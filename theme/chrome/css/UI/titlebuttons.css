@@ -1,4 +1,4 @@
-/* Titlebars (Minimze, Maximize, Restore and Close), disable them when bool is set to TRUE* */
+/* Titlebars (Minimze, Maximize, Restore and Close), disable them when bool is set to TRUE */
 
 @media (-moz-platform: windows) { /* Windows */
 @supports not (-moz-bool-pref("silverfox.disableChromeTitlebar")) {
@@ -85,12 +85,6 @@
 }
 
 @media (-moz-platform: linux) { /* Linux */
-  /* *Linux has special behaviour as Firefox uses its own hardcoded titlebuttons when using themes. */
-  /***
-   Chrome titlebar: Linux titlebuttons
-   NOT Chrome titlebar, with blue system theme and/or theme: Chrome OS titlebuttons
-  ***/
-@supports (not (-moz-bool-pref("silverfox.disableChromeTitlebar"))) or (not (-moz-bool-pref("silverfox.allowThemes"))) {
   .titlebar-close,
   .titlebar-restore,
   .titlebar-min,
@@ -108,7 +102,12 @@
     margin-right: -3px !important;
   }
   .titlebar-close:-moz-lwtheme { /* For some reason, this has different side-padding */
-    margin-right: -1px !important;
+    margin-right: -2px !important;
+  }
+  :root:is(
+    [style*="--lwt-header-image"]
+  ) .titlebar-close:-moz-lwtheme { /* For some reason, this has even more different side-padding */
+    margin-right: -3px !important;
   }
   .titlebar-restore,
   .titlebar-min,
@@ -171,72 +170,4 @@
   .titlebar-restore:hover:active {
     background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
   }
-}
-/* Same for when themed */
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
-  .titlebar-close:-moz-lwtheme,
-  .titlebar-restore:-moz-lwtheme,
-  .titlebar-min:-moz-lwtheme,
-  .titlebar-max:-moz-lwtheme {
-    min-width: 24px !important;
-    max-width: 24px !important;
-    height: 18px !important;
-    padding: 0px !important;
-    margin-top: -14px !important;
-    appearance: none !important;
-    list-style-image: none !important;
-    border-radius: 0 !important;
-  }
-  .titlebar-close:-moz-lwtheme {
-    margin-right: -1px !important;
-  }
-  .titlebar-restore:-moz-lwtheme,
-  .titlebar-min:-moz-lwtheme,
-  .titlebar-max:-moz-lwtheme {
-    margin-right: 2px !important;
-  }
-  @supports (-moz-bool-pref("silverfox.allowThemes")) {
-    :root:not([sizemode="normal"]) .titlebar-close:-moz-lwtheme,
-    :root:not([sizemode="normal"]) .titlebar-min:-moz-lwtheme,
-    :root:not([sizemode="normal"]) .titlebar-restore:-moz-lwtheme {
-      margin-top: 1px !important;
-    }
-  }
-  .titlebar-close:-moz-lwtheme {
-    background: url(../../assets/images/topbar/linux/close.png) !important;
-  }
-  .titlebar-min:-moz-lwtheme {
-    background: url(../../assets/images/topbar/linux/minimize.png) !important;
-  }
-  .titlebar-max:-moz-lwtheme {
-    background: url(../../assets/images/topbar/linux/maximize.png) !important;
-  }
-  .titlebar-restore:-moz-lwtheme {
-    background: url(../../assets/images/topbar/linux/restore.png) !important;
-  }
-  .titlebar-close:-moz-lwtheme:hover {
-    background: url(../../assets/images/topbar/linux/close_hover.png) !important;
-  }
-  .titlebar-min:-moz-lwtheme:hover {
-    background: url(../../assets/images/topbar/linux/minimize_hover.png) !important;
-  }
-  .titlebar-max:-moz-lwtheme:hover {
-    background: url(../../assets/images/topbar/linux/maximize_hover.png) !important;
-  }
-  .titlebar-restore:-moz-lwtheme:hover {
-    background: url(../../assets/images/topbar/linux/restore_hover.png) !important;
-  }
-  .titlebar-close:-moz-lwtheme:hover:active {
-    background: url(../../assets/images/topbar/linux/close_pressed.png) !important;
-  }
-  .titlebar-min:-moz-lwtheme:hover:active {
-    background: url(../../assets/images/topbar/linux/minimize_pressed.png) !important;
-  }
-  .titlebar-max:-moz-lwtheme:hover:active {
-    background: url(../../assets/images/topbar/linux/maximize_pressed.png) !important;
-  }
-  .titlebar-restore:-moz-lwtheme:hover:active {
-    background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
-  }
-}
 }
