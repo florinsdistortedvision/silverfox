@@ -6,3 +6,5 @@ user_pref("browser.display.windows.non_native_menus", 0); // Minimize the occurr
 user_pref("ui.prefersReducedMotion", 1); // Needed for New Tab button to stick to tabs
 user_pref("browser.tabs.inTitlebar", 1); // Force disable titlebar
 user_pref("browser.uidensity", -1); // Force set normal density
+user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Disable "Sponsored stories" in Pocket section of new tab page
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Disable the Pocket section of the new tab page
