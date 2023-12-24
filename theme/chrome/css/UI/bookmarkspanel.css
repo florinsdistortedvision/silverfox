@@ -1,0 +1,272 @@
+/* Add To Bookmarks Panel */
+
+.identity-box-button:hover:active, .identity-box-button[open="true"], #tracking-protection-icon-container:hover:active, #tracking-protection-icon-container[open="true"] {
+  background-color: white !important;
+}
+
+panel, menupopup {
+  --panel-border-radius: 0 !important;
+  --panel-shadow-margin: 0px !important;
+  --panel-border-color: none !important; /*set to grey */
+}
+
+#unified-extensions-area {
+  max-height: auto !important;
+  min-height: auto !important;
+  margin-top: auto !important;
+}
+
+#editBookmarkPanel {
+  --panel-border-radius: 5px !important;
+  --panel-shadow-margin: 1px !important;
+  --panel-border-color: grey !important;
+  margin-right: -7px !important;
+  max-width: 240px !important;
+}
+
+#editBookmarkPanel > .panel-subview-body {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+
+#editBookmarkPanelInfoArea::-webkit-scrollbar {
+    display: none !important;
+}
+
+#editBookmarkPanel .panel-header {
+  margin-top: -32px !important;
+}
+
+#editBMPanel_foldersExpander,
+#editBookmarkPanelBottomContent,
+.editBMPanel_tagsRow.hideable,
+#editBookmarkPanelFaviconContainer,
+#editBookmarkPanelImage,
+#editBookmarkPanel toolbarseparator {
+  display: none !important;
+}
+
+#editBookmarkPanel:before {
+  content: "▲" !important;
+  font-size: 30px; 
+  color: var(--arrowpanel-background) !important;
+  margin-top: -10px !important;
+  margin-left: 204.5px !important;
+  margin-bottom: -20px !important;
+  z-index: -1 !important;
+}
+
+#editBookmarkPanelTitle {
+  position: relative !important;
+  top: 26px !important;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: transparent !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 400;
+}
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+#editBookmarkPanelTitle::before {
+  color: #062d75 !important;
+}
+}
+#editBookmarkPanelTitle::before {
+  content: "Bookmark" !important;
+  color: var(--lwt-text-color) !important;
+  margin-left: -50px !important;
+}
+
+
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+
+#editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 4 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 2 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 3 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove bookmark"] {
+  background: white !important;
+}
+  
+}
+
+
+#editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 4 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 2 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove 3 bookmarks"],
+#editBookmarkPanelRemoveButton[label="Remove bookmark"] {
+  background: var(--arrowpanel-background) !important;
+  color: transparent !important;
+  position: relative;
+  top: -122px;
+  height: 20px !important;
+}
+
+#editBookmarkPanelRemoveButton[label="Remove bookmark"]::before {
+  content: "Remove" !important;
+  position: relative;
+  color: #5498dc !important;
+  text-decoration: underline;
+  top: -6px !important;
+  left: 35px !important;
+}
+
+#editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"]::before,
+#editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"]::before,
+#editBookmarkPanelRemoveButton[label="Remove 4 bookmarks"]::before,
+#editBookmarkPanelRemoveButton[label="Remove 2 bookmarks"]::before,
+#editBookmarkPanelRemoveButton[label="Remove 3 bookmarks"]::before {
+  content: "Remove all" !important;
+  position: relative;
+  color: #5498dc !important;
+  text-decoration: underline;
+  top: -6px !important;
+  left: 50px !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+#editBookmarkPanelRemoveButton[label="Cancel"] {
+  background: white !important;
+  }
+}
+#editBookmarkPanelRemoveButton[label="Cancel"] {
+  background: var(--arrowpanel-background) !important;
+  color: #5498dc !important;
+  text-decoration: underline;
+  position: relative;
+  top: -122px;
+  right: 64px;
+  height: 20px !important;
+}
+
+#editBookmarkPanelRemoveButton:hover {
+  cursor: pointer;
+}
+
+#editBMPanel_namePicker {
+  border-radius: 0px !important;
+  height: 3px !important;
+  width: 156px !important;
+  margin-left: 35px !important;
+  margin-top: -15px !important;
+}
+
+.editBMPanel_folderRow.hideable,
+.editBMPanel_nameRow.hideable {
+  color: transparent;
+}
+
+.editBMPanel_nameRow.hideable::after {
+  content: "Name:" !important;
+  color: var(--lwt-text-color) !important;
+  position: relative;
+  right: 40px !important;
+  top: 7px !important;
+}
+
+.editBMPanel_folderRow.hideable::after {
+  content: "Folder:" !important;
+  color: var(--lwt-text-color) !important;
+  position: relative;
+  top: -7px !important;
+  left: -55px !important;
+}
+
+#editBMPanel_folderMenuList {
+  border-radius: 0px !important;
+  max-height: 22px !important;
+  border: 1px solid #9f9ea1;
+  margin-left: 35px !important;
+  background: #e1e1e1 !important;
+  margin-top: -30px !important;
+  min-width: 174px !important;
+}
+
+#label-box:not([native]) {
+  margin-left: -27px !important;
+}
+
+dropmarker:not([native]) {
+  display: none !important;
+}
+
+.folder-icon,
+#editBMPanel_folderMenuList[selectedGuid="menu________"], #editBMPanel_bmRootItem,
+#editBMPanel_folderMenuList[selectedGuid="toolbar_____"], #editBMPanel_toolbarFolderItem {
+  list-style-image: none !important;
+}
+
+#editBookmarkPanelDoneButton {
+  border-radius: 0px !important;
+  border: 1px solid #9f9ea1 !important;
+  background: #e1e1e1 !important;
+  color: black !important;
+  margin-top: -43px !important;
+  width: 100px !important;
+  height: 25px !important;
+  order: 1 !important;
+  margin-left: -111px !important;
+  z-index: 999 !important;
+  position: relative !important;
+  left: -67px !important;
+}
+
+#editBMPanel_newFolderButton,
+#editBMPanel_folderMenuList,
+#editBookmarkPanelDoneButton {
+  color: black !important;
+}
+
+#editBMPanel_newFolderButton:hover,
+#editBMPanel_folderMenuList:hover,
+#editBookmarkPanelDoneButton:hover {
+  border: 1px solid #0078d7 !important;
+  background: #e5f1fb !important;
+}
+
+#editBookmarkPanelBottomButtons {
+  margin-bottom: -30px !important; 
+}
+
+#editBMPanel_folderMenuList menupopup {
+  --panel-border-color: grey !important;
+}
+
+#editBMPanel_folderMenuList menupopup menuitem[id="editBMPanel_chooseFolderMenuItem"] {
+  display: none !important;
+}
+
+
+#editBMPanel_folderMenuList menuseparator {
+  display: none !important;
+}
+
+#editBMPanel_folderMenuList menuitem {
+  margin-left: -28px !important;
+}
+
+#editBMPanel_folderTree {
+  max-width: 174px !important;
+  min-width: 100px !important;
+  border-radius: 0px !important;
+  margin-left: 35px !important;
+  margin-top: -25px !important;
+}
+
+#editBMPanel_newFolderButton {
+  width: 80px !important;
+  height: 25px !important;
+  border-radius: 0px !important;
+  border: 1px solid #9f9ea1 !important;
+  background: #e1e1e1 !important;
+  position: relative;
+  top: 6px;
+  left: 40px;
+}
+
+#editBMPanel_newFolderButton .button-text {
+  margin-left: -6px !important;
+}

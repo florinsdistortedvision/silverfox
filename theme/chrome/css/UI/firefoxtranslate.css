@@ -1,0 +1,147 @@
+/* Firefox Translations (official Firefox extension) */
+
+#pageAction-urlbar-firefox-translations-addon_mozilla_org {
+  background: transparent !important;
+  list-style-image: url(../../images/extensions/translate.png) !important;
+}
+
+notification[value="fxtranslation-notification"] {
+  background-image: linear-gradient(to bottom, #e5e5e5 0%, #d9d9d9 100%) !important;
+  max-height: 37px !important;
+  min-height: 37px !important;
+  border-right: 2px solid #b2b2b2 !important;
+  border-left: 2px solid #b2b2b2 !important;
+}
+
+notification[value="fxtranslation-notification"] .messageImage {
+  visibility: hidden !important;
+}
+
+notification[value="fxtranslation-notification"]::before {
+  content: url(../../images/extensions/translate.png) !important;
+  position: absolute !important;
+  margin-left: -5px;
+  margin-top: -1px;
+  transform: scale(0.9) !important;
+}
+
+label[anoind="cbQualityEstimation"],
+label[anoind="cbOutbondTranslation"] {
+  display: none !important;
+}
+
+label[value="This page is in"] {
+  margin-top: 7px !important;
+  font-size: 14px !important;
+}
+
+label[anonid="labelTranslate"],
+label[anonid="lblTgtLng"],
+label[anonid="lblSrcLng"] {
+  margin-top: 7px !important;
+}
+
+label[anonid="lblSrcLng"]:after {
+  content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0 \00a0to" !important;
+}
+
+menulist[anonid="detectedLanguage"] {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-weight: 500 !important;
+  border: 1px solid #8f8f8f !important;
+  background-image: linear-gradient(to top, #e4e4e4 0%, #f7f7f7 100%) !important;
+  border-radius: 4px !important;
+  padding-right: 15px !important;
+  padding-top: 12px !important;
+  padding-bottom: 11px !important;
+  padding-left: 30px !important;
+  max-height: 29px !important;
+  width: 125px !important;
+  margin-top: 2px !important;
+  margin-left: -10px !important;
+}
+
+
+menulist[anonid="targetLanguage"] {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-weight: 500 !important;
+  border: 1px solid #8f8f8f !important;
+  background-image: linear-gradient(to top, #e4e4e4 0%, #f7f7f7 100%) !important;
+  border-radius: 4px !important;
+  padding-right: 15px !important;
+  padding-top: 12px !important;
+  padding-bottom: 11px !important;
+  padding-left: 30px !important;
+  max-height: 29px !important;
+  width: 125px !important;
+  margin-top: 1px !important;
+  margin-left: 170px !important;
+}
+
+.notification-button.primary[anonid="translate"] {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-weight: 500 !important;
+  border: 1px solid #8f8f8f !important;
+  background-image: linear-gradient(to top, #e4e4e4 0%, #f7f7f7 100%) !important;
+  border-radius: 4px !important;
+  max-height: 29px !important;
+  min-height: 29px !important;
+  min-width: 70px !important;
+  position: relative !important;
+  top: -4px;
+  left: -5px;
+}
+
+.notification-button.primary[anonid="translate"]::before {
+  content: "Would you like to translate to:" !important;
+  position: absolute !important;
+  width: 300px !important;
+  margin-left: -340px !important;
+  margin-top: 4px !important;
+  pointer-events: none !important;
+}
+
+.notification-button[anonid="options"] {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-weight: 500 !important;
+  border: 1px solid #8f8f8f !important;
+  background-image: linear-gradient(to top, #e4e4e4 0%, #f7f7f7 100%) !important;
+  border-radius: 4px !important;
+  padding-right: 15px !important;
+  height: 28px !important;
+  position: relative !important;
+  top: -2px;
+  left: 13px;
+}
+
+.close-icon[anonid="closeButton"] {
+  list-style-image: url(../../images/topbar/closetab.png) !important;
+  color: transparent !important;
+  margin-right: 5px !important;
+}
+
+.notification-button[anonid="translateAsBrowse"] {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-weight: 500 !important;
+  border: 1px solid #8f8f8f !important;
+  background-image: linear-gradient(to top, #e4e4e4 0%, #f7f7f7 100%) !important;
+  border-radius: 4px !important;
+  padding-right: 15px !important;
+  height: 28px !important;
+  position: relative !important;
+  top: -2px;
+  left: 20px;  
+}
+
+menulist[anonid="detectedLanguage"]:hover,
+menulist[anonid="targetLanguage"]:hover,
+.notification-button.primary[anonid="translate"]:hover,
+.notification-button[anonid="options"]:hover,
+.notification-button[anonid="translateAsBrowse"]:hover {
+  border: 1px solid black !important;
+}

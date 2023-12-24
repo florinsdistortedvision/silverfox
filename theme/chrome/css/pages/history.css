@@ -1,0 +1,114 @@
+@-moz-document url-prefix(chrome://browser/content/places/historySidebar.xhtml) {
+	
+#sidebar-search-container {
+  width: 275px !important;
+  height: 39px !important;
+  margin-left: 564px !important;
+  margin-top: 15px !important;
+}
+
+#sidebar-search-container::before {
+  content: "History" !important;
+  position: relative !important;
+  left: -500px !important;
+      color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  z-index: 999 !important;
+}
+
+#sidebar-search-container::after {
+  color: #eeeeee !important;
+  content: "______________________________________________________________________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 40px !important;
+  z-index: 999 !important;
+  left: 73px !important;
+}
+
+#viewButton {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  width: 50px !important;
+}
+
+#viewButton:hover {
+    background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;
+}
+
+.sidebar-placesTreechildren {
+  margin-left: 63px !important;
+  margin-top: 10px !important;
+  color: black !important;
+}
+  
+@media (prefers-color-scheme: dark) {
+    .sidebar-placesTreechildren {
+        color: white !important;
+    }
+}  
+
+.textbox-search-clear {
+  list-style-image: url(../../assets/images/pages/bookmarks/close.png) !important;
+  position: relative !important;
+  left: -2px;
+}
+
+.textbox-search-clear:hover {
+  list-style-image: url(../../assets/images/pages/bookmarks/close_hover.png) !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell { 
+  margin-left: 4px !important; 
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(hover),
+.sidebar-placesTreechildren::-moz-tree-image(hover),
+.sidebar-placesTreechildren::-moz-tree-twisty(hover) { 
+  background: transparent !important; 
+}
+
+.sidebar-placesTreechildren::-moz-tree-row(hover){ 
+  background: transparent !important; 
+}
+
+.sidebar-placesTreechildren::-moz-tree-image { 
+  fill: transparent !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-twisty {
+  fill: transparent !important;
+  margin-right: -30px !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(selected) {
+  color: black !important;
+  font-size: 14px !important;
+  background: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .sidebar-placesTreechildren::-moz-tree-cell-text(selected) {
+        color: white !important;
+    }
+}  
+
+.sidebar-placesTreechildren::-moz-tree-row(selected) {
+  background-color: transparent !important;
+}
+
+treechildren {    
+--default-focusring: 0 !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-row { 
+  margin-bottom: 15px !important; 
+}
+}

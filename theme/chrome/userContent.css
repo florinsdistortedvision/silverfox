@@ -1,0 +1,24 @@
+/* Pages */
+
+@import url("css/pages/about-config.css");
+@import url("css/pages/about-support.css");
+@import url("css/pages/addons.css");
+@import url("css/pages/beta.css");
+@import url("css/pages/bookmarks.css");
+@import url("css/pages/downloads.css");
+@import url("css/pages/history.css");
+@import url("css/pages/homepage.css");
+@import url("css/pages/privatepage.css");
+@import url("css/pages/reportphish.css");
+@import url("css/pages/settings.css");
+@import url("css/pages/signin.css");
+
+
+/* Error pages */
+
+@import url("css/error pages/about-neterror-connectionfailure.css");
+@import url("css/error pages/about-neterror-cspblocked.css");
+@import url("css/error pages/about-neterror-dnsnotfound.css");
+@import url("css/error pages/about-neterror-netoffline.css");
+@import url("css/error pages/about-neterror-nssbadcert.css");
+@import url("css/error pages/about-tabcrashed.css");

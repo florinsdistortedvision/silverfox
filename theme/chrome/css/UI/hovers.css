@@ -1,0 +1,85 @@
+/* Hovers for identity box, navigation buttons and others */
+
+:root {
+--toolbarbutton-hover-background: transparent !important;
+--toolbarbutton-active-background: transparent !important;
+}
+
+.identity-box-button:hover:not([open=true]),
+#tracking-protection-icon-container:hover:not([open=true]),
+.identity-box-button:hover:active,
+.identity-box-button[open=true],
+#tracking-protection-icon-container:hover:active,
+#tracking-protection-icon-container[open=true],
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:not([open]),
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].notSecureText > .identity-box-button[open=true],
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].chromeUI > .identity-box-button[open=true],
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button:hover:active,
+#identity-box[pageproxystate="valid"].extensionPage > .identity-box-button[open=true] {
+  background-color: white !important;
+}
+
+#PlacesChevron:hover,
+#hamburger-button:hover,
+#reload-button:hover,
+#stop-button:hover,
+#home-button:hover,
+#forward-button:hover,
+#back-button:hover {
+  background-color: #e7e7e7 !important;
+  border-left: 1px solid #b0b0b0;
+  border-right: 1px solid #b0b0b0;
+  border-bottom: 1px solid #8d8d8d;
+  border-top: 1px solid #8d8d8d;
+  border-radius: 3px !important;
+}
+
+#PlacesChevron:active,
+#hamburger-button:active,
+#reload-button:active,
+#stop-button:active,
+#home-button:active,
+#forward-button:active,
+#back-button:active {
+  background-color: #bbbbba !important;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  border-radius: 3px !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"], [open]):hover {
+  background-image: linear-gradient(to top, #e7e7e7 0%, #ecebec 95%, #FFFFFF 100%) !important;
+  border-left: 1px solid #b0b0b0;
+  border-right: 1px solid #b0b0b0;
+  border-bottom: 1px solid #8d8d8d;
+  border-top: 1px solid #b0b0b0;
+  color: darkblue !important;
+  border-radius: 3px !important;
+}
+
+
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"], [open]):active,
+toolbarbutton.bookmark-item:enabled,
+toolbarbutton.bookmark-item[open="true"] {
+  background-image: linear-gradient(to top, #bbbbba 0%, #bbbbba 95%, #bbbbba 100%) !important;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999999;
+  color: darkblue !important;
+  border-radius: 3px !important;
+  z-index: 50 !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton, [disabled="true"], [open]) {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}

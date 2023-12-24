@@ -1,0 +1,205 @@
+/* Profile Pictures */
+
+@supports not -moz-bool-pref("silverfox.usepfp") {
+    :root:not([sizemode="normal"]) .titlebar-spacer {
+        width: 0px !important; 
+    }
+    .titlebar-spacer {
+        width: 2px !important;
+    } 
+}
+
+:root:not([privatebrowsingmode=temporary]) .animated-pfp,
+:root:not([privatebrowsingmode=temporary]) .alien-pfp,
+:root:not([privatebrowsingmode=temporary]) .blondepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .blue-pfp,
+:root:not([privatebrowsingmode=temporary]) .burger-pfp,
+:root:not([privatebrowsingmode=temporary]) .businessmanpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .cat-pfp,
+:root:not([privatebrowsingmode=temporary]) .chickpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .chrome-pfp,
+:root:not([privatebrowsingmode=temporary]) .chromium-pfp,
+:root:not([privatebrowsingmode=temporary]) .cooldudepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .cupcake-pfp,
+:root:not([privatebrowsingmode=temporary]) .custom-pfp,
+:root:not([privatebrowsingmode=temporary]) .dog-pfp,
+:root:not([privatebrowsingmode=temporary]) .drink-pfp,
+:root:not([privatebrowsingmode=temporary]) .flower-pfp,
+:root:not([privatebrowsingmode=temporary]) .football-pfp,
+:root:not([privatebrowsingmode=temporary]) .greenpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .happy-pfp,
+:root:not([privatebrowsingmode=temporary]) .horse-pfp,
+:root:not([privatebrowsingmode=temporary]) .lightbluepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .music-pfp,
+:root:not([privatebrowsingmode=temporary]) .ninja-pfp,
+:root:not([privatebrowsingmode=temporary]) .orangepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .pizza-pfp,
+:root:not([privatebrowsingmode=temporary]) .purplepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .redpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .weather-pfp,
+:root:not([privatebrowsingmode=temporary]) .whitepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .yellowpfp-pfp {
+  width: 45px !important;
+  margin-left: -3px !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .off-pfp {
+  width: 0px !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .animated-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .alien-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .blondepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .bluepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .burger-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .businessmanpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .cat-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .chickpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .chrome-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .chromium-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .cooldudepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .cupcake-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .custom-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .dog-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .drink-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .flower-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .football-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .greenpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .happy-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .horse-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .lightbluepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .music-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .ninja-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .orangepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .pizza-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .purplepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .redpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .weather-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .whitepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .yellowpfp-pfp::before {
+  width: 38px !important;
+  height: 31px !important;
+  position: relative !important;
+  top: -3px !important;
+  left: 7px !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .animated-pfp::before {
+  content: url("../../assets/images/profile pictures/animated.gif") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .alien-pfp::before {
+  content: url("../../assets/images/profile pictures/alien.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .blondepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/blondepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .bluepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/bluepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .burger-pfp::before {
+  content: url("../../assets/images/profile pictures/burger.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .businessmanpfp-pfp::before {
+  content: url("../../assets/images/profile pictures/businessmanpfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .cat-pfp::before {
+  content: url("../../assets/images/profile pictures/cat.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .chickpfp-pfp::before {
+  content: url("../../assets/images/profile pictures/chickpfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .chrome-pfp::before {
+  content: url("../../assets/images/profile pictures/chrome.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .chromium-pfp::before {
+  content: url("../../assets/images/profile pictures/chromium.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .cooldudepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/cooldudepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .cupcake-pfp::before {
+  content: url("../../assets/images/profile pictures/cupcake.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .custom-pfp::before {
+  content: url("../../assets/images/profile pictures/custom.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .dog-pfp::before {
+  content: url("../../assets/images/profile pictures/dog.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .drink-pfp::before {
+  content: url("../../assets/images/profile pictures/drink.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .flower-pfp::before {
+  content: url("../../assets/images/profile pictures/flower.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .football-pfp::before {
+  content: url("../../assets/images/profile pictures/football.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .greenpfp-pfp::before {
+  content: url("../../assets/images/profile pictures/greenpfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .happy-pfp::before {
+  content: url("../../assets/images/profile pictures/happy.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .horse-pfp::before {
+  content: url("../../assets/images/profile pictures/horse.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .lightbluepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/lightbluepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .music-pfp::before {
+  content: url("../../assets/images/profile pictures/music.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .ninja-pfp::before {
+  content: url("../../assets/images/profile pictures/ninja.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .orangepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/orangepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .pizza-pfp::before {
+  content: url("../../assets/images/profile pictures/pizza.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .purplepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/purplepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .redpfp-pfp::before {
+  content: url("../../assets/images/profile pictures/redpfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .weather-pfp::before {
+  content: url("../../assets/images/profile pictures/weather.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .whitepfp-pfp::before {
+  content: url("../../assets/images/profile pictures/whitepfp.png") !important;
+}
+
+:root:not([privatebrowsingmode=temporary]) .yellowpfp-pfp::before {
+  content: url("../../assets/images/profile pictures/yellowpfp.png") !important;
+}

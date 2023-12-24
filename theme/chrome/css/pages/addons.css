@@ -1,0 +1,524 @@
+@-moz-document url-prefix(about:addons) {
+	
+.sidebar-footer-label,
+.category-name {
+  font-size: 12px !important;
+  position: fixed !important;
+  left: 15px !important;
+  cursor: pointer !important;
+}
+
+.category[name="plugin"],
+.category[name="theme"],
+.category[name="extension"],
+.category[name="discover"] {
+  background-image: none !important;
+}
+  
+#preferencesButton,
+.category[data-l10n-id="addon-category-plugin-title"],
+.category[data-l10n-id="addon-category-theme-title"],
+.category[data-l10n-id="addon-category-extension-title"],
+.category[data-l10n-id="addon-category-discover-title"] {
+  max-height: 28px !important;
+  min-height: 28px !important;
+  max-width: 100px !important;
+  margin-left: 0px !important;
+  margin-bottom: 2px !important;
+  position: fixed !important;
+}
+    
+.category[data-l10n-id="addon-category-discover-title"] {
+    top: 55px !important;
+}
+
+.category[data-l10n-id="addon-category-extension-title"] {
+    top: 85px !important;
+}
+
+.category[data-l10n-id="addon-category-theme-title"] {
+    top: 117px !important;
+}  
+
+.category[data-l10n-id="addon-category-plugin-title"] {
+    top: 150px !important;    
+}  
+     
+#category-sync {
+  margin-bottom: 55px !important;
+}
+
+#categories {
+  margin-top: 55px !important;
+}
+
+#preferencesButton:hover,
+#categories > .category:hover {
+  background: transparent !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #categories::before {
+        content: "Chrome" !important;
+        position: fixed !important;
+        top: 20px !important;
+        font-size: 17px !important;
+        color: #4e5764 !important;
+        left: 21px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #categories::before {
+        content: "Chromium" !important;
+        position: fixed !important;
+        top: 20px !important;
+        font-size: 17px !important;
+        color: #4e5764 !important;
+        left: 21px !important;
+    }
+}
+
+#categories > .category[selected] {
+  border-left: 5px solid #4e5764 !important;
+  border-radius: 0px !important;
+  color: #4e5764 !important;
+}
+
+#preferencesButton,
+#categories > .category {
+  color: grey !important;
+}
+    
+#preferencesButton::after {
+  content: "Settings" !important;
+  font-size: 12px !important;
+  color: grey !important;
+  position: relative !important;
+  left: -11px !important;
+}
+
+.search-label,
+.sidebar-footer-icon,
+#help-button {
+  display: none !important;
+}
+
+#preferencesButton {
+  position: fixed !important;
+  top: 205px !important;
+  color: transparent !important;
+}
+
+.pending-uninstall {
+    display: none !important;
+}  
+  
+#sidebar::after {
+  background-color: transparent !important;
+}
+
+#content {
+  margin-left: -55px !important;
+}
+
+.sticky-container,
+.sticky-inner-container {
+  z-index: 5 !important;
+}
+
+search-addons > search-textbox {
+  border-radius: 3px !important;
+  max-height: 25px !important;
+  min-height: 10px !important;
+  font-size: 12px !important;
+  list-style-image: none !important;
+  color: grey !important;
+  margin-bottom: 40px !important; 
+}
+
+
+/* Advanced Settings section */
+
+h1[data-l10n-id="discover-heading"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: transparent !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="discover-heading"]::before {
+  content: "Hmmm" !important;
+  color: #4e5764 !important;
+}
+
+h1[data-l10n-id="discover-heading"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+span[data-l10n-id="discopane-intro"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  color: transparent !important;
+}
+
+span[data-l10n-id="discopane-intro"]::before {
+  content: "You aren't supposed to be here!" !important;
+  color: var(--in-content-text-color) !important;
+  position: relative !important;
+  top: 30px !important;
+}
+
+span[data-l10n-id="discopane-intro"]::after {
+  content: url(../../assets/images/pages/addons/chrome_egg.png) !important;
+  width: 367px !important;
+  height: 367px !important;
+  position: relative !important;
+  top: -20px !important;
+}
+
+.privacy-policy-link,
+.amo-link-container.view-footer-item,
+recommended-addon-list,
+.discopane-notice,
+.discopane-intro-learn-more-link {
+  display: none !important;
+}
+
+.category-name[data-l10n-id="addon-category-discover"]::before {
+  content: "Advanced Settings" !important; 
+  color: grey !important;
+}
+
+.category-name[data-l10n-id="addon-category-discover"] {
+  color: transparent !important;
+}
+
+#categories > .category[selected] .category-name[data-l10n-id="addon-category-discover"]::before {
+  color: #4e5764 !important;
+}
+
+
+/*Extensions section */
+
+h1[data-l10n-id="extension-heading"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="extension-heading"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+h2[data-l10n-id="extension-disabled-heading"],
+h2[data-l10n-id="extension-enabled-heading"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+h2[data-l10n-id="extension-enabled-heading"] {
+  margin-top: 30px !important; 
+}
+
+.main-heading {
+  margin-top: -50px !important;
+}
+
+.more-options-button {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 70px !important;
+  margin-left: 10px !important;
+}
+
+.more-options-button:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;
+}
+
+.more-options-button::before {
+  content: "Settings" !important;
+  position: relative !important;
+  right: 12px !important;
+}
+
+.more-options-button[data-l10n-id="addon-page-options-button"] {
+  position: absolute !important;
+  left: 0 !important;
+  margin-left: 25px !important;
+  margin-top: 12px !important;
+}
+
+.card {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.card.addon {
+  margin-top: -10px !important;
+}
+
+.addon-description,
+.addon-name-link {
+  font-size: 12px !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    .addon-badge-recommended {
+        background-image: url(../../assets/images/pages/addons/recommended.png) !important;
+        background-color: transparent !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    .addon-badge-recommended {
+        background-image: url(../../assets/images/pages/addons/recommended_chromium.png) !important;
+        background-color: transparent !important;
+    }
+}
+
+h2[data-l10n-id="recommended-extensions-heading"] {
+  display: none !important;
+}
+
+
+/*Themes section */
+
+h1[data-l10n-id="theme-heading"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="theme-heading"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+h2[data-l10n-id="theme-enabled-heading"] {
+  margin-top: 30px !important;
+  margin-bottom: 20px !important;
+}
+
+h2[data-l10n-id="theme-disabled-heading2"] {
+  margin-bottom: 20px !important;
+}
+
+h2[data-l10n-id="recommended-themes-heading"],
+h2[data-l10n-id="theme-disabled-heading2"],
+h2[data-l10n-id="theme-enabled-heading"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+h2[data-l10n-id="recommended-themes-heading"] {
+  margin-top: -10px !important;
+  color: transparent !important;
+}
+
+h2[data-l10n-id="recommended-themes-heading"]:before {
+  content: "Themes not working?" !important;
+  color: var(--in-content-text-color) !important;
+}
+
+.theme-enable-button {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 70px !important;
+  margin-left: 10px !important;
+}
+
+.theme-enable-button:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;
+}
+
+.theme-recommendation {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  margin-top: -10px !important;
+  color: transparent !important;
+}
+
+a[href="https://color.firefox.com/?utm_source=firefox-browser&utm_medium=firefox-browser&utm_content=theme-footer-link"] {
+  display: none !important;
+}
+
+.theme-recommendation::before {
+  content: "Have you set silverfox.allowThemes as TRUE in about:config?" !important;
+  color: var(--in-content-text-color) !important;
+}
+
+
+/* Plugins page */
+
+h1[data-l10n-id="plugin-heading"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="plugin-heading"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+.list-section-heading[data-l10n-id="plugin-enabled-heading"] {
+  margin-top: 30px !important;
+}
+
+h2[data-l10n-id="plugin-enabled-heading"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+.card-heading-icon.addon-icon[src="chrome://global/skin/icons/plugin.svg"] {
+  content: url(../../assets/images/pages/addons/plugin.png) !important;
+  width: 39px !important;
+  height: 39px !important;
+}
+
+
+/* Extensions/themes/plugins inner */
+
+.back-button {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 60px !important;
+  margin-left: 75px !important;
+  position: relative !important;
+  top: 23px !important;
+}
+
+.back-button:hover,
+.addon-detail-contribute-button:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;
+}
+
+.addon-detail-contribute-button {
+  text-decoration: none !important;
+  color: transparent !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  max-width: 80px !important;
+  margin-left: 10px !important;
+}
+
+.addon-detail-contribute-button::before {
+  content: "Contribute" !important;
+  position: relative !important;
+  top: -5px !important;
+  right: 16px !important;
+  color: #444444 !important;
+}
+
+.back-button::before {
+  content: "Back" !important;
+  position: relative !important;
+  top: -5px !important;
+  left: -1px !important;
+}
+
+.addon-card-collapsed {
+  margin-top: 20px !important;
+}
+
+.addon-detail-contribute > label,
+.button-link.addon-detail-description-toggle,
+.addon-detail-description,
+.addon-name {
+  font-size: 12px !important;
+}
+
+.tab-group,
+#details-deck-button-preferences,
+#details-deck-button-release-notes,
+#details-deck-button-permissions,
+#details-deck-button-details {
+  font-size: 12px !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  color: #444444 !important;
+}
+
+.tab-group {
+  border: 1px solid #a9a9a9 !important;
+}
+
+.addon-detail-sitepermissions, .addon-detail-row {
+  border-top: none !important;
+  font-size: 12px !important;
+}
+
+.addon-detail-row.addon-detail-help-row {
+  position: relative !important;
+  top: 11px !important;
+}
+
+.permission-info.permission-checked,
+h2[data-l10n-id="addon-permissions-required"] {
+  font-size: 12px !important;
+}
+
+#main[current-view="detail"] {
+  margin-top: 30px !important;
+}
+}

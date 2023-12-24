@@ -1,0 +1,106 @@
+/* Extensions popup Menu */
+
+#unified-extensions-button {
+  position: fixed !important;
+  right: 0;
+  margin-top: 15px !important;
+  margin-right: 5px !important;
+  list-style-image: none !important;
+  z-index: 1 !important;
+  width: 32px !important;
+  max-height: 10px !important;
+}
+
+
+#unified-extensions-panel {
+  --panel-border-color: grey !important;
+  --panel-border-radius: 5px !important;
+}
+
+#unified-extensions-view .panel-header {
+  position: relative !important;
+  right: 122px !important;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 400;
+}
+
+#unified-extensions-view toolbarseparator {
+  display: none;
+}
+
+#unified-extensions-view toolbarbutton[class="unified-extensions-item-action-button panel-no-padding webextension-browser-action subviewbutton subviewbutton-iconic"] {
+  font-size: 11px;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+#unified-extensions-view toolbarbutton[class="unified-extensions-item-action-button panel-no-padding webextension-browser-action subviewbutton subviewbutton-iconic"]:hover {
+  background: white !important;
+  cursor: pointer;
+}
+
+.unified-extensions-item-menu-button.subviewbutton::after {
+  content: url(../../assets/images/middlebar/managextensions.png) !important;
+  position: relative;
+  right: 35px;
+  top: 1px;
+}
+
+.unified-extensions-item-menu-button.subviewbutton {
+  list-style-image: none !important;
+  position: relative;
+  left: 38px;
+  top: -3px;
+}
+
+
+#unified-extensions-manage-extensions {
+  color: #5498dc !important;
+  text-decoration: underline;
+  height: 20px !important; 
+  cursor: pointer;
+}
+
+
+#notification-popup {
+  border: 1px solid grey !important;
+}
+
+.popup-notification-description {
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #062d75;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 400;  
+}
+
+.addon-webext-perm-notification-content {
+  font-size: 11px;
+  font-family: "Open Sans", sans-serif !important;  
+}
+
+.popup-notification-icon {
+  position: relative !important;
+  top: 2px !important;
+}
+
+.popup-notification-secondary-button,
+.popup-notification-primary-button {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 70px !important;
+  margin-left: 10px !important;
+}
+
+.popup-notification-secondary-button:hover,
+.popup-notification-primary-button:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;  
+}

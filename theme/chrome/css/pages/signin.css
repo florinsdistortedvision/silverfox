@@ -1,0 +1,132 @@
+@-moz-document url-prefix("https://accounts.firefox.com/?context=fx_desktop_v3&entrypoint=preferences&action=email&service=sync") {
+
+.flex.justify-center.p-2.brand-banner-bg {
+  display: none !important;
+}
+
+#about-mozilla {
+  display: none !important;
+}
+
+.card {
+  margin-top: -20px !important;
+  background: whiteSmoke !important;
+  border: 1px solid #E5E5E5 !important;
+  box-shadow: none !important;
+  border-radius: 1px !important;
+  max-width: 335px !important;
+  max-height: 275px !important;
+}
+
+#fxa-enter-email-header {
+  font-size: 0px !important;
+  margin-left: -85px !important;
+}
+
+#fxa-enter-email-header::before {
+  content: "Sign in to Chrome" !important;
+  color: #222 !important;
+  font-size: 36px !important;
+  font-weight: normal;
+  position: relative !important;
+  top: -170px !important;
+  white-space: nowrap !important;
+  left: 37px !important;
+}
+
+#fxa-enter-email-header::after {
+  content: "Sign in to get your bookmarks, history and settings on all your devices." !important;
+  color: #666;
+  font-size: 14px;
+  font-weight: normal;
+  white-space: nowrap !important;
+  position: relative !important;
+  top: -160px !important;
+}
+
+#subheader {
+  font-size: 0px !important;
+  margin-top: -100px !important;
+}
+
+#subheader::before {
+  content: "Sign in and sync" !important;
+  color: #222 !important;
+  font-size: 16px;
+  font-weight: normal;
+  height: 16px;
+  line-height: 16px;
+  position: relative !important;
+  top: 5px !important;
+  left: -66px !important;
+}
+
+#subheader::after {
+  content: url(../../assets/images/pages/settings/sync.png) !important;
+  width: 52px !important;
+  height: 19px !important;
+  position: relative !important;
+  top: 10px !important;
+  right: -65px !important;
+}
+  
+.input-text {
+  max-height: 20px !important;
+  width: 295px !important;
+  border-radius: 1px !important;
+  border-color: #A0A0A0 !important;
+  margin-left: -15px !important;
+} 
+
+#submit-btn{
+  background: linear-gradient(to bottom, #4D90FE 0%, #357AE8 100%) !important;
+  border-color: #2F5BB7 !important;
+  border-radius: 3px !important;
+  font-size: 13px !important;
+  max-width: 130px !important;
+  min-height: 30px !important;
+  max-height: 30px !important;
+  padding: 0 !important;
+  margin-left: -14px !important;
+}
+
+form {
+    margin-top: -10px !important;
+}
+
+form::before {
+    content: "Email"  !important;
+    font-size: 13px;
+    font-weight: bold !important;
+    position: relative !important;
+    top: -5px !important;
+    left: -132px !important;
+}
+
+.text-xs.text-grey-500.mb-0.mt-5 {
+  font-size: 11px !important;
+  text-align: left !important;
+  margin-left: -10px !important;
+}
+
+.mt-9 {
+    display: none !important;
+}
+
+#fxa-signin-password-header {
+  margin-top: 35px !important;
+  color: transparent !important;
+}
+
+#fxa-signin-password-header::after {
+  content: "Password" !important;
+   font-size: 13px;
+   font-weight: bold !important;
+   position: relative !important;
+   top: 20px !important;
+   left: -120px !important;
+   color: black !important;
+  z-index: 999 !important;
+  background: whitesmoke !important;
+}
+}

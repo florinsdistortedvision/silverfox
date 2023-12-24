@@ -1,0 +1,507 @@
+/* TabsToolbar (Tabs, New Tab, Tilebars) */
+
+/* Chrome's default gap */
+#TabsToolbar {
+  margin-top: 15px;
+  margin-bottom: -6px !important;
+}
+
+
+/* When theming is disabled, make the blue gradient */
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+    #TabsToolbar {
+        background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
+    }  
+    #navigator-toolbox,
+    #navigator-toolbox-background {
+    background-color: #6192dc !important;
+    }
+}
+
+/* Remove the gap when Firefox is fullscreen */
+:root:not([sizemode="normal"]) #TabsToolbar {
+  margin-top: -5px;
+  margin-bottom: 0px !important;
+}
+
+/* Remove All Tabs  */
+#alltabs-button {
+  display: none !important;
+}
+
+
+/* Fix the gap added to the titlebar in normal and fullscreen */
+.titlebar-buttonbox-container {
+  margin-top: -30px;
+}
+:root:not([sizemode="normal"]) .titlebar-buttonbox-container {
+  margin-top: -5px;
+}
+
+
+/* Remove tabs overflow buttons */
+toolbarbutton#scrollbutton-up, 
+toolbarbutton#scrollbutton-down {
+  display: none !important;
+}
+
+/* Tighten up tabs overflow portion */
+.scrollbox-clip {
+  max-width: 1522px !important;
+}
+
+
+/* Make tabs be one on top of next  */
+#tabbrowser-arrowscrollbox .tabbrowser-tab[visuallyselected="true"] {
+  z-index: 51 !important; 
+}
+#tabbrowser-arrowscrollbox .tabbrowser-tab:not([visuallyselected="true"]) {
+  z-index: 1 !important;
+}
+.tabbrowser-tab[visuallyselected="true"],
+tab:where(:first-of-type[visuallyselected="true"]) {
+    z-index: 5 !important; 
+}
+.tabbrowser-tab:not([visuallyselected="true"], [multiselected]), .tabbrowser-tab:-moz-lwtheme {
+  z-index: 1 !important;
+}
+
+
+#tabbrowser-arrowscrollbox {
+  min-height: 1px !important;
+  max-height: 30px !important;
+}
+
+/* Size of tabs */
+.tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) { 
+  max-width: 212px !important;
+}
+.tabbrowser-tab:not([pinned]) {
+  max-width: 204px !important;
+}
+
+
+/* Chrome's tabs trapzoid shape */
+.tab-background {
+	transform: perspective(45px) rotateX(12deg) translateY(-2.7px);
+	border-top: 1px solid #b2b2b2;
+    border-right: 1px solid #b2b2b2;
+    border-left: 1px solid #b2b2b2; 
+    border-radius: 5px !important;
+	position: absolute;
+	width: 96% !important;
+    box-shadow: 0 0 2pt 0 #b2b2b2  !important;
+}
+
+/* Tab content (text, favicon etc) area position fix and color if themeing is disabled */
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+    .tab-content {
+        margin-top: -5px !important;
+        color: #000000 !important;
+        font-weight: 600;
+        }
+}
+.tab-content {
+  margin-top: -5px !important;
+  font-weight: 600 !important;
+}
+
+
+/* Tabs colors if theming is disabled or enabled  */
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+    .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background-color: #b0cef2 !important;
+    }
+    .tabbrowser-tab[visuallyselected="true"] .tab-background {
+        background-image: linear-gradient(to top, #f5f5f5 0%, #ffffff 100%) !important;
+    }
+    .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background-color: #a1c7f4 !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.allowThemes")) {
+    .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background-color: var(--toolbar-field-focus-background-color) !important;  
+        filter: grayscale(30%) brightness(103%) !important;
+    }
+    .tabbrowser-tab[visuallyselected="true"] .tab-background {
+        background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 30%, transparent 150%) !important;
+    }
+    .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 40%, transparent 110%) !important;
+        filter: contrast(90%) !important;
+    }
+}
+
+/* Because some themes are low effort, disable active tabs outline color */
+#tabbrowser-tabs {
+--lwt-tab-line-color: transparent !important; 
+}
+
+.tabbrowser-tab {
+  margin-top: 1px !important;
+}
+
+/* Removes secondary label (Playing, Muted etc.) */
+.tab-secondary-label {
+  display: none !important;
+}
+
+/* Removes sound playing overlay favicon */
+.tab-icon-overlay {
+  display: none;
+}
+.tab-icon-image {
+  opacity: 1 !important;
+}
+
+
+/* Slight fix for tabs initial position */
+.tab-stack {
+  margin-left: 3px;
+}
+
+
+/* Pinned tabs styling  */
+.tabbrowser-tab[pinned] {
+  padding: 0px !important;
+  padding-right: 10px !important;
+  padding-left: 4px !important;
+  transform: perspective(20px) rotateX(16deg) translateY(-5px);
+  margin-right: 1px !important;
+}
+.tabbrowser-tab[pinned] .tab-background {
+  border-radius: 7px !important;
+}
+.tabbrowser-tab[pinned] .tab-content {
+  margin-top: 3px !important;
+  margin-left: -3px !important;
+}
+
+/* Make tabs more into each other OwO */
+.tabbrowser-tab:not(:first-of-type)[visuallyselected="true"],
+.tabbrowser-tab:not(:first-of-type):not([visuallyselected="true"]) {
+    margin-left: -20px !important;
+}
+.tabbrowser-tab:first-of-type {
+    margin-left: 0 !important;
+}
+
+
+/* Tabs throbber */
+.tab-throbber[busy] {
+  list-style-image: none !important;
+  background-image: url(../../assets/images/topbar/loading.gif) !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  filter: contrast(0.5) !important;
+}
+
+.tab-throbber[progress] {
+  list-style-image: none !important;
+  background-image: url(../../assets/images/topbar/loadingblue.gif) !important;
+  background-size: 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* Padding fix for throbber */
+.tab-throbber,
+.tab-icon-image {
+  margin-left: 3px;
+}
+
+
+/* Tab close */
+.tab-close-button {
+  margin-right: 5px !important;
+  list-style-image: url('../../assets/images/topbar/closetab.png') !important;
+  transform: scale(1.2) !important;
+}
+.tab-close-button:hover {
+  background-color: transparent !important;
+  border: 0px solid transparent !important;
+  list-style-image: url('../../assets/images/topbar/closetab_hover.png') !important;
+  transform: scale(1.7) !important;
+  margin-right: 7px !important;
+  margin-top: 1px !important;
+}
+
+
+/* When website has no favicon, make it a grey folder */
+.tab-icon-image:not([src], [pinned], [crashed], [pictureinpicture])[selected], .tab-icon-image:not([src], [pinned], [crashed], [sharing], [pictureinpicture]) {
+  content: url(../../assets/images/middlebar/greyfolder.png) !important;
+  display: block !important;
+}
+
+
+/* New tab button and its hover */
+@supports (-moz-bool-pref("silverfox.allowThemes")) {
+    #tabs-newtab-button, #TabsToolbar #new-tab-button {
+        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        top: 6px !important;
+        right: 16px;
+        list-style-image: none !important;
+        visibility: visible;
+        transform: scale(0.78) !important;
+        filter: grayscale(30%) brightness(505%) !important;
+    }  
+}
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+    #tabs-newtab-button, #TabsToolbar #new-tab-button {
+        background-image: url(../../assets/images/topbar/newtab-blue.png) !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        top: 6px !important;
+        right: 16px;
+        list-style-image: none !important;
+        visibility: visible;
+        transform: scale(0.78) !important;
+        }
+}
+@supports (-moz-bool-pref("silverfox.preferOldLook")) {
+    #tabs-newtab-button, #TabsToolbar #new-tab-button {
+        background-image: url(../../assets/images/topbar/newtabold.png) !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        top: 7px !important;
+        right: 13px;
+        list-style-image: none !important;
+        visibility: visible;
+        transform: scale(0.9) !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.preferOldLook")) {
+    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
+        background-image: url(../../assets/images/topbar/newtabold_hover.png) !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        top: 7px !important;
+        right: 13px;
+        list-style-image: none !important;
+        visibility: visible;
+        transform: scale(0.9) !important;
+    }
+    #tabs-newtab-button:hover > .toolbarbutton-icon {
+        background: transparent !important;
+        border: 0px solid transparent !important;
+        box-shadow: 0px !important;
+        visibility: hidden;
+    }
+}
+@supports not (-moz-bool-pref("silverfox.preferOldLook")) {
+    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
+        background-color: transparent !important;
+        border: 0px solid transparent !important;
+        box-shadow: 0px !important;
+        box-sizing: 0px !important;
+        filter: grayscale(30%) brightness(103%) !important;
+    }
+    #tabs-newtab-button:hover > .toolbarbutton-icon {
+        background: transparent !important;
+        border: 0px solid transparent !important;
+        box-shadow: 0px !important;
+        visibility: hidden;  
+    }
+}
+
+
+/* Private browsing (icognito mode) */
+#private-browsing-indicator-with-label {
+  position: fixed !important;
+  left: 0 !important;
+  color: transparent !important;
+}
+.private-browsing-indicator-icon {
+  list-style-image: none !important;
+  background-image: url(../../assets/images/topbar/incognito.png) !important;
+  height: 32px !important;
+  width: 38px !important;
+  background-repeat: no-repeat !important; 
+  margin-top: -3px !important;
+}
+:root:not([sizemode="normal"]) .private-browsing-indicator-icon {
+  margin-top: 0px !important;
+}
+#main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
+  width: 42px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-spacer[type="pre-tabs"] {
+  display: block !important;
+}
+
+
+/* Hide favicon when New Tab and Private Browsing Tab */
+.tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
+  visibility: hidden !important;
+  margin-left: -15px;
+}
+.tabbrowser-tab[label="New Tab"] .tab-icon-image {
+  visibility: hidden !important;
+  margin-left: -15px;  
+}
+
+
+/* When pinned, add a grey folder to New Tab and Private Browsing Tab */
+.tabbrowser-tab[pinned] .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"],
+.tabbrowser-tab[pinned][label="New Tab"] .tab-icon-image {
+  visibility: visible !important;
+  margin-left: 0.5px !important;
+  content: url(../../assets/images/middlebar/greyfolder.png) !important;
+  margin-right: 0.5px !important;
+
+}
+
+/* Manual favicon and title text for some Firefox elements */
+
+/* Chromium/Chrome favicon for common Firefox pages */
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    .tabbrowser-tab[label="Advanced Preferences"] .tab-icon-image,
+    .tabbrowser-tab[label="About Profiles"] .tab-icon-image,
+    .tabbrowser-tab[label="Process Manager"] .tab-icon-image,
+    .tabbrowser-tab[label="Troubleshooting Information"] .tab-icon-image {
+        content: url(../../assets/images/topbar/chromefavicon.png) !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    .tabbrowser-tab[label="Advanced Preferences"] .tab-icon-image,
+    .tabbrowser-tab[label="About Profiles"] .tab-icon-image,
+    .tabbrowser-tab[label="Process Manager"] .tab-icon-image,
+    .tabbrowser-tab[label="Troubleshooting Information"] .tab-icon-image {
+        content: url(../../assets/images/topbar/chromiumfavicon.png) !important;
+    }
+}
+
+/* Various manual favicons */
+.tabbrowser-tab[label="Warning: Potential Security Risk Ahead"] .tab-icon-image,
+.tabbrowser-tab[label="Server Not Found"] .tab-icon-image {
+  content: url(../../assets/images/middlebar/greyfolder.png) !important;
+}
+.tabbrowser-tab[label="Settings"] .tab-icon-image {
+  content: url(../../assets/images/topbar/settingsfavicon.png) !important;
+}
+.tabbrowser-tab[label="Add-ons Manager"] .tab-icon-image {
+  content: url(../../assets/images/topbar/extensionsfavicon.png) !important;
+}
+.tabbrowser-tab[label="Downloads"] .tab-icon-image {
+  content: url(../../assets/images/topbar/downloadsfavicon.png) !important;
+}
+.tabbrowser-tab[label="Tab crash reporter"] .tab-icon-image {
+  content: url(../../assets/images/topbar/crashfavicon.png) !important;
+}
+.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-icon-image  {
+  content: url(../../assets/images/topbar/historyfavicon.png) !important;  
+}
+.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-icon-image  {
+  content: url(../../assets/images/topbar/bookmarksfavicon.png) !important;  
+}
+.tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-icon-image {
+  content: url(../../assets/images/pages/report/googlefavicon.ico) !important;
+}
+
+/* Various manual tab text title */
+.tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label,
+.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label,
+.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label {
+  color: transparent !important;
+}
+.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label::before {
+  content: "History" !important;
+  color: var(--lwt-text-color) !important;
+}
+.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label::before {
+  content: "Bookmark Manager" !important;
+  color: var(--lwt-text-color) !important;
+}
+.tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label::before {
+  content: "Report a Phishing Page" !important;
+  color: var(--lwt-text-color) !important;
+}
+
+
+/* Titlebars (Minimze, Maximize, Restore and Close), disable them when bool is set to TRUE */
+
+@supports not (-moz-bool-pref("silverfox.disableChromeTitlebar")) {
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max,
+.titlebar-close {
+  list-style-image: none !important;
+}
+.titlebar-close {
+  margin-right: 5px !important;
+  width: 40px !important;
+  height: 37px !important;
+  margin-top: -5px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-close {
+  margin-top: -12px !important;
+}
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max {
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 37px !important;
+  padding: 0px !important;
+  margin-right: 3px !important;
+  margin-top: -5px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-min {
+  margin-top: -12px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-restore {
+  margin-top: -12px !important;
+}
+
+/* Adding Chrome style*/
+.titlebar-close::before {
+  content: url(../../assets/images/topbar/close.png) !important;
+  width: 44px !important;
+  height: 18px !important;
+  margin-top: 20px !important;
+}
+.titlebar-close:hover::before {
+  content: url(../../assets/images/topbar/close_hover.png) !important;
+  width: 44px !important;
+  height: 18px !important;
+}
+.titlebar-max::before {
+  content: url(../../assets/images/topbar/maximize.png) !important;
+  width: 25px !important;
+  height: 18px !important;
+  margin-top: 20px !important;
+}
+.titlebar-restore::before {
+  content: url(../../assets/images/topbar/restore.png) !important;
+  width: 25px !important;
+  height: 18px !important;
+  margin-top: 20px !important;
+}
+
+/* Hovers */
+.titlebar-max:hover::before {
+  content: url(../../assets/images/topbar/maximize_hover.png) !important;
+  width: 25px !important;
+  height: 18px !important;  
+}
+.titlebar-min::before {
+  content: url(../../assets/images/topbar/minimize.png) !important;
+  width: 26px !important;
+  height: 18px !important;
+  margin-top: 20px !important;
+}
+.titlebar-min:hover::before {
+  content: url(../../assets/images/topbar/minimize_hover.png) !important;
+  width: 26px !important;
+  height: 18px !important;
+}
+.titlebar-restore:hover::before {
+  content: url(../../assets/images/topbar/restore_hover.png) !important;
+  width: 25px !important;
+  height: 18px !important;
+}
+}

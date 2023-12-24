@@ -1,0 +1,30 @@
+@-moz-document url-prefix("https://safebrowsing.google.com/safebrowsing/report_phish/?tpl=mozilla&url=") {
+
+#header h1::before {
+  content: "Report Phishing Page" !important;
+  color: white !important;
+  font-size: 24px !important;
+}
+
+#header h1 {
+  color: transparent !important;
+  font-size: 12px !important;
+}
+
+p:nth-of-type(2),
+p:nth-of-type(3),
+#header img {
+  display: none !important;
+}
+
+div.sub img {
+  visibility: hidden !important;
+}
+
+.sub::after {
+  content: url(../../assets/images/pages/report/google.gif) !important;
+  position: relative !important;
+  left: 140px !important;
+  top: 10px !important;
+}
+}	

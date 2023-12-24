@@ -1,0 +1,134 @@
+/* Findbar */
+
+
+@supports not (-moz-bool-pref("silverfox.allowThemes")) {
+ findbar {
+  background: #dfdfdf !important;
+    }
+}
+
+@supports (-moz-bool-pref("silverfox.allowThemes")) {
+ findbar {
+    background: var(--arrowpanel-background) !important;
+    }
+}
+
+findbar {
+  order: -1;
+  margin-top: -1px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom: 1px solid #aaaaab;
+  border-right: 1px solid #aaaaab;
+  border-left: 1px solid #aaaaab;
+  height: 3%;
+  width: 352px !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  right: 0 !important;
+  position: fixed !important;
+  margin-right: 22px;
+  border-top: none !important;
+}
+
+.findbar-label[value="(Case sensitive)"],
+.findbar-label[value="(Matching diacritics)"],
+.findbar-label[value="(Whole words only)"],
+.findbar-label.findbar-find-status,
+.findbar-entire-word.tabbable,
+.findbar-match-diacritics.tabbable,
+.findbar-case-sensitive.tabbable,
+.findbar-highlight.tabbable {
+  display: none !important;
+}
+
+.findbar-container {
+  margin-top: -7px;
+  transform: scale(0.90);
+  margin-left: -22px !important;
+  min-width: 500px !important;
+}
+
+.findbar-textbox {
+  border-radius: 3px !important;
+  height: 23.4px !important;
+  width: 300px !important;
+  border-color: #c6c6c7 !important;
+  box-shadow: 2px 5px 14px 9px rgba(198,198,199,0.5) !important;  
+}
+
+.findbar-label.found-matches {
+  margin-left: -59px !important;
+  text-overflow: ellipsis !important;
+  z-index: 1 !important;
+  color: grey;
+}
+
+.findbar-label.found-matches::after {
+  content: "matches" !important;
+  color: white;
+  position: relative;
+  right: 45px;
+  background: white !important;
+}
+
+.findbar-label.found-matches[value="1 of 1 match"]::after {
+  content: "matches" !important;
+  color: white;
+  position: relative;
+  right: 35px;
+  background: white !important;  
+}
+
+.findbar-find-previous.tabbable {
+  z-index: 999 !important;
+}
+
+.findbar-find-previous {
+  list-style-image: none !important;
+  background-image: url(../../assets/images/middlebar/findup.png) !important;
+  background-repeat: no-repeat !important;
+  width: 35px !important;
+  height: 31px !important;
+  transform: scale(0.86) !important;
+  position: fixed;
+  top: -2px;
+  left: 287px;
+}
+
+.findbar-find-previous:hover {
+  background-image: url(../../assets/images/middlebar/findup_hover.png) !important;
+}
+
+.findbar-find-next {
+  list-style-image: none !important;
+  background-image: url(../../assets/images/middlebar/finddown.png) !important;
+  background-repeat: no-repeat !important;
+  width: 35px !important;
+  height: 31px !important;
+  transform: scale(0.86) !important;
+  position: fixed;
+  top: -2px;
+  left: 325px;
+  z-index: 999 !important;
+}
+
+.findbar-find-next:hover {
+   background-image: url(../../assets/images/middlebar/finddown_hover.png) !important; 
+}
+
+.findbar-closebutton.tabbable.close-icon {
+  list-style-image: url(../../assets/images/topbar/closetab.png) !important;
+  transform: scale(0.9) !important;
+  position: fixed;
+  right: 16px;
+  margin-top: -3px !important;
+}
+
+.findbar-closebutton.tabbable.close-icon:hover {
+  list-style-image: url(../../assets/images/topbar/closetab_hover.png) !important;
+  background-color: transparent !important;
+  position: fixed;
+  right: 16px;
+  margin-top: -5px !important;
+}

@@ -1,0 +1,63 @@
+/* Native looking folder menupoups */
+
+
+#PlacesToolbar menupopup[placespopup="true"] {
+  --panel-border-radius: 0 !important;
+  --panel-shadow-margin: 10px !important;
+  --panel-border-color: grey !important;
+  --arrowpanel-background: #f0f0f0 !important;
+  --panel-padding: 0 !important; 
+}
+
+#PlacesChevronPopup > :is(menu, menuitem) :is(.menu-text, .menu-iconic-text),
+toolbarbutton[class="bookmark-item"] menupopup[placespopup] > :is(menu, menuitem) :is(.menu-text, .menu-iconic-text) {
+  padding-left: 5px !important;
+  height: 20px !important;
+  margin-top: -3px !important;
+}
+
+
+#PlacesChevronPopup > :is(menu, menuitem) :is(.menu-iconic-icon),
+toolbarbutton[class="bookmark-item"] menupopup[placespopup] > :is(menu, menuitem) :is(.menu-iconic-icon) {
+  margin-top: -6px !important;
+}
+
+
+#PlacesChevronPopup > :is(menu, menuitem),
+toolbarbutton[class="bookmark-item"] menupopup[placespopup] > :is(menu, menuitem) {
+  max-height: 24px !important;
+  min-height: 24px !important;
+  margin-left: -1px !important;
+  margin-top: 0px !important;
+  padding-top: 15px !important;
+  overflow: hidden !important;
+  color: black !important;
+}
+
+
+#PlacesChevronPopup > :is(menu, menuitem):not([disabled])[_moz-menuactive],
+toolbarbutton menupopup[placespopup] > :is(menu, menuitem):not([disabled])[_moz-menuactive] {
+  color: black !important;
+  background: #91c9f7 !important;
+  border-radius: 0px !important;
+
+}
+
+toolbarbutton menupopup[placespopup] menuseparator {
+  display: none;
+}
+
+.openintabs-menuitem {
+  padding-left: 33px !important;
+  width: 105% !important;
+}
+
+.bookmark-item[data-l10n-id="places-empty-bookmarks-folder"] {
+  text-transform: lowercase !important;
+  padding-left: 33px !important;
+  z-index: 999 !important;
+}
+
+#placesContext_new\:separator {
+  display: none !important;
+}

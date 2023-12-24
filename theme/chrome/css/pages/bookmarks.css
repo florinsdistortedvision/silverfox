@@ -1,0 +1,102 @@
+@-moz-document url-prefix(chrome://browser/content/places/bookmarksSidebar.xhtml) {
+
+#sidebar-search-container {
+  width: 220px !important;
+}
+
+#search-box {
+  height: 23px !important;
+}
+
+#sidebar-search-container::before {
+  content: url(../../assets/images/pages/bookmarks/bookmarks.png) !important;
+  margin-top: 2px !important;
+  margin-right: 15px !important;
+}
+
+#bookmarks-view::before {
+  content: "\00a0 \00a0  \00a0 Bookmark Manager" !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  border-top: 1px solid #9cc2ef !important;
+  background: #ebeff9 !important;
+  width: 100% !important;
+  padding-top: 2px !important;
+  height: 18px !important;
+}
+  
+@media (prefers-color-scheme: dark) {
+    #bookmarks-view::before {
+        color: black !important;
+    }
+}  
+
+.textbox-search-clear {
+  list-style-image: url(../../assets/images/pages/bookmarks/close.png) !important;
+  position: relative !important;
+  left: -2px;
+}
+
+.textbox-search-clear:hover {
+  list-style-image: url(../../assets/images/pages/bookmarks/close_hover.png) !important;
+}
+
+.sidebar-placesTreechildren {
+  margin-left: 8px !important;
+  margin-top: 5px !important;
+  color: black !important;
+}
+  
+@media (prefers-color-scheme: dark) {
+    .sidebar-placesTreechildren {
+        color: white !important;
+    }
+}  
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(hover),
+.sidebar-placesTreechildren::-moz-tree-image(hover),
+.sidebar-placesTreechildren::-moz-tree-twisty(hover) { 
+  background: #f1f7ff !important; 
+}
+  
+@media (prefers-color-scheme: dark) {
+    .sidebar-placesTreechildren::-moz-tree-cell-text(hover),
+    .sidebar-placesTreechildren::-moz-tree-image(hover),
+    .sidebar-placesTreechildren::-moz-tree-twisty(hover) {
+        color: black !important;
+    }
+}
+
+.sidebar-placesTreechildren::-moz-tree-row(hover){ 
+  background: #f1f7ff  !important; 
+  border: 1px solid #b6d4fc !important;
+  border-radius: 2px !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-image { 
+  list-style-image: url(../../assets/images/middlebar/folder.png) !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-twisty {
+  fill: black !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(selected) {
+  color: black !important;
+  fill: black !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-row(selected) {
+  border: 1px solid #b6d4fc !important;
+  border-radius: 2px !important;
+  background: linear-gradient(to bottom, #f4f9ff 0%, #cae0fd 100%)
+}
+
+treechildren {    
+--default-focusring: 0 !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-row { 
+  margin-bottom: 5px !important;
+}
+}

@@ -1,0 +1,178 @@
+/* Downloads bar, with coupled JS */
+
+#downloads-button {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  display: none !important;
+}
+
+#downloadsPanel {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 999 !important;
+  background: #dfdfdf !important;
+  width: 99.7% !important;
+  height: 47px !important;
+  border-right: 2px solid #b2b2b2;
+  border-left: 2px solid #b2b2b2;
+  border-bottom: 2px solid #b2b2b2;
+  color: black !important;
+}
+
+:root:not([sizemode="normal"]) #downloadsPanel {
+ width: 99.8% !important; 
+}
+
+#downloadsPanel-blockedSubview {
+  display: none !important;
+}
+
+#downloadsListBox {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.download-state {
+  margin-right: 10px;
+}
+
+#downloadsPanel-multiView {
+  margin-top: -3px !important;
+  margin-left: -3px !important;
+}
+
+.downloadProgress {
+  display: none !important;
+}
+
+.download-state .downloadMainArea {
+ display: flex;
+ align-items: center;
+}
+
+#downloadsHistory {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 5px !important;
+  text-decoration: underline !important;
+  background: #dfdfdf !important;
+  margin-right: 32px !important;
+  height: 40px !important;
+  z-index: 9999 !important;
+}
+
+
+#downloadsHistory:hover {
+  background: #dfdfdf !important;
+  cursor: pointer !important;
+}
+
+#downloadsHistory::before {
+  content: url(../../assets/images/topbar/downloadsfavicon.png) !important;
+  position: relative !important;
+  right: 4px !important;
+  top: 2px !important;
+}
+
+#downloadsHistory::after {
+  content: "..." !important;
+  position: relative !important;
+  top: 4px !important;
+}
+
+#downloadsSummaryDetails, .downloadDetails {
+  position: relative !important;
+  top: -2px !important;
+}
+
+.downloadTypeIcon {
+  width: 16px !important;
+  height: 16px !important;
+  position: relative !important;
+  left: 2px !important;
+}
+
+#downloadsListBox > richlistitem {
+  background: transparent;
+  color: inherit;
+  max-height: 36px !important;
+  min-height: 36px !important;
+  overflow: hidden !important;
+  margin: 0px !important;
+  border-radius: 4px !important;
+  border-left: 1px solid #c5c5c5;
+  border-right: 1px solid #c5c5c5;
+  border-bottom: 1px solid #8d8d8d;
+  border-top: 1px solid white;
+  margin-right: 2px !important;
+  background: #e7e7e7 !important;
+  min-width: 15.5% !important;
+}
+
+#downloadsListBox > richlistitem:hover {
+  background: #f0f0f0 !important;
+}
+
+.downloadButton {
+  height: 42px !important;
+  margin-top: -2px !important;
+  margin-right: -4px !important;
+  max-width: 15px !important;
+  min-width: 15px !important;
+  border-left: 1px solid #c5c5c5 !important;
+}
+
+.downloadButton > .button-box > .button-icon {
+
+  transform: scale(0.6) !important;
+  position: relative !important;
+  right: 2px !important;
+  top: -3px !important;
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url(../../assets/images/downloadsbar/downchevron.png) !important;
+  width: 19px !important;
+  height: 8px !important;
+  right: 3px !important;
+}
+
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: url(../../assets/images/topbar/closetab.png) !important; 
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  position: relative !important;
+  right: 2.4px !important;
+  transform: scale(0.5) !important;
+}
+
+.downloadButton:hover {
+  background-color: #f0f0f0 !important;
+  cursor: pointer !important;
+}
+
+#downloadsHideButtonID {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  visibility: hidden;
+  
+}
+
+#downloadsHideButtonID::before {
+  content: url(../../assets/images/downloadsbar/closebar.png) !important;
+  position: relative !important;
+  top: -9px !important;
+  visibility: visible !important;
+  right: 3px !important;
+  background: #dfdfdf !important;
+}
+ 
+#emptyDownloads {
+  margin-top: -6px !important;
+}

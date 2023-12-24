@@ -1,0 +1,50 @@
+/* Beta Silverfox Bookmark, this will be deleted after closed beta */
+
+#silverfox-bookmark {
+  max-width: 13em !important;
+  margin-top: 2px !important;
+  appearance: none !important;
+  max-height: 14px !important;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  margin-right: -3px !important;
+}
+
+#silverfox-bookmark:hover {
+  background-image: linear-gradient(to top, #e7e7e7 0%, #ecebec 95%, #FFFFFF 100%) !important;
+  border-left: 1px solid #b0b0b0;
+  border-right: 1px solid #b0b0b0;
+  border-bottom: 1px solid #8d8d8d;
+  border-top: 1px solid #b0b0b0;
+  color: darkblue !important;
+  border-radius: 3px !important;  
+}
+
+#silverfox-bookmark::after {
+  content: "Silverfox" !important;
+  position: relative !important;
+  top: -4px;
+  padding-right: 1px !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #silverfox-bookmark::before {
+        content: url(../../assets/images/topbar/chromefavicon.png) !important;
+        position: relative !important;
+        top: -1px;
+        padding-right: 4px !important;
+        padding-left: 1px !important;
+    }
+}
+
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #silverfox-bookmark::before {
+        content: url(../../assets/images/topbar/chromiumfavicon.png) !important;
+        position: relative !important;
+        top: -1px;
+        padding-right: 4px !important;
+        padding-left: 1px !important;
+    }
+}

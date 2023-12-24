@@ -1,0 +1,162 @@
+@-moz-document url-prefix(about:downloads) {
+	
+:host, :root {
+  --in-content-primary-button-background: white !important;
+  --in-content-item-selected-text: inherit !important;
+}    
+   
+#downloadsListBox::before {
+  content: "\00a0 Downloads" !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  border-top: 1px solid #9cc2ef !important;
+  background: #ebeff9 !important;
+  width: 100% !important;
+  padding-top: 2px !important;
+  height: 18px !important;
+}
+  
+@media (prefers-color-scheme: dark) {
+    #downloadsListBox::before {
+      color: black !important;
+    }
+}  
+
+#downloadsListBox {
+  border: 0px solid grey !important;
+  width: 100% !important;
+  margin-left: -8px;
+}
+
+.downloadProgress {
+  display: none !important;
+}
+    
+#contentAreaDownloadsView::before {
+  content: url(../../assets/images/pages/downloads/download.png) !important;
+  position: relative !important;
+  top: -8px !important;
+}
+
+.downloadMainArea {
+  margin-left: 104px !important;
+}
+
+#downloadsListBox::after {
+  content: "Since tracking:" !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin-left: 20px !important;
+  margin-top: 114px !important;
+  font-size: 12px !important;
+  color: #666666 !important;
+}
+
+#downloadsListEmptyDescription::before {
+  content: "\00a0" !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  border-top: 1px solid #9cc2ef !important;
+  background: #ebeff9 !important;
+  width: 100% !important;
+  padding-top: 2px !important;
+  height: 18px !important;
+}
+
+#downloadsListEmptyDescription::after {
+  content: "\00a0 Downloads" !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  border-top: 1px solid #9cc2ef !important;
+  background: #ebeff9 !important;
+  position: fixed;
+  color: black !important;
+}
+
+#downloadsListEmptyDescription {
+  margin-top: 1px !important;
+  margin-left: 1px !important;
+}
+
+.downloadTarget {
+  font-size: 12px !important;
+}
+
+.downloadDetails {
+  font-size: 12px !important;
+  color: #666666 !important;
+}
+
+.downloadIconShow > .button-box > .button-icon,
+.downloadIconRetry > .button-box > .button-icon,
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: none !important;
+}
+
+.downloadButton.downloadIconRetry::before {
+  content: "Retry download" !important;
+  color: #777777 !important;
+  text-decoration: underline !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  visibility: visible !important;
+  position: fixed !important;
+  left: 0 !important;
+  margin-left: 180px !important;
+}
+
+.downloadButton.downloadIconCancel::before {
+  content: "Cancel" !important;
+  color: #777777 !important;
+  text-decoration: underline !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;  
+  cursor: pointer !important;
+  visibility: visible !important; 
+  position: fixed !important;
+  left: 0 !important;
+  margin-left: 180px !important;
+}
+
+.downloadButton.downloadIconShow::before {
+  content: "Show in folder" !important;
+  color: #777777 !important;
+  text-decoration: underline !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;  
+  cursor: pointer !important;
+  visibility: visible !important;  
+  position: fixed !important;
+  left: 0 !important;
+  margin-left: 180px !important;
+}
+
+.downloadButton.downloadIconRetry {
+  position: relative !important;
+  top: 26px;
+}
+
+.downloadButton.downloadIconCancel {
+  position: relative !important;
+  top: 26px;  
+}
+
+.downloadButton.downloadIconShow {
+  position: relative !important;
+  top: 26px;    
+}
+
+#downloadsListBox:focus > richlistitem[selected] {
+  background-image: none !important;
+  background: transparent !important;
+  outline: 1px transparent !important;
+}
+
+.downloadButton {
+  visibility: hidden;
+  position: fixed !important;
+  right: 0 !important;
+}
+}

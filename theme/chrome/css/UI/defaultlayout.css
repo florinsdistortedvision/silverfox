@@ -1,0 +1,200 @@
+/* Default Firefox UI layout tweak */
+
+
+/* Disables MenuBar */
+#toolbar-menubar {
+  display: none !important;
+}
+
+/* Disable the 2 gaps, Import context menu, Save to Pocket, Firefox View */
+#import-button,
+#save-to-pocket-button,
+#customizableui-special-spring2,
+#firefox-view-button,
+#customizableui-special-spring1 {
+  display: none !important;
+  border: none !important;
+}
+
+/* Remove the separator Firefox View adds */
+:root:not([privatebrowsingmode="temporary"], [firefoxviewhidden]) :is(toolbarbutton, toolbarpaletteitem) + #tabbrowser-tabs, :root[privatebrowsingmode="temporary"]:not([firefoxviewhidden]) :is(toolbarbutton:not(#firefox-view-button), toolbarpaletteitem:not(#wrapper-firefox-view-button)) + #tabbrowser-tabs {
+  border-inline-start: 0px solid color-mix(in srgb, currentColor 25%, transparent) !important;
+  padding-inline-start: 0px !important;
+  margin-inline-start: 0px !important;
+}
+
+
+
+
+/* Context menu (bring back non icon back, refresh etc) */
+
+#context-navigation { 
+  flex-direction: column !important; 
+ background-color: -moz-menuhoverdisabled !important;
+}
+
+#context-navigation > menuitem > .menu-iconic-left { 
+  display: none 
+}
+
+#context-navigation > menuitem {
+  padding-inline-start: 2.7em;
+  justify-content: start !important;
+  width: auto !important;
+  background-image: red !important;
+}
+
+#context-navigation > menuitem[_moz-menuactive="true"]:not([disabled]){ 
+  background-color: -moz-menuhover !important; 
+}
+
+#context-navigation > menuitem::before { 
+  content: attr(aria-label);
+}
+
+#toggle_toolbar-menubar,
+#context-pocket {
+  display: none !important;
+}
+
+
+/* Customize Firefox */
+
+#customization-header::after {
+  content: "Where are the rest of the elements? To not disrupt Chrome's layout, everything but Home button has been disabled/hidden." !important;
+  font-weight: normal !important;
+  font-size: 12px !important;
+  position: relative !important;
+  left: 2px !important;
+}
+
+#wrapper-customizableui-special-spring10,
+#customization-uidensity-button,
+#customization-titlebar-visibility-checkbox,
+#wrapper-customizableui-special-spring7,
+#wrapper-fxa-toolbar-menu-button,
+#customization-panel-container,
+#wrapper-customizableui-special-spring5,
+#wrapper-customizableui-special-spring4,
+#wrapper-library-button,
+#wrapper-search-container,
+#wrapper-bookmarks-menu-button,
+#wrapper-fullscreen-button,
+#wrapper-new-window-button,
+#wrapper-developer-button,
+#wrapper-privatebrowsing-button,
+#wrapper-panic-button,
+#wrapper-preferences-button,
+#wrapper-screenshot-button,
+#wrapper-sync-button,
+#wrapper-logins-button,
+#wrapper-email-link-button,
+#wrapper-characterencoding-button,
+#wrapper-edit-controls,
+#wrapper-zoom-controls,
+#wrapper-sidebar-button,
+#wrapper-open-file-button,
+#wrapper-find-button,
+#wrapper-print-button,
+#wrapper-save-page-button,
+#wrapper-history-panelmenu {
+  display: none !important;
+}
+
+#wrapper-home-button::after {
+  content: "Home button, if needed, please drag it after refresh button. It should stay between refresh button and adressbar." !important;
+}
+
+#wrapper-personal-bookmarks::after {
+  content: "Your bookmarks, please drag this in the dotted section (bookmark bar)" !important;
+}
+
+
+
+/* Clear Recent History panel */
+
+#SanitizeDialog h2[id="titleText"]::before {
+  content: "Clear browsing data" !important;
+  color: var(--lwt-text-color) !important;
+  font-weight: 400 !important;
+}
+
+#SanitizeDialog h2[id="titleText"] {
+  color: transparent !important;
+  margin-top: -7px !important;
+  margin-bottom: 12px !important;
+}
+
+#sanitizeDurationLabel::before {
+  content: "Obliterate the following items from:" !important;
+  margin-right: -2px !important;
+}
+
+#sanitizeDurationChoice {
+  padding-left: 35px !important;
+  text-transform: lowercase !important;
+  max-height: 25px !important;
+  min-height: 25px !important;
+  max-width: 150px !important;
+  border: 1px solid #c0c0c0 !important;
+  border-radius: 2px !important;
+  background-image: linear-gradient(to bottom, #f6f6f6 0%, #e0e0e0 70%, #e0e0e0 100%) !important;
+}
+
+#sanitizeEverythingWarningBox,
+h2[data-l10n-id="data-section-label"],
+h2[data-l10n-id="history-section-label"] {
+  display: none !important;
+}
+
+#SanitizeDialog groupbox > hbox{
+  display: flex !important;
+  flex-direction: column-reverse !important;
+  font-size: 12px !important;
+  margin-left: 8px !important;
+}
+
+#sanitizeDurationChoice > menupopup {
+  border: 1px solid #7f9db9 !important;
+  width: 150px !important;
+}
+
+#sanitizeDurationChoice menuseparator {
+  display: none !important;
+}
+
+.dialogFrame {
+  width: 500px !important;
+}
+
+button[dlgtype="cancel"],
+button[data-l10n-id="sanitize-button-ok"] {
+  max-height: 25px !important;
+  color: #444444 !important;
+  font-weight: 500 !important;
+  min-height: 25px !important;
+  max-width: 150px !important;
+  border: 1px solid #c0c0c0 !important;
+  border-radius: 2px !important;
+  background-image: linear-gradient(to bottom, #f6f6f6 0%, #e0e0e0 70%, #e0e0e0 100%) !important;
+  white-space: nowrap !important; 
+}
+
+button[data-l10n-id="sanitize-button-ok"] {
+  font-size: 0px !important;
+}
+
+button[data-l10n-id="sanitize-button-ok"]::before {
+  content: "Clear browsing data" !important;
+  color: #444444 !important;
+  position: relative !important;
+  top: -4px !important;
+    font-weight: 500 !important;
+  font-size: 12px !important;
+}
+
+#sanitizeDurationChoice:hover,
+button[dlgtype="cancel"]:hover,
+button[data-l10n-id="sanitize-button-ok"]:hover {
+  background-image: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 70%, #e0e0e0 100%) !important;
+}

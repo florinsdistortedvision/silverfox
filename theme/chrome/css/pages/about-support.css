@@ -1,0 +1,14 @@
+@-moz-document url-prefix(about:support) {
+	
+#application-box::after {
+  content: "running Silverfox theme" !important;
+  position: relative !important;
+  left: 2px !important;
+}
+
+#version-box::after {
+  content: "/ Silverfox version 0.1 (Closed Beta)" !important;
+  position: relative !important;
+  left: 2px !important;
+}
+}

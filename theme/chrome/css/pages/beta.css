@@ -1,0 +1,22 @@
+@-moz-document url-prefix("https://silverfox.neocities.org/closedbeta") {
+
+.noMember {
+	display: none !important;
+}	
+
+.closedBetaPortion {
+    display: block !important;
+}
+}
+
+@-moz-document url-prefix("https://silverfox.neocities.org") {
+
+.isSF {
+    display: block !important;
+}
+    
+.downloadButton,
+.minReq {
+    display: none !important;
+}
+}

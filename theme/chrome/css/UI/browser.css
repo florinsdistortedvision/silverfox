@@ -1,0 +1,18 @@
+/* Browsing Content Area */
+
+#browser {
+  border-right: 2px solid #b2b2b2;
+  border-left: 2px solid #b2b2b2;
+  border-bottom: 2px solid #b2b2b2;
+  border-radius: 0px 5px 5px 5px;
+  margin-top: -1px !important;
+}
+
+/* When video sends Firefox in fullscreen remove borders and margin */
+
+:root[inDOMFullscreen="true"] #browser {
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  margin-top: 0px !important;
+}

@@ -1,0 +1,70 @@
+@-moz-document url-prefix('about:tabcrashed') {
+	
+body {
+  background: #233040 !important;
+}
+
+h1[data-l10n-id="crashed-header"] {
+  color: transparent !important;
+  font-size: 0px !important;
+}
+
+h1[data-l10n-id="crashed-header"]::before {
+  content: "Aw, Snap!" !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  position: fixed !important;
+  top: 48%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+h1[data-l10n-id="crashed-header"]::after {
+  content: url(../../assets/images/pages/errors/crash.png) !important;
+  position: fixed !important;
+  top: 41.3%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+h2[data-l10n-id="crashed-offer-help"] {
+  display: none !important;
+}
+
+#offerHelpMessageSingle {
+  color: transparent !important;
+  font-size: 0px !important;
+  margin-top: 20px !important;
+}
+
+#offerHelpMessageSingle::before {
+  content: "Something went wrong while displaying this webpage. To continue, reload or go to another page." !important;
+  white-space: nowrap;
+  color: white !important;
+  font-size: 13px !important;
+  position: fixed !important;
+  top: 52%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+#closeTab {
+  display: none !important;
+}
+
+#restoreAll,
+#restoreTab {
+  background: white !important;
+  color: black !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #bababa !important;
+  border-radius: 5px !important;
+  min-height: 25px !important;
+  position: fixed !important;
+  top: 56%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+}

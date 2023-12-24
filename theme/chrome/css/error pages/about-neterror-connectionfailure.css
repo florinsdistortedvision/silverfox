@@ -1,0 +1,74 @@
+@-moz-document url-prefix('about:neterror?e=connectionFailure') {
+	
+body {
+  background: linear-gradient(to bottom, #cccccc 0%, #aaaaaa 100%) !important;
+}
+
+.container {
+  border-radius: 5px !important;
+  background: white !important;
+  box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
+  font-size: 12px !important;
+  min-width: 780px !important;
+  margin-top: -650px !important;
+  height: 160px !important;
+  color: black !important;
+}
+
+
+h1[data-l10n-id="connectionFailure-title"] {
+  font-size: 5px !important;
+  font-weight: 600 !important;
+  color: transparent !important;
+  margin-left: 20px !important;
+  margin-top: 8px !important;
+}
+
+@media only screen and (max-width: 974px) {
+    h1[data-l10n-id="connectionFailure-title"] {
+        margin-top: -35px !important;
+    }
+}
+
+h1[data-l10n-id="connectionFailure-title"]::before {
+  content: "This webpage is not available" !important;
+  font-size: 23px !important;
+  font-weight: 600 !important;
+  color: black !important;
+}
+
+h1[data-l10n-id="connectionFailure-title"]::after {
+  content: url(../../assets/images/pages/newtab/chromelogo.png) !important;
+  position: relative !important;
+  left: 250px !important;
+  position: relative !important;
+  top: 5px !important;
+}
+
+#errorShortDesc {
+  font-size: 12px !important;
+  margin-left: 23px !important;
+  max-width: 750px !important;
+  margin-top: 20px !important;
+}
+
+#errorShortDesc::after {
+  content: "The webpage you are trying to access might be temporarily down or it may have moved permanently to a new web address." !important;
+}
+
+ul {
+  color: transparent !important;
+}
+
+#netErrorButtonContainer {
+    display:  none !important; 
+}
+
+ul::after {
+  content: "Error 113 (net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH): Unknown error." !important;
+  color: grey !important;
+  position: relative !important;
+  font-size: 13px !important;
+  top: -40px !important;
+}
+}

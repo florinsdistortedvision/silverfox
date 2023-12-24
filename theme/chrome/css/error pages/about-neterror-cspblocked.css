@@ -1,0 +1,74 @@
+@-moz-document url-prefix('about:neterror?e=cspBlocked') {
+	
+body {
+  background: linear-gradient(to bottom, #cccccc 0%, #aaaaaa 100%) !important;
+}
+
+.container {
+  border-radius: 5px !important;
+  background: white !important;
+  box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
+  font-size: 12px !important;
+  min-width: 780px !important;
+  margin-top: -400px !important;
+  color: black !important;
+}
+
+
+h1[data-l10n-id="csp-xfo-error-title"] {
+  font-size: 5px !important;
+  font-weight: 600 !important;
+  color: transparent !important;
+  margin-left: 20px !important;
+  margin-top: 10px !important;
+}
+  
+h1[data-l10n-id="csp-xfo-error-title"]::before {
+  content: "This webpage cannot be opened" !important;
+  font-size: 23px !important;
+  font-weight: 600 !important;
+  color: black !important;
+}
+
+h1[data-l10n-id="csp-xfo-error-title"]::after {
+  content: url(../../assets/images/pages/newtab/chromelogo.png) !important;
+  position: relative !important;
+  left: 170px !important;
+  top: 3px !important;
+}
+
+#errorLongDesc {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  max-width: 720px !important;
+  margin-top: -2px !important;
+}
+
+#learnMoreLink {
+  margin-left: 22px !important;
+  position: relative !important;
+  top: 32px;
+}
+
+.toggle-container-with-text {
+  margin-top: -102px !important;
+  margin-left: -40px !important;
+}
+
+button[data-l10n-id="open-in-new-window-for-csp-or-xfo-error"] {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 25px !important;
+  min-height: 25px !important;
+  margin-right: 20px !important;
+}
+
+button[data-l10n-id="open-in-new-window-for-csp-or-xfo-error"]:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;  
+}
+}

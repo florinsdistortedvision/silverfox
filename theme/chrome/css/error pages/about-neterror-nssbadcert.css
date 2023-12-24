@@ -1,0 +1,150 @@
+@-moz-document url-prefix('about:certerror?e=nssBadCert') {
+
+body {
+  background: linear-gradient(to bottom, #8a0e1f 0%, #5c0000 100%) !important;
+}
+
+.container {
+  border-radius: 5px !important;
+  background: white !important;
+  box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
+  font-size: 12px !important;
+  min-width: 780px !important;
+  margin-top: -450px !important;
+}
+
+body.certerror .title {
+  background-image: none !important;
+}
+
+h1[data-l10n-id="nssBadCert-title"] {
+  font-size: 5px !important;
+  font-weight: 600 !important;
+  color: transparent !important;
+  margin-left: 100px !important;
+  margin-top: -15px !important;
+}
+
+h1[data-l10n-id="nssBadCert-title"]::before {
+  content: "The site's security certificate is not trusted!" !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  color: #660000 !important;
+}
+
+h1[data-l10n-id="nssBadCert-title"]::after {
+  content: url(../../assets/images/pages/errors/bigwarning.png) !important;
+  position: relative !important;
+  left: -640px !important;
+  top: 30px !important;
+}
+
+#learnMoreLink,
+#errorWhatToDoText,
+p[data-l10n-id="certerror-what-can-you-do-about-it-title"],
+#errorShortDesc {
+  font-size: 12px !important;
+  margin-left: 100px !important;
+  max-width: 600px !important;
+}
+
+#errorWhatToDoText::After {
+  content: "testing" !important;
+  font-size: 30px !important;
+  color: transparent !important;
+}
+
+#errorWhatToDoText {
+  border-bottom: 1px solid #cccccc !important;
+}
+
+#errorShortDesc {
+  margin-top: 20px !important;
+}
+
+p[data-l10n-id="certerror-what-can-you-do-about-it-title"] {
+  margin-top: -1px !important;
+}
+
+#learnMoreLink {
+  color: transparent !important;
+}
+
+#learnMoreLink::before {
+  content: "Help me understand" !important;
+  color: #0000ee !important;
+  text-decoration: underline !important;
+  font-size: 13px !important;
+}
+
+#exceptionDialogButton,
+#advancedButton,
+#returnButton {
+  background: #f0f0f0 !important;
+  color: transparent !important;
+  font-size: 0.5px !important;
+  border-radius: 0px !important;
+  border-top: 2px solid #f0f0f0 !important;
+  border-left: 2px solid #f0f0f0 !important;
+  border-right: 2px solid #696969 !important;
+  border-bottom: 2px solid #696969 !important;
+  max-height: 24px !important;
+  min-height: 24px !important;
+}
+
+#advancedButton {
+  font-size: 2.4px !important;
+}
+
+#exceptionDialogButton {
+  position: relative !important;
+  top: -367px !important;
+  left: -385px !important;
+  visibility: visible !important;
+  z-index: 999 !important;
+}
+
+#certErrorAndCaptivePortalButtonContainer {
+  margin-right: 517px !important;
+  margin-top: -15px !important;
+  position: relative !important;
+  top: -65px !important;
+}
+
+#returnButton {
+	z-index: 10 !important;
+}
+
+#returnButton::before {
+  content: "Back to safety" !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: black !important;
+  position: relative !important;
+  left: 8px !important;
+  z-index: 10 !important;
+}
+
+#advancedButton::before {
+  content: "More..." !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: black !important;
+  position: relative !important;
+  left: 8px !important;
+}
+
+#exceptionDialogButton:before {
+  content: "Proceed anyway" !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: black !important;
+  position: relative !important;
+  left: 8px !important;
+  z-index: 999 !important;
+}
+
+#badCertAdvancedPanel {
+  visibility: hidden !important;
+}
+}

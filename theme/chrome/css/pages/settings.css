@@ -1,0 +1,1410 @@
+@-moz-document url-prefix(about:preferences), url-prefix(about:preferences#general), url-prefix(about:preferences#home), url-prefix(about:preferences#search), url-prefix(about:preferences#privacy), url-prefix(about:preferences#sync), url-prefix(about:preferences#moreFromMozilla)  {
+
+.sidebar-footer-label,
+.category-name {
+  font-size: 12px !important;
+  position: fixed !important;
+  left: 15px !important;
+  cursor: pointer !important;
+}
+
+#category-more-from-mozilla[selected="true"] .category-name[data-l10n-id="more-from-moz-title"]::before {
+  content: "Help" !important;
+  color: #4e5764 !important;
+}
+
+#category-more-from-mozilla .category-name[data-l10n-id="more-from-moz-title"]::before {
+  content: "Help" !important;
+  color: grey !important;
+}
+
+.sidebar-footer-label::before {
+  content: "Extensions" !important;
+  color: grey !important;
+  margin-left: 4px !important;
+}
+
+.sidebar-footer-label,
+.category-name[data-l10n-id="more-from-moz-title"] {
+  color: transparent !important;
+}
+
+.sidebar-footer-icon.addons-icon,
+.category-icon {
+  list-style-image: none !important;
+}
+
+#addonsButton,
+#category-general,
+#category-home,
+#category-search,
+#category-privacy,
+#category-sync,
+#category-more-from-mozilla {
+  max-height: 28px !important;
+  min-height: 28px !important;
+  max-width: 100px !important;
+  margin-left: 0px !important;
+  margin-bottom: 2px !important;
+}
+
+#category-sync {
+  margin-bottom: 55px !important;
+}
+
+#category-general {
+  margin-top: -15px !important;
+}
+#addonsButton:hover,
+#categories > .category:hover {
+  background: transparent !important;
+}
+
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #category-general::before {
+        content: "Chrome" !important;
+        position: fixed !important;
+        top: 20px !important;
+        font-size: 17px !important;
+        color: #4e5764 !important;
+        left: 21px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #category-general::before {
+        content: "Chromium" !important;
+        position: fixed !important;
+        top: 20px !important;
+        font-size: 17px !important;
+        color: #4e5764 !important;
+        left: 21px !important;
+    }
+}
+
+#category-general[selected="true"],
+#category-home[selected="true"],
+#category-search[selected="true"],
+#category-privacy[selected="true"],
+#category-sync[selected="true"],
+#category-more-from-mozilla[selected="true"] {
+  border-left: 5px solid #4e5764 !important;
+  border-radius: 0px !important;
+}
+
+#categories > .category[selected] {
+  color: #4e5764 !important;
+}
+
+#categories > .category {
+  color: grey !important;
+}
+
+#helpButton {
+  display: none !important;
+}
+
+#addonsButton {
+  position: fixed !important;
+  top: 205px !important;
+}
+
+.navigation::after {
+  background-color: transparent !important;
+}
+
+.main-content {
+  margin-left: -55px !important;
+}
+
+.sticky-container,
+.sticky-inner-container {
+  z-index: 5 !important;
+}
+
+#searchInput {
+  border-radius: 3px !important;
+  max-height: 25px !important;
+  min-height: 10px !important;
+  font-size: 12px !important;
+  list-style-image: none !important;
+  color: grey !important;
+  margin-bottom: 40px !important; 
+}
+
+a[data-l10n-id="managed-notice"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+#policies-container {
+  background: none !important;
+  position: fixed !important;
+  left: 330px !important;
+  margin-top: 17px !important;
+}
+
+/* General section */
+
+/*Section title and separator*/
+
+h1[data-l10n-id="pane-general-title"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="pane-general-title"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+#startupGroup[data-category="paneGeneral"] {
+  margin-top: -35px !important;
+  z-index: 999 !important;
+}
+
+    
+/* Subcategories titles */
+
+h1[data-l10n-id="network-settings-title"],
+h1[data-l10n-id="browsing-title"],
+h1[data-l10n-id="performance-title"],
+h1[data-l10n-id="update-application-title"],
+h2[data-l10n-id="drm-content-header"],
+h2[data-l10n-id="applications-header"],
+h2[data-l10n-id="download-header"],
+h1[data-l10n-id="files-and-applications-title"],
+h2[data-l10n-id="language-header"],
+h2[data-l10n-id="preferences-zoom-header"],
+h2[data-l10n-id="preferences-fonts-header"],
+h2[data-l10n-id="preferences-colors-header"],
+h2[data-l10n-id="preferences-web-appearance-header"],
+h1[data-l10n-id="language-and-appearance-header"],
+h2[data-l10n-id="tabs-group-header"],
+h2[data-l10n-id="preferences-data-migration-header"],
+h2[data-l10n-id="startup-header"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+h2[data-l10n-id="drm-content-header"],
+h2[data-l10n-id="applications-header"],
+h2[data-l10n-id="language-header"],
+h2[data-l10n-id="preferences-zoom-header"],
+h2[data-l10n-id="preferences-fonts-header"] {
+  margin-top: -18px !important;
+}
+
+h1[data-l10n-id="network-settings-title"],
+h1[data-l10n-id="performance-title"],
+h1[data-l10n-id="update-application-title"],
+h1[data-l10n-id="files-and-applications-title"] {
+  margin-top: -30px !important;
+}
+
+h1[data-l10n-id="browsing-title"] {
+  margin-top: -40px !important;
+}
+
+h2[data-l10n-id="download-header"] {
+  margin-top: 5px !important;
+}
+
+
+/* Checkboxes */
+
+#browserContainersCheckbox,
+#cfrRecommendations-features,
+#cfrRecommendations,
+#mediaControlToggleEnabled,
+#pictureInPictureToggleEnabled,
+#searchStartTyping,
+#useCursorNavigation,
+#useOnScreenKeyboard,
+#useSmoothScrolling,
+#useAutoScroll,
+#useRecommendedPerformanceSettings,
+#manualDesktop,
+#backgroundUpdate,
+#autoDesktop,
+#playDRMContent,
+#handleNewFileTypes,
+#alwaysAsk,
+#checkSpelling,
+#zoomText,
+#showTabsInTaskbar,
+#warnCloseMultiple,
+#switchToNewTabs,
+#linkTargeting,
+#ctrlTabRecentlyUsedOrder,
+#setDefaultPane,
+#alwaysCheckDefault,
+#browserRestoreSession {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+#setDefaultPane {
+  margin-left: -9px !important;
+  margin-bottom: -30px !important;
+}
+
+#isDefaultLabel, #isNotDefaultLabel {
+  font-weight: 500 !important;
+  margin-top: -2px !important;
+  margin-left: 5px !important;
+}
+
+.face-sad::before {
+ content: url(../../assets/images/pages/settings/nouptodatewarning.png) !important;
+ position: relative !important;
+ left: 2.5px !important;
+ top: 2px !important;
+}
+
+.face-smile::before{
+ content: url(../../assets/images/pages/settings/uptodatecheck.png) !important;
+ position: relative !important;
+ left: 2.5px !important;
+ top: 4px !important;
+}
+  
+#handleNewFileTypes {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+
+/*Buttons and menulists */
+
+
+#disableContainersExtension,
+#browserContainersSettings,
+#fxtranslateButton,
+button[data-l10n-id="update-checkForUpdatesButton"],
+#connectionSettings,
+#checkForUpdatesButton2,
+#showUpdateHistory,
+#chooseFolder,
+#chooseLanguage,
+#manageBrowserLanguagesButton,
+#primaryBrowserLocale,
+#defaultZoom,
+#advancedFonts,
+#defaultFontSize,
+#defaultFont,
+#colors,
+#data-migration,
+#setDefaultButton {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 120px !important;
+  margin-left: 10px !important;
+}
+
+#defaultZoom,
+#defaultFontSize {
+  min-width: 10px !important;
+}
+
+#disableContainersExtension:hover,  
+#browserContainersSettings:hover,
+#fxtranslateButton:hover,
+button[data-l10n-id="update-checkForUpdatesButton"]:hover,
+#connectionSettings:hover,
+#checkForUpdatesButton2:hover,
+#showUpdateHistory:hover,
+#chooseFolder:hover,
+#chooseLanguage:hover,
+#manageBrowserLanguagesButton:hover,
+#primaryBrowserLocale:hover,
+#defaultZoom:hover,
+#advancedFonts:hover,
+#defaultFontSize:hover,
+#defaultFont:hover,
+#colors:hover,
+#data-migration:hover,
+#setDefaultButton:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;
+}
+
+
+/* Descriptions */
+
+description[data-l10n-id="preferences-colors-description"],
+description[data-l10n-id="preferences-data-migration-description"] {
+  margin-top: -10px !important;
+}
+
+description[data-l10n-id="fx-translate-web-pages"],
+#connectionSettingsDescription,
+description[data-l10n-id="performance-use-recommended-settings-desc"],
+#useService,
+#updateSettingCrossUserWarning,
+#updateAllowDescription,
+#updateBox,
+description[data-l10n-id="update-application-version"],
+label[data-l10n-id="update-application-description"],
+#handleNewFileTypesDesc,
+description[data-l10n-id="applications-description"],
+label[data-l10n-id="download-save-where"],
+description[data-l10n-id="choose-language-description"],
+description[data-l10n-id="choose-browser-language-description"],
+label[data-l10n-id="preferences-default-zoom"],
+#defaultFontSizeLabel,
+label[data-l10n-id="default-font"],
+description[data-l10n-id="preferences-colors-description"],
+div[data-l10n-id="preferences-web-appearance-footer"],
+description[data-l10n-id="preferences-web-appearance-description"],
+description[data-l10n-id="preferences-data-migration-description"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+description[data-l10n-id="performance-use-recommended-settings-desc"],
+description[data-l10n-id="choose-browser-language-description"] {
+  margin-top: 2px !important;
+  margin-bottom: 5px !important;
+}
+
+#data-migration {
+  position: relative !important;
+  top: -8px !important;
+}
+
+#handleNewFileTypesDesc {
+  margin-top: 2px !important;
+}
+
+#updateAllowDescription {
+  margin-top: -30px !important;
+}
+
+groupbox[id="dataMigrationGroup"] {
+  margin-bottom: -5px !important;
+}
+
+div[data-l10n-id="preferences-web-appearance-footer"] {
+  margin-bottom: -25px !important;
+}
+
+.subcategory:not([hidden]) ~ .subcategory {
+  border-top: none !important;
+}
+
+#languageAndAppearanceCategory {
+  margin-top: -28px !important;
+}
+
+.web-appearance-choice-image-container {
+  display: none !important;
+}
+
+.web-appearance-choice-footer {
+  border-top: none !important;
+  font-size: 12px !important;
+  margin-left: 12px !important;
+  padding: 0px 5px !important;
+}
+
+.web-appearance-choice {
+  border: none !important;
+}
+
+#primaryBrowserLocale {
+  margin-left: 20px !important;
+}
+
+#downloadFolder {
+  height: 4px !important;
+  font-size: 12px !important;
+  border-radius: 2px !important;
+  background: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  max-width: 80px !important; 
+}
+
+#filter {
+  border-radius: 3px !important;
+  max-height: 25px !important;
+  min-height: 10px !important;
+  font-size: 12px !important;
+  list-style-image: none !important;
+  color: grey !important;
+}
+
+#actionColumn,
+#typeColumn {
+  font-size: 12px !important;
+  background: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  color: #444444 !important;
+}
+
+.actionDescription,
+.typeDescription {
+  font-size: 12px !important;
+}
+
+#handlersView {
+  height: 13em !important;
+}
+
+a[is="moz-support-link"]:not(.sidebar-footer-link) {
+  font-size: 12px !important;
+}
+
+label[data-l10n-id="update-application-description"]::after {
+  content: "\00a0 Silverfox users, please refrain from updating unless the version you want to update to has been confirmed working." !important;
+}
+
+
+#updateSettingsContainer {
+  background: transparent !important;
+}
+
+.info-icon {
+  display: none !important;
+}
+
+#updateSettingCrossUserWarning {
+  margin-top: -15px !important;
+  margin-left: -10px !important;
+}
+
+#useService {
+  margin-top: -15px !important;
+  margin-left: 30px !important;
+}
+
+
+/*Home section*/
+
+
+h1[data-l10n-id="pane-home-title"] {
+  position: fixed !important;
+  top: 0 !important;
+    color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="pane-home-title"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+#homepageGroup[data-category="paneHome"] {
+  margin-top: -79px !important;
+  z-index: 999 !important;
+}
+
+h2[data-l10n-id="home-prefs-content-header2"],
+h2[data-l10n-id="home-new-windows-tabs-header"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+h2[data-l10n-id="home-prefs-content-header2"] {
+  margin-top: -15px !important;
+}
+
+label[data-l10n-id="home-prefs-shortcuts-description"],
+description[data-l10n-id="home-prefs-content-description2"],
+label[data-l10n-id="home-newtabs-mode-label"],
+label[data-l10n-id="home-homepage-mode-label"],
+description[data-l10n-id="home-new-windows-tabs-description2"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+#homeContentsGroup [data-subcategory] > vbox menulist,
+#newTabMode,
+#homeMode {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 120px !important;
+  margin-left: 10px !important;
+}
+
+#homeContentsGroup [data-subcategory] > vbox menulist:hover,
+#newTabMode:hover,
+#homeMode:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;	
+}
+
+.indent,
+#homeContentsGroup [data-subcategory] .section-checkbox {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  font-weight: 500 !important;
+}
+
+#homeContentsGroup .checkbox-icon[src] {
+  display: none !important;
+}
+
+
+
+/* Search section */
+
+
+h1[data-l10n-id="pane-search-title"] {
+  position: fixed !important;
+  top: 0 !important;
+    color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="pane-search-title"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+#searchbarGroup[data-category="paneSearch"] {
+  margin-top: -35px !important;
+  z-index: 999 !important;
+}
+
+h2[data-l10n-id="search-one-click-header2"],
+h2[data-l10n-id="search-suggestions-header"],
+h2[data-l10n-id="search-engine-default-header"],
+h2[data-l10n-id="search-bar-header"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+h2[data-l10n-id="search-one-click-header2"],
+h2[data-l10n-id="search-suggestions-header"],
+h2[data-l10n-id="search-engine-default-header"] {
+  margin-top: -10px !important;
+}
+
+#searchBarHiddenRadio {
+  margin-top: 5px !important;
+}
+
+#suggestionsInSearchFieldsCheckbox,
+#searchBarShownRadio,
+#searchBarHiddenRadio {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  font-weight: 500 !important;
+}
+
+#addEngines,
+description[data-l10n-id="search-one-click-desc"],
+#openLocationBarPrivacyPreferences,
+#searchSuggestionsDesc,
+description[data-l10n-id="search-engine-default-desc-2"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+#defaultEngine, #defaultPrivateEngine {
+  margin-top: 10px !important;
+}
+
+#removeEngineButton, #restoreDefaultSearchEngines,
+#defaultEngine, #defaultPrivateEngine {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 120px !important;
+  margin-left: 10px !important;
+}
+
+#removeEngineButton:hover, #restoreDefaultSearchEngines:hover,
+#defaultEngine:hover, #defaultPrivateEngine:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;	
+}
+
+#engineShown,
+#engineKeyword,
+#engineName {
+  font-size: 12px !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+}
+
+#engineChildren {
+  font-size: 12px !important;
+}
+
+
+/* Privacy and Security section */
+
+h1[data-l10n-id="privacy-header"] {
+  position: fixed !important;
+  top: 0 !important;
+    color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="privacy-header"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+#trackingGroup[data-category="panePrivacy"] {
+  margin-top: -35px !important;
+  z-index: 999 !important;
+}
+
+
+h2[data-l10n-id="preferences-doh-group-message"],
+h1[data-l10n-id="preferences-doh-header"],
+h2[data-l10n-id="httpsonly-header"],
+h2[data-l10n-id="certs-header"],
+h2[data-l10n-id="security-browsing-protection"],
+h1[data-l10n-id="security-header"],
+h1[data-l10n-id="collection-header"],
+h1[data-l10n-id="permissions-header"],
+h2[data-l10n-id="addressbar-header"],
+h2[data-l10n-id="history-header"],
+h2[data-l10n-id="pane-privacy-logins-and-passwords-header"],
+h2[data-l10n-id="sitedata-header"],
+h2[data-l10n-id="content-blocking-enhanced-tracking-protection"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+
+h1[data-l10n-id="preferences-doh-header"],
+h2[data-l10n-id="httpsonly-header"],
+h2[data-l10n-id="certs-header"],
+h1[data-l10n-id="security-header"],
+h1[data-l10n-id="collection-header"],
+h1[data-l10n-id="permissions-header"],
+h2[data-l10n-id="addressbar-header"],
+h2[data-l10n-id="history-header"],
+h2[data-l10n-id="pane-privacy-logins-and-passwords-header"],
+h2[data-l10n-id="sitedata-header"],
+h2[data-l10n-id="search-engine-default-header"] {
+  margin-top: -10px !important;
+}
+
+h1[data-l10n-id="preferences-doh-header"],
+h1[data-l10n-id="security-header"],
+h1[data-l10n-id="permissions-header"],
+h2[data-l10n-id="history-header"] {
+  margin-top: -25px !important;
+}
+
+h2[data-l10n-id="security-browsing-protection"] {
+  margin-top: 5px !important;
+}
+
+#trackingProtectionShield {
+  list-style-image: url(../../assets/images/pages/settings/warning.png) !important;
+  width: 39px !important;
+  height: 39px !important;
+  position: relative !important;
+  left: 20px !important;
+  top: 10px !important;  
+}
+
+label[data-l10n-id="preferences-doh-exceptions-description"],
+#dohStatusSection,
+#dohDescription,
+#httpsOnlyLearnMore,
+#httpsOnlyDescription,
+#dataCollectionPrivacyNotice,
+label[data-l10n-id="collection-description"],
+#xrPermissionsLabel,
+#autoplayPermissionsLabel,
+#notificationPermissionsLabel,
+#microphonePermissionsLabel,
+#cameraPermissionsLabel,
+#locationPermissionsLabel,
+#openSearchEnginePreferences,
+#locationBarSuggestionLabel,
+#historyModeLabel,
+description[data-l10n-id="forms-primary-pw-former-name"],
+#doNotTrackDesc,
+description[class="description-with-side-element"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+.learnMore,
+#contentBlockingLearnMore {
+  position: relative !important;
+}
+
+#dohLearnMore,
+#httpsOnlyLearnMore {
+  margin-left: 28px !important;
+}
+
+#dataCollectionPrivacyNotice {
+  position: relative !important;
+  left: 0px !important;
+}
+
+#dohStrictResolverChoices,
+#dohEnabledResolverChoices,
+#dohExceptionsButton,
+#httpsOnlyExceptionButton,
+#viewSecurityDevicesButton,
+#viewCertificatesButton,
+#addonExceptions,
+#popupPolicyButton,
+#xrSettingsButton,
+#autoplaySettingsButton,
+#notificationSettingsButton,
+#microphoneSettingsButton,
+#cameraSettingsButton,
+#locationSettingsButton,
+#clearDataSettings,
+#clearHistoryButton,
+#historyMode,
+#changeMasterPassword,
+#showPasswords,
+#passwordExceptions,
+#cookieExceptions,
+#siteDataSettings,
+#clearSiteDataButton,
+#trackingProtectionMenu,
+#blockCookiesMenu,
+#trackingProtectionExceptions {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 120px !important;
+  margin-left: 10px !important;
+}
+
+#dohStrictResolverChoices:hover,
+#dohEnabledResolverChoices:hover,
+#dohExceptionsButton:hover,
+#httpsOnlyExceptionButton:hover,
+#viewSecurityDevicesButton:hover,
+#viewCertificatesButton:hover,
+#addonExceptions:hover,
+#popupPolicyButton:hover,
+#xrSettingsButton:hover,
+#autoplaySettingsButton:hover,
+#notificationSettingsButton:hover,
+#microphoneSettingsButton:hover,
+#cameraSettingsButton:hover,
+#locationSettingsButton:hover,
+#clearDataSettings:hover,
+#clearHistoryButton:hover,
+#historyMode:hover,
+#changeMasterPassword:hover,
+#showPasswords:hover,
+#passwordExceptions:hover,
+#cookieExceptions:hover,
+#siteDataSettings:hover,
+#clearSiteDataButton:hover,
+#trackingProtectionMenu:hover,
+#blockCookiesMenu:hover,
+#trackingProtectionExceptions:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;	
+}
+
+.privacy-detailedoption,
+.privacy-detailedoption.selected .content-blocking-warning,
+.privacy-detailedoption.selected {
+  background: transparent !important;
+  border: none !important;
+}
+
+#dohOptionOff,
+#dohOptionStrict,
+#dohOptionEnabled,
+#dohOptionDefault,
+#httpsOnlyRadioGroup,
+#enableOCSP,
+#enableSafeBrowsing,
+#automaticallySubmitCrashesBox,
+#optOutStudiesEnabled,
+#submitHealthReportBox,
+#warnAddonInstall,
+#popupPolicy,
+#enginesSuggestion,
+#topSitesSuggestion,
+#openpageSuggestion,
+#bookmarkSuggestion,
+#historySuggestion,
+#privateBrowsingAutoStart,
+.tail-with-learn-more[data-l10n-id="forms-windows-sso"],
+#useMasterPassword,
+#savePasswords,
+#deleteOnClose,
+#doNotTrackRadioGroup,
+#contentBlockingFingerprintersCheckbox,
+#contentBlockingCryptominersCheckbox,
+#contentBlockingTrackingProtectionCheckbox,
+#contentBlockingBlockCookiesCheckbox,
+#customRadio,
+#strictRadio,
+#standardRadio {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  font-weight: 500 !important;
+}
+
+#crashReporterLabel {
+  font-size: 12px !important;
+  position: relative !important;
+  top: 2px !important;
+}
+
+.content-blocking-warning-title, .privacy-detailedoption .radio-label-box {
+  font-weight: normal !important;
+}
+
+.content-blocking-warning.info-box-container,
+#etpStandardTCPBox {
+  margin-left: -15px !important;
+  margin-top: -15px !important;
+}
+
+.content-blocking-warning-image {
+  display: none !important;
+}
+
+.content-blocking-warning-title[data-l10n-id="content-blocking-warning-title"] {
+  position: relative !important;
+  left: 20px !important;
+}
+
+#deleteOnClose {
+  margin-top: -12px !important;
+}
+
+#FHRLearnMore {
+  font-size: 12px !important;
+  position: relative !important;
+  top: -4px !important;
+}
+
+#viewShieldStudies {
+  font-size: 12px !important;
+}
+
+#default-desc-5-learn-more,
+#default-desc-3-learn-more {
+  font-size: 12px !important;
+  position: relative !important;
+  top: -1px !important;
+  margin-left: 2px !important;
+}
+
+.geo-icon {
+  list-style-image: url(../../assets/images/pages/settings/location.png) !important;
+}
+.camera-icon {
+  list-style-image: url(../../assets/images/pages/settings/camera.png) !important;
+}
+
+.microphone-icon {
+  list-style-image: url(../../assets/images/pages/settings/microphone.png) !important;
+}
+
+.desktop-notification-icon {
+  list-style-image: url(../../assets/images/pages/settings/notifications.png) !important;
+}
+
+.autoplay-icon {
+  list-style-image: url(../../assets/images/pages/settings/autoplay.png) !important;
+}
+
+.xr-icon {
+  list-style-image: url(../../assets/images/pages/settings/vr.png) !important;
+}
+
+.geo-icon,
+.camera-icon,
+.microphone-icon,
+.desktop-notification-icon,
+.autoplay-icon,
+.xr-icon {
+  width: 19px !important;
+  height: 19px !important;
+  position: relative !important;
+  left: 15px !important;
+}
+
+
+
+/* Sync section */
+
+h1[data-l10n-id="pane-sync-title3"] {
+  position: fixed !important;
+  top: 0 !important;
+   color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="pane-sync-title3"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+#weavePrefsDeck{
+  margin-top: -35px !important;
+  z-index: 999 !important;
+}
+
+h2[data-l10n-id="prefs-syncing-on"],
+h2[data-l10n-id="sync-device-name-header"],
+h2[data-l10n-id="sync-signedout-caption"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+}
+  
+h2[data-l10n-id="sync-device-name-header"] {
+    margin-top: -5px !important;
+}
+
+h2[data-l10n-id="prefs-syncing-on"] {
+    margin-top: 4px !important;
+}  
+  
+#noFxaDescription {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+}
+
+#syncChangeOptions,  
+#syncNow,
+#fxaChangeDeviceName,
+#fxaUnlinkButton,
+#noFxaSignIn {
+  text-decoration: none !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #a9a9a9 !important;
+  background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+  border-radius: 2px !important;
+  max-height: 22px !important;
+  min-height: 12px !important;
+  min-width: 120px !important;
+  margin-left: 10px !important;
+}
+
+#syncChangeOptions:hover,  
+#syncNow:hover,  
+#fxaChangeDeviceName:hover,
+#fxaUnlinkButton:hover,
+#noFxaSignIn:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;	
+}
+
+#noFxaSignIn {
+  margin-top: -40px !important;
+  margin-left: 20px !important;
+}
+
+.fxaSyncIllustration {
+  list-style-image: url(../../assets/images/pages/settings/sync.png) !important;
+  width: 52px !important;
+  height: 19px !important;
+  position: relative !important;
+  top: 20px !important;
+}
+
+.fxaMobilePromo {
+  display: none !important;
+}
+  
+#fxaLoginVerified {
+    margin-top: 20px !important;
+    font-size: 12px;
+}
+
+#fxaEmailAddress:after {
+    content: " - Proud Silverfox user" !important;
+}
+
+#verifiedManage {
+    margin-top: -10px !important;
+}  
+  
+#fxaSyncComputerName {
+    max-height: 5px !important;
+    min-height: 5px !important;
+}  
+
+.sync-group.info-box-container.sync-configured {
+    font-size: 12px !important;
+    background: whitesmoke !important;
+}  
+
+
+/* About Chrome/Help section */
+
+#moreFromMozillaCategory-header .title::before {
+  content: "About" !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  position: relative !important;
+  top: -68px !important;
+  z-index: 999 !important;
+}
+
+#moreFromMozillaCategory-header .title {
+  color: transparent !important;
+}
+
+#moreFromMozillaCategory-header .title::after {
+  color: #eeeeee !important;
+  content: "________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 28px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+
+#moreFromMozillaCategory-header {
+  z-index: 999 !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory-header .subtitle::before {
+        content: "Google Chrome" !important;
+        color: var(--in-content-text-color) !important;
+        z-index: 999 !important;
+        position: relative !important;
+        left: 40px !important;
+        top: -20px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory-header .subtitle::before {
+        content: "Chromium" !important;
+        color: var(--in-content-text-color) !important;
+        z-index: 999 !important;
+        position: relative !important;
+        left: 40px !important;
+        top: -20px !important;
+    }
+}
+
+#moreFromMozillaCategory-header .subtitle {
+  color: transparent !important;
+  margin-top: -45px !important;
+  z-index: 999 !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory-header .subtitle::after {
+        content: url(../../assets/images/pages/settings/chromelogo.png) !important;
+        z-index: 999 !important;
+        position: relative !important;
+        top: -2px !important;
+        right: 585px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory-header .subtitle::after {
+        content: url(../../assets/images/pages/settings/chromiumlogo.png) !important;
+        z-index: 999 !important;
+        position: relative !important;
+        top: -2px !important;
+        right: 550px !important;
+    }
+}
+
+#moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-mobile-title"] {
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  color: transparent !important;
+  position: relative !important;
+  top: -52px !important;
+  left: -30px !important;
+}
+
+#moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-mobile-title"]::before {
+  content: "A web browser built for speed, simplicity, and security" !important;
+  color: var(--in-content-text-color) !important;
+  position: relative !important;
+  left: 40px !important;
+  top: -22px !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #default-fxMobile {
+        text-decoration: none !important;
+        color: transparent !important;
+        border: 1px solid #a9a9a9 !important;
+        background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+        font-size: 15px !important;
+        border-radius: 2px !important;
+        padding-right: 88px !important;
+        position: fixed !important;
+        top: 123px !important;
+        left: 215px !important; 
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #default-fxMobile {
+        text-decoration: none !important;
+        color: transparent !important;
+        border: 1px solid #a9a9a9 !important;
+        background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+        font-size: 15px !important;
+        border-radius: 2px !important;
+        padding-right: 101px !important;
+        position: fixed !important;
+        top: 123px !important;
+        left: 215px !important; 
+    }
+}
+
+#default-fxMobile:hover,
+#moreFromMozillaCategory .qr-code-link:hover {
+  background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%) !important;	
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .qr-code-link {
+        text-decoration: none !important;
+        color: transparent !important;
+        border: 1px solid #a9a9a9 !important;
+        background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+        font-size: 6px !important;
+        border-radius: 2px !important;
+        position: fixed !important;
+        top: 123px !important;
+        left: 387px !important; 
+        height: 21px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .qr-code-link {
+        text-decoration: none !important;
+        color: transparent !important;
+        border: 1px solid #a9a9a9 !important;
+        background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%) !important;
+        font-size: 6px !important;
+        border-radius: 2px !important;
+        position: fixed !important;
+        top: 123px !important;
+        left: 400px !important; 
+        height: 21px !important;
+    }
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #default-fxMobile::before {
+        content: "Get help with using Chrome" !important;
+        color: #444444 !important;
+        font-size: 12px !important;
+        position: fixed !important;
+        margin-left: 7px !important;
+        margin-top: -1px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #default-fxMobile::before {
+        content: "Get help with using Chromium" !important;
+        color: #444444 !important;
+        font-size: 12px !important;
+        position: fixed !important;
+        margin-left: 7px !important;
+        margin-top: -1px !important;
+    }
+}
+
+#moreFromMozillaCategory .qr-code-link::before {
+  content: "Report an issue" !important;
+  color: #444444 !important;
+  font-size: 12px !important;
+  position: fixed !important;
+  margin-left: 9px !important;
+  margin-top: 5px !important;  
+}
+
+#moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-mobile-description"] {
+  font-size: 12px !important;
+  color: transparent !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-mobile-description"]::before {
+        content: "Version 23.0.1271.97" !important;
+        color: var(--in-content-text-color) !important;
+        position: fixed !important;
+        left: 216px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-mobile-description"]::before {
+        content: "Version 24.0.1282.0 (159411)" !important;
+        color: var(--in-content-text-color) !important;
+        position: fixed !important;
+        left: 216px !important;
+    }
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-mobile-description"]::after {
+        content: "Google Chrome is up to date." !important;
+        color: var(--in-content-text-color) !important;
+        position: fixed !important;
+        left: 216px !important;
+        margin-top: 25px !important;
+        margin-left: 23px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-mobile-description"]::after {
+        content: "Chromium is up to date." !important;
+        color: var(--in-content-text-color) !important;
+        position: fixed !important;
+        left: 216px !important;
+        margin-top: 25px !important;
+        margin-left: 23px !important;
+    }
+}
+
+#moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"] {
+  font-size: 12px !important;
+  color: transparent !important;
+  font-weight: 500 !important;
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::before {
+        content: "Google Chrome (Silverfox)" !important;
+        color: var(--in-content-text-color) !important;
+        position: relative !important;
+        right: 28px !important; 
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::before {
+        content: "Chromium (Silverfox)" !important;
+        color: var(--in-content-text-color) !important;
+        position: relative !important;
+        right: 28px !important; 
+    }
+}
+
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::after {
+        content: "Copyright © 2006-2012 Google Inc. © 2023 florin. All Rights Reserved." !important;
+        color: var(--in-content-text-color) !important;
+        position: relative !important;
+        top: 20px !important;
+        right: 235px !important;
+    }
+}
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::after {
+        content: "Copyright © 2006-2012 The Chromium Authors. © 2023 florin. All Rights Reserved." !important;
+        color: var(--in-content-text-color) !important;
+        position: relative !important;
+        top: 20px !important;
+        right: 209px !important;
+    }
+}
+
+#moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-relay-description"] {
+  font-size: 12px !important;
+  color: transparent !important;
+  font-weight: 500 !important;
+}
+
+#moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-relay-description"]::before {
+  content: "Silverfox is made possible by Firefox's CSS and JS open source projects and other open source software." !important;
+  color: var(--in-content-text-color) !important;
+  position: relative !important;
+  top: 20px !important;
+  right: 28px !important;
+}
+
+.qr-code-box-image[data-l10n-id="more-from-moz-qr-code-firefox-mobile-img"],
+#moreFromMozillaCategory .small-button {
+  display: none !important;
+}
+
+.qr-code-box:not([hidden="true"]) {
+  background-color: var(--in-content-page-background) !important;
+}
+
+.qr-code-box-title[data-l10n-id="more-from-moz-qr-code-box-firefox-mobile-title"]::before {
+  content: url(../../assets/images/pages/settings/uptodatecheck.png) !important;
+  position: relative !important;
+  top: -98px !important;
+  right: 65px !important;
+}
+
+.qr-code-box-title[data-l10n-id="more-from-moz-qr-code-box-firefox-mobile-title"] {
+  color: transparent !important;
+}
+}

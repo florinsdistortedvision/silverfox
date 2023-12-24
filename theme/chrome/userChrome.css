@@ -1,0 +1,43 @@
+/* UI */
+
+@import url("css/UI/bookmarkspanel.css");
+@import url("css/UI/beta.css");
+@import url("css/UI/browser.css");
+@import url("css/UI/defaultlayout.css");
+@import url("css/UI/downloadsbar.css");
+@import url("css/UI/extensionspanel.css");
+@import url("css/UI/findbar.css");
+@import url("css/UI/firefoxtranslate.css");
+@import url("css/UI/folderdropdowns.css");
+@import url("css/UI/fonts.css");
+@import url("css/UI/hamburgermenu.css");
+@import url("css/UI/hovers.css");
+@import url("css/UI/identitypanel.css");
+@import url("css/UI/navbar.css");
+@import url("css/UI/profilepictures.css");
+@import url("css/UI/tabstoolbar.css");
+
+
+/* Pages */
+
+@import url("css/pages/about-config.css");
+@import url("css/pages/about-support.css");
+@import url("css/pages/addons.css");
+@import url("css/pages/bookmarks.css");
+@import url("css/pages/downloads.css");
+@import url("css/pages/history.css");
+@import url("css/pages/homepage.css");
+@import url("css/pages/privatepage.css");
+@import url("css/pages/reportphish.css");
+@import url("css/pages/settings.css");
+@import url("css/pages/signin.css");
+
+
+/* Error pages */
+
+@import url("css/error pages/about-neterror-connectionfailure.css");
+@import url("css/error pages/about-neterror-cspblocked.css");
+@import url("css/error pages/about-neterror-dnsnotfound.css");
+@import url("css/error pages/about-neterror-netoffline.css");
+@import url("css/error pages/about-neterror-nssbadcert.css");
+@import url("css/error pages/about-tabcrashed.css");

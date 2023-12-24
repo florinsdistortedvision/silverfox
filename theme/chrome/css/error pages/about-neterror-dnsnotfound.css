@@ -1,0 +1,97 @@
+@-moz-document url-prefix('about:neterror?e=dnsNotFound') {
+
+body {
+  background: linear-gradient(to bottom, #cccccc 0%, #aaaaaa 100%) !important;
+}
+
+.container {
+  border-radius: 5px !important;
+  background: white !important;
+  box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
+  font-size: 12px !important;
+  min-width: 780px !important;
+  margin-top: -400px !important;
+  color: black !important;
+}
+
+h1[data-l10n-id="dnsNotFound-title"] {
+  font-size: 5px !important;
+  font-weight: 600 !important;
+  color: transparent !important;
+  margin-left: 20px !important;
+  margin-top: 10px !important;
+}
+
+h1[data-l10n-id="dnsNotFound-title"]::before {
+  content: "This webpage is not available" !important;
+  font-size: 23px !important;
+  font-weight: 600 !important;
+  color: black !important;
+}
+
+h1[data-l10n-id="dnsNotFound-title"]::after {
+  content: url(../../assets/images/pages/newtab/chromelogo.png) !important;
+  position: relative !important;
+  left: 180px !important;
+  top: 3px !important;
+}
+
+#errorShortDesc {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  max-width: 750px !important;
+}
+
+#errorShortDesc::after {
+  content: " DNS lookup failed. DNS is the network service that translates a website's name to its Internet address. This error is most often caused by having no connection to the Internet or a misconfigured network. It can also be caused by an unresponsive DNS server or a firewall preventing Google Chrome from accessing the network." !important;
+}
+
+span[data-l10n-id="neterror-dns-not-found-hint-header"] {
+  font-size: 12px !important;
+  margin-left: 20px !important;
+  color: transparent !important;
+}
+
+span[data-l10n-id="neterror-dns-not-found-hint-header"]::before {
+  content: "Here are some suggestions:" !important;
+  font-weight: 600 !important;
+  color: black !important;
+}
+
+ul {
+  margin-left: 50px !important;
+}
+
+#netErrorButtonContainer > button {
+  background: transparent !important;
+  color: transparent !important;
+  cursor: pointer !important;
+  position: relative !important;
+  right: 520px !important;
+  top: -50px !important;
+}
+
+#netErrorButtonContainer::before {
+  content: "•" !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  position: relative !important;
+  right: 506px !important;
+  top: -30px !important;
+}
+
+#netErrorButtonContainer > button::before {
+  content: "Reload this webpage later." !important;
+  color: #0000cc !important;
+  text-decoration: underline !important;
+}
+
+ul::after {
+  content: "Error 105 (net::ERR_NAME_NOT_RESOLVED): Unable to resolve the server's DNS address." !important;
+  color: grey !important;
+  position: relative !important;
+  left: -25px !important;
+  font-size: 13px !important;
+  top: 50px !important;
+}
+}

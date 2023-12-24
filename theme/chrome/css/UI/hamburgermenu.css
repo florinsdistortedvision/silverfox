@@ -1,0 +1,372 @@
+/* Hamburger Menu */
+
+#appMenu-notification-popup {
+  display: none !important;
+}
+
+#hamburger-button {
+  appearance: unset  !important;
+}
+
+#hamburger-button {
+  z-index: 999 !important;
+  width: 28px !important;
+  height: 24px !important;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  margin-top: 4px !important;
+  margin-right: 5px !important;
+  margin-left: 2px !important;
+}
+
+@supports (-moz-bool-pref("silverfox.preferOldLook")) {
+#hamburger-button::before {
+  content: url(../../assets/images/middlebar/wrench.png) !important;
+  height: 24px !important;
+  width: 28px !important;
+  position: relative !important;
+  top: -3px !important;
+  left: -1px !important;
+}
+}
+
+@supports not (-moz-bool-pref("silverfox.preferOldLook")) {
+#hamburger-button::before {
+  content: url(../../assets/images/middlebar/hamburger.png) !important;
+  height: 24px !important;
+  width: 28px !important;
+  position: relative !important;
+  top: -5px !important;
+  left: -4px !important;
+}
+}
+
+#hamburger-button menu {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#hamburger-button menupopup {
+  overflow-y: auto !important;
+}
+
+#hamburger-button menuitem {
+  padding-right: 0px !important;
+  width: 270px !important;
+}
+
+.submenu-item1::after,
+.submenu-item2::after,
+.submenu-item3::after,
+.submenu-item7::after,
+.submenu-item8::after,
+.submenu-item9::after,
+.submenu-item11::after,
+.submenu-item12::after,
+.submenu-item10-3::after,
+.submenu-item10-4::after,
+.submenu-item10-6::after,
+.submenu-item10-7::after {
+  position: relative !important;
+  right: 20px;  
+}
+
+
+.submenu-item1::after {
+  content: "Ctrl+T" !important;
+
+}
+
+.submenu-item2::after {
+  content: "Ctrl+N" !important;
+}
+
+.submenu-item3::after {
+  content: "Ctrl+Shift+N" !important;
+}
+
+.submenu-item5 {
+  height: 22px !important;
+}
+.submenu-item5:before {
+  content: "Edit";
+  position: relative;
+  top: 3px;
+  left: 33px;
+
+}
+
+.submenu-item6 {
+ height: 23px !important; 
+}
+
+.submenu-item6::before {
+  content: "Zoom" !important;
+  position: relative;
+  top: 3px;
+  left: 33px;
+}
+
+.submenu-item7::after {
+  content: "Ctrl+S" !important;
+}
+
+.submenu-item8::after {
+  content: "Ctrl+F" !important;
+}
+
+.submenu-item9::after {
+  content: "Ctrl+P" !important;
+}
+
+.submenu-item11::after {
+  content: "Ctrl+H" !important;
+}
+
+.submenu-item12::after {
+  content: "Ctrl+J" !important;
+}
+
+.submenu-item10-3::after {
+  content: "Shift+Esc" !important;
+}
+
+.submenu-item10-4::after {
+  content: "Ctrl+Shift+Del" !important;
+}
+
+.submenu-item10-6::after {
+  content: "Ctrl+U" !important;
+}
+
+
+#submenu5-button-1 {
+  margin-left: 128px !important;
+}
+
+#submenu5-button-1,
+#submenu5-button-2,
+#submenu5-button-3,
+#zoom-in-button,
+#zoom-level-div,
+#zoom-out-button,
+#fullscreen {
+  position: relative;
+  top: -16px;
+}
+
+.submenu-item21,
+.submenu-item22,
+.submenu-item23,
+.submenu-item24,
+.submenu-item20,
+.submenu-item18,
+.submenu-item19 {
+  appearance: auto !important;
+  -moz-default-appearance: button !important;
+  padding-block: 1px !important;
+  padding-inline: 8px !important;
+  border: 2px outset ButtonBorder !important;
+  background-color: ButtonFace !important;
+  cursor: default !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+}  
+.submenu-item18 {
+  max-width: 41px !important; 
+  position: relative;
+  top: -163px;
+  max-height: 22px !important;
+  left: 126px;
+}
+
+.submenu-item19 {
+  max-width: 41px !important; 
+  position: relative;
+  top: -185px;
+  max-height: 22px !important;
+  left: 168px;  
+}
+
+.submenu-item20 {
+  max-width: 41px !important; 
+  position: relative;
+  top: -207px;
+  max-height: 22px !important;
+  left: 210px;
+}
+
+.submenu-item21 {
+  max-width: 25px !important; 
+  position: relative;
+  top: -202px;
+  max-height: 22px !important;
+  left: 124px;
+}
+
+.submenu-item22 {
+  max-width: 41px !important; 
+  position: relative;
+  top: -224px;
+  max-height: 22px !important;
+  left: 150px;
+}
+
+.submenu-item23 {
+  max-width: 25px !important; 
+  position: relative;
+  top: -246px;
+  max-height: 22px !important;
+  left: 192px;
+}
+
+.submenu-item24 {
+  max-width: 30px !important; 
+  position: relative;
+  top: -268px;
+  max-height: 22px !important;
+  left: 221px;
+}
+
+.submenu-item18::before {
+  content: "Cut" !important;
+  position: relative;
+  right: -2.5px;
+}
+
+.submenu-item19::before {
+  content: "Copy" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item20::before {
+  content: "Paste" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item21::before {
+  content: "-" !important;
+  position: relative;
+  right: -0.5px;
+  top: -1px;
+}
+
+.submenu-item22[zoomlevel="30%"]::before {
+  content: "30%" !important;
+  position: relative;
+  right: -2px;
+}
+
+.submenu-item22[zoomlevel="50%"]::before {
+  content: "50%" !important;
+  position: relative;
+  right: -2px;
+}
+
+.submenu-item22[zoomlevel="67%"]::before {
+  content: "67%" !important;
+  position: relative;
+  right: -2px;
+}
+
+.submenu-item22[zoomlevel="80%"]::before {
+  content: "80%" !important;
+  position: relative;
+  right: -2px;
+}
+
+.submenu-item22[zoomlevel="90%"]::before {
+  content: "90%" !important;
+  position: relative;
+  right: -2px;
+}
+
+.submenu-item22[done="true"]::before {
+  content: "100%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="110%"]::before {
+  content: "110%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="120%"]::before {
+  content: "120%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="133%"]::before {
+  content: "133%" !important;
+  position: relative;
+  right: 1px;
+}
+
+
+.submenu-item22[zoomlevel="150%"]::before {
+  content: "150%" !important;
+  position: relative;
+  right: 1px;
+}
+
+
+.submenu-item22[zoomlevel="170%"]::before {
+  content: "170%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="200%"]::before {
+  content: "200%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="240%"]::before {
+  content: "240%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="300%"]::before {
+  content: "300%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="400%"]::before {
+  content: "400%" !important;
+  position: relative;
+  right: 1px;
+}
+
+.submenu-item22[zoomlevel="500%"]::before {
+  content: "500%" !important;
+  position: relative;
+  right: 1px;
+}
+
+
+.submenu-item23::before {
+  content: "+" !important;
+  position: relative;
+  right: -0.5px;
+  top: -1px;
+}
+
+.submenu-item24::before {
+  content: url(../../assets/images/middlebar/hamfullscreen.png) !important;
+  position: relative;
+  right: 2px;
+  top: 2.3px;
+}
+.submenu-item17 {
+  margin-bottom: -154px !important;
+}
