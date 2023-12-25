@@ -8,3 +8,4 @@ user_pref("browser.tabs.inTitlebar", 1); // Force disable titlebar
 user_pref("browser.uidensity", -1); // Force set normal density
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Disable "Sponsored stories" in Pocket section of new tab page
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Disable the Pocket section of the new tab page
+user_pref("widget.gtk.native-context-menus", true); // LINUX ONLY - force native GTK3 context menus where possible for more authenticity
