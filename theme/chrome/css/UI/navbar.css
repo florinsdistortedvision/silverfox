@@ -27,6 +27,33 @@
     }
 }
 
+/* When in fullscreen, remove left and right borders and radius */
+:root:not([sizemode="normal"]) #nav-bar {
+  border-right: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+  border-radius: 0px !important;
+}
+
+/* For Aero and Windows 8, retain the gradient when not using custom themes */
+@media (-moz-windows-glass),
+       (-moz-platform: windows-win8) {
+      :root:not(
+                [style*="--lwt-header-image"],
+                [lwtheme-image],
+                [style*="--lwt-additional-images"]
+                ) #nav-bar {
+                    background-image: linear-gradient(to top, #e3e3e3 0%, #f5f5f5 100%) !important;
+  }
+  
+      :root:not(
+                [style*="--lwt-header-image"],
+                [lwtheme-image],
+                [style*="--lwt-additional-images"]
+                ) #PersonalToolbar {
+                   background-image: linear-gradient(to bottom, #e3e3e3 0%, #dfdfdf 100%) !important;  
+    }
+}
+
 /* Nav bar position in normal and fullscreen */
 :root:not([sizemode="normal"]) #nav-bar {
   margin-top: -8px !important;
@@ -38,6 +65,8 @@
 /* Coupled with JS, when PersonalToolbar is disabled, add a bottom border to Nav Bar */
 #nav-bar[alone="true"] {
   border-bottom: 1px solid #b2b2b2 !important;
+  margin-bottom: 0px !important;
+  height: 38px !important;
 }
 
 /* Removes the line between Nav Bar and PersonalToolbar*/
@@ -54,6 +83,12 @@
     border-bottom: 1px solid #b2b2b2;
     border-right: 2px solid #b2b2b2;
     border-left: 2px solid #b2b2b2;
+}
+
+/* When in fullscreen, remove left and right borders */
+:root:not([sizemode="normal"]) #PersonalToolbar {
+    border-right: none !important;
+    border-left: none !important;
 }
 
 /* Make bookmarks closer to each other */

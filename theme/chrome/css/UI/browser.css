@@ -8,8 +8,9 @@
   margin-top: -1px !important;
 }
 
-/* When video sends Firefox in fullscreen remove borders and margin */
+/* When in fullscreen (including videos) remove borders and margin */
 
+:root:not([sizemode="normal"]) #browser,
 :root[inDOMFullscreen="true"] #browser {
   border-right: none !important;
   border-left: none !important;

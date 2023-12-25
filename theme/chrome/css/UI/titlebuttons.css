@@ -1,6 +1,7 @@
 /* Titlebars (Minimze, Maximize, Restore and Close) */
 
-@media (-moz-platform: windows) { /* Windows, disable them when bool is set to TRUE */
+/* Windows (7, 8/8.1, 10 and 11) */
+@media (-moz-platform: windows) { 
 @supports not (-moz-bool-pref("silverfox.disableChromeTitlebar")) {
 .titlebar-restore,
 .titlebar-min,
@@ -82,9 +83,212 @@
   height: 18px !important;
 }
 }
+
+/* Windows 7 */
+    
+@media (-moz-platform: windows-win7) {
+         
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max,
+.titlebar-close {
+  display: unset !important;
+} 
+         
+:root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
+:root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
+  display: none !important;
+}
+         
+.titlebar-close {
+  margin-top: -7px !important;
+  padding-left: 15px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-close {
+  margin-top: 4px !important;
+  margin-bottom: -5px !important;
+}
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max {
+  margin-top: -4px !important;
+  margin-right: 2px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-min {
+  margin-top: 7px !important;
+  margin-bottom: -5px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-restore {
+  margin-top: 7px !important;
+  margin-right: -15px !important;
+  margin-bottom: -5px !important;
+} 
+.titlebar-max {
+   margin-right: -14px !important;
 }
 
-@media (-moz-platform: linux) { /* Linux */
+         
+.titlebar-close:hover::before {
+  position: relative !important;
+  left: -1px !important;
+}
+
+/* When in light/dark mode use native titlebar buttons, when custom themes use Chrome styling */
+:root:is(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) {
+  appearance: unset !important;
+}
+
+:root:is(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) .titlebar-buttonbox-container {
+  align-items: center !important;
+  margin-right: -7px;
+} 
+}
+
+/* Windows 8 / 8.1 */
+
+@media (-moz-platform: windows-win8) {
+         
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max,
+.titlebar-close {
+  display: unset !important;
+} 
+         
+:root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
+:root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
+  display: none !important;
+}
+         
+.titlebar-close {
+  margin-right: 5px !important;
+  margin-top: -7px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-close {
+  margin-top: 4px !important;
+  margin-bottom: -5px !important;
+}
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max {
+  margin-right: -11px !important;
+  margin-top: -4px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-min {
+  margin-top: 7px !important;
+    margin-bottom: -5px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-restore {
+  margin-top: 7px !important;
+  margin-right: -15px !important;
+  margin-bottom: -5px !important;
+} 
+.titlebar-max {
+   margin-right: -15px !important;
+}
+         
+.titlebar-close:hover::before {
+  position: relative !important;
+  left: -1px !important;
+}
+
+/* When in light/dark mode use native titlebar buttons, when custom themes use Chrome styling */                 
+:root:is(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) {
+  appearance: unset !important;
+}
+
+:root:is(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) .titlebar-buttonbox-container {
+  align-items: center !important;
+  margin-right: -7px;
+} 
+}
+
+/* Aero Basic, note hovers still show the default buttons unfortunately */
+@media (-moz-windows-compositor: 0) {
+  
+:root[tabsintitlebar]:not([inDOMFullscreen]) #titlebar:-moz-lwtheme {
+      visibility: hidden !important;
+}
+
+.titlebar-button {
+    appearance: unset !important;
+} 
+  
+  
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max,
+.titlebar-close {
+  display: unset !important;
+} 
+         
+:root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
+:root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
+  display: none !important;
+}
+         
+.titlebar-close {
+  margin-top: 9px !important;
+  margin-right: 20px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-close {
+  margin-top: 2px !important;
+  margin-bottom: -5px !important;
+}
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max {
+  margin-top: 15px !important;
+  margin-right: 2px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-min {
+  margin-top: 8px !important;
+  margin-bottom: -5px !important;
+}
+:root:not([sizemode="normal"]) .titlebar-restore {
+  margin-top: 8px !important;
+  margin-right: -12px !important;
+  margin-bottom: -5px !important;
+} 
+.titlebar-max {
+   margin-right: -14px !important;
+}
+        
+.titlebar-close:hover::before {
+  position: relative !important;
+  left: -1px !important;
+}
+
+:root:not(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) .titlebar-buttonbox {
+  align-items: center !important;
+  appearance: none !important;
+}    
+}
+}
+
+
+/* Linux */
+@media (-moz-platform: linux) { 
   .titlebar-close,
   .titlebar-restore,
   .titlebar-min,

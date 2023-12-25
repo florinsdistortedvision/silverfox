@@ -1387,7 +1387,28 @@ h2[data-l10n-id="prefs-syncing-on"] {
   top: 20px !important;
   right: 28px !important;
 }
-
+  
+@media (-moz-platform: windows-win7),
+       (-moz-platform: windows-win8) {
+  @supports not (-moz-bool-pref("silverfox.beChromium")) {     
+        #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::before {
+          right: 29px !important; 
+        } 
+        #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::after {
+          right: 234px !important;
+        }
+  }
+  
+  @supports (-moz-bool-pref("silverfox.beChromium")) {     
+        #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::before {
+          right: 30px !important; 
+        } 
+        #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-relay-description"]::before {
+          right: 29px !important;
+        }
+  }  
+}
+  
 .qr-code-box-image[data-l10n-id="more-from-moz-qr-code-firefox-mobile-img"],
 #moreFromMozillaCategory .small-button {
   display: none !important;

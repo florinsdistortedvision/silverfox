@@ -173,7 +173,9 @@
   cursor: default !important;
   box-sizing: border-box !important;
   user-select: none !important;
-}  
+} 
+
+
 .submenu-item18 {
   max-width: 41px !important; 
   position: relative;
@@ -369,4 +371,77 @@
 }
 .submenu-item17 {
   margin-bottom: -154px !important;
+}
+
+
+/* Padding fix for Windows 7 */
+
+@media (-moz-platform: windows-win7) {
+.submenu-item18 {
+  top: -162px;
+}
+
+.submenu-item19 {
+  top: -185px;
+}
+
+.submenu-item20 {
+  top: -208px;
+}
+
+.submenu-item21 {
+  top: -202px;
+}
+
+.submenu-item22 {
+  top: -225px;
+}
+
+.submenu-item23 {
+  top: -248px;
+}
+
+.submenu-item24 {
+  top: -271px;
+}
+
+ .submenu-item17 {
+  margin-bottom: -161px !important;
+}  
+}
+
+/* Padding fix for Windows 8 */
+
+@media (-moz-platform: windows-win8) {
+.submenu-item18 {
+  top: -157px;
+}
+
+.submenu-item19 {
+  top: -180px;
+}
+
+.submenu-item20 {
+  top: -203px;
+}
+
+.submenu-item21 {
+  top: -198px;
+}
+
+.submenu-item22 {
+  top: -221px;
+}
+
+.submenu-item23 {
+  top: -244px;
+}
+
+.submenu-item24 {
+  top: -267px;
+}
+
+ .submenu-item17 {
+  margin-bottom: -161px !important;
+}  
 }
