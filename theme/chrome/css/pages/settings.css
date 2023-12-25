@@ -1408,6 +1408,11 @@ h2[data-l10n-id="prefs-syncing-on"] {
         }
   }  
 }
+
+#moreFromMozillaCategory #mozilla-vpn,
+.description[data-l10n-id="more-from-moz-mozilla-vpn-description"] {
+  display: none !important;
+}
   
 .qr-code-box-image[data-l10n-id="more-from-moz-qr-code-firefox-mobile-img"],
 #moreFromMozillaCategory .small-button {
