@@ -1,6 +1,6 @@
-/* Titlebars (Minimze, Maximize, Restore and Close), disable them when bool is set to TRUE */
+/* Titlebars (Minimze, Maximize, Restore and Close) */
 
-@media (-moz-platform: windows) { /* Windows */
+@media (-moz-platform: windows) { /* Windows, disable them when bool is set to TRUE */
 @supports not (-moz-bool-pref("silverfox.disableChromeTitlebar")) {
 .titlebar-restore,
 .titlebar-min,
@@ -36,48 +36,48 @@
 
 /* Adding Chrome style*/
 .titlebar-close::before {
-  content: url(../../assets/images/topbar/windows/close.png) !important;
+  content: url(../../assets/images/topbar/close.png) !important;
   width: 44px !important;
   height: 18px !important;
   margin-top: 20px !important;
 }
-.titlebar-min::before {
-  content: url(../../assets/images/topbar/windows/minimize.png) !important;
+.titlebar-close:hover::before {
+  content: url(../../assets/images/topbar/close_hover.png) !important;
   width: 44px !important;
   height: 18px !important;
 }
 .titlebar-max::before {
-  content: url(../../assets/images/topbar/windows/maximize.png) !important;
+  content: url(../../assets/images/topbar/maximize.png) !important;
   width: 25px !important;
   height: 18px !important;
   margin-top: 20px !important;
 }
 .titlebar-restore::before {
-  content: url(../../assets/images/topbar/windows/restore.png) !important;
+  content: url(../../assets/images/topbar/restore.png) !important;
   width: 25px !important;
   height: 18px !important;
   margin-top: 20px !important;
 }
 
 /* Hovers */
-.titlebar-close:hover::before {
-  content: url(../../assets/images/topbar/windows/close_hover.png) !important;
+.titlebar-max:hover::before {
+  content: url(../../assets/images/topbar/maximize_hover.png) !important;
+  width: 25px !important;
+  height: 18px !important;
+}
+.titlebar-min::before {
+  content: url(../../assets/images/topbar/minimize.png) !important;
   width: 26px !important;
   height: 18px !important;
   margin-top: 20px !important;
 }
-.titlebar-min::before {
-  content: url(../../assets/images/topbar/windows/minimize_hover.png) !important;
+.titlebar-min:hover::before {
+  content: url(../../assets/images/topbar/minimize_hover.png) !important;
   width: 26px !important;
   height: 18px !important;
 }
-.titlebar-max:hover::before {
-  content: url(../../assets/images/topbar/windows/maximize_hover.png) !important;
-  width: 25px !important;
-  height: 18px !important;
-}
 .titlebar-restore:hover::before {
-  content: url(../../assets/images/topbar/windows/restore_hover.png) !important;
+  content: url(../../assets/images/topbar/restore_hover.png) !important;
   width: 25px !important;
   height: 18px !important;
 }
