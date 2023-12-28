@@ -127,6 +127,7 @@
 }
 }
 
+
 /* Windows Aero for Windows 10, if bool set to TRUE*/
     
 @supports (-moz-bool-pref("silverfox.hasAeroGlass")) {
@@ -146,7 +147,7 @@
      -moz-default-appearance: -moz-win-borderless-glass !important;
 }
 }
-
+}
 
 /* Windows Aero except for Windows 10 */
 
