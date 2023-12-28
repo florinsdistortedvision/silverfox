@@ -165,7 +165,7 @@
        (-moz-platform: windows-win8) {
 
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]  #nav-bar {
-    background-image: linear-gradient(to bottom, #1c1b22 25%, rgb(28, 27, 34) 100%) !important;
+    background-image: linear-gradient(to bottom, var(--toolbar-field-focus-background-color) 25%, rgb(28, 27, 34) 100%) !important;
 }
            
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"]  #PersonalToolbar {
