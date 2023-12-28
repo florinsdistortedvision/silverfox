@@ -13,7 +13,7 @@ Closed beta members, you have been provided with the closed beta website directl
 
 ## How to install Silverfox?
 
-######  Support for Windows 7 or 8/8.1 as well as Linux and Mac has not been tested.
+######  Support for Linux and Mac has not been tested.
 
 1. Download and install the latest version of [Firefox 115ESR](https://ftp.mozilla.org/pub/firefox/releases/115.6.0esr/). **115ESR is a requirement !**
 2. Launch Firefox, go to about:support, then In Application Basics look for Profile Folder, then click Open Folder.
