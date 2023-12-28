@@ -47,6 +47,18 @@ toolbarbutton menupopup[placespopup] menuseparator {
   display: none;
 }
 
+.bookmark-item[container] {
+  list-style-image: url(../../assets/images/middlebar/folder.png) !important;
+}
+
+toolbarbutton menupopup[placespopup] > menu > .menu-right {
+  list-style-image: url(chrome://global/skin/icons/arrow-right.svg);
+  transform: scale(0.7) !important;
+  position: relative !important;
+  top: -2px;
+}
+
+
 .openintabs-menuitem {
   padding-left: 33px !important;
   width: 105% !important;

@@ -143,6 +143,40 @@ a[data-l10n-id="managed-notice"] {
   left: 330px !important;
   margin-top: 17px !important;
 }
+  
+#categories {
+    padding-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+}  
+  
+@media only screen and (max-width: 834px) {
+.navigation {
+  padding-right: 55px !important;
+}
+  
+#categories {
+    padding-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+}
+
+.sidebar-footer-label {
+    display: block !important;
+  }  
+  
+.category-icon + .category-name {
+    display: block !important;
+}
+  
+h1[data-l10n-id="pane-general-title"]::after,
+h1[data-l10n-id="pane-home-title"]::after,
+h1[data-l10n-id="pane-search-title"]::after,
+h1[data-l10n-id="privacy-header"]::after,
+h1[data-l10n-id="pane-sync-title3"]::after,
+#moreFromMozillaCategory-header .title::after {
+  margin-left: -95px !important;
+}  
+  
+}
 
 /* General section */
 
@@ -223,6 +257,13 @@ h2[data-l10n-id="download-header"] {
 
 /* Checkboxes */
 
+#warnOnQuitKey,
+#useSystemLocale,
+#distribution,
+#distributionId,
+#useOverlayScrollbars,
+.text-link .learn-sponsored,
+#creditCardAutofill,
 #browserContainersCheckbox,
 #cfrRecommendations-features,
 #cfrRecommendations,
@@ -1407,11 +1448,6 @@ h2[data-l10n-id="prefs-syncing-on"] {
           right: 29px !important;
         }
   }  
-}
-
-#moreFromMozillaCategory #mozilla-vpn,
-.description[data-l10n-id="more-from-moz-mozilla-vpn-description"] {
-  display: none !important;
 }
   
 .qr-code-box-image[data-l10n-id="more-from-moz-qr-code-firefox-mobile-img"],

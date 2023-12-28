@@ -38,22 +38,7 @@
   --newtab-text-primary-color: #fbfbfe;
 }
     
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
-  .search-wrapper .logo-and-wordmark .wordmark {
-    background: none !important; 
-    border-top: 1px solid #e3e3e3 !important;
-    height: 48px !important;
-    margin-inline-start: 16px;
-    width: 500000px !important;
-    position: fixed !important;
-    bottom: 0 !important;
-    z-index: 2 !important;
-    background-image: linear-gradient(to top, var( --newtab-background-color) 20%, #f2f2f2 300%) !important;
-  }
-}
-  
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-  .search-wrapper .logo-and-wordmark .wordmark {
+.search-wrapper .logo-and-wordmark .wordmark {
     background: none !important; 
     border-top: 1px solid #e3e3e3 !important;
     height: 48px !important;
@@ -63,7 +48,6 @@
     bottom: 0 !important;
     z-index: 2 !important;
     background-image: linear-gradient(to top, #e3e3e3 0%, #f2f2f2 100%) !important;
- }
 }
   
 
@@ -117,13 +101,14 @@
 .ds-column.ds-column-12 {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: space-around !important;
-  position: relative !important;
-  bottom: 150px !important;
-  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
   max-width: 1200px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+  min-height: 50px;
+  position: relative;
+  top: -120px;
 }
 
 .top-site-outer {
@@ -154,34 +139,18 @@
 .top-site-icon.rich-icon {
   transform: scale(0.4)
 }
-
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
-  .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
-     background: var(--newtab-background-color) !important;
-  }
-  .top-site-outer .tile {
-    width: 210px !important;
-    height: 120px !important;
-    border-radius: 3px !important;
-    box-shadow: none !important;
-    border: 1px solid #dedede !important;
-    background-image: linear-gradient(to bottom, var(--newtab-background-color) 0%, #fdfdfd 200%) !important;
-  }
-}
-  
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-  .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
+ 
+.top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
      background: transparent !important;
-  }
-  .top-site-outer .tile {
+}
+.top-site-outer .tile {
     width: 210px !important;
     height: 120px !important;
     border-radius: 3px !important;
     box-shadow: none !important;
     border: 1px solid #dedede !important;
     background-image: linear-gradient(to bottom, #eeeeee 0%, #fdfdfd 100%) !important;
-  }
-}  
+}
   
 .top-site-outer .tile:hover {
   filter: contrast(0.97) !important;

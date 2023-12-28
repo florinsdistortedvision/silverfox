@@ -73,7 +73,6 @@
   right: 20px;  
 }
 
-
 .submenu-item1::after {
   content: "Ctrl+T" !important;
 
@@ -166,13 +165,6 @@
 .submenu-item19 {
   appearance: auto !important;
   -moz-default-appearance: button !important;
-  padding-block: 1px !important;
-  padding-inline: 8px !important;
-  border: 2px outset ButtonBorder !important;
-  background-color: ButtonFace !important;
-  cursor: default !important;
-  box-sizing: border-box !important;
-  user-select: none !important;
 } 
 
 
@@ -311,13 +303,11 @@
   right: 1px;
 }
 
-
 .submenu-item22[zoomlevel="150%"]::before {
   content: "150%" !important;
   position: relative;
   right: 1px;
 }
-
 
 .submenu-item22[zoomlevel="170%"]::before {
   content: "170%" !important;

@@ -3,12 +3,15 @@
 /* Windows (7, 8/8.1, 10 and 11) */
 @media (-moz-platform: windows) { 
 @supports not (-moz-bool-pref("silverfox.disableChromeTitlebar")) {
+
 .titlebar-restore,
 .titlebar-min,
 .titlebar-max,
 .titlebar-close {
   list-style-image: none !important;
 }
+
+  
 .titlebar-close {
   margin-right: 5px !important;
   width: 40px !important;
@@ -36,6 +39,7 @@
 }
 
 /* Adding Chrome style*/
+  
 .titlebar-close::before {
   content: url(../../assets/images/topbar/windows/close.png) !important;
   width: 44px !important;
@@ -84,6 +88,36 @@
 }
 }
 
+/* Windows 10 with Aero/Custom themes */  
+/* MSStyles themes add a "native" titlebar, no hovers */
+  
+@media (-moz-platform: windows-win10) {  
+@supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
+:root:not(:-moz-lwtheme) .titlebar-restore,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-restore,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore,
+:root:not(:-moz-lwtheme) .titlebar-min,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min,
+:root:not(:-moz-lwtheme) .titlebar-max,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-close,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close,  
+:root:not(:-moz-lwtheme) .titlebar-close {
+  opacity: 0 !important;
+}
+  
+.titlebar-button {
+    background: transparent !important;
+}  
+}  
+  
+}
+  
+  
+  
+  
 /* Windows 7 */
     
 @media (-moz-platform: windows-win7) {
@@ -126,13 +160,25 @@
 .titlebar-max {
    margin-right: -14px !important;
 }
-
          
 .titlebar-close:hover::before {
   position: relative !important;
   left: -1px !important;
 }
 
+/* Fix for fullscreen native titlebars cutting off nav-bar */  
+:root:is(:not([sizemode=normal]), [style*="--lwt-accent-color: rgb(240, 240, 244)"][style*="--lwt-accent-color: rgb(28, 27, 34)"][lwtheme]) .titlebar-buttonbox {
+    max-height: 30px !important;
+}
+  
+:root:is(
+  [lwtheme]:not([style*="--lwt-accent-color: rgb(240, 240, 244)"]),
+  [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
+):not([sizemode=normal]) .titlebar-buttonbox-container {
+    max-height: 30px !important;
+}  
+  
+  
 /* When in light/dark mode use native titlebar buttons, when custom themes use Chrome styling */
 :root:is(
   [style*="--lwt-header-image"],
@@ -200,6 +246,21 @@
   left: -1px !important;
 }
 
+  
+/* Fix for fullscreen native titlebars cutting off nav-bar */  
+:root:is(:not([sizemode=normal]), [style*="--lwt-accent-color: rgb(240, 240, 244)"][style*="--lwt-accent-color: rgb(28, 27, 34)"][lwtheme]) .titlebar-buttonbox {
+    max-height: 30px !important;
+}
+  
+:root:is(
+  [lwtheme]:not([style*="--lwt-accent-color: rgb(240, 240, 244)"]),
+  [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
+):not([sizemode=normal]) .titlebar-buttonbox-container {
+    max-height: 30px !important;
+}  
+
+
+
 /* When in light/dark mode use native titlebar buttons, when custom themes use Chrome styling */                 
 :root:is(
   [style*="--lwt-header-image"],
@@ -208,6 +269,11 @@
 ) {
   appearance: unset !important;
 }
+/* In Windows 8, native titlebars have the accent color overlayed over, so for themes that dont have a image bring Chrome styling*/  
+:root[lwtheme]:not([style*="--lwt-accent-color: rgb(240, 240, 244)"]):not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) {
+  appearance: unset !important;
+}
+  
 
 :root:is(
   [style*="--lwt-header-image"],
@@ -216,7 +282,14 @@
 ) .titlebar-buttonbox-container {
   align-items: center !important;
   margin-right: -7px;
-} 
+}
+/* In Windows 8, native titlebars have the accent color overlayed over, so for themes that dont have a image bring Chrome styling*/  
+:root[lwtheme]:not([style*="--lwt-accent-color: rgb(240, 240, 244)"]):not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox-container {
+  align-items: center !important;
+  margin-right: -7px;
+}
+  
+  
 }
 
 /* Aero Basic, note hovers still show the default buttons unfortunately */
@@ -226,23 +299,15 @@
       visibility: hidden !important;
 }
 
-.titlebar-button {
-    appearance: unset !important;
-} 
-  
-  
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max,
-.titlebar-close {
-  display: unset !important;
-} 
-         
-:root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
-:root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
-  display: none !important;
+#titlebar-buttonbox-container .titlebar-close {
+  appearance: none !important;
 }
-         
+  
+  
+.titlebar-button {
+    appearance: none !important;
+}   
+          
 .titlebar-close {
   margin-top: 9px !important;
   margin-right: 20px !important;
@@ -289,36 +354,46 @@
 
 /* Linux */
 @media (-moz-platform: linux) { 
-  .titlebar-buttonbox {
-    margin-top: -14px !important;
-    appearance: none !important; /* Prevents ANY influencing of margins */
-    gap: 2px !important;
-  }
-  @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-right: 3px !important;
-  }}
-  @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-left: 3px !important;
-  }}
   .titlebar-close,
   .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-    appearance: none !important;
-    list-style-image: none !important;
-    border-radius: 0 !important;
     min-width: 24px !important;
     max-width: 24px !important;
     height: 18px !important;
-    padding: 0 !important;
+    padding: 0px !important;
+    margin-top: -14px !important;
+    appearance: none !important;
+    list-style-image: none !important;
+    border-radius: 0 !important;
+  }
+  .titlebar-close:not(:-moz-lwtheme) {
+    margin-right: -3px !important;
+  }
+  .titlebar-close:-moz-lwtheme { /* For some reason, this has different side-padding */
+    margin-right: -2px !important;
+  }
+  :root:is(
+    [style*="--lwt-header-image"]
+  ) .titlebar-close:-moz-lwtheme { /* For some reason, this has even more different side-padding */
+    margin-right: -3px !important;
+  }
+  .titlebar-restore,
+  .titlebar-min,
+  .titlebar-max {
+    margin-right: 2px !important;
   }
   @supports (-moz-bool-pref("silverfox.allowThemes")) {
-    :root:not([sizemode="normal"]) .titlebar-buttonbox {
+    :root:not([sizemode="normal"]) .titlebar-close,
+    :root:not([sizemode="normal"]) .titlebar-min,
+    :root:not([sizemode="normal"]) .titlebar-restore {
       margin-top: 1px !important;
     }
   }
   @supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    :root:not([sizemode="normal"]) .titlebar-buttonbox {
+    :root:not([sizemode="normal"]) .titlebar-close,
+    :root:not([sizemode="normal"]) .titlebar-min,
+    :root:not([sizemode="normal"]) .titlebar-restore {
       margin-top: 0px !important;
     }
   }

@@ -12,7 +12,7 @@
 :root:not([privatebrowsingmode=temporary]) .animated-pfp,
 :root:not([privatebrowsingmode=temporary]) .alien-pfp,
 :root:not([privatebrowsingmode=temporary]) .blondepfp-pfp,
-:root:not([privatebrowsingmode=temporary]) .blue-pfp,
+:root:not([privatebrowsingmode=temporary]) .bluepfp-pfp,
 :root:not([privatebrowsingmode=temporary]) .burger-pfp,
 :root:not([privatebrowsingmode=temporary]) .businessmanpfp-pfp,
 :root:not([privatebrowsingmode=temporary]) .cat-pfp,
@@ -42,6 +42,8 @@
   width: 45px !important;
   margin-left: -3px !important;
 }
+
+
 
 :root:not([privatebrowsingmode=temporary]) .off-pfp {
   width: 0px !important;
@@ -82,6 +84,41 @@
   position: relative !important;
   top: -3px !important;
   left: 7px !important;
+}
+
+@media (-moz-platform: windows-win7) {
+  :root:not([privatebrowsingmode=temporary]) .animated-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .alien-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .blondepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .bluepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .burger-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .businessmanpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .cat-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .chickpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .chrome-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .chromium-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .cooldudepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .cupcake-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .custom-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .dog-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .drink-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .flower-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .football-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .greenpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .happy-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .horse-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .lightbluepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .music-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .ninja-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .orangepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .pizza-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .purplepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .redpfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .weather-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .whitepfp-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .yellowpfp-pfp::before {
+  top: 2px !important;
+}
 }
 
 :root:not([privatebrowsingmode=temporary]) .animated-pfp::before {

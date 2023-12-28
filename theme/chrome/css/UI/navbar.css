@@ -2,64 +2,27 @@
 
 
 /* Make Chrome's gradient for nav-bar and themes formula */
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    #nav-bar {
+#nav-bar {
         margin-top: -2px;
         margin-bottom: -5px;
         z-index: 50;
-        background-image: linear-gradient(to top, #e3e3e3 0%, #f5f5f5 100%) !important;
         border-right: 2px solid #b2b2b2;
         border-left: 2px solid #b2b2b2;
         border-top: 2px solid #b2b2b2;
         border-radius: 5px 5px 0px 0px; 
-    }
-}
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
-    #nav-bar {
-        margin-top: -2px;
-        margin-bottom: -5px;
-        z-index: 50;
-        background-image: linear-gradient(to bottom, var(--toolbar-field-focus-background-color) 25%, transparent 100%) !important;
-        border-right: 2px solid #b2b2b2;
-        border-left: 2px solid #b2b2b2;
-        border-top: 2px solid #b2b2b2;
-        border-radius: 5px 5px 0px 0px; 
-    }
+        height: 35px !important;
 }
 
 /* When in fullscreen, remove left and right borders and radius */
 :root:not([sizemode="normal"]) #nav-bar {
-  border-right: 2px solid transparent !important;
-  border-left: 2px solid transparent !important;
+  border-right: none !important;
+  border-left: none !important;
   border-radius: 0px !important;
-}
-
-/* For Aero and Windows 8, retain the gradient when not using custom themes */
-@media (-moz-windows-glass),
-       (-moz-platform: windows-win8) {
-      :root:not(
-                [style*="--lwt-header-image"],
-                [lwtheme-image],
-                [style*="--lwt-additional-images"]
-                ) #nav-bar {
-                    background-image: linear-gradient(to top, #e3e3e3 0%, #f5f5f5 100%) !important;
-  }
-  
-      :root:not(
-                [style*="--lwt-header-image"],
-                [lwtheme-image],
-                [style*="--lwt-additional-images"]
-                ) #PersonalToolbar {
-                   background-image: linear-gradient(to bottom, #e3e3e3 0%, #dfdfdf 100%) !important;  
-    }
 }
 
 /* Nav bar position in normal and fullscreen */
 :root:not([sizemode="normal"]) #nav-bar {
   margin-top: -8px !important;
-}
-#nav-bar {
-  height: 35px !important;
 }
 
 /* Coupled with JS, when PersonalToolbar is disabled, add a bottom border to Nav Bar */
@@ -73,8 +36,6 @@
 .browser-toolbar:not(.titlebar-color) {
   background-color: unset !important;
 }
-
-
 
 /* Personal Toolbar (bookmarks bar) */
 
@@ -100,13 +61,6 @@
 #personal-bookmarks, #PlacesToolbar, #PlacesToolbarItems {
   height: 27px !important;
   margin-left: -1px !important;
-}
-
-/* Add Chrome's gradient when theming is disabled */
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    #PersonalToolbar {
-            background-image: linear-gradient(to bottom, #e3e3e3 0%, #dfdfdf 100%) !important;  
-    }
 }
 
 /* Manual bookmark favicons for various Firefox pages */
@@ -349,6 +303,11 @@
     font-size: 15px !important;
     z-index: 90 !important;
 }
+
+:root:not([sizemode="normal"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
+    left: 127px;
+}
+
 #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
     content: "https" !important;
     background: white !important;
@@ -358,6 +317,11 @@
     font-size: 15px !important;
     z-index: 90 !important;
 }
+
+:root:not([sizemode="normal"]) #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
+    left: 155px;
+}
+
 #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
   content: url('../../assets/images/middlebar/unsafehttps.png') !important;
   left: 128px;
@@ -367,6 +331,11 @@
   font-size: 15px !important;
   z-index: 999 !important;
 }
+
+:root:not([sizemode="normal"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+  left: 125px;
+}
+
 #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
   content: url('../../assets/images/middlebar/unsafehttps.png') !important;
   left: 155px;
@@ -377,6 +346,9 @@
   z-index: 999 !important;
 }
 
+:root:not([sizemode="normal"]) #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+  left: 153px;
+}
 
 
 /* UrlBar (Adress Bar) */

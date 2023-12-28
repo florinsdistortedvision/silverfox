@@ -1,0 +1,248 @@
+/* OS Behaviour Themes for Light/Dark/System and Custom Themes */
+/* Changes Navigator Toolbox, NavBar and Personal Toolbar */
+/* ONLY ON WINDOWS 10, use silverfox.hasAeroGlass to enable Aero - only for Aeroglass or AWM */
+/* Windows 8/8.1 users with Aeroglass, no need for any bool */
+
+
+/* Generic Windows Light and Dark Mode, excluding custom theme */
+
+@media (-moz-platform: windows) {
+
+/* Tabs */
+  
+ 
+/* Light mode and System theme */
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background: #dce1e7 !important;  
+        filter: grayscale(30%) brightness(103%) !important;
+}
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background: #dce1e7 !important;
+        opacity: 95% !important;
+}
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background {
+        background-image: linear-gradient(to top, #f5f5f5 0%, #ffffff 100%) !important;
+}
+    
+  
+/* Dark mode and custom themes  */
+  
+:root:is(
+  [style*="--lwt-header-image"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+    background-color: var(--toolbar-field-focus-background-color) !important;  
+    filter: grayscale(30%) brightness(103%) !important;
+}
+      
+:root:is(
+  [style*="--lwt-header-image"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab[visuallyselected="true"] .tab-background {
+    background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 30%, transparent 150%) !important;
+}
+    
+    
+ 
+/* For no image custom themes, add a nice gradient to selected tab */    
+:root:-moz-lwtheme:not(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab[visuallyselected="true"] .tab-background {
+     background-image: linear-gradient(to bottom, var(--toolbar-field-focus-background-color) 0%, var(--lwt-accent-color) 60%) !important;   
+}       
+    
+:root:is(
+  [style*="--lwt-header-image"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+    background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 40%, transparent 110%) !important;
+    filter: contrast(90%) !important;
+}  
+
+/* For no image custom themes, add a nice gradient to non-selected tab */    
+:root:-moz-lwtheme:not(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+     background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 0%, var(--lwt-accent-color) 60%) !important;   
+}
+    
+/* NavBar */
+ 
+:root:not(:-moz-lwtheme) #nav-bar,    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #nav-bar {
+    background-image: linear-gradient(to top, #e3e3e3 0%, #f5f5f5 100%) !important;
+}
+
+:root:is(
+  [style*="--lwt-header-image"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+)  #nav-bar {
+    background-image: linear-gradient(to bottom, var(--toolbar-field-focus-background-color) 25%, transparent 100%) !important;
+}  
+  
+/* Personal Toolbar only for light mode and system */
+
+:root:not(:-moz-lwtheme) #PersonalToolbar,    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
+     background-image: linear-gradient(to bottom, #e3e3e3 0%, #dfdfdf 100%) !important; 
+}
+}
+
+
+
+/* Specialized cases for different OS behaviours */
+
+/* Windows 10/11 */
+@media (-moz-platform: windows-win10) {
+@supports not (-moz-bool-pref("silverfox.hasAeroGlass")) { 
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
+    background-color: white !important;
+}  
+  
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
+     background-color: transparent !important;
+}
+}
+
+/* Windows Aero for Windows 10, if bool set to TRUE*/
+    
+@supports (-moz-bool-pref("silverfox.hasAeroGlass")) {
+  #TabsToolbar {
+    background-image: none !important;
+}
+    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
+     background-color: transparent !important;
+}    
+:root {
+     background-color: transparent !important;
+     appearance: auto !important;
+     -moz-default-appearance: -moz-win-borderless-glass !important;
+}
+}
+
+
+/* Windows Aero except for Windows 10 */
+
+@media (-moz-windows-glass) {
+   
+#TabsToolbar {
+    background-image: none !important;
+}       
+}
+
+
+/* Proper Dark mode for Win 7 and 8, including Aero*/
+
+@media (-moz-platform: windows-win7),
+       (-moz-platform: windows-win8) {
+
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"]  #nav-bar {
+    background-image: linear-gradient(to bottom, #1c1b22 25%, rgb(28, 27, 34) 100%) !important;
+}
+           
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"]  #PersonalToolbar {
+    background: rgb(28, 27, 34) !important;
+    color: white !important;
+}           
+                                            
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .tab-content {
+    color: var(--lwt-text-color) !important;
+}                      
+}
+    
+    
+/* Proper Dark mode for Win 10 with Aero*/
+
+@media (-moz-platform: windows-win10) {
+
+@supports (-moz-bool-pref("silverfox.hasAeroGlass")) {
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"]  #nav-bar {
+    background-image: linear-gradient(to bottom, var(--toolbar-field-focus-background-color) 25%, rgb(28, 27, 34) 100%) !important;
+}
+           
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"]  #PersonalToolbar {
+    background: rgb(28, 27, 34) !important;
+    color: white !important;
+}           
+                                            
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .tab-content {
+    color: var(--lwt-text-color) !important;
+}  
+}
+}
+    
+     
+
+
+/* Aero Basic and Classic have Blue mode regardless of setting, besides custom themes */
+
+@media (-moz-windows-compositor: 0),
+       (-moz-windows-classic) {
+  
+:root:not(
+       [style*="--lwt-header-image"],
+       [lwtheme-image],
+       [lwtheme],
+       [style*="--lwt-additional-images"]
+       ) #TabsToolbar {
+    background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
+}
+
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #TabsToolbar,  
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #TabsToolbar {
+    background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;    
+}
+
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
+    background: #6192dc !important;
+} 
+
+:root:not(
+           [style*="--lwt-header-image"],
+           [lwtheme-image],
+           [lwtheme],
+           [style*="--lwt-additional-images"]
+          ) #titlebar {
+  appearance: none !important;
+  background: #6192dc !important;
+}    
+}
+
+/* For Light and System, make text black for Windows Classic */
+@media (-moz-windows-classic) {
+
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
+:root:not(:-moz-lwtheme) .tab-content {
+    color: black !important;
+} 
+}

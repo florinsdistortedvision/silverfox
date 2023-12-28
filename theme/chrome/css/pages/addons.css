@@ -96,6 +96,39 @@
   position: relative !important;
   left: -11px !important;
 }
+  
+#categories {
+    padding-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+}  
+  
+@media only screen and (max-width: 834px) {
+
+#content {
+  padding-left: 75px !important;
+}
+  
+#categories {
+    padding-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+}
+
+.sidebar-footer-label,
+.category-name {
+    display: block !important;
+} 
+  
+#preferencesButton::after{
+    left: -17px !important;
+}
+  
+h1[data-l10n-id="discover-heading"]::after,
+h1[data-l10n-id="extension-heading"]::after,
+h1[data-l10n-id="theme-heading"]::after,
+h1[data-l10n-id="plugin-heading"]::after {
+ margin-left: -75px !important;
+}  
+}  
 
 .search-label,
 .sidebar-footer-icon,

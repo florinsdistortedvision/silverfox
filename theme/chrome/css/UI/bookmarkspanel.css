@@ -22,6 +22,7 @@ panel, menupopup {
   --panel-border-color: grey !important;
   margin-right: -7px !important;
   max-width: 240px !important;
+  font-size: 12px !important;
 }
 
 #editBookmarkPanel > .panel-subview-body {
@@ -76,21 +77,6 @@ panel, menupopup {
   color: var(--lwt-text-color) !important;
   margin-left: -50px !important;
 }
-
-
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-
-#editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 4 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 2 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 3 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove bookmark"] {
-  background: white !important;
-}
-  
-}
-
 
 #editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"],
 #editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"],

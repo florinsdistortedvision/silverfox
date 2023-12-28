@@ -7,56 +7,6 @@
 }
 
 
-/* When theming is disabled, make the blue gradient */
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-     @media (-moz-platform: windows-win10) {
-            #TabsToolbar {
-                background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
-            }  
-            #navigator-toolbox,
-            #navigator-toolbox-background {
-                background-color: #6192dc !important;
-            }
-    }
-}
-
-/* Blue Gradient for Aero Basic, treated differently */
-@media (-moz-windows-compositor: 0) {
-  
-    :root:not(
-                [style*="--lwt-header-image"],
-                [lwtheme-image],
-                [style*="--lwt-additional-images"]
-                ) #TabsToolbar {
-                    background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
-                                }  
-    :root:not(
-                [style*="--lwt-header-image"],
-                [lwtheme-image],
-                [style*="--lwt-additional-images"]
-                )#navigator-toolbox,
-    :root:not(
-                [style*="--lwt-header-image"],
-                [lwtheme-image],
-                [style*="--lwt-additional-images"]
-                )#navigator-toolbox-background {
-                    background-color: #6192dc !important;
-                                }
-}
-
-/* Disable blue gradient for light/dark theme for Aero */
-@media (-moz-windows-glass) {
- 
-  #TabsToolbar {
-    background-image: none !important;
-  }
-  
-  :root:-moz-lwtheme #TabsToolbar,
-  :root[lwt-default-theme-in-dark-mode] #TabsToolbar {
-    background-image: none !important;
-  }
-}
-
 /* Remove the gap when Firefox is fullscreen */
 :root:not([sizemode="normal"]) #TabsToolbar {
   margin-top: -5px;
@@ -105,6 +55,10 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   z-index: 1 !important;
 }
 
+/* Fix for dragging tabs around */
+#tabbrowser-tabs[movingtab] {
+  margin-bottom: -9px !important;
+}
 
 #tabbrowser-arrowscrollbox {
   min-height: 1px !important;
@@ -124,85 +78,20 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 .tab-background {
 	transform: perspective(45px) rotateX(12deg) translateY(-2.7px);
 	border-top: 1px solid #b2b2b2;
-    border-right: 1px solid #b2b2b2;
-    border-left: 1px solid #b2b2b2; 
-    border-radius: 5px !important;
+  border-right: 1px solid #b2b2b2;
+  border-left: 1px solid #b2b2b2; 
+  border-radius: 5px !important;
 	position: absolute;
 	width: 96% !important;
-    box-shadow: 0 0 2pt 0 #b2b2b2  !important;
+  box-shadow: 0 0 2pt 0 #b2b2b2  !important;
 }
 
+
 /* Tab content (text, favicon etc) area position fix and color if themeing is disabled */
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    .tab-content {
-        margin-top: -5px !important;
-        color: #000000 !important;
-        font-weight: 500;
-        }
-}
 .tab-content {
   margin-top: -5px !important;
   font-weight: 500 !important;
 }
-
-
-/* Tabs colors if theming is disabled or enabled  */
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
-        background-color: #b0cef2 !important;
-    }
-    .tabbrowser-tab[visuallyselected="true"] .tab-background {
-        background-image: linear-gradient(to top, #f5f5f5 0%, #ffffff 100%) !important;
-    }
-    .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
-        background-color: #a1c7f4 !important;
-    }
-}
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
-    .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
-        background-color: var(--toolbar-field-focus-background-color) !important;  
-        filter: grayscale(30%) brightness(103%) !important;
-    }
-    .tabbrowser-tab[visuallyselected="true"] .tab-background {
-        background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 30%, transparent 150%) !important;
-    }
-    .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
-        background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 40%, transparent 110%) !important;
-        filter: contrast(90%) !important;
-    }
-}
-
-/* Make tabs grey when in Aero mode and Windows 8, except for themes */
-@media (-moz-windows-glass),
-       (-moz-platform: windows-win8) {
- 
-:root:not(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-additional-images"]
-) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
-        background: #dce1e7 !important;  
-        filter: grayscale(30%) brightness(103%) !important;
-    }
-:root:not(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-additional-images"]
-) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
-        background: #dce1e7 !important;
-        opacity: 95% !important;
-    }
-  
- :root:not(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-additional-images"]
-  ) .tabbrowser-tab[visuallyselected="true"] .tab-background {
-        background-image: linear-gradient(to top, #f5f5f5 0%, #ffffff 100%) !important;
-    }
-  
-}
-
 
 /* Because some themes are low effort, disable active tabs outline color */
 #tabbrowser-tabs {
@@ -308,7 +197,6 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 
 /* New tab button and its hover */
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
     #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-image: url(../../assets/images/topbar/newtab_original.png) !important;
         background-repeat: no-repeat !important;
@@ -319,35 +207,22 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         visibility: visible;
         transform: scale(0.78) !important;
         filter: grayscale(30%) brightness(505%) !important;
-    }  
-}
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    #tabs-newtab-button, #TabsToolbar #new-tab-button {
-        background-image: url(../../assets/images/topbar/newtab-blue.png) !important;
-        background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 6px !important;
-        right: 16px;
-        list-style-image: none !important;
-        visibility: visible;
-        transform: scale(0.78) !important;
-        }
-  
-  @media (-moz-windows-glass),
-         (-moz-platform: windows-win8) {
-    #tabs-newtab-button, #TabsToolbar #new-tab-button {
-        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
-        background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 6px !important;
-        right: 16px;
-        list-style-image: none !important;
-        visibility: visible;
-        transform: scale(0.78) !important;
-        filter: grayscale(30%) brightness(505%) !important;
-        }
-  } 
-}
+    }
+
+    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
+        background-color: transparent !important;
+        border: 0px solid transparent !important;
+        box-shadow: 0px !important;
+        box-sizing: 0px !important;
+        filter: grayscale(30%) brightness(103%) !important;
+    }
+    #tabs-newtab-button:hover > .toolbarbutton-icon {
+        background: transparent !important;
+        border: 0px solid transparent !important;
+        box-shadow: 0px !important;
+        visibility: hidden;  
+    }
+
 @supports (-moz-bool-pref("silverfox.preferOldLook")) {
     #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-image: url(../../assets/images/topbar/newtabold.png) !important;
@@ -359,8 +234,6 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         visibility: visible;
         transform: scale(0.9) !important;
     }
-}
-@supports (-moz-bool-pref("silverfox.preferOldLook")) {
     #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
         background-image: url(../../assets/images/topbar/newtabold_hover.png) !important;
         background-repeat: no-repeat !important;
@@ -376,21 +249,6 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         border: 0px solid transparent !important;
         box-shadow: 0px !important;
         visibility: hidden;
-    }
-}
-@supports not (-moz-bool-pref("silverfox.preferOldLook")) {
-    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
-        background-color: transparent !important;
-        border: 0px solid transparent !important;
-        box-shadow: 0px !important;
-        box-sizing: 0px !important;
-        filter: grayscale(30%) brightness(103%) !important;
-    }
-    #tabs-newtab-button:hover > .toolbarbutton-icon {
-        background: transparent !important;
-        border: 0px solid transparent !important;
-        box-shadow: 0px !important;
-        visibility: hidden;  
     }
 }
 
@@ -409,6 +267,13 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   background-repeat: no-repeat !important; 
   margin-top: -3px !important;
 }
+
+@media (-moz-platform: windows-win7) {
+  .private-browsing-indicator-icon {
+    margin-top: 2px !important;
+  }
+}
+
 :root:not([sizemode="normal"]) .private-browsing-indicator-icon {
   margin-top: 0px !important;
 }

@@ -7,6 +7,7 @@
 }
 
 /* Disable the 2 gaps, Import context menu, Save to Pocket, Firefox View */
+#fxa-toolbar-menu-button,
 #import-button,
 #save-to-pocket-button,
 #customizableui-special-spring2,

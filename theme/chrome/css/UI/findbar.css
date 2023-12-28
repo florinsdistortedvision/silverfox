@@ -1,16 +1,16 @@
 /* Findbar */
 
-
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
- findbar {
+:root:not(:-moz-lwtheme) findbar,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] findbar {
   background: #dfdfdf !important;
-    }
 }
 
-@supports (-moz-bool-pref("silverfox.allowThemes")) {
- findbar {
-    background: var(--arrowpanel-background) !important;
-    }
+:root:-moz-lwtheme:not(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-additional-images"]
+) findbar {
+  background: var(--arrowpanel-background) !important;
 }
 
 findbar {
