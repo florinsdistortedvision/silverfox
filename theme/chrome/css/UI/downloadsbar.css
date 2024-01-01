@@ -86,9 +86,22 @@
   top: 4px !important;
 }
 
+@media (-moz-platform: macos) {
+  #downloadsHistory::after {
+  left: -2px;
+    top: 5px !important;
+  }
+}
+
 #downloadsSummaryDetails, .downloadDetails {
   position: relative !important;
   top: -2px !important;
+}
+
+@media (-moz-platform: linux) {
+  #downloadsHistory::after {
+   top: 5px !important; 
+  }
 }
 
 .downloadTypeIcon {
@@ -113,6 +126,14 @@
   margin-right: 2px !important;
   background: #e7e7e7 !important;
   min-width: 15.5% !important;
+}
+
+@media (-moz-platform: macos) {
+  #downloadsListBox > richlistitem {
+  border-radius: 7px !important;
+  border: 1px solid #b9b9b9; 
+  background:  #eeeeee !important;
+  }
 }
 
 #downloadsListBox > richlistitem:hover {
@@ -174,6 +195,13 @@
   right: 3px !important;
   background: #dfdfdf !important;
 }
+
+@media (-moz-platform: linux) {
+  #downloadsHideButtonID::before { 
+  right: -5px !important;
+  }
+}
+
  
 #emptyDownloads {
   margin-top: -6px !important;

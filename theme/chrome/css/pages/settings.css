@@ -586,6 +586,9 @@ description[data-l10n-id="home-new-windows-tabs-description2"] {
   margin-left: 20px !important;
 }
 
+#restoreDefaultHomePageBtn,
+#useBookmarkBtn,
+#useCurrentBtn,
 #homeContentsGroup [data-subcategory] > vbox menulist,
 #newTabMode,
 #homeMode {
@@ -602,6 +605,9 @@ description[data-l10n-id="home-new-windows-tabs-description2"] {
   margin-left: 10px !important;
 }
 
+#restoreDefaultHomePageBtn:hover,
+#useBookmarkBtn:hover,
+#useCurrentBtn:hover,
 #homeContentsGroup [data-subcategory] > vbox menulist:hover,
 #newTabMode:hover,
 #homeMode:hover {
@@ -619,7 +625,20 @@ description[data-l10n-id="home-new-windows-tabs-description2"] {
   display: none !important;
 }
 
-
+#homePageUrl {
+    max-height: 5px !important;
+    min-height: 5px !important;
+    max-width: 300px !important;
+    margin-left: 8px !important;
+    font-size: 12px !important;
+}
+  
+#restoreDefaultHomePageBtn {
+    position: relative !important;
+    margin-top: 20px !important;
+    top: 32px;
+    left: 12px !important;
+}  
 
 /* Search section */
 
@@ -1141,8 +1160,13 @@ h2[data-l10n-id="prefs-syncing-on"] {
 
 .sync-group.info-box-container.sync-configured {
     font-size: 12px !important;
+}
+  
+  @media (prefers-color-scheme: light) {
+.sync-group.info-box-container.sync-configured {
     background: whitesmoke !important;
-}  
+}   
+  }  
 
 
 /* About Chrome/Help section */
@@ -1209,7 +1233,19 @@ h2[data-l10n-id="prefs-syncing-on"] {
         top: -2px !important;
         right: 585px !important;
     }
+  
+  @media (-moz-platform: linux) {
+    #moreFromMozillaCategory-header .subtitle:after {
+      right: 600px !important;
+    }
+  }
+  @media (-moz-platform: macos) {
+    #moreFromMozillaCategory-header .subtitle:after {
+      right: 605px !important;
+    }
+  }
 }
+ 
 @supports (-moz-bool-pref("silverfox.beChromium")) {
     #moreFromMozillaCategory-header .subtitle::after {
         content: url(../../assets/images/pages/settings/chromiumlogo.png) !important;
@@ -1218,6 +1254,13 @@ h2[data-l10n-id="prefs-syncing-on"] {
         top: -2px !important;
         right: 550px !important;
     }
+  
+  @media (-moz-platform: linux),
+         (-moz-platform: macos) {
+    #moreFromMozillaCategory-header .subtitle::after {
+      right: 568px !important;
+    }
+  }
 }
 
 #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-mobile-title"] {
@@ -1404,6 +1447,13 @@ h2[data-l10n-id="prefs-syncing-on"] {
         top: 20px !important;
         right: 235px !important;
     }
+  
+  @media (-moz-platform: linux),
+         (-moz-platform: macos) { 
+  #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::after {
+    right: 248px !important;
+    }
+  }
 }
 @supports (-moz-bool-pref("silverfox.beChromium")) {
     #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::after {
@@ -1413,6 +1463,12 @@ h2[data-l10n-id="prefs-syncing-on"] {
         top: 20px !important;
         right: 209px !important;
     }
+    @media (-moz-platform: linux),
+           (-moz-platform: macos) { 
+  #moreFromMozillaCategory .product-title[data-l10n-id="more-from-moz-firefox-relay-title"]::after {
+    right: 218px !important;
+    }
+  }
 }
 
 #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-relay-description"] {
@@ -1450,6 +1506,15 @@ h2[data-l10n-id="prefs-syncing-on"] {
   }  
 }
   
+@media (-moz-platform: linux),
+       (-moz-platform: macos) { 
+  @supports (-moz-bool-pref("silverfox.beChromium")) { 
+  #moreFromMozillaCategory .description[data-l10n-id="more-from-moz-firefox-relay-description"]::before {
+    top: 5px !important;
+    }
+  }
+  }
+  
 .qr-code-box-image[data-l10n-id="more-from-moz-qr-code-firefox-mobile-img"],
 #moreFromMozillaCategory .small-button {
   display: none !important;
@@ -1465,6 +1530,12 @@ h2[data-l10n-id="prefs-syncing-on"] {
   top: -98px !important;
   right: 65px !important;
 }
+  
+  @media (-moz-platform: macos) {
+    .qr-code-box-title[data-l10n-id="more-from-moz-qr-code-box-firefox-mobile-title"]::before {
+     right: 73px !important; 
+    }
+  }  
 
 .qr-code-box-title[data-l10n-id="more-from-moz-qr-code-box-firefox-mobile-title"] {
   color: transparent !important;

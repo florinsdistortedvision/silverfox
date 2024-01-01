@@ -3,14 +3,15 @@
 
 /* Make Chrome's gradient for nav-bar and themes formula */
 #nav-bar {
-        margin-top: -2px;
-        margin-bottom: -5px;
-        z-index: 50;
-        border-right: 2px solid #b2b2b2;
-        border-left: 2px solid #b2b2b2;
-        border-top: 2px solid #b2b2b2;
-        border-radius: 5px 5px 0px 0px; 
+        margin-top: -2px !important;
+        margin-bottom: -5px !important;
+        z-index: 50 !important;
+        border-right: 2px solid #b2b2b2 !important;
+        border-left: 2px solid #b2b2b2 !important;
+        border-top: 1px solid #b2b2b2 !important;
+        border-radius: 5px 5px 0px 0px !important;
         height: 35px !important;
+        box-shadow: 0 -5px 5px -7px #b2b2b2 !important;
 }
 
 /* When in fullscreen, remove left and right borders and radius */
@@ -41,9 +42,9 @@
 
 #PersonalToolbar {
     margin-top: 2.5px !important;
-    border-bottom: 1px solid #b2b2b2;
-    border-right: 2px solid #b2b2b2;
-    border-left: 2px solid #b2b2b2;
+    border-bottom: 1px solid #b2b2b2 !important;
+    border-right: 2px solid #b2b2b2 !important;
+    border-left: 2px solid #b2b2b2 !important;
 }
 
 /* When in fullscreen, remove left and right borders */
@@ -304,6 +305,18 @@
     z-index: 90 !important;
 }
 
+@media (-moz-platform: linux) {
+  #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
+   margin-top: 2px !important;
+  }
+}
+
+@media (-moz-platform: macos) {
+  #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
+   margin-top: 1px !important;
+  }
+}
+
 :root:not([sizemode="normal"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
     left: 127px;
 }
@@ -316,6 +329,18 @@
     position: fixed !important;
     font-size: 15px !important;
     z-index: 90 !important;
+}
+
+@media (-moz-platform: linux) {
+  #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
+   margin-top: 2px !important; 
+  }
+}
+
+@media (-moz-platform: macos) {
+  #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
+   margin-top: 1px !important; 
+  }
 }
 
 :root:not([sizemode="normal"]) #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
@@ -332,6 +357,19 @@
   z-index: 999 !important;
 }
 
+@media (-moz-platform: linux) {
+  #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+   margin-top: 3px !important;
+   margin-left: 2px !important;
+  }
+}
+
+@media (-moz-platform: macos) {
+  #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+   margin-left: 2px !important;
+  }
+}
+
 :root:not([sizemode="normal"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
   left: 125px;
 }
@@ -344,6 +382,19 @@
   position: fixed !important;
   font-size: 15px !important;
   z-index: 999 !important;
+}
+
+@media (-moz-platform: linux) {
+  #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+   margin-top: 3px !important;
+    margin-left: 3px !important;
+  }
+}
+
+@media (-moz-platform: macos) {
+  #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+    margin-left: 3px !important;
+  }
 }
 
 :root:not([sizemode="normal"]) #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
@@ -366,16 +417,33 @@
   font-size: 15px !important;
   color: black !important;
 }
+
+@media (-moz-platform: linux) {
+  #urlbar-input {
+    margin-top: 0px !important;
+  }
+}
+
+@media (-moz-platform: macos) {
+  #urlbar-input {
+    margin-top: -1px !important;
+  }
+}
+
 #urlbar-input-container,
 #urlbar-background {
   background-color: #ffffff !important;
   height: 24px !important;
   border-radius: 3px !important;
-  border: 1px solid #c5c5c5 !important;
+  border-top: 1px solid #a7a8a8 !important;
+  border-bottom: 1px solid #cbcbcb !important;
+  border-left: 1px solid #c7c7c7 !important;
+  border-right: 1px solid #c6c6c6 !important;
   top: 3px !important;
   padding-inline: 0px !important;
   padding-block: 0px !important;
-  width: 100.3% !important; 
+  width: 100.3% !important;
+  box-shadow: 0px 1px 1px 0px #f2f2f2 !important;
 }
 
 /* Styling of urlbar opened view */
@@ -383,12 +451,26 @@
   padding-inline: 0px !important;
   padding-block: 0px !important;
 }
+
+@media (-moz-platform: linux) {
+  #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+    margin-top: -1px !important;
+  }
+}
+
+
 #urlbar[breakout][breakout-extend] {
   height: 19px !important;
   top: 2px !important;
   width: 100% !important;
   left: 0px !important;
   color: black !important;
+}
+
+@media (-moz-platform: linux) {
+ #urlbar[breakout][breakout-extend] {
+   top: 3px !important;
+  }
 }
 #urlbar-background, #searchbar {
     box-shadow: none !important;
@@ -564,6 +646,7 @@
 #urlbar-zoom-button {
   margin-right: -4px !important;
   width: 25px !important;
+  background: transparent !important;
 }
 #contextual-feature-recommendation-notification {
   display: none !important;

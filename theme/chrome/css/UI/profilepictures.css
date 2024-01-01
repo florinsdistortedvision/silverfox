@@ -8,7 +8,7 @@
         width: 2px !important;
     } 
 }
-
+ 
 :root:not([privatebrowsingmode=temporary]) .animated-pfp,
 :root:not([privatebrowsingmode=temporary]) .alien-pfp,
 :root:not([privatebrowsingmode=temporary]) .blondepfp-pfp,
@@ -48,6 +48,7 @@
 :root:not([privatebrowsingmode=temporary]) .off-pfp {
   width: 0px !important;
 }
+
 
 :root:not([privatebrowsingmode=temporary]) .animated-pfp::before,
 :root:not([privatebrowsingmode=temporary]) .alien-pfp::before,
@@ -239,4 +240,45 @@
 
 :root:not([privatebrowsingmode=temporary]) .yellowpfp-pfp::before {
   content: url("../../assets/images/profile pictures/yellowpfp.png") !important;
+}
+
+/* Mac is on the right side */
+
+@media (-moz-platform: macos) {
+:root:not([privatebrowsingmode=temporary]) .animated-pfp,
+:root:not([privatebrowsingmode=temporary]) .alien-pfp,
+:root:not([privatebrowsingmode=temporary]) .blondepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .bluepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .burger-pfp,
+:root:not([privatebrowsingmode=temporary]) .businessmanpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .cat-pfp,
+:root:not([privatebrowsingmode=temporary]) .chickpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .chrome-pfp,
+:root:not([privatebrowsingmode=temporary]) .chromium-pfp,
+:root:not([privatebrowsingmode=temporary]) .cooldudepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .cupcake-pfp,
+:root:not([privatebrowsingmode=temporary]) .custom-pfp,
+:root:not([privatebrowsingmode=temporary]) .dog-pfp,
+:root:not([privatebrowsingmode=temporary]) .drink-pfp,
+:root:not([privatebrowsingmode=temporary]) .flower-pfp,
+:root:not([privatebrowsingmode=temporary]) .football-pfp,
+:root:not([privatebrowsingmode=temporary]) .greenpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .happy-pfp,
+:root:not([privatebrowsingmode=temporary]) .horse-pfp,
+:root:not([privatebrowsingmode=temporary]) .lightbluepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .music-pfp,
+:root:not([privatebrowsingmode=temporary]) .ninja-pfp,
+:root:not([privatebrowsingmode=temporary]) .orangepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .pizza-pfp,
+:root:not([privatebrowsingmode=temporary]) .purplepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .redpfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .weather-pfp,
+:root:not([privatebrowsingmode=temporary]) .whitepfp-pfp,
+:root:not([privatebrowsingmode=temporary]) .yellowpfp-pfp {
+  width: 45px !important;
+  position: fixed;
+  right: 0;
+  margin-right: 2px;
+  transform: scaleX(-1);
+}
 }

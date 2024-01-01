@@ -6,7 +6,9 @@
 
 /* Generic Windows Light and Dark Mode, excluding custom theme */
 
-@media (-moz-platform: windows) {
+@media (-moz-platform: windows),
+       (-moz-platform: linux),
+       (-moz-platform: macos) {
 
 /* Tabs */
   
@@ -29,6 +31,14 @@
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background {
         background-image: linear-gradient(to top, #f5f5f5 0%, #ffffff 100%) !important;
 }
+    
+    
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background:before,
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background:after,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background:before,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background:after {
+        background: #f5f5f5 !important;
+}    
     
   
 /* Dark mode and custom themes  */
@@ -53,7 +63,25 @@
     background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 30%, transparent 150%) !important;
 }
     
-    
+:root:is(
+  [style*="--lwt-header-image"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab[visuallyselected="true"] .tab-background:before {
+    background: var(--toolbar-field-focus-background-color) !important;
+}
+
+:root:is(
+  [style*="--lwt-header-image"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab[visuallyselected="true"] .tab-background:after {
+    background: var(--toolbar-field-focus-background-color) !important;
+}    
  
 /* For no image custom themes, add a nice gradient to selected tab */    
 :root:-moz-lwtheme:not(
@@ -84,6 +112,26 @@
 ) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
      background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 0%, var(--lwt-accent-color) 60%) !important;   
 }
+    
+:root:-moz-lwtheme:not(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab[visuallyselected="true"] .tab-background:before {
+     background: var(--lwt-accent-color) !important;   
+}
+
+:root:-moz-lwtheme:not(
+  [style*="--lwt-header-image"],
+  [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+  [style*="--lwt-additional-images"]
+) .tabbrowser-tab[visuallyselected="true"] .tab-background:after {
+     background: var(--lwt-accent-color) !important;  
+}    
     
 /* NavBar */
  
@@ -203,7 +251,7 @@
 
 
 /* Aero Basic and Classic have Blue mode regardless of setting, besides custom themes */
-
+@media (-moz-platform: windows) {
 @media (-moz-windows-compositor: 0),
        (-moz-windows-classic) {
   
@@ -238,12 +286,89 @@
   background: #6192dc !important;
 }    
 }
-
-/* For Light and System, make text black for Windows Classic */
+    
+ /* For Light and System, make text black for Windows Classic */
 @media (-moz-windows-classic) {
 
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
 :root:not(:-moz-lwtheme) .tab-content {
     color: black !important;
 } 
+}   
+}
+
+
+/* Linux */
+
+@media (-moz-platform: linux) {
+
+    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
+     background-color: transparent !important;
+
+}
+    
+:root:not(
+       [style*="--lwt-header-image"],
+       [lwtheme-image],
+       [lwtheme],
+       [style*="--lwt-additional-images"]
+       ) #TabsToolbar {
+    background-image: none !important;
+}
+
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #TabsToolbar,  
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #TabsToolbar {
+    background-image: none !important; 
+}     
+}
+
+/* MacOS */
+
+@media (-moz-platform: macos) {
+#TabsToolbar {
+        margin-top: 5px;
+}
+    
+ .titlebar-buttonbox-container {
+        margin-top: -10px;
+}
+    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
+    background: linear-gradient(to bottom, #e6e6e6 0%, #c7c7c7 40%) !important;
+}      
+    
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background {
+        background-image: linear-gradient(to top, #e5e5e5 20%, #f3f4f4 100%) !important;
+}
+    
+    
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background:before,
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background:after,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background:before,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background:after {
+        background: #e5e5e5 !important;
+}     
+  
+    
+/* NavBar */
+ 
+:root:not(:-moz-lwtheme) #nav-bar,    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #nav-bar {
+    background-image: linear-gradient(to bottom, #e5e5e5 0%, #cecfcf 100%) !important;
+}
+  
+  
+/* Personal Toolbar only for light mode and system */
+
+:root:not(:-moz-lwtheme) #PersonalToolbar,    
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
+     background-image: linear-gradient(to top, #cecfce 0%, #cecfcf 100%) !important; 
+}    
+    
 }

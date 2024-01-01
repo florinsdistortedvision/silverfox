@@ -80,10 +80,37 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 	border-top: 1px solid #b2b2b2;
   border-right: 1px solid #b2b2b2;
   border-left: 1px solid #b2b2b2; 
-  border-radius: 5px !important;
+  border-radius: 5px 5px 0px 0px !important; /*topR topL bottomR bottomL*/
 	position: absolute;
 	width: 96% !important;
-  box-shadow: 0 0 2pt 0 #b2b2b2  !important;
+  box-shadow: 0 0 2pt 0 #b2b2b2 !important;
+}
+
+/* Make tabs rounded for each bottom side, only for selected tab */
+.tabbrowser-tab[visuallyselected="true"] .tab-background:before {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: -5px;
+  border-left: 1px solid #b2b2b2;
+  width: 3px;
+  height: 5px;
+  transform: rotate(40deg);
+  background: #f5f5f5;
+  transform-origin: 100% 100%;
+}
+
+.tabbrowser-tab[visuallyselected="true"] .tab-background:after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  right: -4px;
+  border-right: 1px solid #b2b2b2;
+  width: 3px;
+  height: 3px;
+  background: #f5f5f5;
+  transform: rotate(-40deg);
+  transform-origin: 0% 100%;
 }
 
 
@@ -99,7 +126,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 }
 
 .tabbrowser-tab {
-  margin-top: 1px !important;
+  margin-top: 1.5px !important;
 }
 
 /* Removes secondary label (Playing, Muted etc.) */
@@ -120,7 +147,6 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 .tab-stack {
   margin-left: 3px;
 }
-
 
 /* Pinned tabs styling  */
 .tabbrowser-tab[pinned] {
@@ -209,6 +235,17 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         filter: grayscale(30%) brightness(505%) !important;
     }
 
+@media (-moz-platform: macos),
+       (-moz-platform: linux) {
+  #tabs-newtab-button, #TabsToolbar #new-tab-button {
+    background-image: url(../../assets/images/topbar/newtab_maclinux.png) !important;
+    transform: scale(1) !important;
+    right: 13px;
+    top: 8px !important;
+  }
+    
+}
+
     #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
         background-color: transparent !important;
         border: 0px solid transparent !important;
@@ -254,6 +291,8 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 
 /* Private browsing (icognito mode) */
+@media (-moz-platform: windows),
+       (-moz-platform: linux) {
 #private-browsing-indicator-with-label {
   position: fixed !important;
   left: 0 !important;
@@ -272,14 +311,41 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   .private-browsing-indicator-icon {
     margin-top: 2px !important;
   }
+  #main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
+  width: 42px !important;
+}
+}
+}
+
+@media (-moz-platform: macos) {
+ #private-browsing-indicator-with-label {
+  position: fixed !important;
+  right: 0 !important;
+  margin-right: -90px !important;
+  color: transparent !important;
+}
+.private-browsing-indicator-icon {
+  list-style-image: none !important;
+  background-image: url(../../assets/images/topbar/incognito.png) !important;
+  height: 32px !important;
+  width: 38px !important;
+  background-repeat: no-repeat !important; 
+  margin-top: -3px !important;
+  transform: scaleX(-1);
+} 
+  
+#main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
+  width: 0px !important;
+}
+.toolbar-items {
+  margin-left: 5px;
+}
 }
 
 :root:not([sizemode="normal"]) .private-browsing-indicator-icon {
   margin-top: 0px !important;
 }
-#main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
-  width: 42px !important;
-}
+
 :root:not([sizemode="normal"]) .titlebar-spacer[type="pre-tabs"] {
   display: block !important;
 }

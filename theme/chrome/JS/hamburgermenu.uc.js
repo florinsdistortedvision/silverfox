@@ -262,30 +262,39 @@ window.addEventListener("load", function () {
   const aboutChrome = document.querySelector(".submenu-item15");
   const helpMenu = document.querySelector(".submenu-item16");
   const exitMenu = document.querySelector(".submenu-item17");
-  
+    
 if (newTab) {
-  const openBrowserOnce = function (event) {
-    if (event.target === newTab) {
-      BrowserOpenTab({ event });
+  const openGoogleSearch = function (event) {
+    BrowserOpenTab({ event });
 
-      newTab.removeEventListener("command", openBrowserOnce);
+    const paste = readFromClipboard();
+
+    if (paste) {
+      const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(paste);
+
+      gBrowser.selectedTab = gBrowser.addTab(searchURL);
     }
   };
 
-  newTab.addEventListener("command", openBrowserOnce);
-}  
-
+  newTab.addEventListener("command", openGoogleSearch);
+}
+    
 if (newWindow) {
-  const openBrowserOnce = function (event) {
-    if (event.target === newWindow) {
-      OpenBrowserWindow();
+  const openGoogleSearch = function (event) {
+    OpenBrowserWindow();
 
-      newWindow.removeEventListener("command", openBrowserOnce);
+    const paste = readFromClipboard();
+
+    if (paste) {
+      const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(paste);
+
+      gBrowser.selectedTab = gBrowser.addTab(searchURL);
     }
   };
 
-  newWindow.addEventListener("command", openBrowserOnce);
-}  
+  newWindow.addEventListener("command", openGoogleSearch);
+}    
+ 
 
 if (newIncognitoWindow) {
   const openBrowserOnce = function (event) {

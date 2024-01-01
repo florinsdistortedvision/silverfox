@@ -8,13 +8,17 @@
   cursor: pointer !important;
 }
 
+.category[name="locale"],
+.category[name="dictionary"],
 .category[name="plugin"],
 .category[name="theme"],
 .category[name="extension"],
 .category[name="discover"] {
   background-image: none !important;
 }
-  
+ 
+.category[data-l10n-id="addon-category-locale-title"],
+.category[data-l10n-id="addon-category-dictionary-title"],  
 #preferencesButton,
 .category[data-l10n-id="addon-category-plugin-title"],
 .category[data-l10n-id="addon-category-theme-title"],
@@ -42,7 +46,15 @@
 
 .category[data-l10n-id="addon-category-plugin-title"] {
     top: 150px !important;    
-}  
+}
+  
+ .category[data-l10n-id="addon-category-dictionary-title"] {
+    top: 240px !important;
+}
+  
+  .category[data-l10n-id="addon-category-locale-title"] {
+    top: 275px !important;
+  }  
      
 #category-sync {
   margin-bottom: 55px !important;
@@ -122,6 +134,8 @@
     left: -17px !important;
 }
   
+h1[data-l10n-id="locale-heading"]::after,
+h1[data-l10n-id="dictionary-heading"]::after,  
 h1[data-l10n-id="discover-heading"]::after,
 h1[data-l10n-id="extension-heading"]::after,
 h1[data-l10n-id="theme-heading"]::after,
@@ -554,4 +568,65 @@ h2[data-l10n-id="addon-permissions-required"] {
 #main[current-view="detail"] {
   margin-top: 30px !important;
 }
+  
+  
+/* Dictionaries Section */
+  
+h1[data-l10n-id="dictionary-heading"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="dictionary-heading"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+  
+h2[data-l10n-id="dictionary-enabled-heading"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+  margin-top: 30px !important;
+}  
+  
+  
+  
+/* Languages Section */  
+
+  
+h1[data-l10n-id="locale-heading"] {
+  position: fixed !important;
+  top: 0 !important;
+  color: #4e5764 !important;
+  font-weight: 450 !important;
+  font-size: 17px !important;
+  margin-top: 21px !important;
+  z-index: 999 !important;
+}
+
+h1[data-l10n-id="locale-heading"]::after {
+  color: #eeeeee !important;
+  content: "_____________________________________________________________________________________________" !important;
+  position: fixed !important;
+  top: 35px !important;
+  z-index: 999 !important;
+  left: 214px !important;
+}
+  
+h2[data-l10n-id="locale-enabled-heading"] {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin-left: 3px !important;
+  margin-top: 30px !important;
+}   
+  
 }

@@ -367,37 +367,18 @@
     list-style-image: none !important;
     border-radius: 0 !important;
   }
-  .titlebar-close:not(:-moz-lwtheme) {
-    margin-right: -3px !important;
-  }
-  .titlebar-close:-moz-lwtheme { /* For some reason, this has different side-padding */
-    margin-right: -2px !important;
-  }
-  :root:is(
-    [style*="--lwt-header-image"]
-  ) .titlebar-close:-moz-lwtheme { /* For some reason, this has even more different side-padding */
-    margin-right: -3px !important;
-  }
   .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
     margin-right: 2px !important;
   }
-  @supports (-moz-bool-pref("silverfox.allowThemes")) {
-    :root:not([sizemode="normal"]) .titlebar-close,
-    :root:not([sizemode="normal"]) .titlebar-min,
-    :root:not([sizemode="normal"]) .titlebar-restore {
-      margin-top: 1px !important;
-    }
-  }
-  @supports not (-moz-bool-pref("silverfox.allowThemes")) {
-    :root:not([sizemode="normal"]) .titlebar-close,
-    :root:not([sizemode="normal"]) .titlebar-min,
-    :root:not([sizemode="normal"]) .titlebar-restore {
-      margin-top: 0px !important;
-    }
-  }
 
+:root:not([sizemode="normal"]) .titlebar-close,
+:root:not([sizemode="normal"]) .titlebar-min,
+:root:not([sizemode="normal"]) .titlebar-restore {
+      margin-top: 0px !important;
+}
+  
   /* Adding Chrome style*/
   .titlebar-close {
     background: url(../../assets/images/topbar/linux/close.png) !important;

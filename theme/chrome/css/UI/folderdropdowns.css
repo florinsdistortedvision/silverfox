@@ -9,6 +9,12 @@
   --panel-padding: 0 !important; 
 }
 
+@media (-moz-platform: macos) {
+#PlacesToolbar menupopup[placespopup="true"] {
+  margin-top: -10px !important;
+  }
+}
+
 #PlacesChevronPopup > :is(menu, menuitem) :is(.menu-text, .menu-iconic-text),
 toolbarbutton[class="bookmark-item"] menupopup[placespopup] > :is(menu, menuitem) :is(.menu-text, .menu-iconic-text) {
   padding-left: 5px !important;
