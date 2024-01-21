@@ -349,27 +349,15 @@
                           color-mix(in srgb, black 4%, -moz-dialog) 100%) !important;
 }
     
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
-     background-color: transparent !important;
 
+/* Light theme */
+:root:-moz-lwtheme[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox {
+  background: #406dc2 !important;
 }
-    
-:root:not(
-       [style*="--lwt-header-image"],
-       [lwtheme-image],
-       [lwtheme],
-       [style*="--lwt-additional-images"]
-       ) #TabsToolbar {
-    background-image: none !important;
-}
-
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #TabsToolbar,  
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #TabsToolbar {
-    background-image: none !important; 
-}     
+:root:-moz-lwtheme[style*="--lwt-accent-color: rgb(240, 240, 244)"] #titlebar {
+  background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
+  border-top-left-radius: env(-moz-gtk-csd-titlebar-radius) !important;
+  border-top-right-radius: env(-moz-gtk-csd-titlebar-radius) !important;
 }
 
 /* MacOS */
