@@ -369,6 +369,15 @@
 :root:not(:-moz-lwtheme) #PersonalToolbar,    
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
      background-image: linear-gradient(to top, #cecfce 0%, #cecfcf 100%) !important; 
-}    
-    
+}
+}
+
+
+/* Fix for upstream menu appearance issue */
+@media (-moz-platform: linux) {
+  menupopup {
+      --panel-background: var(--arrowpanel-background) !important;
+      --panel-color: var(--arrowpanel-color) !important;
+      --panel-border-color: var(--arrowpanel-border-color) !important;
+  }
 }
