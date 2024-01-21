@@ -376,8 +376,8 @@
 /* Fix for upstream menu appearance issue */
 @media (-moz-platform: linux) {
   menupopup {
-      --panel-background: var(--arrowpanel-background) !important;
-      --panel-color: var(--arrowpanel-color) !important;
-      --panel-border-color: var(--arrowpanel-border-color) !important;
+      --panel-background: Field !important;
+      --panel-color: FieldText !important;
+      --panel-border-color: ThreeDShadow !important;
   }
 }
