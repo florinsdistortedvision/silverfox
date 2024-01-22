@@ -360,6 +360,15 @@
   border-top-right-radius: env(-moz-gtk-csd-titlebar-radius) !important;
 }
 
+
+/* Fix for upstream menu appearance issue */
+menupopup {
+    --panel-background: Field !important;
+    --panel-color: FieldText !important;
+    --panel-border-color: ThreeDShadow !important;
+}
+}
+
 /* MacOS */
 
 @media (-moz-platform: macos) {
@@ -404,14 +413,4 @@
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
      background-image: linear-gradient(to top, #cecfce 0%, #cecfcf 100%) !important; 
 }
-}
-
-
-/* Fix for upstream menu appearance issue */
-@media (-moz-platform: linux) {
-  menupopup {
-      --panel-background: Field !important;
-      --panel-color: FieldText !important;
-      --panel-border-color: ThreeDShadow !important;
-  }
 }
