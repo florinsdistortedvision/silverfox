@@ -243,8 +243,9 @@
 }
 
 /* Mac is on the right side */
+/* Same on Linux, when titlebar buttons are on the left */
 
-@media (-moz-platform: macos) {
+@media (-moz-platform: macos) or ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement)) {
 :root:not([privatebrowsingmode=temporary]) .animated-pfp,
 :root:not([privatebrowsingmode=temporary]) .alien-pfp,
 :root:not([privatebrowsingmode=temporary]) .blondepfp-pfp,

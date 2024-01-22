@@ -134,8 +134,7 @@
 }    
     
 /* NavBar */
- 
-:root:not(:-moz-lwtheme) #nav-bar,    
+:root:not(:-moz-lwtheme) #nav-bar,
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #nav-bar {
     background-image: linear-gradient(to top, #e3e3e3 0%, #f5f5f5 100%) !important;
 }
@@ -156,8 +155,6 @@
      background-image: linear-gradient(to bottom, #e3e3e3 0%, #dfdfdf 100%) !important; 
 }
 }
-
-
 
 /* Specialized cases for different OS behaviours */
 
@@ -302,28 +299,74 @@
 
 @media (-moz-platform: linux) {
 
-    
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
-     background-color: transparent !important;
+/* Linux System Theme */
+/* Tabs */
 
-}
-    
-:root:not(
-       [style*="--lwt-header-image"],
-       [lwtheme-image],
-       [lwtheme],
-       [style*="--lwt-additional-images"]
-       ) #TabsToolbar {
-    background-image: none !important;
+:root:not(:-moz-lwtheme) .tab-text {
+  color: -moz-DialogText !important;
 }
 
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #TabsToolbar,  
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #TabsToolbar {
-    background-image: none !important; 
-}     
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+    background: color-mix(in srgb, Field 56%, ActiveCaption) !important;
+    filter: grayscale(30%) brightness(103%) !important;
+}
+:root:-moz-window-inactive:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+    background: color-mix(in srgb, Field 56%, InactiveCaption) !important;
+}
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+  background: color-mix(in srgb, Field 56%, ActiveCaption) !important;
+  opacity: 100% !important;
+}
+:root:-moz-window-inactive:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+  background: color-mix(in srgb, Field 56%, InactiveCaption) !important;
+}
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background {
+  background-image: linear-gradient(to top,
+                          color-mix(in srgb, white 14%, -moz-dialog) 0%,
+                          color-mix(in srgb, white 22%, -moz-dialog) 100%) !important;
+}
+
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background:before,
+:root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background:after {
+  background: color-mix(in srgb, white 14%, -moz-dialog) !important;
+}
+
+/* NavBar */
+:root:not(:-moz-lwtheme) #nav-bar {
+  background-image: linear-gradient(to top,
+                          -moz-dialog 0%,
+                          color-mix(in srgb, white 14%, -moz-dialog) 100%) !important;
+}
+
+/* Personal Toolbar only for light mode and system */
+
+:root:not(:-moz-lwtheme) #PersonalToolbar {
+  background-image: linear-gradient(to bottom,
+                          -moz-dialog 0%,
+                          color-mix(in srgb, black 4%, -moz-dialog) 100%) !important;
+}
+    
+
+/* Light theme */
+:root:-moz-lwtheme[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox {
+  background: #406dc2 !important;
+}
+:root:-moz-lwtheme[style*="--lwt-accent-color: rgb(240, 240, 244)"] #titlebar {
+  background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
+  border-top-left-radius: env(-moz-gtk-csd-titlebar-radius) !important;
+  border-top-right-radius: env(-moz-gtk-csd-titlebar-radius) !important;
+}
+
+
+/* Fix for upstream menu appearance issue */
+menupopup {
+    --panel-background: Field !important;
+    --panel-color: FieldText !important;
+    --panel-border-color: ThreeDShadow !important;
+}
 }
 
 /* MacOS */
@@ -369,6 +412,5 @@
 :root:not(:-moz-lwtheme) #PersonalToolbar,    
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
      background-image: linear-gradient(to top, #cecfce 0%, #cecfcf 100%) !important; 
-}    
-    
+}
 }

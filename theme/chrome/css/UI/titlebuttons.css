@@ -354,30 +354,33 @@
 
 /* Linux */
 @media (-moz-platform: linux) { 
+  @media (-moz-platform: linux) {
+  .titlebar-buttonbox {
+    margin-top: -14px !important;
+    appearance: none !important; /* Prevents ANY influencing of margins */
+    gap: 2px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-buttonbox {
+    margin-top: 1px !important;
+  }
+  @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
+    margin-right: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+  }}
+  @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
+    margin-left: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+  }}
   .titlebar-close,
   .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-    min-width: 24px !important;
-    max-width: 24px !important;
-    height: 18px !important;
-    padding: 0px !important;
-    margin-top: -14px !important;
     appearance: none !important;
     list-style-image: none !important;
     border-radius: 0 !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    height: 18px !important;
+    padding: 0 !important;
   }
-  .titlebar-restore,
-  .titlebar-min,
-  .titlebar-max {
-    margin-right: 2px !important;
-  }
-
-:root:not([sizemode="normal"]) .titlebar-close,
-:root:not([sizemode="normal"]) .titlebar-min,
-:root:not([sizemode="normal"]) .titlebar-restore {
-      margin-top: 0px !important;
-}
   
   /* Adding Chrome style*/
   .titlebar-close {
