@@ -605,7 +605,7 @@
     margin-right: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
   }}
   @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-left: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+    margin-left: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
   }}
   .titlebar-close,
   .titlebar-restore,
