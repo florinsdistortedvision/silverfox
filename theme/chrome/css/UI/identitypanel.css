@@ -160,7 +160,7 @@
   pointer-events: none !important; 
 }
 
-.panel-viewcontainer[panelopen] {
+#identity-popup-multiView > .panel-viewcontainer[panelopen] {
   height: 445px !important;
 }
 

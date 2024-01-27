@@ -88,7 +88,7 @@
 }
 
 @media (-moz-platform: windows-win7) {
-  :root:not([privatebrowsingmode=temporary]) .animated-pfp::before,
+:root:not([privatebrowsingmode=temporary]) .animated-pfp::before,
 :root:not([privatebrowsingmode=temporary]) .alien-pfp::before,
 :root:not([privatebrowsingmode=temporary]) .blondepfp-pfp::before,
 :root:not([privatebrowsingmode=temporary]) .bluepfp-pfp::before,
@@ -242,8 +242,7 @@
   content: url("../../assets/images/profile pictures/yellowpfp.png") !important;
 }
 
-/* Mac is on the right side */
-/* Same on Linux, when titlebar buttons are on the left */
+/* Mac and Linux (when reversed titlebars) are on the right side */
 
 @media (-moz-platform: macos) or ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement)) {
 :root:not([privatebrowsingmode=temporary]) .animated-pfp,

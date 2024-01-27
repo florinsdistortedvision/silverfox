@@ -199,3 +199,74 @@ button[dlgtype="cancel"]:hover,
 button[data-l10n-id="sanitize-button-ok"]:hover {
   background-image: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 70%, #e0e0e0 100%) !important;
 }
+
+
+/* Set Firefox as default */
+
+notification-message[message-bar-type=infobar] {
+  margin: 4px 0 0 !important;
+}
+
+.container.infobar::before {
+  content: url(../../assets/images/pages/settings/chromelogo.png) !important;
+  margin-left: 7px !important;
+  background-image: none !important;
+  margin-top: 5px !important;
+}
+
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+  .container.infobar::before {
+   content: url(../../assets/images/pages/settings/chromiumlogo.png) !important; 
+}
+}
+
+.container.infobar {
+  background: linear-gradient(to bottom, #fdeda8 0%, #fae692 100%) !important;
+  margin-top: -5px !important;
+  border-bottom: 1px solid #b2b2b2 !important;
+  border-right: 2px solid #b2b2b2 !important;
+  border-left: 2px solid #b2b2b2 !important;
+  border-radius: 0px !important;
+}
+
+span[data-l10n-id="default-browser-notification-message"] {
+  font-size: 0px !important;
+  margin-left: 28px !important;
+}
+
+span[data-l10n-id="default-browser-notification-message"]:before {
+  content: "Google Chrome isn't your default browser." !important;
+  font-size: 15px !important;
+  position: relative !important;
+  top: 1.5px !important;
+}
+
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+span[data-l10n-id="default-browser-notification-message"]:before {
+  content: "Chromium isn't your default browser." !important; 
+}  
+}
+
+button[data-l10n-id="default-browser-notification-button"] {
+  background: linear-gradient(to bottom, #fefae7 0%, #fbedb0 100%) !important;
+  color: black !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  border: 1px solid #978c5e !important;
+}
+
+button[data-l10n-id="default-browser-notification-button"]:hover {
+  border: 1px solid black !important;
+}
+
+.close.ghost-button.notification-close {
+  background: url(../../assets/images/topbar/closetab.png) !important;
+  background-repeat: no-repeat !important;
+  position: relative !important;
+  top: 7px;
+}
+
+
+
+
+

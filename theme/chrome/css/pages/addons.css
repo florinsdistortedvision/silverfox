@@ -346,6 +346,14 @@ h2[data-l10n-id="extension-enabled-heading"] {
         background-color: transparent !important;
     }
 }
+  
+.addon-badge-private-browsing-allowed {
+    background: url(../../assets/images/pages/addons/private.png) !important;
+    background-repeat: no-repeat !important;
+    border-radius: 0px !important;
+    position: relative !important;
+    top: 2px;
+}  
 
 h2[data-l10n-id="recommended-extensions-heading"] {
   display: none !important;
@@ -396,7 +404,7 @@ h2[data-l10n-id="recommended-themes-heading"] {
 }
 
 h2[data-l10n-id="recommended-themes-heading"]:before {
-  content: "Themes not working?" !important;
+  content: "Seeing black boxes?" !important;
   color: var(--in-content-text-color) !important;
 }
 
@@ -430,10 +438,187 @@ a[href="https://color.firefox.com/?utm_source=firefox-browser&utm_medium=firefox
 }
 
 .theme-recommendation::before {
-  content: "Have you set silverfox.allowThemes as TRUE in about:config?" !important;
+  content: "This might happen when Windows doesn't correctly switch between modes, restart Firefox and it should fix itself." !important;
   color: var(--in-content-text-color) !important;
 }
+  
+/* Chrome Classic and Native theme */
 
+/*Light/Classic Blue*/
+addon-card[addon-id="firefox-compact-light@mozilla.org"] .addon-detail-row.addon-detail-row-author, 
+#firefox-compact-light_mozilla_org-heading,  
+.addon-name-link[href="addons://detail/firefox-compact-light@mozilla.org"],
+addon-card[addon-id="firefox-compact-light@mozilla.org"] .addon-description {
+    font-size: 0px !important;
+}  
+
+#firefox-compact-light_mozilla_org-heading:before {
+    content: "Classic Theme" !important;
+    font-size: 12px !important;
+}
+ 
+addon-card[addon-id="firefox-compact-light@mozilla.org"] .addon-description::before {
+    content: "Chrome's classic Blue gradient theme." !important; 
+    font-size: 12px !important;
+}  
+
+addon-card[addon-id="firefox-compact-light@mozilla.org"] .addon-detail-row.addon-detail-row-author:before {
+    content: "Made by florin for Silverfox." !important;
+    font-size: 12px !important;
+}  
+  
+addon-card[addon-id="firefox-compact-light@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/classic_win.png) !important;
+}  
+
+  
+@media (-moz-platform: macos) {
+addon-card[addon-id="firefox-compact-light@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/classic_mac.png) !important;
+}     
+}  
+  
+@media (-moz-platform: linux) {
+addon-card[addon-id="firefox-compact-light@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/classic_linux.png) !important;
+}     
+}
+  
+@media (-moz-platform: linux) {
+  @media (-moz-gtk-csd-reversed-placement) {
+addon-card[addon-id="firefox-compact-light@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/classic_linux_rev.png) !important;
+}     
+}}  
+  
+/*System/Native*/
+addon-card[addon-id="default-theme@mozilla.org"] .addon-detail-row.addon-detail-row-author, 
+#default-theme_mozilla_org-heading,  
+.addon-name-link[href="addons://detail/default-theme@mozilla.org"],
+addon-card[addon-id="default-theme@mozilla.org"] .addon-description {
+    font-size: 0px !important;
+} 
+  
+  
+#default-theme_mozilla_org-heading:before {
+    content: "Native Theme" !important;
+    font-size: 12px !important;
+}
+    
+@media (-moz-platform: macos) {
+#default-theme_mozilla_org-heading:before {
+    content: "Default Theme" !important;
+    font-size: 12px !important;
+}    
+}
+  
+@media (-moz-platform: linux) {
+#default-theme_mozilla_org-heading:before {
+    content: "GTK+ Theme" !important;
+    font-size: 12px !important;
+}    
+}  
+  
+addon-card[addon-id="default-theme@mozilla.org"] .addon-detail-row.addon-detail-row-author:before {
+    content: "Made by florin for Silverfox." !important;
+    font-size: 12px !important;
+}   
+  
+addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+    content: "Native default theme. You're on Windows 10/11, theme will switch based on Windows light or dark mode." !important; 
+    font-size: 12px !important;
+}
+  
+@media (-moz-platform: windows-win10) {
+@supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
+ addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+    content: "Native default theme. You enabled Aero switch, theme will switch based on Windows light or dark mode." !important; 
+    font-size: 12px !important;
+}
+}}  
+  
+@media (-moz-platform: windows-win8) {
+ addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+    content: "Native default theme. You're on Windows 8/8.1, theme will remain in light mode." !important; 
+    font-size: 12px !important;
+}    
+}
+  
+@media (-moz-platform: windows-win7) {
+ addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+    content: "Native default theme. You're on Windows 7 with Aero, theme will remain in light mode." !important; 
+    font-size: 12px !important;
+}    
+}  
+
+@media (-moz-platform: macos) {
+ addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+    content: "Native default theme. Mojave (10.14) and later will make theme switch based on Mac's light or dark mode." !important; 
+    font-size: 12px !important;
+}     
+} 
+  
+@media (-moz-platform: linux) {
+ addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+    content: "Native default theme. Depending on distro, theme switch based on light or dark mode." !important; 
+    font-size: 12px !important;
+}     
+}  
+  
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_win11.png) !important;
+}  
+ 
+@media (-moz-platform: windows-win10) {
+@supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_win10_aero.png) !important;
+}
+}}
+  
+@media (-moz-platform: windows-win8) {
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_win8.png) !important;
+}    
+}
+  
+@media (-moz-platform: windows-win7) {
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_win7_aero.png) !important;
+}
+}
+  
+@media (-moz-platform: macos) {
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_mac.png) !important;
+}  
+}
+  
+@media (-moz-platform: linux) {
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_linux.png) !important;
+}  
+}
+  
+@media (-moz-platform: linux) {
+@media (-moz-gtk-csd-reversed-placement)  {
+addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+    content: url(../../assets/images/pages/settings/native_linux_rev.png) !important;
+}  
+}} 
+    
+  
+/* Because Classic Blue is forced on Aero Basic and Classic theme, no need for a native theme, so hide it */  
+@media (-moz-platform: windows-win7) {  
+  @media (-moz-windows-compositor: 0),
+  @media (-moz-windows-classic) {
+      addon-card[addon-id="default-theme@mozilla.org"] {
+        display: none !important;
+      }
+  } 
+}
+}  
+  
 
 /* Plugins page */
 

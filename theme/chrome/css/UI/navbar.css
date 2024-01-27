@@ -217,7 +217,11 @@
   background-position: -2px -3px !important;  
 }
 
+/* Since reduced motion is disabled, remove the refresh/stop animation */
 
+#stop-reload-button .toolbarbutton-animatable-image {
+  animation-duration: 0s !important;
+}
 
 /* Identity boxes (locks) */
 
@@ -305,7 +309,7 @@
     z-index: 90 !important;
 }
 
-@media (-moz-platform: linux) {
+@media (-moz-platform: linux) not (-moz-gtk-csd-reversed-placement) {
   #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
    margin-top: 2px !important;
   }
@@ -331,7 +335,7 @@
     z-index: 90 !important;
 }
 
-@media (-moz-platform: linux) {
+@media (-moz-platform: linux) not (-moz-gtk-csd-reversed-placement) {
   #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
    margin-top: 2px !important; 
   }
@@ -357,7 +361,7 @@
   z-index: 999 !important;
 }
 
-@media (-moz-platform: linux) {
+@media (-moz-platform: linux) not (-moz-gtk-csd-reversed-placement)  {
   #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
    margin-top: 3px !important;
    margin-left: 2px !important;
@@ -384,7 +388,7 @@
   z-index: 999 !important;
 }
 
-@media (-moz-platform: linux) {
+@media (-moz-platform: linux) not (-moz-gtk-csd-reversed-placement)  {
   #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
    margin-top: 3px !important;
     margin-left: 3px !important;
@@ -404,6 +408,15 @@
 
 /* UrlBar (Adress Bar) */
 
+/* Stop resizing of results below 600px height */
+@media screen and (min-height: 600px) {
+  .urlbarView-results[wrap] > .urlbarView-row:where(:not([rich-suggestion=with-icon])) > .urlbarView-row-inner {
+    flex-wrap: unset !important;
+    margin-left: -26px !important;
+    margin-top: -2px !important;
+    
+  }
+}
 
 /* Force background color */
 #urlbar-input[style="--urlbar-scheme-size: 0px;"] {
@@ -716,14 +729,14 @@
 #unified-extensions-button {
   margin-right: -6.5px !important;
 }
-#star-button-box[tooltiptext="Edit this bookmark (Ctrl+D)"] {
+#star-button-box[data-l10n-id="urlbar-star-edit-bookmark"] {
   background-image: url(../../assets/images/middlebar/bookmarkstar.png) !important;
   background-repeat: no-repeat !important;
   background-position: 4px center !important;
   margin-top: -1px !important;
   margin-right: -2px !important;
 }
-#star-button-box[tooltiptext="Bookmark this page (Ctrl+D)"] {
+#star-button-box[data-l10n-id="urlbar-star-add-bookmark"] {
   background-image: url(../../assets/images/middlebar/addbookmark.png) !important;
   background-repeat: no-repeat !important;
   background-position: 4px center !important;

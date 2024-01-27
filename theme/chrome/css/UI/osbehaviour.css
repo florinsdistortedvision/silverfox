@@ -1,8 +1,9 @@
 /* OS Behaviour Themes for Light/Dark/System and Custom Themes */
 /* Changes Navigator Toolbox, NavBar and Personal Toolbar */
-/* ONLY ON WINDOWS 10, use silverfox.hasAeroGlass to enable Aero - only for Aeroglass or AWM */
+/* ONLY ON WINDOWS 10, use silverfox.hasAeroGlass to enable Aero - only for DWMBlurGlass or Aeroglass */
 /* Windows 8/8.1 users with Aeroglass, no need for any bool */
 
+/* To remove redundancy, Light Theme becomes Classic Chrome Blue theme & System theme becomes Native theme, unless specified */
 
 /* Generic Windows Light and Dark Mode, excluding custom theme */
 
@@ -15,18 +16,41 @@
  
 /* Light mode and System theme */
 
-:root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
         background: #dce1e7 !important;  
         filter: grayscale(30%) brightness(103%) !important;
 }
-
-:root:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+           
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
         background: #dce1e7 !important;
         opacity: 95% !important;
 }
+ 
+/* Classic Blue*/           
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background-image: linear-gradient(to bottom, #a3c8f4 0%, #9cc2f1 100%) !important;
+        filter: grayscale(30%) brightness(103%) !important;
+}
+           
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background-image: linear-gradient(to bottom, #a3c8f4 0%, #9cc2f1 100%) !important;
+        opacity: 95% !important;
+}
+           
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background-image: linear-gradient(to bottom, #b4bec9 0%, #a0aebe 100%) !important;
+        filter: grayscale(30%) brightness(103%) !important;          
+}        
 
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background-image: linear-gradient(to bottom, #b4bec9 0%, #a0aebe 100%) !important;
+        opacity: 0.95 !important;
+}
+
+        
+
+           
+           
 :root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background,
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tabbrowser-tab[visuallyselected="true"] .tab-background {
         background-image: linear-gradient(to top, #f5f5f5 0%, #ffffff 100%) !important;
@@ -108,10 +132,11 @@
 :root:-moz-lwtheme:not(
   [style*="--lwt-header-image"],
   [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
   [style*="--lwt-additional-images"]
 ) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
      background-image: linear-gradient(to top, var(--toolbar-field-focus-background-color) 0%, var(--lwt-accent-color) 60%) !important;   
-}
+}          
     
 :root:-moz-lwtheme:not(
   [style*="--lwt-header-image"],
@@ -134,7 +159,8 @@
 }    
     
 /* NavBar */
-:root:not(:-moz-lwtheme) #nav-bar,
+ 
+:root:not(:-moz-lwtheme) #nav-bar,    
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #nav-bar {
     background-image: linear-gradient(to top, #e3e3e3 0%, #f5f5f5 100%) !important;
 }
@@ -156,15 +182,32 @@
 }
 }
 
+/* Classic Blue gradient for TabsToolbar*/
+
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #TabsToolbar {
+    background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;    
+}
+
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
+    background: #6192dc !important;
+}
+
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(240, 240, 244)"] #TabsToolbar {
+    background-image: linear-gradient(to top, #526d92 0%, #526d92 10%, #617a9c 97%, #617a9c 100%) !important;    
+}
+
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
+:root[privatebrowsingmode="temporary"][style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
+    background: #617a9c !important;
+}
+
+
 /* Specialized cases for different OS behaviours */
 
 /* Windows 10/11 */
 @media (-moz-platform: windows-win10) {
-@supports not (-moz-bool-pref("silverfox.hasAeroGlass")) { 
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
-    background-color: white !important;
-}  
+@supports not (-moz-bool-pref("silverfox.hasAeroGlass")) {   
   
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
@@ -176,12 +219,11 @@
 /* Windows Aero for Windows 10, if bool set to TRUE*/
     
 @supports (-moz-bool-pref("silverfox.hasAeroGlass")) {
-  #TabsToolbar {
+
+#TabsToolbar {
     background-image: none !important;
 }
     
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background,
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
      background-color: transparent !important;
@@ -257,7 +299,7 @@
        [lwtheme-image],
        [lwtheme],
        [style*="--lwt-additional-images"]
-       ) #TabsToolbar {
+) #TabsToolbar {
     background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
 }
 
@@ -351,11 +393,8 @@
     
 
 /* Light theme */
-:root:-moz-lwtheme[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox {
-  background: #406dc2 !important;
-}
+
 :root:-moz-lwtheme[style*="--lwt-accent-color: rgb(240, 240, 244)"] #titlebar {
-  background-image: linear-gradient(to top, #406dc2 0%, #406dc2 10%, #6192dc 97%, #6192dc 100%) !important;
   border-top-left-radius: env(-moz-gtk-csd-titlebar-radius) !important;
   border-top-right-radius: env(-moz-gtk-csd-titlebar-radius) !important;
 }
@@ -380,8 +419,8 @@ menupopup {
         margin-top: -10px;
 }
     
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #navigator-toolbox-background {
+:root:not(:-moz-lwtheme) #navigator-toolbox,
+:root:not(:-moz-lwtheme) #navigator-toolbox-background {
     background: linear-gradient(to bottom, #e6e6e6 0%, #c7c7c7 40%) !important;
 }      
     
@@ -412,5 +451,6 @@ menupopup {
 :root:not(:-moz-lwtheme) #PersonalToolbar,    
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
      background-image: linear-gradient(to top, #cecfce 0%, #cecfcf 100%) !important; 
-}
+}    
+    
 }

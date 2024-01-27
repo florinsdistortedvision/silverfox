@@ -7,8 +7,17 @@
 }
 
 #version-box::after {
-  content: "/ Silverfox version 0.4 (Closed Beta)" !important;
+  content: "/ Silverfox version 0.5 (Closed Beta)" !important;
   position: relative !important;
   left: 2px !important;
+}
+}
+
+@-moz-document url-prefix(https://silverfox.neocities.org/updater/letsupdate) {
+	
+.currentVersion p:after {
+    content: "0.5";
+    position: relative;
+    left: 5px;
 }
 }

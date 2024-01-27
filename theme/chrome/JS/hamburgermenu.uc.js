@@ -35,6 +35,7 @@ window.addEventListener("load", function () {
     );
 
     const hamburgerMenuItems = [
+      { label: "Your Silverfox is outdated, update now", class: "update-silverfox" },
       { label: "New tab", class: "submenu-item1" },
       { label: "New window", class: "submenu-item2" },
       { label: "New incognito window", class: "submenu-item3" },
@@ -74,14 +75,7 @@ window.addEventListener("load", function () {
       { label: "About Google Chrome", class: "submenu-item15" },
       { label: "Help", class: "submenu-item16" },
       { label: "Separator", separator: true },
-      { label: "Exit", class: "submenu-item17" },
-      { label: "Cut", class: "submenu-item18" },
-      { label: "Copy", class: "submenu-item19" },
-      { label: "Paste", class: "submenu-item20" },
-      { label: "-", class: "submenu-item21" },
-      { label: "100%", class: "submenu-item22" },
-      { label: "+", class: "submenu-item23" },
-      { label: "f", class: "submenu-item24" },
+	  { label: "Exit", class: "submenu-item17" },
     ];
 	
     let beChromium;
@@ -119,6 +113,7 @@ window.addEventListener("load", function () {
             "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
             "menuitem"
           );
+		  
 
       if (hamburgerMenuItems[i].separator) {
         const separator = document.createElementNS(
@@ -130,57 +125,6 @@ window.addEventListener("load", function () {
       } else {
         menuElement.setAttribute("label", hamburgerMenuItems[i].label);
         menuElement.setAttribute("class", hamburgerMenuItems[i].class);
-
-        if (hamburgerMenuItems[i].class === "submenu-item22") {
-          const zoomButtonObserver = new MutationObserver((mutationsList) => {
-            for (const mutation of mutationsList) {
-              if (mutation.type === 'attributes' && mutation.attributeName === 'label') {
-                const zoomLevel = mutation.target.getAttribute('label');
-                menuElement.setAttribute('zoomlevel', zoomLevel);
-              }
-            }
-          });
-
-          const urlbarZoomButton = document.getElementById("urlbar-zoom-button");
-
-          if (urlbarZoomButton) {
-            zoomButtonObserver.observe(urlbarZoomButton, { attributes: true });
-          }
-        }
-		
-		if (hamburgerMenuItems[i].class === "submenu-item22") {
-  const doneAttributeObserver = new MutationObserver((mutationsList) => {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'hidden') {
-        const urlbarZoomButton = document.getElementById("urlbar-zoom-button");
-        const submenuItem22 = document.querySelector('.submenu-item22');
-
-        if (urlbarZoomButton && submenuItem22) {
-          const isZoomButtonHidden = urlbarZoomButton.getAttribute('hidden') === 'true';
-
-          if (isZoomButtonHidden) {
-            submenuItem22.setAttribute('done', 'true');
-          } else {
-            submenuItem22.removeAttribute('done');
-          }
-        }
-      }
-    }
-  });
-
-  const submenuItem22 = document.querySelector('.submenu-item22');
-
-  if (submenuItem22) {
-    doneAttributeObserver.observe(submenuItem22, { attributes: true });
-  }
-
-  const urlbarZoomButton = document.getElementById("urlbar-zoom-button");
-
-  if (urlbarZoomButton) {
-    doneAttributeObserver.observe(urlbarZoomButton, { attributes: true });
-  }
-}
-
 
         if (hamburgerMenuItems[i].class === "submenu-item10" && hamburgerMenuItems[i].submenu) {
           const submenu = submenuPopup10.cloneNode(true);
@@ -226,6 +170,64 @@ window.addEventListener("load", function () {
 
     tabsToolbar.appendChild(hamburgerButton);
   }
+  
+const submenuItem5 = document.querySelector(".submenu-item5");
+const submenuItem6 = document.querySelector(".submenu-item6");
+
+
+const editbuttonInfo = [
+  { label: "Cut", class: "cutButton", disabled: "true" },
+  { label: "Copy", class: "copyButton", disabled: "true" },
+  { label: "Paste", class: "pasteButton", disabled: "true" }
+];
+
+const zoombuttonInfo = [
+  { label: "-", class: "minimizeButton" },
+  { label: "100%", class: "zoomLevelButton" },
+  { label: "+", class: "maximizeButton" },
+  { label: "", class: "fullscreenButton" }
+];
+
+editbuttonInfo.forEach(info => {
+  const button = document.createElementNS(
+    "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+    "button"
+  );
+
+  button.setAttribute("class", info.class);
+  button.setAttribute("disabled", info.disabled);
+
+  const label = document.createElementNS(
+    "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+    "label"
+  );
+  label.setAttribute("class", "button-text");
+  label.textContent = info.label;
+
+  button.appendChild(label);
+  submenuItem5.appendChild(button);
+});
+
+zoombuttonInfo.forEach(info => {
+  const button = document.createElementNS(
+    "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+    "button"
+  );
+
+  button.setAttribute("class", info.class);
+
+  const label = document.createElementNS(
+    "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul",
+    "label"
+  );
+  label.setAttribute("class", "button-text");
+  label.textContent = info.label;
+
+  button.appendChild(label);
+  submenuItem6.appendChild(button);
+});
+
+
 
   // Hamburger Menu functions
   
@@ -234,14 +236,14 @@ window.addEventListener("load", function () {
   const newIncognitoWindow = document.querySelector(".submenu-item3");
   const bookmarksMenu = document.querySelector(".submenu-item4");
   
-  const cutButton = document.querySelector(".submenu-item18");
-  const copyButton = document.querySelector(".submenu-item19");
-  const pasteButton = document.querySelector(".submenu-item20");
+  const cutButton = document.querySelector(".cutButton");
+  const copyButton = document.querySelector(".copyButton");
+  const pasteButton = document.querySelector(".pasteButton");
   
-  const zoomOut = document.querySelector(".submenu-item21");
-  const zoomLevel = document.querySelector(".submenu-item22");
-  const zoomIn = document.querySelector(".submenu-item23");
-  const fullScreen = document.querySelector(".submenu-item24");
+  const zoomOut = document.querySelector(".minimizeButton");
+  const zoomLevel = document.querySelector(".zoomLevelButton");
+  const zoomIn = document.querySelector(".maximizeButton");
+  const fullScreen = document.querySelector(".fullscreenButton");
   
   const savePage = document.querySelector(".submenu-item7");
   const findMenu = document.querySelector(".submenu-item8");
@@ -262,6 +264,7 @@ window.addEventListener("load", function () {
   const aboutChrome = document.querySelector(".submenu-item15");
   const helpMenu = document.querySelector(".submenu-item16");
   const exitMenu = document.querySelector(".submenu-item17");
+   
     
 if (newTab) {
   const openGoogleSearch = function (event) {
@@ -297,15 +300,19 @@ if (newWindow) {
  
 
 if (newIncognitoWindow) {
-  const openBrowserOnce = function (event) {
-    if (event.target === newIncognitoWindow) {
-      OpenBrowserWindow({private: true});
+  const openGoogleSearch = function (event) {
+    OpenBrowserWindow({private: true});
 
-      newIncognitoWindow.removeEventListener("command", openBrowserOnce);
+    const paste = readFromClipboard();
+
+    if (paste) {
+      const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(paste);
+
+      gBrowser.selectedTab = gBrowser.addTab(searchURL);
     }
   };
 
-  newIncognitoWindow.addEventListener("command", openBrowserOnce);
+  newIncognitoWindow.addEventListener("command", openGoogleSearch);
 }  
 
 if (bookmarksMenu) {
@@ -338,7 +345,7 @@ if (cutButton) {
 
 if (copyButton) {
   const openGoogleSearch = function (event) {
-    goDoCommand('cmd_copy');
+    copyContentsToClipboard();
 
     const paste = readFromClipboard();
 
@@ -682,5 +689,6 @@ if (exitMenu) {
   };
 
   exitMenu.addEventListener("command", openGoogleSearch);
-}
+}    
+    
 });

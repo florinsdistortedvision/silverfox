@@ -67,10 +67,8 @@ panel, menupopup {
   font-family: "Open Sans", sans-serif !important;
   font-weight: 400;
 }
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
 #editBookmarkPanelTitle::before {
   color: #062d75 !important;
-}
 }
 #editBookmarkPanelTitle::before {
   content: "Bookmark" !important;

@@ -1,4 +1,4 @@
-/* TabsToolbar (Tabs, New Tab, Tilebars) */
+/* TabsToolbar (Tabs, New Tab) */
 
 /* Chrome's default gap */
 #TabsToolbar {
@@ -113,6 +113,24 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   transform-origin: 0% 100%;
 }
 
+/* Since reduced motion is not necessary anymore, a fix for stuck New Tab */
+.tabbrowser-tab:not([pinned], [fadein]) {
+  max-width: 0.1px !important;
+  min-width: 0.1px !important;
+  visibility: hidden !important;
+}
+
+.tabbrowser-tab[fadein]:not([pinned]) {
+  transition: max-width 100ms linear !important;
+}
+
+
+/* Fix for pinned state */
+.tabbrowser-tab[visuallyselected="true"][pinned] .tab-background:before,
+.tabbrowser-tab[visuallyselected="true"][pinned] .tab-background:after {
+  bottom: 4px;
+}
+
 
 /* Tab content (text, favicon etc) area position fix and color if themeing is disabled */
 .tab-content {
@@ -127,6 +145,11 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 .tabbrowser-tab {
   margin-top: 1.5px !important;
+}
+
+/* No blue swipe on tabs when loaded */
+.tabbrowser-tab .tab-loading-burst {
+  display: none !important;
 }
 
 /* Removes secondary label (Playing, Muted etc.) */
@@ -184,6 +207,11 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   filter: contrast(0.5) !important;
 }
 
+/* Because reduced motion is off, remove the bouncing dots animation */
+:root[sessionrestored] .tab-throbber[busy]::before {
+    background-image: none !important;
+}
+
 .tab-throbber[progress] {
   list-style-image: none !important;
   background-image: url(../../assets/images/topbar/loadingblue.gif) !important;
@@ -223,7 +251,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 
 /* New tab button and its hover */
-    #tabs-newtab-button, #TabsToolbar #new-tab-button {
+#tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-image: url(../../assets/images/topbar/newtab_original.png) !important;
         background-repeat: no-repeat !important;
         position: relative !important;
@@ -233,7 +261,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         visibility: visible;
         transform: scale(0.78) !important;
         filter: grayscale(30%) brightness(505%) !important;
-    }
+}
 
 @media (-moz-platform: macos),
        (-moz-platform: linux) {
@@ -246,22 +274,22 @@ tab:where(:first-of-type[visuallyselected="true"]) {
     
 }
 
-    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
+#tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
         background-color: transparent !important;
         border: 0px solid transparent !important;
         box-shadow: 0px !important;
         box-sizing: 0px !important;
         filter: grayscale(30%) brightness(103%) !important;
-    }
-    #tabs-newtab-button:hover > .toolbarbutton-icon {
+}
+#tabs-newtab-button:hover > .toolbarbutton-icon {
         background: transparent !important;
         border: 0px solid transparent !important;
         box-shadow: 0px !important;
         visibility: hidden;  
-    }
+}
 
 @supports (-moz-bool-pref("silverfox.preferOldLook")) {
-    #tabs-newtab-button, #TabsToolbar #new-tab-button {
+ #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-image: url(../../assets/images/topbar/newtabold.png) !important;
         background-repeat: no-repeat !important;
         position: relative !important;
@@ -270,8 +298,8 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         list-style-image: none !important;
         visibility: visible;
         transform: scale(0.9) !important;
-    }
-    #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
+}
+#tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
         background-image: url(../../assets/images/topbar/newtabold_hover.png) !important;
         background-repeat: no-repeat !important;
         position: relative !important;
@@ -280,13 +308,13 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         list-style-image: none !important;
         visibility: visible;
         transform: scale(0.9) !important;
-    }
-    #tabs-newtab-button:hover > .toolbarbutton-icon {
+}
+#tabs-newtab-button:hover > .toolbarbutton-icon {
         background: transparent !important;
         border: 0px solid transparent !important;
         box-shadow: 0px !important;
         visibility: hidden;
-    }
+}
 }
 
 
@@ -306,14 +334,18 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   background-repeat: no-repeat !important; 
   margin-top: -3px !important;
 }
+         
+ #main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
+  width: 45px !important;
+}
+}
 
 @media (-moz-platform: windows-win7) {
   .private-browsing-indicator-icon {
     margin-top: 2px !important;
-  }
-  #main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
-  width: 42px !important;
 }
+#main-window[privatebrowsingmode="temporary"] .titlebar-spacer {
+  width: 42px !important;
 }
 }
 
@@ -356,7 +388,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   visibility: hidden !important;
   margin-left: -15px;
 }
-.tabbrowser-tab[label="New Tab"] .tab-icon-image {
+.tabbrowser-tab[image="chrome://branding/content/icon32.png"]:not([labeldirection="ltr"]) .tab-icon-image {
   visibility: hidden !important;
   margin-left: -15px;  
 }
@@ -364,7 +396,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* When pinned, add a grey folder to New Tab and Private Browsing Tab */
 .tabbrowser-tab[pinned] .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"],
-.tabbrowser-tab[pinned][label="New Tab"] .tab-icon-image {
+.tabbrowser-tab[pinned][image="chrome://branding/content/icon32.png"]:not([labeldirection="ltr"]) .tab-icon-image {
   visibility: visible !important;
   margin-left: 0.5px !important;
   content: url(../../assets/images/middlebar/greyfolder.png) !important;
@@ -376,31 +408,27 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* Chromium/Chrome favicon for common Firefox pages */
 @supports not (-moz-bool-pref("silverfox.beChromium")) {
-    .tabbrowser-tab[label="Advanced Preferences"] .tab-icon-image,
-    .tabbrowser-tab[label="About Profiles"] .tab-icon-image,
-    .tabbrowser-tab[label="Process Manager"] .tab-icon-image,
-    .tabbrowser-tab[label="Troubleshooting Information"] .tab-icon-image {
+    .tabbrowser-tab[image="chrome://global/skin/icons/settings.svg"] .tab-icon-image,
+    .tabbrowser-tab[image="chrome://branding/content/icon32.png"][labeldirection="ltr"] .tab-icon-image {
         content: url(../../assets/images/topbar/chromefavicon.png) !important;
     }
 }
 @supports (-moz-bool-pref("silverfox.beChromium")) {
-    .tabbrowser-tab[label="Advanced Preferences"] .tab-icon-image,
-    .tabbrowser-tab[label="About Profiles"] .tab-icon-image,
-    .tabbrowser-tab[label="Process Manager"] .tab-icon-image,
-    .tabbrowser-tab[label="Troubleshooting Information"] .tab-icon-image {
+    .tabbrowser-tab[image="chrome://global/skin/icons/settings.svg"] .tab-icon-image,
+    .tabbrowser-tab[image="chrome://branding/content/icon32.png"][labeldirection="ltr"] .tab-icon-image {
         content: url(../../assets/images/topbar/chromiumfavicon.png) !important;
     }
 }
 
 /* Various manual favicons */
-.tabbrowser-tab[label="Warning: Potential Security Risk Ahead"] .tab-icon-image,
-.tabbrowser-tab[label="Server Not Found"] .tab-icon-image {
+.tabbrowser-tab[image="chrome://global/skin/icons/warning.svg"] .tab-icon-image,
+.tabbrowser-tab[image="chrome://global/skin/icons/warning.svg"] .tab-icon-image {
   content: url(../../assets/images/middlebar/greyfolder.png) !important;
 }
-.tabbrowser-tab[label="Settings"] .tab-icon-image {
+.tabbrowser-tab[image="chrome://global/skin/icons/settings.svg"] .tab-icon-image {
   content: url(../../assets/images/topbar/settingsfavicon.png) !important;
 }
-.tabbrowser-tab[label="Add-ons Manager"] .tab-icon-image {
+.tabbrowser-tab[image="chrome://mozapps/skin/extensions/extension.svg"] .tab-icon-image {
   content: url(../../assets/images/topbar/extensionsfavicon.png) !important;
 }
 .tabbrowser-tab[label="Downloads"] .tab-icon-image {

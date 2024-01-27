@@ -28,3 +28,32 @@ div.sub img {
   top: 10px !important;
 }
 }	
+
+
+@-moz-document url-prefix("about:mozilla") {
+
+* {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+html {
+  background: linear-gradient(to top, #72a071 0%, #486549 100%) !important;
+}
+
+#from,
+#moztext {
+  font-size: 0px !important;
+}
+#moztext::before {
+  content: "I said, better late than never, better late than never" !important;
+  font-size: 30px !important;
+  font-style: normal !important;
+}
+
+
+#from:before {
+  content: "- Rich Amiri" !important;
+  font-size: 30px !important;
+  margin-right: 30px !important;
+}
+}

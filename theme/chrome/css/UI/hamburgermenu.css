@@ -5,7 +5,7 @@
 }
 
 #hamburger-button {
-  appearance: unset  !important;
+  appearance: unset !important;
 }
 
 #hamburger-button {
@@ -22,7 +22,7 @@
 }
 
 @supports (-moz-bool-pref("silverfox.preferOldLook")) {
-#hamburger-button::before {
+#hamburger-button[current="true"]::before {
   content: url(../../assets/images/middlebar/wrench.png) !important;
   height: 24px !important;
   width: 28px !important;
@@ -30,10 +30,19 @@
   top: -3px !important;
   left: -1px !important;
 }
+  
+#hamburger-button[current="false"]::before {
+  content: url(../../assets/images/middlebar/wrench_update.png) !important;
+  height: 24px !important;
+  width: 28px !important;
+  position: relative !important;
+  top: -3px !important;
+  left: -1px !important;
+}  
 }
 
 @supports not (-moz-bool-pref("silverfox.preferOldLook")) {
-#hamburger-button::before {
+#hamburger-button[current="true"]::before {
   content: url(../../assets/images/middlebar/hamburger.png) !important;
   height: 24px !important;
   width: 28px !important;
@@ -41,8 +50,24 @@
   top: -5px !important;
   left: -4px !important;
 }
+  
+#hamburger-button[current="false"]::before {
+  content: url(../../assets/images/middlebar/hamburger_update.png) !important;
+  height: 24px !important;
+  width: 28px !important;
+  position: relative !important;
+  top: -5px !important;
+  left: -4px !important;
+}  
 }
 
+#hamburger-button[current="true"] .update-silverfox {
+  display: none !important;
+}
+
+#hamburger-button[current="false"] .update-silverfox {
+  color: #ab2020 !important;
+}
 
 #hamburger-button menuitem {
   padding-right: 0px !important;
@@ -67,7 +92,6 @@
 
 .submenu-item1::after {
   content: "Ctrl+T" !important;
-
 }
 
 .submenu-item2::after {
@@ -78,26 +102,62 @@
   content: "Ctrl+Shift+N" !important;
 }
 
+@media (-moz-platform: macos) {
+  .submenu-item1::after {
+    content: "⌘+T" !important;
+  }
+  
+  .submenu-item2:after {
+    content: "⌘+N" !important;
+  }
+  
+  .submenu-item3:after {
+    content: "⌘+⇧+N" !important;
+  }
+}
+
 .submenu-item5 {
   height: 22px !important;
 }
+
+@media (-moz-platform: macos) {
+  .submenu-item5 {
+    height: unset !important;
+  }
+}
+
 .submenu-item5:before {
   content: "Edit";
   position: relative;
-  top: 3px;
   left: 33px;
+}
 
+@media (-moz-platform: macos) {
+  .submenu-item5:before {
+    left: 23px;
+  }
 }
 
 .submenu-item6 {
  height: 23px !important; 
 }
 
+@media (-moz-platform: macos) {
+  .submenu-item6 {
+    height: unset !important;
+  }
+}
+
 .submenu-item6::before {
   content: "Zoom" !important;
   position: relative;
-  top: 3px;
   left: 33px;
+}
+
+@media (-moz-platform: macos) {
+  .submenu-item6:before {
+    left: 23px;
+  }
 }
 
 .submenu-item7::after {
@@ -132,33 +192,39 @@
   content: "Ctrl+U" !important;
 }
 
-
-#submenu5-button-1 {
-  margin-left: 128px !important;
+@media (-moz-platform: macos) {
+  .submenu-item7:after {
+    content: "⌘+S" !important;
+  }
+  
+  .submenu-item8:after {
+    content: "⌘+F" !important;
+  }
+  
+  .submenu-item9:after {
+    content: "⌘+P" !important;
+  }
+  
+  .submenu-item11:after {
+    content: "⌘+H" !important;
+  }
+  
+  .submenu-item12:after {
+    content: "⌘+J" !important;
+  }
+  
+  .submenu-item10-3:after {
+    content: "⇧+Esc" !important;
+  }
+  
+  .submenu-item10-4:after {
+    content: "⌘+⇧+Del" !important;
+  }
+  
+  .submenu-item10-6:after {
+    content: "⌘+U" !important;
+  }
 }
-
-#submenu5-button-1,
-#submenu5-button-2,
-#submenu5-button-3,
-#zoom-in-button,
-#zoom-level-div,
-#zoom-out-button,
-#fullscreen {
-  position: relative;
-  top: -16px;
-}
-
-.submenu-item21,
-.submenu-item22,
-.submenu-item23,
-.submenu-item24,
-.submenu-item20,
-.submenu-item18,
-.submenu-item19 {
-  appearance: auto !important;
-  -moz-default-appearance: button !important;
-} 
-
 
 .submenu-item18 {
   max-width: 41px !important; 
@@ -216,409 +282,69 @@
   left: 221px;
 }
 
-.submenu-item18::before {
-  content: "Cut" !important;
-  position: relative;
-  right: -2.5px;
+.minimizeButton,
+.zoomLevelButton,
+.maximizeButton,
+.fullscreenButton,
+.cutButton,
+.copyButton, 
+.pasteButton {
+  max-height: 21px !important;
+  min-width: auto !important;
+  margin-right: -5px !important;
+  align-items: center;
+  justify-content: center;
 }
-
-.submenu-item19::before {
-  content: "Copy" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item20::before {
-  content: "Paste" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item21::before {
-  content: "-" !important;
-  position: relative;
-  right: -0.5px;
-  top: -1px;
-}
-
-.submenu-item22[zoomlevel="30%"]::before {
-  content: "30%" !important;
-  position: relative;
-  right: -2px;
-}
-
-.submenu-item22[zoomlevel="50%"]::before {
-  content: "50%" !important;
-  position: relative;
-  right: -2px;
-}
-
-.submenu-item22[zoomlevel="67%"]::before {
-  content: "67%" !important;
-  position: relative;
-  right: -2px;
-}
-
-.submenu-item22[zoomlevel="80%"]::before {
-  content: "80%" !important;
-  position: relative;
-  right: -2px;
-}
-
-.submenu-item22[zoomlevel="90%"]::before {
-  content: "90%" !important;
-  position: relative;
-  right: -2px;
-}
-
-.submenu-item22[done="true"]::before {
-  content: "100%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="110%"]::before {
-  content: "110%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="120%"]::before {
-  content: "120%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="133%"]::before {
-  content: "133%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="150%"]::before {
-  content: "150%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="170%"]::before {
-  content: "170%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="200%"]::before {
-  content: "200%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="240%"]::before {
-  content: "240%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="300%"]::before {
-  content: "300%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="400%"]::before {
-  content: "400%" !important;
-  position: relative;
-  right: 1px;
-}
-
-.submenu-item22[zoomlevel="500%"]::before {
-  content: "500%" !important;
-  position: relative;
-  right: 1px;
-}
-
-
-.submenu-item23::before {
-  content: "+" !important;
-  position: relative;
-  right: -0.5px;
-  top: -1px;
-}
-
-.submenu-item24::before {
-  content: url(../../assets/images/middlebar/hamfullscreen.png) !important;
-  position: relative;
-  right: 2px;
-  top: 2.3px;
-}
-.submenu-item17 {
-  margin-bottom: -154px !important;
-}
-
-
-/* Padding fix for Windows 7 */
-
-@media (-moz-platform: windows-win7) {
-.submenu-item18 {
-  top: -162px;
-}
-
-.submenu-item19 {
-  top: -185px;
-}
-
-.submenu-item20 {
-  top: -208px;
-}
-
-.submenu-item21 {
-  top: -202px;
-}
-
-.submenu-item22 {
-  top: -225px;
-}
-
-.submenu-item23 {
-  top: -248px;
-}
-
-.submenu-item24 {
-  top: -271px;
-}
-
- .submenu-item17 {
-  margin-bottom: -161px !important;
-}  
-}
-
-/* Padding fix for Windows 8 */
-
-@media (-moz-platform: windows-win8) {
-.submenu-item18 {
-  top: -157px;
-}
-
-.submenu-item19 {
-  top: -180px;
-}
-
-.submenu-item20 {
-  top: -203px;
-}
-
-.submenu-item21 {
-  top: -198px;
-}
-
-.submenu-item22 {
-  top: -221px;
-}
-
-.submenu-item23 {
-  top: -244px;
-}
-
-.submenu-item24 {
-  top: -267px;
-}
-
- .submenu-item17 {
-  margin-bottom: -161px !important;
-}  
-}
-
-/* Padding fix for Linux */
 
 @media (-moz-platform: linux) {
-
-#hamburger-button menuitem, div, button, menupopup {
-  font-size: 12px !important;
-}
+.zoomLevelButton,
+.fullscreenButton,
+.cutButton,
+.copyButton, 
+ .pasteButton {
+    max-width: 45px !important;
+  }
   
-.submenu-item20,  
-.submenu-item22,
-.submenu-item19 {
-  padding: 0 !important;
-}
-  
-.submenu-item21,
-.submenu-item23,
-.submenu-item24,
-.submenu-item18 {
-  padding: 0 !important;
-  max-width: 10px !important;
-}  
-  
-.submenu-item18 {
-  top: -173px;
-}  
-
-.submenu-item19 {
-  top: -195px;
-  left: 163px;
+  .minimizeButton,
+  .maximizeButton {
+    max-width: 10px !important;
+  }
 }
 
-.submenu-item20 {
-  top: -217px;
-  left: 206px;
+.cutButton {
+  margin-left: 110px !important;
 }
 
-.submenu-item18:before,
-.submenu-item19:before,
-.submenu-item20:before {
-  left: -10px;  
-}
-  
-.submenu-item21 {
-  top: -212px;
-  left: 106px;
+@media (-moz-platform: macos){
+  .cutButton {
+    margin-left: 65px !important;
+  } 
 }
 
-.submenu-item22 {
-  top: -234px;
-  left: 142px;
+@media (-moz-platform: linux) {
+  .cutButton {
+    margin-left: 90px !important;
+  }
 }
 
-.submenu-item23 {
-  top: -256px;
-  left: 184px;
+.minimizeButton {
+  margin-left: 99px !important;
 }
-
-.submenu-item24 {
-  top: -278px;
-}
-  
-.submenu-item21:before,
-.submenu-item22:before,
-.submenu-item23:before,
-.submenu-item24:before {
-  left: -2px;
-}
-  
-.submenu-item24::before {
-    left: -9px !important;
-}
-  
-.submenu-item5:before,
-.submenu-item6::before {
-  left: 28px;
-}  
-  
-.submenu-item22[done="true"]::before,
-.submenu-item22[zoomlevel="110%"]::before,
-.submenu-item22[zoomlevel="120%"]::before,
-.submenu-item22[zoomlevel="133%"]::before,
-.submenu-item22[zoomlevel="150%"]::before,
-.submenu-item22[zoomlevel="170%"]::before,
-.submenu-item22[zoomlevel="200%"]::before,
-.submenu-item22[zoomlevel="240%"]::before,
-.submenu-item22[zoomlevel="300%"]::before,
-.submenu-item22[zoomlevel="400%"]::before,
-.submenu-item22[zoomlevel="500%"]::before {
-  left: -11px !important;
-}  
- 
-.submenu-item22[zoomlevel="30%"]::before,
-.submenu-item22[zoomlevel="50%"]::before,
-.submenu-item22[zoomlevel="67%"]::before,
-.submenu-item22[zoomlevel="80%"]::before,
-.submenu-item22[zoomlevel="90%"]::before {
-  left: -7px;
-}  
-  
-}
-
 
 @media (-moz-platform: macos) {
-.submenu-item18 {
-  top: -195px;
+  .minimizeButton {
+    margin-left: 52px !important;
+  }
 }
 
-.submenu-item19 {
-  top: -217px;
+@media (-moz-platform: linux) {
+  .minimizeButton {
+    margin-left: 55px !important;
+  }
 }
 
-.submenu-item20 {
-  top: -239px;
-}
-
-.submenu-item21 {
-  top: -225px;
-}
-
-.submenu-item22 {
-  top: -247px;
-}
-
-.submenu-item23 {
-  top: -269px;
-}
-
-.submenu-item24 {
-  top: -291px;
-}
-
- .submenu-item17 {
-  margin-bottom: -154px !important;
-}  
-
-.submenu-item18::before{
-    left: -18px;
-}
-  
-.submenu-item19:before,
-.submenu-item20:before {
-  left: -25px;  
-}  
-  
-.submenu-item21:before,
-.submenu-item22:before,
-.submenu-item23:before,
-.submenu-item24:before {
-  left: -15px;
-}
-  
-.submenu-item24::before {
-    left: -19px !important;
-}
-  
-.submenu-item5:before,
-.submenu-item6::before {
-  left: 23px;
-}  
-  
-.submenu-item22[done="true"]::before,
-.submenu-item22[zoomlevel="110%"]::before,
-.submenu-item22[zoomlevel="120%"]::before,
-.submenu-item22[zoomlevel="133%"]::before,
-.submenu-item22[zoomlevel="150%"]::before,
-.submenu-item22[zoomlevel="170%"]::before,
-.submenu-item22[zoomlevel="200%"]::before,
-.submenu-item22[zoomlevel="240%"]::before,
-.submenu-item22[zoomlevel="300%"]::before,
-.submenu-item22[zoomlevel="400%"]::before,
-.submenu-item22[zoomlevel="500%"]::before {
-  left: -24px !important;
-}  
- 
-.submenu-item22[zoomlevel="30%"]::before,
-.submenu-item22[zoomlevel="50%"]::before,
-.submenu-item22[zoomlevel="67%"]::before,
-.submenu-item22[zoomlevel="80%"]::before,
-.submenu-item22[zoomlevel="90%"]::before {
-  left: -7px;
-}
-  
-.submenu-item21 {
-    left: 112px;
-}  
-
-.submenu-item22 {
-    left: 147px;
-}
-  
-  .submenu-item23 {
-    left: 188px;
-  }  
+.fullscreenButton::before {
+  content: url(../../assets/images/middlebar/hamfullscreen.png);
+  position: relative;
+  top: 2px;
 }

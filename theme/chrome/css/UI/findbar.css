@@ -31,9 +31,9 @@ findbar {
   border-top: none !important;
 }
 
-.findbar-label[value="(Case sensitive)"],
-.findbar-label[value="(Matching diacritics)"],
-.findbar-label[value="(Whole words only)"],
+.findbar-label[data-l10n-id="findbar-case-sensitive-status"],
+.findbar-label[data-l10n-id="findbar-match-diacritics-status"],
+.findbar-label[data-l10n-id="findbar-entire-word-status"],
 .findbar-label.findbar-find-status,
 .findbar-entire-word.tabbable,
 .findbar-match-diacritics.tabbable,

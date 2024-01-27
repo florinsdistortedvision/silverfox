@@ -198,4 +198,20 @@
   top: 45px !important;
   right: 90px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.hasLocalImage")) {   
+body {
+    background: url(../../assets/images/pages/newtab/local.jpg) !important;
+    overflow: hidden !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    height: 100vh !important;
+}   
+  
+* {
+    text-shadow: 0 0 10px white !important;
+} 
+}
+  
 }
