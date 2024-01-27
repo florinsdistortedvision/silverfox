@@ -666,6 +666,15 @@ h1[data-l10n-id="pane-search-title"]::after {
   margin-top: -35px !important;
   z-index: 999 !important;
 }
+  
+#searchbarGroup {
+  display: none !important;
+} 
+  
+#defaultEngineGroup {
+   margin-top: -10px !important;
+   z-index: 999 !important;
+ }  
 
 h2[data-l10n-id="search-one-click-header2"],
 h2[data-l10n-id="search-suggestions-header"],

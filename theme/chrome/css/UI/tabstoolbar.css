@@ -320,12 +320,14 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* Private browsing (icognito mode) */
 @media (-moz-platform: windows),
-       (-moz-platform: linux) {
+       (-moz-platform: linux) not (-moz-gtk-csd-reversed-placement) {
 #private-browsing-indicator-with-label {
   position: fixed !important;
   left: 0 !important;
   color: transparent !important;
 }
+        
+         
 .private-browsing-indicator-icon {
   list-style-image: none !important;
   background-image: url(../../assets/images/topbar/incognito.png) !important;
@@ -349,8 +351,8 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 }
 }
 
-@media (-moz-platform: macos) {
- #private-browsing-indicator-with-label {
+@media (-moz-platform: macos) or ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement)) {
+#private-browsing-indicator-with-label {
   position: fixed !important;
   right: 0 !important;
   margin-right: -90px !important;
@@ -382,6 +384,10 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   display: block !important;
 }
 
+/* Remove Private Browsing label */
+label[data-l10n-id="private-browsing-indicator-label"] {
+   visibility: hidden !important;
+} 
 
 /* Hide favicon when New Tab and Private Browsing Tab */
 .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"] {
