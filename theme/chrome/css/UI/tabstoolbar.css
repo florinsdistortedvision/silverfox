@@ -320,7 +320,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* Private browsing (icognito mode) */
 @media (-moz-platform: windows),
-       (-moz-platform: linux) not (-moz-gtk-csd-reversed-placement) {
+       ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement: 0)) {
 #private-browsing-indicator-with-label {
   position: fixed !important;
   left: 0 !important;

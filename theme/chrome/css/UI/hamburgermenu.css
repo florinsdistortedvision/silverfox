@@ -21,6 +21,12 @@
   margin-left: 2px !important;
 }
 
+
+#hamburger-button menupopup, menuitem, div {
+  font-size: 12px !important;
+}
+
+
 @supports (-moz-bool-pref("silverfox.preferOldLook")) {
 #hamburger-button[current="true"]::before {
   content: url(../../assets/images/middlebar/wrench.png) !important;
@@ -160,6 +166,13 @@
   }
 }
 
+@media (-moz-platform: linux) {
+  .submenu-item5:before,
+  .submenu-item6:before {
+    left: 28px;
+  }
+}
+
 .submenu-item7::after {
   content: "Ctrl+S" !important;
 }
@@ -296,21 +309,6 @@
   justify-content: center;
 }
 
-@media (-moz-platform: linux) {
-.zoomLevelButton,
-.fullscreenButton,
-.cutButton,
-.copyButton, 
- .pasteButton {
-    max-width: 45px !important;
-  }
-  
-  .minimizeButton,
-  .maximizeButton {
-    max-width: 10px !important;
-  }
-}
-
 .cutButton {
   margin-left: 110px !important;
 }
@@ -322,8 +320,12 @@
 }
 
 @media (-moz-platform: linux) {
-  .cutButton {
-    margin-left: 90px !important;
+  
+#hamburger-button button {
+    max-width: 30px !important;
+}  
+.cutButton {
+    margin-left: 125px !important;
   }
 }
 
@@ -339,7 +341,7 @@
 
 @media (-moz-platform: linux) {
   .minimizeButton {
-    margin-left: 55px !important;
+    margin-left: 82px !important;
   }
 }
 

@@ -30,7 +30,6 @@ panel, menupopup {
   scrollbar-width: none !important;
 }
 
-
 #editBookmarkPanelInfoArea::-webkit-scrollbar {
     display: none !important;
 }
@@ -76,12 +75,12 @@ panel, menupopup {
   margin-left: -50px !important;
 }
 
-#editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 4 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 2 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove 3 bookmarks"],
-#editBookmarkPanelRemoveButton[label="Remove bookmark"] {
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":6}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":5}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":4}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":3}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":2}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-id="bookmark-panel-remove"] {
   background: var(--arrowpanel-background) !important;
   color: transparent !important;
   position: relative;
@@ -89,7 +88,7 @@ panel, menupopup {
   height: 20px !important;
 }
 
-#editBookmarkPanelRemoveButton[label="Remove bookmark"]::before {
+#editBookmarkPanelRemoveButton[data-l10n-id="bookmark-panel-remove"]::before {
   content: "Remove" !important;
   position: relative;
   color: #5498dc !important;
@@ -98,11 +97,11 @@ panel, menupopup {
   left: 35px !important;
 }
 
-#editBookmarkPanelRemoveButton[label="Remove 6 bookmarks"]::before,
-#editBookmarkPanelRemoveButton[label="Remove 5 bookmarks"]::before,
-#editBookmarkPanelRemoveButton[label="Remove 4 bookmarks"]::before,
-#editBookmarkPanelRemoveButton[label="Remove 2 bookmarks"]::before,
-#editBookmarkPanelRemoveButton[label="Remove 3 bookmarks"]::before {
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":6}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":5}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":4}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":3}']::before,
+#editBookmarkPanelRemoveButton[data-l10n-args='{"count":2}']::before {
   content: "Remove all" !important;
   position: relative;
   color: #5498dc !important;
@@ -111,12 +110,12 @@ panel, menupopup {
   left: 50px !important;
 }
 
-@supports not (-moz-bool-pref("silverfox.allowThemes")) {
-#editBookmarkPanelRemoveButton[label="Cancel"] {
+
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #editBookmarkPanelRemoveButton[data-l10n-id="bookmark-panel-cancel"] {
   background: white !important;
-  }
 }
-#editBookmarkPanelRemoveButton[label="Cancel"] {
+
+:root:not(:-moz-lwtheme) #editBookmarkPanelRemoveButton[data-l10n-id="bookmark-panel-cancel"] {
   background: var(--arrowpanel-background) !important;
   color: #5498dc !important;
   text-decoration: underline;
@@ -222,7 +221,6 @@ dropmarker:not([native]) {
 #editBMPanel_folderMenuList menupopup menuitem[id="editBMPanel_chooseFolderMenuItem"] {
   display: none !important;
 }
-
 
 #editBMPanel_folderMenuList menuseparator {
   display: none !important;

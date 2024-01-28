@@ -7,7 +7,7 @@ const currentSilverfoxVersion = "0.5";
 function checkSilverfoxVersion() {
   console.log("Checking Silverfox version");
 
-  const remoteURL = "https://silverfox.neocities.org/updater/currentversion.txt";
+  const remoteURL = "https://silverfox.neocities.org/updater/currentversion.txt?timestamp=" + Date.now();
 
   fetch(remoteURL)
     .then(response => response.text())

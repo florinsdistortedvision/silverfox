@@ -8,9 +8,15 @@
 :root:-moz-lwtheme:not(
   [style*="--lwt-header-image"],
   [lwtheme-image],
+  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
   [style*="--lwt-additional-images"]
 ) findbar {
-  background: var(--arrowpanel-background) !important;
+  background: var(--lwt-accent-color) !important;
+}
+
+input.findbar-textbox {
+  background-color: white !important;
+  color: black !important;
 }
 
 findbar {
@@ -61,12 +67,12 @@ findbar {
   margin-left: -59px !important;
   text-overflow: ellipsis !important;
   z-index: 1 !important;
-  color: grey;
+  color: grey !important;
 }
 
 .findbar-label.found-matches::after {
   content: "matches" !important;
-  color: white;
+  color: white !important;
   position: relative;
   right: 45px;
   background: white !important;
