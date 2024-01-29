@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
 
 // Current SF version
-const currentSilverfoxVersion = "0.5";
+const currentSilverfoxVersion = "0.5.1";
 
 // Grab latest version from website    
 function checkSilverfoxVersion() {

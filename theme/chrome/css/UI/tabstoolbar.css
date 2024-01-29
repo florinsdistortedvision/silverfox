@@ -113,15 +113,30 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   transform-origin: 0% 100%;
 }
 
-/* Since reduced motion is not necessary anymore, a fix for stuck New Tab */
-.tabbrowser-tab:not([pinned], [fadein]) {
-  max-width: 0.1px !important;
-  min-width: 0.1px !important;
-  visibility: hidden !important;
+/* Since reduced motion is not necessary anymore, a fix for stuck New Tab and dragging tabs around */
+/* Thanks Travis */
+
+.tabbrowser-tab:not([pinned]) {
+  transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
 }
 
-.tabbrowser-tab[fadein]:not([pinned]) {
-  transition: max-width 100ms linear !important;
+@media (prefers-reduced-motion: no-preference) {
+  #tabbrowser-tabs[movingtab] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[fadein]:not([selected]):not([multiselected]),
+  .tabbrowser-tab[tab-grouping],
+  .tabbrowser-tab[tabdrop-samewindow] {
+    transition: transform 0.001ms var(--animation-easing-function), min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 20ms !important;
+  }
+}
+
+.tabbrowser-tab:not([pinned]):not([fadein]) {
+  max-width: 0.1px !important;
+  min-width: 0.1px !important;
+  opacity: 0 !important;
+  transition: min-width 200ms ease-out, max-width 250ms ease-out , opacity 50ms ease-out 100ms !important;
+}
+
+.tabbrowser-tab[visuallyselected="true"] {
+  z-index: 999 !important;
 }
 
 
@@ -457,17 +472,20 @@ label[data-l10n-id="private-browsing-indicator-label"] {
 .tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label,
 .tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label,
 .tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label {
-  color: transparent !important;
+  font-size: 0px !important;
 }
+.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label::before,
+.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label::before,
+.tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label::before {
+  font-size: 12px !important;
+}
+
 .tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label::before {
   content: "History" !important;
-  color: var(--lwt-text-color) !important;
 }
 .tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label::before {
   content: "Bookmark Manager" !important;
-  color: var(--lwt-text-color) !important;
 }
 .tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label::before {
   content: "Report a Phishing Page" !important;
-  color: var(--lwt-text-color) !important;
 }
