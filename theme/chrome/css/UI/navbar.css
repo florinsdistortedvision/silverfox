@@ -68,6 +68,7 @@
 @supports not (-moz-bool-pref("silverfox.beChromium")) {
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:config"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:profiles"],
+    .bookmark-item > .toolbarbutton-icon[src="page-icon:chrome://userchrome/content/pages/about/about.xhtml"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:support"] {
         background-image: url(../../assets/images/topbar/chromefavicon.png) !important;
         width: 0px !important;
@@ -78,6 +79,7 @@
 @supports (-moz-bool-pref("silverfox.beChromium")) {
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:config"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:profiles"],
+    .bookmark-item > .toolbarbutton-icon[src="page-icon:chrome://userchrome/content/pages/about/about.xhtml"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:support"] {
         background-image: url(../../assets/images/topbar/chromiumfavicon.png) !important;
         width: 0px !important;

@@ -12,6 +12,10 @@
   content: "Help" !important;
   color: #4e5764 !important;
 }
+  
+  #category-more-from-mozilla {
+    display: none !important;
+  }  
 
 #category-more-from-mozilla .category-name[data-l10n-id="more-from-moz-title"]::before {
   content: "Help" !important;

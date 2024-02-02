@@ -430,12 +430,14 @@ label[data-l10n-id="private-browsing-indicator-label"] {
 /* Chromium/Chrome favicon for common Firefox pages */
 @supports not (-moz-bool-pref("silverfox.beChromium")) {
     .tabbrowser-tab[image="chrome://global/skin/icons/settings.svg"] .tab-icon-image,
+    .tabbrowser-tab[image="chrome://userchrome/content/pages/about/assets/chromefavicon.png"] .tab-icon-image,
     .tabbrowser-tab[image="chrome://branding/content/icon32.png"][labeldirection="ltr"] .tab-icon-image {
         content: url(../../assets/images/topbar/chromefavicon.png) !important;
     }
 }
 @supports (-moz-bool-pref("silverfox.beChromium")) {
     .tabbrowser-tab[image="chrome://global/skin/icons/settings.svg"] .tab-icon-image,
+    .tabbrowser-tab[image="chrome://userchrome/content/pages/about/assets/chromefavicon.png"] .tab-icon-image,
     .tabbrowser-tab[image="chrome://branding/content/icon32.png"][labeldirection="ltr"] .tab-icon-image {
         content: url(../../assets/images/topbar/chromiumfavicon.png) !important;
     }

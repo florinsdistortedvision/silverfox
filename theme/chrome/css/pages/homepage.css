@@ -197,7 +197,7 @@
   position: relative !important;
   top: 45px !important;
   right: 90px !important;
-}
+}   
   
 @supports (-moz-bool-pref("silverfox.hasLocalImage")) {   
 body {

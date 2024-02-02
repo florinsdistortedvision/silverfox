@@ -3,662 +3,679 @@
 /* Windows (7, 8/8.1, 10 and 11) */
 @media (-moz-platform: windows) { 
 
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max,
-.titlebar-close {
-  list-style-image: none !important;
-}
-
-  
-.titlebar-close {
-  margin-right: 27px !important;
-  width: 40px !important;
-  height: 37px !important;
-  margin-top: -5px !important;
-}
-  
-:root:not([sizemode="normal"]) .titlebar-close {
-  margin-top: -12px !important;
-}
-  
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max {
-  min-width: 22px !important;
-  max-width: 22px !important;
-  height: 37px !important;
-  padding: 0px !important;
-  margin-right: 3px !important;
-  margin-top: -5px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-min {
-  margin-top: -12px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-restore {
-  margin-top: -12px !important;
-}
-
-/* Adding Chrome style*/
-  
-.titlebar-close::before {
-  content: url(../../assets/images/topbar/windows/close.png) !important;
-  width: 44px !important;
-  height: 18px !important;
-  margin-top: 20px !important;
-}
-.titlebar-close:hover::before {
-  content: url(../../assets/images/topbar/windows/close_hover.png) !important;
-  width: 44px !important;
-  height: 18px !important;
-}
-.titlebar-max::before {
-  content: url(../../assets/images/topbar/windows/maximize.png) !important;
-  width: 25px !important;
-  height: 18px !important;
-  margin-top: 20px !important;
-}
-.titlebar-restore::before {
-  content: url(../../assets/images/topbar/windows/restore.png) !important;
-  width: 25px !important;
-  height: 18px !important;
-  margin-top: 20px !important;
-}
-
-/* Hovers */
-.titlebar-max:hover::before {
-  content: url(../../assets/images/topbar/windows/maximize_hover.png) !important;
-  width: 25px !important;
-  height: 18px !important;
-}
-.titlebar-min::before {
-  content: url(../../assets/images/topbar/windows/minimize.png) !important;
-  width: 26px !important;
-  height: 18px !important;
-  margin-top: 20px !important;
-}
-.titlebar-min:hover::before {
-  content: url(../../assets/images/topbar/windows/minimize_hover.png) !important;
-  width: 26px !important;
-  height: 18px !important;
-}
-.titlebar-restore:hover::before {
-  content: url(../../assets/images/topbar/windows/restore_hover.png) !important;
-  width: 25px !important;
-  height: 18px !important;
-}
-
-/* Windows 10 with Aero */  
-/* MSStyles themes add a "native" titlebar, but they don't replace the real one for some reason */
-  
-@media (-moz-platform: windows-win10) {  
-@supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
-:root:not(:-moz-lwtheme) .titlebar-restore,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore,
-:root:not(:-moz-lwtheme) .titlebar-min,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min,
-:root:not(:-moz-lwtheme) .titlebar-max,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close,  
-:root:not(:-moz-lwtheme) .titlebar-close {
-  opacity: 0 !important;
-}
-  
-.titlebar-button {
-    background: transparent !important;
-}  
-   
-/* Those "native" titlebars don't have hovers, so this is a hacky "fix" to that
-  Also this assumes, you have the Win 7 size titlebars */
-   
-:root:not(:-moz-lwtheme) .titlebar-restore:hover,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore:hover,
-:root:not(:-moz-lwtheme) .titlebar-min:hover,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min:hover,
-:root:not(:-moz-lwtheme) .titlebar-max:hover,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max:hover,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close:hover,  
-:root:not(:-moz-lwtheme) .titlebar-close:hover {
-  opacity: 20% !important;
-  box-shadow: 0px 0px 15px #fff;
-}
-  
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-) .titlebar-max:hover::before,
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-) .titlebar-min:hover::before,
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-) .titlebar-restore:hover::before {
-  content: url(../../assets/images/topbar/windows/button_hover_aero.png) !important;
-  height: 10px !important;
-  width: 35px !important;
-}
-    
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-) .titlebar-max:hover::before {
-    margin-left: -1px !important;
-    margin-top: 20px !important;
-} 
-  
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-) .titlebar-min:hover::before {
-    margin-left: -5px !important;
-    margin-top: 20px !important;
-}  
-  
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-) .titlebar-close:hover::before {
-  content: url(../../assets/images/topbar/windows/close_hover_aero.png) !important;
- height: 10px !important;
-  width: 30px !important;
-  margin-left: -10px !important;
-}  
-  
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-):not([sizemode=normal]) .titlebar-min:hover::before {
-    margin-left: -13px !important;
-} 
-
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-):not([sizemode=normal]) .titlebar-restore:hover::before {
-    margin-left: -8px !important;
-}  
- 
-:root:is(
-  [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-):not([sizemode=normal]) .titlebar-close:hover::before {
-    margin-left: -20px !important;
-}
-  
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-close {
-    margin-right: 5px !important;
-}  
- 
-  
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-max {
-    margin-right: 5px !important;
-} 
-  
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-min {
-    margin-right: 3px !important;
-}  
- 
-}  
-}
-  
-  
-/*Fix gap for Win10 */  
-@media (-moz-platform: windows-win10) {  
-
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [lwtheme],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox {
-  margin-right: -21px !important;
-} 
-}
-  
-  
-  
-/* Windows 7 */
-    
-@media (-moz-platform: windows-win7) {
-         
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max,
-.titlebar-close {
-  display: unset !important;
-} 
-         
-:root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
-:root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
-  display: none !important;
-}
-         
-.titlebar-close {
-  margin-top: -7px !important;
-  padding-left: 15px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-close {
-  margin-top: 4px !important;
-  margin-bottom: -5px !important;
-}
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max {
-  margin-top: -4px !important;
-  margin-right: -6px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-min {
-  margin-top: 7px !important;
-  margin-bottom: -5px !important;
-  margin-right: -6px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-restore {
-  margin-top: 7px !important;
-  margin-right: -22px !important;
-  margin-bottom: -5px !important;
-  
-} 
-.titlebar-max {
-   margin-right: -22px !important;
-}
-         
-.titlebar-close:hover::before {
-  position: relative !important;
-  left: -1px !important;
-}
-
-/* Fix for fullscreen native titlebars cutting off nav-bar */  
-:root:is(:not([sizemode=normal]), [style*="--lwt-accent-color: rgb(28, 27, 34)"][lwtheme]) .titlebar-buttonbox {
-    max-height: 30px !important;
-}
-  
-:root:is(
-  [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
-):not([sizemode=normal]) .titlebar-buttonbox-container {
-    max-height: 30px !important;
-}  
- 
-:root:is(
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-):not([sizemode="normal"]) .titlebar-buttonbox-container {
-  margin-top: -17px;
-} 
-  
-/* In Windows 7, native titlebars have the aero wallpaper blur overlayed over, so for custom themes bring Chrome styling*/                  
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox {
-  appearance: unset !important;
-}
-   
-:root[lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox {
-  appearance: unset !important;
-}
-
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [lwtheme],
-  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox-container {
-  align-items: center !important;
-  margin-right: -7px;
-} 
-  
-:root:is(
-  [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
-) .titlebar-buttonbox-container {
-  align-items: center !important;
-  margin-right: -7px;
-}
-
-/* Lil trick to stop doubling of titlebars */  
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox-container {
-   opacity: 0 !important; 
-}  
-
-  
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
-    margin-right: -22px !important;
-}
-  
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
-    margin-right: -6px !important;
-}
-  
-:root:is(
-  [style*="--lwt-accent-color: rgb(240, 240, 244)"]
-):not([sizemode=normal]) .titlebar-restore {
-    margin-right: -22px !important;  
-} 
-}
-  
-  
-
-/* Windows 8 / 8.1 */
-
-@media (-moz-platform: windows-win8) {
-         
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max,
-.titlebar-close {
-  display: unset !important;
-} 
-         
-:root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
-:root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
-  display: none !important;
-}
-         
-.titlebar-close {
-  margin-right: 5px !important;
-  margin-top: -7px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-close {
-  margin-top: 4px !important;
-  margin-bottom: -5px !important;
-}
-.titlebar-restore,
-.titlebar-min,
-.titlebar-max {
-  margin-right: -11px !important;
-  margin-top: -4px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-min {
-  margin-top: 7px !important;
-    margin-bottom: -5px !important;
-}
-:root:not([sizemode="normal"]) .titlebar-restore {
-  margin-top: 7px !important;
-  margin-right: -15px !important;
-  margin-bottom: -5px !important;
-} 
-.titlebar-max {
-   margin-right: -15px !important;
-}
-         
-.titlebar-close:hover::before {
-  position: relative !important;
-  left: -1px !important;
-}
-
-  
-/* Fix for fullscreen native titlebars cutting off nav-bar */  
-:root:is(:not([sizemode=normal]), [style*="--lwt-accent-color: rgb(28, 27, 34)"][lwtheme]) .titlebar-buttonbox {
-    max-height: 30px !important;
-}
-  
-:root:is(
-  [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
-):not([sizemode=normal]) .titlebar-buttonbox-container {
-    max-height: 30px !important;
-}  
-
-
-
-/* When in light/dark mode use native titlebar buttons, when custom themes use Chrome styling */                 
-:root:is(
-  [style*="--lwt-header-image"],
-  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-  [lwtheme-image],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox {
-  appearance: unset !important;
-}
-/* In Windows 8, native titlebars have the accent color overlayed over, so for themes that dont have a image bring Chrome styling*/  
-:root[lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox {
-  appearance: unset !important;
-}
-  
-
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox-container {
-  align-items: center !important;
-  margin-right: -7px;
-}
-/* In Windows 8, native titlebars have the accent color overlayed over, so for themes that dont have a image bring Chrome styling*/  
-:root[lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox-container {
-  align-items: center !important;
-  margin-right: 3px;
-}
-}
-  
-/* Aero Basic - PAIN */
-  
-@media (-moz-windows-compositor: 0) {
-  
-:root[tabsintitlebar]:not([inDOMFullscreen]) #titlebar:-moz-lwtheme {
-      visibility: hidden !important;
-}
-
-#titlebar-buttonbox-container .titlebar-close {
-  appearance: none !important;
-}
-  
-  
- 
-/* Disable the stupid hover of native basic titlebars */  
-.titlebar-button {
-    appearance: none !important;
-    max-height: 0px !important;
-}   
-  
-:root:not(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox {
-    align-items: center !important;
-    appearance: none !important;
-}
-  
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [lwtheme],
-  [style*="--lwt-additional-images"]
-) .titlebar-buttonbox {
-    margin-top: -54px !important;
-}  
-  
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [lwtheme],
-  [style*="--lwt-additional-images"]
-) .titlebar-close {
-  margin-top: 12px !important;
-  margin-left: 2px !important;
-  margin-right: 26px !important;
-}  
-  
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [lwtheme],
-  [style*="--lwt-additional-images"]
-) .titlebar-max {
-  margin-left: 10px !important;
-  margin-right: -16px !important;
-}
-   
-    
-:root[lwtheme] .titlebar-restore,
-:root[lwtheme] .titlebar-min,
-:root[lwtheme] .titlebar-max {
-  margin-top: 15px !important;
-}  
-   
-:root[lwtheme] .titlebar-close {
-  margin-top: 15px !important;
-}
-  
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
-  [style*="--lwt-additional-images"]
-)  .titlebar-restore,
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
-  [style*="--lwt-additional-images"]
-)  .titlebar-min,
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
-  [style*="--lwt-additional-images"]
-)  .titlebar-max {
-    margin-top: 18px !important;
-}
-
-/* Restore the lil trick */
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-buttonbox-container,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox-container,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox-container {
-   opacity: 100% !important;
-   margin-top: -36px !important;
-}
-  
-/* "System" theme */  
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-close {
-    margin-top: 18px !important;
-}
-  
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-max {
-    margin-left: 10px !important;
-    margin-right: -12px !important;
-}  
-
-:root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-buttonbox-container {
-    margin-right: -7px !important;
-} 
-  
-/* Maximized */  
-  
-:root:is(
-  [lwtheme]:not([style*="--lwt-accent-color: rgb(240, 240, 244)"]),
-  [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
-):not([sizemode=normal]) .titlebar-buttonbox-container {
-    margin-top: 4px !important;
-}
-  
-:root:is(
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-):not([sizemode=normal]) .titlebar-buttonbox {
-    margin-top: 26px !important;
-    margin-bottom: 32px !important;
-}  
-  
-:root:is(
-  [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-):not([sizemode=normal]) .titlebar-restore {
-    margin-left: 10px !important;
-  margin-right: -12px !important;
-}
-  
-:root:is(
-  [style*="--lwt-header-image"],
-  [lwtheme-image],
-  [style*="--lwt-accent-color: rgb(240, 240, 244)"],
-  [lwtheme],
-  [style*="--lwt-additional-images"]
-):not([sizemode=normal]) .titlebar-restore {
-  margin-left: 10px !important;
-  margin-right: -16px !important;
-}  
-
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox,
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
-  margin-top: -50px !important;
-}    
-}
-}
-
-
-/* Linux */
-
-@media (-moz-platform: linux) {
-  .titlebar-buttonbox {
-    margin-top: -14px !important;
-    appearance: none !important; /* Prevents ANY influencing of margins */
-    gap: 2px !important;
+  .titlebar-restore,
+  .titlebar-min,
+  .titlebar-max,
+  .titlebar-close {
+    list-style-image: none !important;
   }
-  :root:not([sizemode="normal"]) .titlebar-buttonbox {
-    margin-top: 1px !important;
+  
+    
+  .titlebar-close {
+    margin-right: 27px !important;
+    width: 40px !important;
+    height: 37px !important;
+    margin-top: -5px !important;
   }
-  @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-right: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
-  }}
-  @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-left: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
-  }}
-  .titlebar-close,
+    
+  :root:not([sizemode="normal"]) .titlebar-close {
+    margin-top: -12px !important;
+  }
+    
   .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-    appearance: none !important;
-    list-style-image: none !important;
-    border-radius: 0 !important;
-    min-width: 24px !important;
-    max-width: 24px !important;
-    height: 18px !important;
-    padding: 0 !important;
+    min-width: 22px !important;
+    max-width: 22px !important;
+    height: 37px !important;
+    padding: 0px !important;
+    margin-right: 3px !important;
+    margin-top: -5px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-min {
+    margin-top: -12px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-restore {
+    margin-top: -12px !important;
   }
   
   /* Adding Chrome style*/
-  .titlebar-close {
-    background: url(../../assets/images/topbar/linux/close.png) !important;
+    
+  .titlebar-close::before {
+    content: url(../../assets/images/topbar/windows/close.png) !important;
+    width: 44px !important;
+    height: 18px !important;
+    margin-top: 20px !important;
   }
-  .titlebar-min {
-    background: url(../../assets/images/topbar/linux/minimize.png) !important;
+  .titlebar-close:hover::before {
+    content: url(../../assets/images/topbar/windows/close_hover.png) !important;
+    width: 44px !important;
+    height: 18px !important;
   }
-  .titlebar-max {
-    background: url(../../assets/images/topbar/linux/maximize.png) !important;
+  .titlebar-max::before {
+    content: url(../../assets/images/topbar/windows/maximize.png) !important;
+    width: 25px !important;
+    height: 18px !important;
+    margin-top: 20px !important;
   }
-  .titlebar-restore {
-    background: url(../../assets/images/topbar/linux/restore.png) !important;
+  .titlebar-restore::before {
+    content: url(../../assets/images/topbar/windows/restore.png) !important;
+    width: 25px !important;
+    height: 18px !important;
+    margin-top: 20px !important;
   }
-
+  
   /* Hovers */
-  .titlebar-close:hover {
-    background: url(../../assets/images/topbar/linux/close_hover.png) !important;
+  .titlebar-max:hover::before {
+    content: url(../../assets/images/topbar/windows/maximize_hover.png) !important;
+    width: 25px !important;
+    height: 18px !important;
   }
-  .titlebar-min:hover {
-    background: url(../../assets/images/topbar/linux/minimize_hover.png) !important;
+  .titlebar-min::before {
+    content: url(../../assets/images/topbar/windows/minimize.png) !important;
+    width: 26px !important;
+    height: 18px !important;
+    margin-top: 20px !important;
   }
-  .titlebar-max:hover {
-    background: url(../../assets/images/topbar/linux/maximize_hover.png) !important;
+  .titlebar-min:hover::before {
+    content: url(../../assets/images/topbar/windows/minimize_hover.png) !important;
+    width: 26px !important;
+    height: 18px !important;
   }
-  .titlebar-restore:hover {
-    background: url(../../assets/images/topbar/linux/restore_hover.png) !important;
+  .titlebar-restore:hover::before {
+    content: url(../../assets/images/topbar/windows/restore_hover.png) !important;
+    width: 25px !important;
+    height: 18px !important;
   }
-
-  /* Pressed */
-  .titlebar-close:hover:active {
-    background: url(../../assets/images/topbar/linux/close_pressed.png) !important;
+  
+  /* Windows 10 with Aero */  
+  /* MSStyles themes add a "native" titlebar, but they don't replace the real one for some reason */
+    
+  @media (-moz-platform: windows-win10) {  
+  @supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
+  :root:not(:-moz-lwtheme) .titlebar-restore,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore,
+  :root:not(:-moz-lwtheme) .titlebar-min,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min,
+  :root:not(:-moz-lwtheme) .titlebar-max,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close,  
+  :root:not(:-moz-lwtheme) .titlebar-close {
+    opacity: 0 !important;
   }
-  .titlebar-min:hover:active {
-    background: url(../../assets/images/topbar/linux/minimize_pressed.png) !important;
+    
+  .titlebar-button {
+      background: transparent !important;
+  }  
+     
+  /* Those "native" titlebars don't have hovers, so this is a hacky "fix" to that
+    Also this assumes, you have the Win 7 size titlebars */
+     
+  :root:not(:-moz-lwtheme) .titlebar-restore:hover,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore:hover,
+  :root:not(:-moz-lwtheme) .titlebar-min:hover,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min:hover,
+  :root:not(:-moz-lwtheme) .titlebar-max:hover,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max:hover,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close:hover,  
+  :root:not(:-moz-lwtheme) .titlebar-close:hover {
+    opacity: 20% !important;
+    box-shadow: 0px 0px 15px #fff;
   }
-  .titlebar-max:hover:active {
-    background: url(../../assets/images/topbar/linux/maximize_pressed.png) !important;
+    
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ) .titlebar-max:hover::before,
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ) .titlebar-min:hover::before,
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ) .titlebar-restore:hover::before {
+    content: url(../../assets/images/topbar/windows/button_hover_aero.png) !important;
+    height: 10px !important;
+    width: 35px !important;
   }
-  .titlebar-restore:hover:active {
-    background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
+      
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ) .titlebar-max:hover::before {
+      margin-left: -1px !important;
+      margin-top: 20px !important;
+  } 
+    
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ) .titlebar-min:hover::before {
+      margin-left: -5px !important;
+      margin-top: 20px !important;
+  }  
+    
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ) .titlebar-close:hover::before {
+    content: url(../../assets/images/topbar/windows/close_hover_aero.png) !important;
+   height: 10px !important;
+    width: 30px !important;
+    margin-left: -10px !important;
+  }  
+    
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ):not([sizemode=normal]) .titlebar-min:hover::before {
+      margin-left: -13px !important;
+  } 
+  
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ):not([sizemode=normal]) .titlebar-restore:hover::before {
+      margin-left: -8px !important;
+  }  
+   
+  :root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ):not([sizemode=normal]) .titlebar-close:hover::before {
+      margin-left: -20px !important;
   }
-}
+    
+  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-close {
+      margin-right: 5px !important;
+  }  
+   
+    
+  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-max {
+      margin-right: 5px !important;
+  } 
+    
+  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-min {
+      margin-right: 3px !important;
+  }  
+   
+  }  
+  }
+    
+    
+  /*Fix gap for Win10 */  
+  @media (-moz-platform: windows-win10) {  
+  
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [lwtheme],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox {
+    margin-right: -21px !important;
+  } 
+  }
+    
+    
+    
+  /* Windows 7 */
+      
+  @media (-moz-platform: windows-win7) {
+           
+  .titlebar-restore,
+  .titlebar-min,
+  .titlebar-max,
+  .titlebar-close {
+    display: unset !important;
+  } 
+           
+  :root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
+  :root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
+    display: none !important;
+  }
+           
+  .titlebar-close {
+    margin-top: -7px !important;
+    margin-right: 16px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-close {
+    margin-top: 4px !important;
+    margin-bottom: -5px !important;
+  }
+    
+  .titlebar-restore,
+  .titlebar-min,
+  .titlebar-max {
+    margin-top: -4px !important;
+  }
+    
+  :root:not([sizemode="normal"]) .titlebar-min {
+    margin-top: 7px !important;
+    margin-bottom: -5px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-restore {
+    margin-top: 7px !important;
+    margin-bottom: -5px !important;  
+  } 
+   
+  :root:is(
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"]
+    ):not([sizemode="normal"]) .titlebar-restore {
+      padding-right: 44px !important;
+  }  
+    
+  :root:not([sizemode="normal"]) .titlebar-restore {
+      margin-right: -2px !important;
+  }  
+    
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
+    padding-right: 44px !important;
+  }
+  
+  .titlebar-max {
+      margin-right: -4px !important;
+  }  
+    
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
+    padding-right: 32px !important;
+  }
+   
+  .titlebar-min {
+      margin-right: 2px !important;
+  }
+           
+  
+  /* Fix for fullscreen native titlebars cutting off nav-bar */  
+  :root:is(:not([sizemode=normal]), [style*="--lwt-accent-color: rgb(28, 27, 34)"][lwtheme]) .titlebar-buttonbox {
+      max-height: 30px !important;
+  }
+    
+  :root:is(
+    [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
+  ):not([sizemode=normal]) .titlebar-buttonbox-container {
+      max-height: 30px !important;
+  }  
+   
+  :root:is(
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ):not([sizemode="normal"]) .titlebar-buttonbox-container {
+    margin-top: -17px;
+  } 
+    
+  /* In Windows 7, native titlebars have the aero wallpaper blur overlayed over, so for custom themes bring Chrome styling*/                  
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox {
+    appearance: unset !important;
+  }
+     
+  :root[lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox {
+    appearance: unset !important;
+  }
+  
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [lwtheme],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox-container {
+    align-items: center !important;
+    margin-right: -7px;
+  } 
+    
+  :root:is(
+    [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
+  ) .titlebar-buttonbox-container {
+    align-items: center !important;
+    margin-right: -7px;
+  }
+  
+  /* Lil trick to stop doubling of titlebars */  
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox-container {
+     opacity: 0 !important; 
+  }  
+  
+    
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
+      margin-right: -22px !important;
+  }
+    
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
+      margin-right: -6px !important;
+  }
+    
+  :root:is(
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"]
+  ):not([sizemode=normal]) .titlebar-restore {
+      margin-right: -22px !important;  
+  } 
+  }
+    
+    
+  
+  /* Windows 8 / 8.1 */
+  
+  @media (-moz-platform: windows-win8) {
+           
+  .titlebar-restore,
+  .titlebar-min,
+  .titlebar-max,
+  .titlebar-close {
+    display: unset !important;
+  } 
+           
+  :root:not([sizemode=maximized], [sizemode=fullscreen]) .titlebar-restore,
+  :root:is([sizemode=maximized], [sizemode=fullscreen]) .titlebar-max {
+    display: none !important;
+  }
+           
+  .titlebar-close {
+    margin-right: 5px !important;
+    margin-top: -7px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-close {
+    margin-top: 4px !important;
+    margin-bottom: -5px !important;
+  }
+  .titlebar-restore,
+  .titlebar-min,
+  .titlebar-max {
+    margin-right: -11px !important;
+    margin-top: -4px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-min {
+    margin-top: 7px !important;
+      margin-bottom: -5px !important;
+  }
+  :root:not([sizemode="normal"]) .titlebar-restore {
+    margin-top: 7px !important;
+    margin-right: -15px !important;
+    margin-bottom: -5px !important;
+  } 
+  .titlebar-max {
+     margin-right: -15px !important;
+  }
+           
+  .titlebar-close:hover::before {
+    position: relative !important;
+    left: -1px !important;
+  }
+  
+    
+  /* Fix for fullscreen native titlebars cutting off nav-bar */  
+  :root:is(:not([sizemode=normal]), [style*="--lwt-accent-color: rgb(28, 27, 34)"][lwtheme]) .titlebar-buttonbox {
+      max-height: 30px !important;
+  }
+    
+  :root:is(
+    [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
+  ):not([sizemode=normal]) .titlebar-buttonbox-container {
+      max-height: 30px !important;
+  }  
+  
+  
+  
+  /* When in light/dark mode use native titlebar buttons, when custom themes use Chrome styling */                 
+  :root:is(
+    [style*="--lwt-header-image"],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [lwtheme-image],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox {
+    appearance: unset !important;
+  }
+  /* In Windows 8, native titlebars have the accent color overlayed over, so for themes that dont have a image bring Chrome styling*/  
+  :root[lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox {
+    appearance: unset !important;
+  }
+    
+  
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox-container {
+    align-items: center !important;
+    margin-right: -7px;
+  }
+  /* In Windows 8, native titlebars have the accent color overlayed over, so for themes that dont have a image bring Chrome styling*/  
+  :root[lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"]) .titlebar-buttonbox-container {
+    align-items: center !important;
+    margin-right: 3px;
+  }
+  }
+    
+  /* Aero Basic - PAIN */
+    
+  @media (-moz-windows-compositor: 0) {
+    
+  :root[tabsintitlebar]:not([inDOMFullscreen]) #titlebar:-moz-lwtheme {
+        visibility: hidden !important;
+  }
+  
+  #titlebar-buttonbox-container .titlebar-close {
+    appearance: none !important;
+  }
+     
+  /* Disable the stupid hover of native basic titlebars */  
+  .titlebar-button {
+      appearance: none !important;
+      max-height: 0px !important;
+  }   
+    
+  :root:not(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox {
+      align-items: center !important;
+      appearance: none !important;
+  }
+    
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [lwtheme],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-buttonbox {
+      margin-top: -54px !important;
+  }  
+    
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [lwtheme],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-close {
+    margin-top: 12px !important;
+    margin-left: 2px !important;
+    margin-right: 18px !important;
+  }  
+    
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [lwtheme],
+    [style*="--lwt-additional-images"]
+  ) .titlebar-max {
+    margin-left: 10px !important;
+    margin-right: -2px !important;
+  }  
+    
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
+    margin-right: -24px !important;
+    margin-left: 0px !important;
+  } 
+       
+  :root[lwtheme] .titlebar-min {
+      margin-right: -6px !important;
+  }  
+      
+  :root[lwtheme] .titlebar-restore,
+  :root[lwtheme] .titlebar-min,
+  :root[lwtheme] .titlebar-max {
+    margin-top: 15px !important;
+  }  
+     
+  :root[lwtheme] .titlebar-close {
+    margin-top: 15px !important;
+  }
+    
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
+    [style*="--lwt-additional-images"]
+  )  .titlebar-restore,
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
+    [style*="--lwt-additional-images"]
+  )  .titlebar-min,
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"],
+    [style*="--lwt-additional-images"]
+  )  .titlebar-max {
+      margin-top: 18px !important;
+  }
+  
+  /* Restore the lil trick */
+  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-buttonbox-container,
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox-container,
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox-container {
+     opacity: 100% !important;
+     margin-top: -36px !important;
+  }
+    
+  /* Maximized */  
+    
+  :root:is(
+    [lwtheme]:not([style*="--lwt-accent-color: rgb(240, 240, 244)"]),
+    [lwtheme]:not([style*="--lwt-accent-color: rgb(28, 27, 34)"])
+  ):not([sizemode=normal]) .titlebar-buttonbox-container {
+      margin-top: 4px !important;
+  }
+    
+  :root:is(
+    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
+  ):not([sizemode=normal]) .titlebar-buttonbox {
+      margin-top: 26px !important;
+      margin-bottom: 32px !important;
+  }  
+   
+  :root:is(
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"]
+    ):not([sizemode="normal"]) .titlebar-min {
+      padding-right: 0px !important;
+  }  
+    
+  :root:is(
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"]
+    ):not([sizemode="normal"]) .titlebar-restore {
+      padding-right: 0px !important;
+  }   
+    
+  :root:is(
+    [style*="--lwt-header-image"],
+    [lwtheme-image],
+    [style*="--lwt-accent-color: rgb(240, 240, 244)"],
+    [lwtheme],
+    [style*="--lwt-additional-images"]
+  ):not([sizemode=normal]) .titlebar-restore {
+    margin-left: 10px !important;
+    margin-right: -2px !important;
+  }  
+  
+  :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox,
+  :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
+    margin-top: -50px !important;
+  }    
+  }
+  }
+  
+  
+  /* Linux */
+  
+  @media (-moz-platform: linux) {
+    
+  @supports not (-moz-bool-pref("silverfox.enableNativeLinuxTitlebars")) {   
+    .titlebar-buttonbox {
+      margin-top: -14px !important;
+      appearance: none !important; /* Prevents ANY influencing of margins */
+      gap: 2px !important;
+    }
+    :root:not([sizemode="normal"]) .titlebar-buttonbox {
+      margin-top: 1px !important;
+    }
+    @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
+      margin-right: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+    }}
+    @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
+      margin-left: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
+    }}
+    .titlebar-close,
+    .titlebar-restore,
+    .titlebar-min,
+    .titlebar-max {
+      appearance: none !important;
+      list-style-image: none !important;
+      border-radius: 0 !important;
+      min-width: 24px !important;
+      max-width: 24px !important;
+      height: 18px !important;
+      padding: 0 !important;
+    }
+    
+    /* Adding Chrome style*/
+    .titlebar-close {
+      background: url(../../assets/images/topbar/linux/close.png) !important;
+    }
+    .titlebar-min {
+      background: url(../../assets/images/topbar/linux/minimize.png) !important;
+    }
+    .titlebar-max {
+      background: url(../../assets/images/topbar/linux/maximize.png) !important;
+    }
+    .titlebar-restore {
+      background: url(../../assets/images/topbar/linux/restore.png) !important;
+    }
+  
+    /* Hovers */
+    .titlebar-close:hover {
+      background: url(../../assets/images/topbar/linux/close_hover.png) !important;
+    }
+    .titlebar-min:hover {
+      background: url(../../assets/images/topbar/linux/minimize_hover.png) !important;
+    }
+    .titlebar-max:hover {
+      background: url(../../assets/images/topbar/linux/maximize_hover.png) !important;
+    }
+    .titlebar-restore:hover {
+      background: url(../../assets/images/topbar/linux/restore_hover.png) !important;
+    }
+  
+    /* Pressed */
+    .titlebar-close:hover:active {
+      background: url(../../assets/images/topbar/linux/close_pressed.png) !important;
+    }
+    .titlebar-min:hover:active {
+      background: url(../../assets/images/topbar/linux/minimize_pressed.png) !important;
+    }
+    .titlebar-max:hover:active {
+      background: url(../../assets/images/topbar/linux/maximize_pressed.png) !important;
+    }
+    .titlebar-restore:hover:active {
+      background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
+    }
+  }
+  }

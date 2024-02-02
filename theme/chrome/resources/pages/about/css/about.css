@@ -1,0 +1,116 @@
+* {
+    font-family: "Segoe UI", sans-serif;
+}
+
+.settingsPane {
+    display: inline-flex;
+}
+
+.leftSection {
+    margin-left: 16px;
+    padding-right: 94px;
+}
+
+.chromeChromiumName {
+    font-size: 17px !important;
+    color: #4e5764 !important;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-left: -3px !important;
+}
+
+.leftSection a {
+    display: grid;
+    font-size: 12px !important;
+    text-decoration: none;
+    color: grey;
+    margin-bottom: 15px;
+}
+
+.helpLink {
+    color: #4e5764 !important;
+    border-left: 5px solid #4e5764 !important;
+    padding-left: 18px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: -23px;
+    margin-top: 37px;
+}
+
+.headerInfo {
+    color: #4e5764;
+    font-size: 17px;
+    border-bottom: 1px solid #eeeeee;
+    margin-top: -5px;
+    height: 33px;
+}
+
+.tagLine {
+    margin-top: -12px;
+    font-size: 12px;
+    margin-left: 36px;
+}
+
+.browserName {
+    margin-left: 3px;
+    margin-top: -2px;
+}
+
+.browserName[chrome="true"]:before {
+    content: url("chrome://userchrome/content/pages/about/assets/chromelogo.png");
+}
+
+.browserName[chromium="true"]:before {
+    content: url("chrome://userchrome/content/pages/about/assets/chromiumlogo.png");
+}
+
+.browserName:before {
+    position: relative;
+    top: 20px;
+    left: -5px;
+}
+
+.aboutButtons {
+    margin-top: 15px;
+}
+
+.aboutButtons button {
+    border: 1px solid #a9a9a9;
+    background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%);
+    font-size: 13px;
+    border-radius: 2px;
+    padding-bottom: 2px;
+    padding-top: 1px;
+    color: black;
+}
+
+.aboutButtons button:hover {
+    background-image: linear-gradient(to top, #e6e6e6 0%, #f0f0f0 100%);
+    cursor: pointer;
+}
+
+.versionUpdate {
+    font-size: 12px;
+    margin-top: 42px;
+}
+
+.isUptoDate {
+    margin-top: -7px;
+    margin-left: 5px;
+}
+
+.isUptoDate:before {
+    content: url("chrome://userchrome/content/pages/about/assets/uptodatecheck.png");
+    position: relative;
+    top: 3px;
+    left: -4px;
+}
+
+.moreInfo {
+    font-size: 12px;
+    margin-top: 267px;
+}
+
+.moreInfo p {
+    margin-bottom: -8px;
+}

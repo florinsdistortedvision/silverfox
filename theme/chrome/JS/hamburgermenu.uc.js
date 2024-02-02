@@ -53,7 +53,7 @@ window.addEventListener("load", function () {
         class: "submenu-item10",
         submenu: true, // Indicate that it has a submenu
         submenuItems: [
-          { label: "Find extensions... ", class: "submenu-item10-1" },
+          { label: "Silverfox Flags ", class: "submenu-item10-1" },
           { label: "Separator", separator: true },
           { label: "Extensions", class: "submenu-item10-2" },
           { label: "Task manager", class: "submenu-item10-3" },
@@ -249,7 +249,7 @@ zoombuttonInfo.forEach(info => {
   const findMenu = document.querySelector(".submenu-item8");
   const printMenu = document.querySelector(".submenu-item9");
   
-  const findExtensions = document.querySelector(".submenu-item10-1");
+  const silverfoxFlags = document.querySelector(".submenu-item10-1");
   const extensionsMenu = document.querySelector(".submenu-item10-2");
   const taskManager = document.querySelector(".submenu-item10-3");
   const clearBrowsing = document.querySelector(".submenu-item10-4");
@@ -473,16 +473,16 @@ if (printMenu) {
   printMenu.addEventListener("command", openGoogleSearch);
 }
 
-if (findExtensions) {
+if (silverfoxFlags) {
   const openSpaceHey = function (event) {
-    const spaceHeyURL = "https://addons.mozilla.org/en-US/firefox/";
+    const spaceHeyURL = "chrome://userchrome/content/pages/flags/flags.xhtml";
     
     const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
 
     window.gBrowser.selectedTab = newTab;
   };
 
-  findExtensions.addEventListener("command", openSpaceHey);
+  silverfoxFlags.addEventListener("command", openSpaceHey);
 }
 
 if (extensionsMenu) {
@@ -644,7 +644,7 @@ if (settingsMenu) {
 if (aboutChrome) {
   const openGoogleSearch = function (event) {
     const window = event.target.ownerDocument.defaultView;
-	switchToTabHavingURI('about:preferences#moreFromMozilla', true);
+	switchToTabHavingURI('chrome://userchrome/content/pages/about/about.xhtml', true);
 
     const paste = readFromClipboard();
 

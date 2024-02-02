@@ -1,0 +1,127 @@
+/* Silverfox Flags Page */
+
+* {
+    font-family: "Segoe UI", sans-serif;
+}
+
+.experimentName,
+.carefulTop {
+    display: inline-flex;
+}
+
+.carefulInfo {
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+red {
+    color: red;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.moreInfo {
+    font-size: 15px;
+}
+
+.expText {
+    font-weight: bold;
+    border-top: 1px solid #9cc2ef;
+    background: #ebeff9;
+    font-size: 12px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    color: black;
+}
+
+.experimentsTable {
+    background: #F0F0F0;
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+.experimentName {
+    margin-top: -8px;
+}
+
+.experimentFlag {
+    border-bottom: 1px solid #cdcdcd;
+    padding-left: 5px;
+}
+
+.flagName {
+    font-weight: bold;
+    padding-right: 5px;
+    color: black;
+}
+
+.aboutInfo,
+.flagMention {
+    color: grey;
+}
+
+.dropdownSwitch,
+.enableSwitch,
+.aboutInfo {
+    margin-top: -10px;
+}
+
+.enableSwitch {
+    padding-bottom: 5px;
+}
+
+.dropdownSwitch {
+    padding-bottom: 10px;
+}
+
+.restartFirefox {
+    margin-top: 5px;
+    background: white;
+    border-top: 1px solid #cdcdcd;
+    color: black;
+}
+
+.firefoxSwitch p, button {
+    font-size: 12px;
+}
+
+.firefoxSwitch p {
+    margin-bottom: 2px;
+}
+.notAvailable {
+    margin-top: -10px;
+    font-size: 12px;
+    color: grey;
+}
+
+/* Conditional flags */
+
+.enableDisableAero {
+    display: none;
+}
+
+@media (-moz-platform: windows-win10) {
+    .enableDisableAero {
+        display: block !important;
+    }
+    
+    .notAvailable[type="aeroFlag"] {
+        display: none !important;
+    }
+}
+
+.enableDisableLinuxTitlebar {
+    display: none;
+}
+
+@media (-moz-platform: linux) {
+    .enableDisableLinuxTitlebar {
+        display: block !important;
+    }
+
+    .notAvailable[type="linuxTitlebars"] {
+        display: none !important
+    }
+}

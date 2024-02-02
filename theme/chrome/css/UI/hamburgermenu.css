@@ -26,7 +26,6 @@
   font-size: 12px !important;
 }
 
-
 @supports (-moz-bool-pref("silverfox.preferOldLook")) {
 #hamburger-button[current="true"]::before {
   content: url(../../assets/images/middlebar/wrench.png) !important;
@@ -310,43 +309,57 @@
 }
 
 .cutButton {
-  margin-left: 110px !important;
-}
-
-@media (-moz-platform: macos){
-  .cutButton {
-    margin-left: 65px !important;
-  } 
-}
-
-@media (-moz-platform: linux) {
-  
-#hamburger-button button {
-    max-width: 30px !important;
-}  
-.cutButton {
-    margin-left: 125px !important;
-  }
+  margin-left: 120px !important;
 }
 
 .minimizeButton {
-  margin-left: 99px !important;
+  margin-left: 112px !important;
 }
 
 @media (-moz-platform: macos) {
+  .cutButton {
+    margin-left: 100px !important;
+  }
+  
   .minimizeButton {
-    margin-left: 52px !important;
+    margin-left: 70px !important;
   }
 }
 
-@media (-moz-platform: linux) {
-  .minimizeButton {
-    margin-left: 82px !important;
-  }
-}
 
 .fullscreenButton::before {
   content: url(../../assets/images/middlebar/hamfullscreen.png);
   position: relative;
   top: 2px;
+}
+
+.fullscreenButton,
+.zoomLevelButton,
+.maximizeButton,
+.minimizeButton,
+.cutButton,
+.copyButton,
+.pasteButton {
+  appearance: unset !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  border-radius: 3px !important;
+  border: 1px solid #d5d5d5 !important;
+  background: transparent !important;
+  max-width: 40px !important;
+}
+
+.fullscreenButton:hover,
+.zoomLevelButton:hover,
+.maximizeButton:hover,
+.minimizeButton:hover,
+.cutButton:hover,
+.copyButton:hover,
+.pasteButton:hover {
+  border-color: grey !important;
+}
+
+.fullscreenButton {
+  position: relative !important;
+  top: 1px !important;
 }

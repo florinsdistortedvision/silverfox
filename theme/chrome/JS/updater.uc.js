@@ -28,7 +28,7 @@ function compareVersions(localVersion, remoteVersion) {
   function checkSilverfoxVersion() {
     console.log("Checking Silverfox version");
 
-    const remoteURL = "https://silverfox.neocities.org/updater/currentversion.txt?timestamp=" + Date.now();
+    const remoteURL = "https://silverfox.neocities.org/components/JS/currentversion.txt?timestamp=" + Date.now();
 
     fetch(remoteURL)
       .then(response => response.text())
@@ -50,7 +50,7 @@ function compareVersions(localVersion, remoteVersion) {
     checkSilverfoxVersion();
 
     updateSilverfox.addEventListener("command", function () {
-      const spaceHeyURL = "https://silverfox.neocities.org/updater/letsupdate";
+      const spaceHeyURL = "https://silverfox.neocities.org/components/update";
       const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
       window.gBrowser.selectedTab = newTab;
 

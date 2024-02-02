@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">   
+<link rel="icon" type="image/png" href="chrome://userchrome/content/pages/flags/assets/flagsfavicon.png" />
+<link rel="stylesheet" type="text/css" href="chrome://userchrome/content/pages/flags/css/flags.css" />
+<script src="chrome://userchrome/content/pages/flags/JS/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  showRestartElement(false);
+
+  updateSwitchText('Be Chromium');
+  updateSwitchText('Enable Aero Glass');
+  updateSwitchText('Restore Old Look');
+  updateSwitchText('Allow Homepage Images');
+  updateSwitchText('Enable Native Linux Titlebars')
+});
+</script>
+<head>
+      <title>Silverfox Flags</title>
+</head>
+   
+<body>
+
+<div class="infoTop">
+    <div class="carefulTop">
+        <img class="warningImage" src="chrome://userchrome/content/pages/flags/assets/warning.png"></img>
+        <p class="carefulInfo">Careful, these flags may bite</p>
+    </div>
+    
+    <div class="carefulMoreInfo">
+    <p class="moreInfo"> <red>WARNING</red>These experimental features may change, break, or disappear at any time. We make absolutely no guarantees about what may happen if you turn one of these flags on, and your browser may even spontaneously combust. Jokes aside, this page controls some Silverfox functions, replacing the more manual way of going to about:config. Please proceed with caution.</p>
+    </div>
+</div>
+
+<div class="experimentsBar">
+    <div class="expBar">
+        <p class="expText">Flags</p>
+    </div>
+</div>
+    
+ <div class="experimentsTable">
+    <div class="experimentFlag">
+        <div class="experimentName">
+        <p class="flagName">Be Chromium</p>
+        <p class="flagMention"></p>
+        </div>
+        <div class="experimentInfo">
+        <p class="aboutInfo">Turns Chrome branding to Chromium branding, visible in multiple places such as homepage, icognito page, hamburger menu, settings page, favicons/bookmarks, etc.</p>
+        </div>
+        <div class="enableSwitch" data-flag="Be Chromium">
+          <a class="enableDisableChromium" href="#" onclick="toggleFlag('Be Chromium', 'silverfox.beChromium')">Enable</a> 
+        </div>
+    </div>
+
+    <div class="experimentFlag">
+        <div class="experimentName">
+        <p class="flagName">Enable Aero Glass</p>
+        <p class="flagMention">For Windows 10 and Windows 11 ONLY. Requires Aero enabling software such as DWMBlurGlass or Glass8</p>
+        </div>
+        <div class="experimentInfo">
+        <p class="aboutInfo">Removes background of tabs bar for Native theme, allowing Aero to show itself. Custom Firefox themes will disable Aero to simulate Chrome's way of handling them.</p>
+        </div>
+        <div class="enableSwitch" data-flag="Enable Aero Glass">
+          <a class="enableDisableAero" href="#" onclick="toggleFlag('Enable Aero Glass', 'silverfox.hasAeroGlass')">Enable</a>  
+          <p class="notAvailable" type="aeroFlag">Sorry, this flag is not available on your platform.</p> 
+        </div>
+    </div>
+
+    <div class="experimentFlag">
+        <div class="experimentName">
+        <p class="flagName">Restore Old Look</p>
+        <p class="flagMention"></p>
+        </div>
+        <div class="experimentInfo">
+        <p class="aboutInfo">Turns new tab icon into older pre 2012 refresh design and hamburger menu turns into early 2012 wrench menu.</p>
+        </div>
+        <div class="enableSwitch" data-flag="Restore Old Look">
+          <a class="enableDisableOld" href="#" onclick="toggleFlag('Restore Old Look', 'silverfox.preferOldLook')">Enable</a> 
+        </div>
+    </div>
+
+    <div class="experimentFlag">
+        <div class="experimentName">
+        <p class="flagName">Allow Homepage Images</p>
+        <p class="flagMention"></p>
+        </div>
+        <div class="experimentInfo">
+        <p class="aboutInfo">Allows custom user set images on homepage. Unfortunately Firefox themes don't natively support this. Silverfox optimized themes will also need this if they have a homepage image variable.</p>
+        </div>
+        <div class="enableSwitch" data-flag="Allow Homepage Images">
+          <a class="enableDisableHomepageImage" href="#" onclick="toggleFlag('Allow Homepage Images', 'silverfox.hasLocalImage')">Enable</a>  
+        </div>
+    </div>
+
+    <div class="experimentFlag">
+        <div class="experimentName">
+        <p class="flagName">Enable Profile Pictures</p>
+        <p class="flagMention">Custom and Custom - Animated are meant to be edited by user, expecting a .png or .gif respectively</p>
+        </div>
+        <div class="experimentInfo">
+        <p class="aboutInfo">Choose between the original profile pictures or your own seen in the top left corner. Mac or Linux users with reversed titlebar position will see them in top right corner.</p>
+        </div>
+        <div class="dropdownSwitch">
+          <select class="ddOptions" onchange="setUsePfpPreference()">
+            <option value="alien">Alien</option>
+            <option value="blondepfp">Blonde Girl</option>
+            <option value="bluepfp">Blue Guy</option>
+            <option value="burger">Burger</option>
+            <option value="businessmanpfp">Business Man</option>
+            <option value="cat">Cat</option>
+            <option value="chrome">Chrome</option>
+            <option value="chromium">Chromium</option>
+            <option value="chickpfp">Cool Chick</option>
+            <option value="cooldudepfp">Cool Dude</option>
+            <option value="custom">Custom</option>
+            <option value="animated">Custom - Animated</option>
+            <option value="dog">Dog</option>
+            <option value="drink">Drink</option>
+            <option value="flower">Flower</option>
+            <option value="football">Football</option>
+            <option value="greenpfp">Green Guy</option>
+            <option value="happy">Happy</option>
+            <option value="horse">Horse</option>
+            <option value="lightbluepfp">Light Blue Guy</option>
+            <option value="music">Music</option>
+            <option value="ninja">Ninja</option>
+            <option value="off">Off</option>
+            <option value="orangepfp">Orange Guy</option>
+            <option value="pizza">Pizza</option>
+            <option value="purplepfp">Purple Guy</option>
+            <option value="redpfp">Red Guy</option>
+            <option value="weather">Weather</option>
+            <option value="whitepfp">White Guy</option>
+            <option value="yellowpfp">Yellow Guy</option>
+          </select>
+        </div>
+    </div>
+
+    <div class="experimentFlag">
+      <div class="experimentName">
+      <p class="flagName">Enable Native Linux Titlebars</p>
+      <p class="flagMention">Linux only</p>
+      </div>
+      <div class="experimentInfo">
+      <p class="aboutInfo">Disables the custom Chrome styled titlebar buttons, allowing the native ones to show.</p>
+      </div>
+      <div class="enableSwitch" data-flag="Enable Native Linux Titlebars">
+        <a class="enableDisableLinuxTitlebar" href="#" onclick="toggleFlag('Enable Native Linux Titlebars', 'silverfox.enableNativeLinuxTitlebars')">Enable</a>  
+        <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
+      </div>
+  </div>
+    
+    
+ </div>   
+
+ <div class="restartFirefox">
+  <div class="firefoxSwitch">
+    <p>Your changes will take effect the next time you relaunch Silverfox.</p>
+    <button onclick="_ucUtils.restart(true);" class="restartNow">Relaunch Now</button>
+  </div>
+</div> 
+
+</body>
+</html>
