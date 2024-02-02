@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
 
 // Current SF version
-const currentSilverfoxVersion = "0.5.1";
+const currentSilverfoxVersion = "0.6";
 
   // Function to compare version numbers
 function compareVersions(localVersion, remoteVersion) {
