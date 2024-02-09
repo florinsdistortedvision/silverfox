@@ -68,7 +68,7 @@
 @supports not (-moz-bool-pref("silverfox.beChromium")) {
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:config"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:profiles"],
-    .bookmark-item > .toolbarbutton-icon[src="page-icon:chrome://userchrome/content/pages/about/about.xhtml"],
+    .bookmark-item > .toolbarbutton-icon[src="page-icon:about:silverfox"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:support"] {
         background-image: url(../../assets/images/topbar/chromefavicon.png) !important;
         width: 0px !important;
@@ -79,7 +79,7 @@
 @supports (-moz-bool-pref("silverfox.beChromium")) {
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:config"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:profiles"],
-    .bookmark-item > .toolbarbutton-icon[src="page-icon:chrome://userchrome/content/pages/about/about.xhtml"],
+    .bookmark-item > .toolbarbutton-icon[src="page-icon:about:silverfox"],
     .bookmark-item > .toolbarbutton-icon[src="page-icon:about:support"] {
         background-image: url(../../assets/images/topbar/chromiumfavicon.png) !important;
         width: 0px !important;
@@ -92,7 +92,6 @@
 .bookmark-item > .toolbarbutton-icon[src="page-icon:about:preferences#search"],
 .bookmark-item > .toolbarbutton-icon[src="page-icon:about:preferences#privacy"],
 .bookmark-item > .toolbarbutton-icon[src="page-icon:about:preferences#sync"],
-.bookmark-item > .toolbarbutton-icon[src="page-icon:about:preferences#moreFromMozilla"],
 .bookmark-item > .toolbarbutton-icon[src="page-icon:about:preferences"] {
     background-image: url(../../assets/images/topbar/settingsfavicon.png) !important;
     width: 0px !important;
@@ -105,13 +104,13 @@
 	height: 0px !important;
 	padding: 0 0 16px 16px !important;
 }
-.bookmark-item[label="chrome://browser/content/places/historySidebar.xhtml"] > .toolbarbutton-icon {
+.bookmark-item[image="page-icon:about:history"] > .toolbarbutton-icon {
     background-image: url(../../assets/images/topbar/historyfavicon.png) !important;
     width: 0px !important;
 	height: 0px !important;
 	padding: 0 0 16px 16px !important;
 }
-.bookmark-item[label="chrome://browser/content/places/bookmarksSidebar.xhtml"] > .toolbarbutton-icon {
+.bookmark-item[image="page-icon:about:bookmarks"] > .toolbarbutton-icon {
     background-image: url(../../assets/images/topbar/bookmarksfavicon.png) !important;
     width: 0px !important;
 	height: 0px !important;
@@ -119,10 +118,10 @@
 }
 
 /* Various bookmark titles for some Firefox pages */
-.bookmark-item[label="chrome://browser/content/places/historySidebar.xhtml"] > .toolbarbutton-text::before {
+.bookmark-item[image="page-icon:about:history"] > .toolbarbutton-text::before {
   content: "History" !important;
 }
-.bookmark-item[label="chrome://browser/content/places/bookmarksSidebar.xhtml"] > .toolbarbutton-text::before {
+.bookmark-item[image="page-icon:about:bookmarks"] > .toolbarbutton-text::before {
   content: "Bookmark Manager" !important;
 }
 
@@ -254,6 +253,7 @@
 
 /* If secure page, show green lock */
 
+#identity-box[class="verifiedDomain mixedActiveBlocked"] #identity-icon-box,
 #identity-box[class="verifiedDomain"] #identity-icon-box {
   background-image: url(../../assets/images/middlebar/securelock.png) !important;
   background-repeat: no-repeat !important;

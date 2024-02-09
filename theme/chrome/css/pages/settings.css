@@ -1,5 +1,58 @@
 @-moz-document url-prefix(about:preferences), url-prefix(about:preferences#general), url-prefix(about:preferences#home), url-prefix(about:preferences#search), url-prefix(about:preferences#privacy), url-prefix(about:preferences#sync), url-prefix(about:preferences#moreFromMozilla)  {
 
+  .checkbox-check {
+    background-color: #ededed !important;
+    border: 1px solid #a9a9a9 !important;
+  }
+  
+  .checkbox-check:not([native]) {
+    height: 13px !important;
+    width: 13px !important;
+    margin-top: 3px !important;
+  }
+  
+  .checkbox-check[checked] {
+    border-color: #a9a9a9 !important;
+    background-color: #ededed !important;
+    background-image: url("chrome://userchromeassets/content/images/pages/settings/checkmark.png") !important;
+  }
+  
+  
+  checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
+    background-color: var(--checkbox-unchecked-hover-bgcolor, color-mix(in srgb, AccentColor 4%, Field)) !important;
+  }
+
+  .radio-check {
+    width: 15px !important;
+    height: 15px !important;
+    border: 1px solid #a9a9a9 !important;
+    background-color: #ededed !important;
+  }
+  
+  .radio-check[selected] {
+    fill: #666666 !important;
+    color: #666666 !important;
+    background-size: 15px !important;
+  }
+  
+  html|input[type="radio"]:enabled:checked:hover,
+  xul|radio:not([disabled="true"])[selected]:hover > xul|*.radio-check {
+    background-color: #ededed !important;
+    color: #666666 !important;
+    border-color: none !important;
+  }
+  
+  html|input[type="radio"]:enabled:checked:hover:active,
+  xul|radio:not([disabled="true"])[selected]:hover:active > xul|*.radio-check {
+    background-color: none !important;
+    color: transparent !important;
+    border-color: none !important;
+  }
+  
+  radio[focused="true"] > .radio-check { 
+    outline: none !important; 
+  }
+
 .sidebar-footer-label,
 .category-name {
   font-size: 12px !important;

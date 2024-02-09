@@ -1,13 +1,10 @@
 @-moz-document url-prefix(about:config) {
-.config-help-text::before {
+.config-help-text:after {
   content: "If you see this, stream First Love album by Hikaru Utada !" !important;
-  position: relative !important;
-  top: 20px !important;
-  left: 415px !important;
   font-size: 12px !important;
 }
 
 .config-help-text {
-  margin-left: -293px !important;
+  font-size: 0px !important;
 }
 }

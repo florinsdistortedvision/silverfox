@@ -16,339 +16,251 @@
 #identity-popup {
     --panel-border-radius: 5px !important;
     --panel-border-color: grey !important;
-    max-width: 318px !important;
+    min-width: 318px !important;
     margin-left: -8px !important;
-  
 }
 
-/* Header (Website name) */
-
-#identity-popup-mainView-panel-header-span {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  margin-left: -134px !important;
-  margin-top: 14px;
-  font-family: "Open Sans", sans-serif !important;
-  font-size: 12.5px !important; 
+#identity-popup[connection="chrome"] {
+    min-width: auto !important;
 }
 
-/* Hiding trick */
-#identity-popup-mainView-panel-header-span:before {
-  content: "white" !important;
-  background: white !important;
-  color: white !important;
-  position: relative !important;
-  right: -122px !important;
-}
-
-
-.identity-popup-warning-box.identity-popup-warning-yellow {
-  display: none;
-}
-
-
-/* Chrome's borders */
-#identity-popup-mainView-panel-header:after {
-  content: url(../../assets/images/middlebar/secborder.png) !important;
-  position: fixed !important;
-  top: 55px;
-  left: 0;
-}
-
-
-/* Identity info based on website's security level */
-#identity-popup[connection="secure"] [when-connection~="secure"]:after {
-  content: "Identity verified" !important;
-  color: #599743 !important;
-  position: fixed !important;
-  top: 35px !important;
-  font-family: "Segoe UI", sans-serif !important;
-  left: 21px !important;
-  font-size: 11.5px !important;
-  display: block !important;
-  font-weight: 500;
-}
-#identity-popup[connection=secure-cert-user-overridden] [when-connection~=secure-cert-user-overridden]:after,
-#identity-popup[connection=not-secure] [when-connection~=not-secure]:after {
-  content: "Identity not verified" !important;
-  color: black !important;
-  position: fixed !important;
-  top: 35px !important;
-  font-family: "Segoe UI", sans-serif !important;
-  left: 21px !important;
-  font-size: 11.5px !important;
-  display: block !important;
-  font-weight: 500;
-}
-
-#identity-popup-security-button {
-  margin-top: 7px !important;
-}
-
-#identity-popup-securityView toolbarseparator,
-#identity-popup-mainView toolbarseparator {
+#identity-popup .panel-viewcontainer {
   display: none !important;
 }
 
-#identity-popup-security-button {
-  list-style-image: none !important;
-  position: relative !important;
-  left: 88px !important;
-  font-weight: bold;
-  color: #666666 !important;
-  font-size: 0px !important;
-}
-
-#identity-popup-security-button:hover {
-  box-shadow: none !important;
-  border: none !important;
-  box-sizing: none !important;
-  background: transparent !important;
-  cursor: pointer;
-  width: 165px !important;  
-}
-
-#identity-popup-security-button:after {
-  content: "Connection" !important;
-  position: fixed !important;
-  left: 118px !important;
-  color: #666666 !important;
-  font-size: 12px !important;
-}
-
-#identity-popup-security-button:before {
-  content: "Permissions" !important;
-  position: fixed !important;
-  left: 34px !important;
-  pointer-events: none;
-  color: black !important;
-  font-size: 12px !important;
-}
-
-#identity-popup-clear-sitedata-button {
-  color: #5498dc !important;
-  text-decoration: underline !important;
-  margin-top: -314px !important;
-  margin-left: 13.5px !important;
-}
-
-#identity-popup-clear-sitedata-button:hover {
-  box-shadow: none !important;
-  border: none !important;
-  box-sizing: none !important;
-  background: transparent !important;
-  cursor: pointer;
-  width: 165px !important;
-}
-
-.identity-popup-security-content:before {
-  content: "Cookies and site data" !important;
-  position: fixed !important;
-  top: 100px !important;
-  left: 22px !important;
-  font-weight: bold;
-  color: black !important;
-  pointer-events: none !important;
-}
-
-.identity-popup-security-content:after {
-  content: url(../../assets/images/middlebar/permissionspane.png) !important;
-  position: fixed !important;
-  top: 165px !important;
-  left: 13.8px !important;
-  pointer-events: none !important; 
-}
-
-#identity-popup-multiView > .panel-viewcontainer[panelopen] {
-  height: 445px !important;
-}
-
-#identity-popup-securityView::after {
-  content: url(../../assets/images/middlebar/conborder.png) !important;
-  position: fixed !important;
-  top: 55px;
-  left: 0;
-  z-index: 5 !important;
+#identity-popup-multiView {
+  display: block !important;
 }
 
 
-.identity-popup-security-connection-icon {
-  visibility: hidden !important;
+/* Custom added styling */
+
+.connectionView,
+.permsView {
+    display: none;
 }
 
-.panel-header:not(.panel-header-with-info-button) > .subviewbutton-back + h1 {
-  position: fixed !important;
-  left: 0 !important;
-  margin-left: -122.5px !important;
-  font-family: "Open Sans", sans-serif !important;
-  font-size: 12.5px !important;
+.secureChrome {
+    display: none !important;
 }
 
-.panel-header:not(.panel-header-with-info-button) > .subviewbutton-back + h1::after {
-  content: "aaa" !important;
-  color: white !important;
-  background: white !important;
-  position: fixed !important;
-  left: 0 !important;
-  margin-left: -1px !important;
+#identity-popup[connection="chrome"] .secureChrome {
+    display: flex !important;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.subviewbutton.subviewbutton-iconic.subviewbutton-back {
-  position: fixed !important;
-  top: 53px !important;
-  left: 28px !important;
-  color: transparent;
-  z-index: 999 !important;
+@supports not (-moz-bool-pref("silverfox.beChromium")) {
+    #identity-popup[connection="chrome"] .chromiumLogo {
+        display: none !important;
+}
+    
+    #identity-popup[connection="chrome"] .chromiumView {
+        display: none !important;
+}   
 }
 
-.subviewbutton.subviewbutton-iconic.subviewbutton-back::before {
-  content: "Permissions" !important;
-  color: #666666 !important;
-  font-weight: bold;
+@supports (-moz-bool-pref("silverfox.beChromium")) {
+    #identity-popup[connection="chrome"] .chromeLogo {
+        display: none !important;
 }
-
-.subviewbutton.subviewbutton-iconic.subviewbutton-back:hover {
-  box-shadow: none !important;
-  border: none !important;
-  box-sizing: none !important;
-  background: transparent !important;
-  cursor: pointer;
-  width: 75px !important;
-  list-style-image: none !important;
+    
+    #identity-popup[connection="chrome"] .chromeView {
+        display: none !important;
+}   
 }
-
-
-.subviewbutton.subviewbutton-iconic.subviewbutton-back::after {
-  content: "Connection" !important;
-  color: black !important;
-  font-weight: bold;
-  position: fixed !important;
-  left: 128px !important;
-  pointer-events: none !important;
-}
-
-.identity-popup-connection-secure.security-view {
-  margin-top: 45px !important;
-  padding-bottom: 10px !important;
   
+.secureChrome img {
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
+    padding-right: 5px;
+}
+  
+.secureChrome p {
+    font-size: 12px;
 }
 
-.identity-popup-connection-not-secure.security-view {
-  color: white;
+.connectionView[active="true"],
+.permsView[active="true"] {
+    display: block;
 }
 
-description[when-connection="secure secure-ev"]::before {
-  content: url(../../assets/images/middlebar/secureinfo.png) !important;
-  background-repeat: no-repeat;
-  margin-left: -20px !important;
-  padding-right: 5.5px !important;
-  position: relative !important;
-  top: 6px;
+.connectionView,
+.siteInfo,
+.permissionsTab,
+.cookiesTab,
+.pagesTab {
+    padding-left: 15px;
 }
 
-description[when-connection="not-secure cert-error-page net-error-page https-only-error-page"]::before {
-  content: url(../../assets/images/middlebar/notsecureinfowarning.png) !important;
-  background-repeat: no-repeat;
-  margin-left: -34px !important;
-  position: relative !important;
-  padding-right: 4px;
-  top: 25px;
+.firstThing {
+    display: flex;
 }
 
-#identity-popup[ciphers="weak"] .identity-popup-security-connection, #identity-popup[mixedcontent~="passive-loaded"][isbroken] .identity-popup-security-connection {
-  list-style-image: none !important;
+.closepopup {
+    width: 16px;
+    height: 16px;
+    padding-left: 190px;
+    margin-top: 15px;
 }
 
-description[when-connection="not-secure cert-error-page net-error-page https-only-error-page"] {
-  margin-left: 29px !important;  
-  margin-top: 0px !important;
-  max-width: 270px !important;
+.closepopup:hover {
+    content: url("chrome://userchrome/content/pages/homepage/assets/close_hover.png");
 }
 
-description[when-mixedcontent="passive-loaded"] {
-  margin-left: 29px !important;  
-  margin-top: -4px !important;
-  max-width: 270px !important;
+.identityInfo p {
+    font-size: 12px;
+    margin-top: -10px;
 }
 
-description[when-mixedcontent="passive-loaded"]::before {
-  content: url(../../assets/images/middlebar/notsecureinfowarning.png) !important;
-  background-repeat: no-repeat;
-  margin-left: -35px !important;
-  position: relative !important;
-  padding-right: 5px;
-  top: 16px;
+.identityNotVerified,
+.identityVerified {
+    display: none !important;
 }
 
-description[when-connection="secure secure-ev secure-cert-user-overridden"] {
-  margin-left: 0px !important;  
-  max-width: 300px !important;  
-  margin-block: -0.7em !important;
-  position: relative;
-  top: 15px;
+#identity-popup[connection="chrome"] .siteInfo,
+#identity-popup[connection="chrome"] .pagesTab,
+#identity-popup[connection="chrome"] .permsView,
+#identity-popup[connection="chrome"] .permissionTab,
+#identity-popup[connection="chrome"] .connectionView {
+    display: none !important;
 }
 
-
-description[when-connection="secure secure-ev secure-cert-user-overridden"]::before {
-  content: url(../../assets/images/middlebar/secureinfo.png) !important;
-  background-repeat: no-repeat;
-  margin-left: 4px !important;
-  padding-right: 5.5px !important;
-  position: relative !important;
-  top: 7px;
+#identity-popup[connection="secure"] .identityVerified {
+    display: block !important;
 }
 
-#identity-popup-securityView-extended-info > button {
-  min-width: 10px !important;
-  max-width: 160px !important;
-  margin-top: 65px !important;
-  margin-left: -15px !important;
-  appearance: none !important;
-  background: white !important;
-  border: 0px !important;
-  color: #5498dc !important;
-  text-decoration: underline !important;
-  margin-left: -10px !important;
-  cursor: pointer;
+#identity-popup[connection="not-secure"] .identityNotVerified,
+#identity-popup[connection="cert-error-page"] .identityNotVerified {
+    display: block !important;
 }
 
-button[label="Remove Exception"]::before {
-  content: url(../../assets/images/middlebar/untrustedinfo.png) !important;
-  background-repeat: no-repeat;
-  margin-left: 12px !important;
-  position: relative !important;
-  top: 2px;
-
+.identityVerified {
+    color: darkgreen !important;
 }
 
-#identity-popup[connection^="secure"] .identity-popup-security-connection {
-  list-style-image: none !important;
+.firstThing p {
+    font-weight: bold;
+    font-size: 14px;
 }
 
-description[when-connection="not-secure cert-error-page net-error-page https-only-error-page"],
-description[when-connection="secure secure-ev"],
-description[when-mixedcontent="passive-loaded"],
-description[when-connection="secure secure-ev secure-cert-user-overridden"],
-description[when-connection="secure secure-ev"] {
-  padding-bottom: 10px !important;
-  margin-left: -50px !important;
-  padding-left: 50px !important;
-  min-width: 150% !important;
-  border-bottom: 1px solid #e9e9e9 !important;
+.fakeBorder {
+    font-size: 0px;
+    border-top: 1px solid rgb(204, 204, 204);
+    margin-left: -15px;
+    margin-top: 2px;
 }
 
-#identity-popup-more-info {
-  color: #5498dc !important;
-  text-decoration: underline !important;
-  margin-left: 13.5px !important;
+.pagesTab a {
+    text-decoration: none !important;
+    color: grey !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
-#identity-popup-more-info:hover {
-  box-shadow: none !important;
-  border: none !important;
-  box-sizing: none !important;
-  background: transparent !important;
-  cursor: pointer;
-  width: 110px !important;
+.connectionPage,
+.permissionPage {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.connectionPage[active="true"],
+.permissionPage[active="true"] {
+    border-top: 1px solid rgb(204, 204, 204);
+    border-right: 1px solid rgb(204, 204, 204);
+    border-left: 1px solid rgb(204, 204, 204);
+    border-bottom: 4px solid transparent;
+    background: white !important;
+    color: black !important;
+}
+
+.connectionView[active="true"] {
+    padding-bottom: 180px;
+}
+
+.cookiesTab p,
+.permissionsTab p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cookiesTab a {
+    font-size: 12px;
+}
+
+.permissionsTab img {
+    margin-top: -5px;
+    padding-bottom: 5px;
+}
+
+.verifiedView {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 12px;
+    padding-bottom: 15px;
+}
+
+.infoView {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 12px;  
+}
+
+.keepMeInfo,
+.keepMeSafe {
+    margin-top: 12px;
+    display: flex;
+}
+
+.keepMeInfo img,
+.keepMeSafe img {
+    width: 29px;
+    height: 28px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+
+.keepMeSafe img[type="runaway"],
+.keepMeSafe p[type="runaway"],
+.keepMeSafe img[type="notsecure"],
+.keepMeSafe p[type="notsecure"],
+.keepMeSafe img[type="secure"],
+.keepMeSafe p[type="secure"] {
+    display: none !important;
+}
+
+#identity-popup[connection="secure"] .keepMeSafe img[type="secure"],
+#identity-popup[connection="secure"] .keepMeSafe p[type="secure"] {
+    display: block !important;
+}
+
+#identity-popup[connection="not-secure"] .keepMeSafe img[type="notsecure"],
+#identity-popup[connection="not-secure"] .keepMeSafe p[type="notsecure"] {
+    display: block !important;
+}
+
+#identity-popup[connection="cert-error-page"] .keepMeSafe img[type="runaway"],
+#identity-popup[connection="cert-error-page"] .keepMeSafe p[type="runaway"] {
+    display: block !important;
+}
+
+.certificateInfo {
+    margin-left: 35px;
+}
+
+.keepMeInfo p {
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.visitedToday {
+    margin-left: 35px;
+    margin-top: -14px;
+}
+
+.whatMean {
+    font-size: 12px !important;
+    margin-left: 5px !important;
+    position: relative !important;
+    top: 5px;
 }

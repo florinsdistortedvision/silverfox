@@ -1,13 +1,13 @@
 @-moz-document url-prefix(about:support) {
 	
 #application-box::after {
-  content: "running Silverfox theme" !important;
+  content: "running Silverfox Beta theme" !important;
   position: relative !important;
   left: 2px !important;
 }
 
 #version-box::after {
-  content: "/ Silverfox version 0.6 (Closed Beta)" !important;
+  content: "/ Silverfox version 0.7 (Closed Beta)" !important;
   position: relative !important;
   left: 2px !important;
 }
@@ -16,7 +16,7 @@
 @-moz-document url-prefix(https://silverfox.neocities.org/components/update) {
 	
 .currentVersion p:after {
-    content: "0.6";
+    content: "0.7";
     position: relative;
     left: 5px;
 }

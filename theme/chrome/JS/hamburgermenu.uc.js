@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Silverfox Hamburger Menu
-// @version      1.0
+// @version      1.1
 // @description  Creates Hamburger Menu with its contents and functions
 // @author       florin
 // ==/UserScript==
@@ -41,6 +41,8 @@ window.addEventListener("load", function () {
       { label: "New incognito window", class: "submenu-item3" },
       { label: "Bookmarks", class: "submenu-item4" },
       { label: "Separator", separator: true },
+      { label: "Relaunch Chrome in Windows 8 mode", class: "windows8-mode", now: isAprilFoolsDay() ? "true" : "false" },
+      { label: "Separator", now: isAprilFoolsDay() ? "true" : "false", separator: true },
       { label: "SubMenu 5", class: "submenu-item5" },
       { label: "Separator", separator: true },
       { label: "SubMenu 6", class: "submenu-item6" },
@@ -91,16 +93,30 @@ window.addEventListener("load", function () {
     if (beChromium) {
       const submenuItem13 = hamburgerMenuItems.find(item => item.class === "submenu-item13");
       const submenuItem15 = hamburgerMenuItems.find(item => item.class === "submenu-item15");
+      const windows8 = hamburgerMenuItems.find(item => item.class === "windows8-mode");
 
       if (submenuItem13) submenuItem13.label = "My Chromium account...";
       if (submenuItem15) submenuItem15.label = "About Chromium";
+      if (windows8) windows8.label = "Relaunch Chromium in Windows 8 mode";
     } else {
       const submenuItem13 = hamburgerMenuItems.find(item => item.class === "submenu-item13");
       const submenuItem15 = hamburgerMenuItems.find(item => item.class === "submenu-item15");
+      const windows8 = hamburgerMenuItems.find(item => item.class === "windows8-mode");
 
       if (submenuItem13) submenuItem13.label = "My Chrome account...";
       if (submenuItem15) submenuItem15.label = "About Google Chrome";
-    }	
+      if (windows8) windows8.label = "Relaunch Chrome in Windows 8 mode";
+    }
+    
+    function isAprilFoolsDay() {
+      const now = new Date();
+      return now.getMonth() === 3 && now.getDate() === 1;
+  }
+
+  const windows8SeparatorIndex = hamburgerMenuItems.findIndex(item => item.class === "windows8-mode") + 1;
+  if (windows8SeparatorIndex !== -1) {
+      hamburgerMenuItems[windows8SeparatorIndex].now = isAprilFoolsDay() ? "true" : "false";
+  }
 
     for (let i = 0; i < hamburgerMenuItems.length; i++) {
       const menuElement = hamburgerMenuItems[i].class === "submenu-item5"
@@ -121,6 +137,7 @@ window.addEventListener("load", function () {
           "menuseparator"
         );
         separator.setAttribute("orient", "horizontal");
+        separator.setAttribute("now", hamburgerMenuItems[i].now);
         hamburgerPopup.appendChild(separator);
       } else {
         menuElement.setAttribute("label", hamburgerMenuItems[i].label);
@@ -150,6 +167,10 @@ window.addEventListener("load", function () {
 
           menuElement.appendChild(submenu);
         }
+
+          if (hamburgerMenuItems[i].now) {
+            menuElement.setAttribute("now", hamburgerMenuItems[i].now);
+          }
 
         hamburgerPopup.appendChild(menuElement);
       }
@@ -235,6 +256,7 @@ zoombuttonInfo.forEach(info => {
   const newWindow = document.querySelector(".submenu-item2");
   const newIncognitoWindow = document.querySelector(".submenu-item3");
   const bookmarksMenu = document.querySelector(".submenu-item4");
+  const windows8 = this.document.querySelector(".windows8-mode")
   
   const cutButton = document.querySelector(".cutButton");
   const copyButton = document.querySelector(".copyButton");
@@ -317,7 +339,7 @@ if (newIncognitoWindow) {
 
 if (bookmarksMenu) {
   const openSpaceHey = function (event) {
-    const spaceHeyURL = "chrome://browser/content/places/bookmarksSidebar.xhtml";
+    const spaceHeyURL = "about:bookmarks";
     
     const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
 
@@ -325,7 +347,19 @@ if (bookmarksMenu) {
   };
 
   bookmarksMenu.addEventListener("command", openSpaceHey);
-}  
+}
+
+if (windows8) {
+  const openSpaceHey = function (event) {
+    const spaceHeyURL = "https://silverfox.neocities.org/components/win8";
+    
+    const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
+
+    window.gBrowser.selectedTab = newTab;
+  };
+
+  windows8.addEventListener("command", openSpaceHey);
+}
 
 if (cutButton) {
   const openGoogleSearch = function (event) {
@@ -475,7 +509,7 @@ if (printMenu) {
 
 if (silverfoxFlags) {
   const openSpaceHey = function (event) {
-    const spaceHeyURL = "chrome://userchrome/content/pages/flags/flags.xhtml";
+    const spaceHeyURL = "about:flags";
     
     const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
 
@@ -584,7 +618,7 @@ if (aboutProfiles) {
 
 if (historyMenu) {
   const openSpaceHey = function (event) {
-    const spaceHeyURL = "chrome://browser/content/places/historySidebar.xhtml";
+    const spaceHeyURL = "about:history";
     
     const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
 
@@ -644,7 +678,7 @@ if (settingsMenu) {
 if (aboutChrome) {
   const openGoogleSearch = function (event) {
     const window = event.target.ownerDocument.defaultView;
-	switchToTabHavingURI('chrome://userchrome/content/pages/about/about.xhtml', true);
+	switchToTabHavingURI('about:silverfox', true);
 
     const paste = readFromClipboard();
 
@@ -689,6 +723,75 @@ if (exitMenu) {
   };
 
   exitMenu.addEventListener("command", openGoogleSearch);
-}    
+} 
+
+// Silverfox update checker
+// Because some legacy Linux versions like old ass Ubuntu breaks when updater.uc.js is separate, this will now be combined into one
+// Thanks linux.
+
+  // Function to compare version numbers
+  function compareVersions(localVersion, remoteVersion) {
+    const localParts = localVersion.split('.').map(Number);
+    const remoteParts = remoteVersion.split('.').map(Number);
+
+    const maxLength = Math.max(localParts.length, remoteParts.length);
+
+    for (let i = 0; i < maxLength; i++) {
+        const localPart = localParts[i] || 0;
+        const remotePart = remoteParts[i] || 0;
+
+        if (localPart < remotePart) {
+            return -1; // Local version is older
+        } else if (localPart > remotePart) {
+            return 1; // Local version is newer
+        }
+    }
+
+    return 0; // Versions are equal
+}
+
+// Grab latest version from the local file
+function checkSilverfoxVersion() {
+    console.log("Checking Silverfox version");
+
+    const localVersionFile = "chrome://userscripts/content/version.txt";
+    const remoteURL = "https://silverfox.neocities.org/components/JS/currentversion.txt";
+
+    // Fetch local version with timestamp to prevent caching
+    fetch(localVersionFile + "?timestamp=" + Date.now())
+        .then(response => response.text())
+        .then(localVersion => {
+            // Fetch remote version with timestamp to prevent caching
+            fetch(remoteURL + "?timestamp=" + Date.now())
+                .then(response => response.text())
+                .then(remoteVersion => {
+                    const isCurrent = compareVersions(localVersion.trim(), remoteVersion.trim()) === 0;
+                    console.log("Is Silverfox up to date?", isCurrent);
+
+                    const hamburgerButton = document.getElementById("hamburger-button");
+                    hamburgerButton.setAttribute("current", isCurrent ? "true" : "false");
+                })
+                .catch(error => {
+                    console.error("Error fetching remote Silverfox version:", error);
+                });
+        })
+        .catch(error => {
+            console.error("Error fetching local Silverfox version:", error);
+        });
+}
+
+// Add an attribute to the hamburger menu according to whether it's up to date or not, and add function to the menu list 
+const updateSilverfox = document.querySelector(".update-silverfox");
+if (updateSilverfox) {
+    checkSilverfoxVersion();
+
+    updateSilverfox.addEventListener("command", function () {
+        const spaceHeyURL = "https://silverfox.neocities.org/components/update";
+        const newTab = window.gBrowser.addTrustedTab(spaceHeyURL);
+        window.gBrowser.selectedTab = newTab;
+
+        checkSilverfoxVersion();
+    });
+}  
     
 });

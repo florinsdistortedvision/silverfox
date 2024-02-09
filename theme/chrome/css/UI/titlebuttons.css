@@ -93,14 +93,14 @@
     
   @media (-moz-platform: windows-win10) {  
   @supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
-  :root:not(:-moz-lwtheme) .titlebar-restore,
+:root[native="true"] .titlebar-restore,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore,
-  :root:not(:-moz-lwtheme) .titlebar-min,
+:root[native="true"] .titlebar-min,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min,
-  :root:not(:-moz-lwtheme) .titlebar-max,
+:root[native="true"] .titlebar-max,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close,  
-  :root:not(:-moz-lwtheme) .titlebar-close {
+:root[native="true"] .titlebar-close {
     opacity: 0 !important;
   }
     
@@ -111,97 +111,100 @@
   /* Those "native" titlebars don't have hovers, so this is a hacky "fix" to that
     Also this assumes, you have the Win 7 size titlebars */
      
-  :root:not(:-moz-lwtheme) .titlebar-restore:hover,
+:root[native="true"] .titlebar-restore:hover,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-restore:hover,
-  :root:not(:-moz-lwtheme) .titlebar-min:hover,
+:root[native="true"] .titlebar-min:hover,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min:hover,
-  :root:not(:-moz-lwtheme) .titlebar-max:hover,
+:root[native="true"] .titlebar-max:hover,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-max:hover,
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-close:hover,  
-  :root:not(:-moz-lwtheme) .titlebar-close:hover {
+:root[native="true"] .titlebar-close:hover {
     opacity: 20% !important;
     box-shadow: 0px 0px 15px #fff;
   }
     
-  :root:is(
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ) .titlebar-max:hover::before,
-  :root:is(
+    [native="true"]
+) .titlebar-max:hover::before,
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ) .titlebar-min:hover::before,
-  :root:is(
+    [native="true"]
+) .titlebar-min:hover::before,
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ) .titlebar-restore:hover::before {
+    [native="true"]
+) .titlebar-restore:hover::before {
     content: url(../../assets/images/topbar/windows/button_hover_aero.png) !important;
     height: 10px !important;
     width: 35px !important;
-  }
+}
       
-  :root:is(
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ) .titlebar-max:hover::before {
+    [native="true"]
+) .titlebar-max:hover::before {
       margin-left: -1px !important;
       margin-top: 20px !important;
-  } 
-    
-  :root:is(
+} 
+         
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ) .titlebar-min:hover::before {
-      margin-left: -5px !important;
-      margin-top: 20px !important;
-  }  
-    
-  :root:is(
-    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ) .titlebar-close:hover::before {
+    [native="true"]
+) .titlebar-close:hover::before {
     content: url(../../assets/images/topbar/windows/close_hover_aero.png) !important;
    height: 10px !important;
     width: 30px !important;
     margin-left: -10px !important;
-  }  
+}  
+        
+:root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [native="true"]
+) .titlebar-close {
+      margin-right: 25px !important;
+      margin-top: -7px !important;
+}
     
-  :root:is(
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ):not([sizemode=normal]) .titlebar-min:hover::before {
-      margin-left: -13px !important;
-  } 
-  
-  :root:is(
+    [native="true"]
+):not([sizemode=normal]) .titlebar-close:hover::before {
+      margin-left: -12px !important;
+      margin-top: 6px !important;
+}    
+       
+:root:is(
     [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ):not([sizemode=normal]) .titlebar-restore:hover::before {
-      margin-left: -8px !important;
-  }  
-   
-  :root:is(
-    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
-    [style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"]
-  ):not([sizemode=normal]) .titlebar-close:hover::before {
-      margin-left: -20px !important;
-  }
-    
-  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-close {
+    [native="true"]
+) .titlebar-max {
       margin-right: 5px !important;
-  }  
-   
+}
     
-  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-max {
-      margin-right: 5px !important;
-  } 
+:root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [native="true"]
+):not([sizemode=normal]) .titlebar-restore:hover::before {
+      margin-left: -2px !important;
+}     
     
-  :root[style*="-lwt-accent-color: white; --lwt-text-color: rgba(0, 0, 0);"] .titlebar-min {
+:root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [native="true"]
+) .titlebar-min {
       margin-right: 3px !important;
-  }  
+} 
+    
+:root:is(
+    [style*="--lwt-accent-color: rgb(28, 27, 34)"],
+    [native="true"]
+):not([sizemode=normal]) .titlebar-min:hover::before {
+      margin-left: -5px !important;
+    margin-top: 20px !important;
+}     
    
-  }  
-  }
+}  
+}
     
     
   /*Fix gap for Win10 */  
@@ -217,7 +220,6 @@
     margin-right: -21px !important;
   } 
   }
-    
     
     
   /* Windows 7 */

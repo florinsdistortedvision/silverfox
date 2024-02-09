@@ -1,0 +1,68 @@
+.icognitoSection {
+    background-color: #EEE;
+    border-radius: 5px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 62px;
+    max-width: 600px;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 75%;
+    height: 233px;
+}
+
+bold {
+    font-weight: bold;
+}
+
+.warningSection {
+    margin-top: -15px;
+    display: inline-flex;
+}
+
+.icognitoDude {
+    transform: scaleX(-1);
+    height: 33px;
+    margin-top: 12px;
+    margin-right: 5px;
+}
+
+.icognitoList {
+    margin-top: -13px;
+}
+
+ul {
+  list-style: none;
+  margin-left: -15px;
+
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+li:before {
+  content: "◆";
+  font-size: 8px;
+  padding-right: 5px;
+}
+
+.learnMore {
+    margin-top: -5px;
+}
+
+.reEnableStuff {
+    display: inline-flex;
+}
+
+.extensionsIcon {
+    height: 30px;
+    margin-top: 3px;
+    padding-right: 8px;
+}
+
+.reEnableStuff p {
+    margin-top: 2px;
+}

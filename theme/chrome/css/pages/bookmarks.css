@@ -1,4 +1,4 @@
-@-moz-document url-prefix(chrome://browser/content/places/bookmarksSidebar.xhtml) {
+@-moz-document url-prefix(about:bookmarks) {
 
 #sidebar-search-container {
   width: 220px !important;

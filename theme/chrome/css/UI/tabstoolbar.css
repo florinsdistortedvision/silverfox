@@ -460,10 +460,10 @@ label[data-l10n-id="private-browsing-indicator-label"] {
 .tabbrowser-tab[label="Tab crash reporter"] .tab-icon-image {
   content: url(../../assets/images/topbar/crashfavicon.png) !important;
 }
-.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-icon-image  {
+.tabbrowser-tab[label="about:history"] .tab-icon-image  {
   content: url(../../assets/images/topbar/historyfavicon.png) !important;  
 }
-.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-icon-image  {
+.tabbrowser-tab[label="about:bookmarks"] .tab-icon-image  {
   content: url(../../assets/images/topbar/bookmarksfavicon.png) !important;  
 }
 .tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-icon-image {
@@ -472,20 +472,20 @@ label[data-l10n-id="private-browsing-indicator-label"] {
 
 /* Various manual tab text title */
 .tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label,
-.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label,
-.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label {
+.tabbrowser-tab[label="about:bookmarks"] .tab-label,
+.tabbrowser-tab[label="about:history"] .tab-label {
   font-size: 0px !important;
 }
-.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label::before,
-.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label::before,
+.tabbrowser-tab[label="about:history"] .tab-label::before,
+.tabbrowser-tab[label="about:bookmarks"] .tab-label::before,
 .tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label::before {
   font-size: 12px !important;
 }
 
-.tabbrowser-tab[label="browser/content/places/historySidebar.xhtml"] .tab-label::before {
+.tabbrowser-tab[label="about:history"] .tab-label::before {
   content: "History" !important;
 }
-.tabbrowser-tab[label="browser/content/places/bookmarksSidebar.xhtml"] .tab-label::before {
+.tabbrowser-tab[label="about:bookmarks"] .tab-label::before {
   content: "Bookmark Manager" !important;
 }
 .tabbrowser-tab[label="Report a Suspected Web Forgery"] .tab-label::before {

@@ -1,4 +1,4 @@
-@-moz-document url-prefix(chrome://browser/content/places/historySidebar.xhtml) {
+@-moz-document url-prefix(about:history) {
 	
 #sidebar-search-container {
   width: 275px !important;

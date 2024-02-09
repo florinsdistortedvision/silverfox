@@ -591,7 +591,7 @@ _ucjs && utils.startupFinished().then(() => {
   if(Pref.setIfUnset("userChromeJS.firstRunShown",true)){
     utils.showNotification({
       type: "fx-autoconfig-installed",
-      label: `fx-autoconfig: ${utils.brandName} is being modified with custom autoconfig scripting`
+      label: `If you see this, Silverfox has been correctly installed.`
     });
   }
 });

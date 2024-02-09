@@ -1,0 +1,338 @@
+* {
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Top Portion (and buttons) */
+
+.topSection {
+    font-size: 12px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-top: -5px;
+}
+
+.nextPage {
+    position: fixed;
+    height: 100%;
+    top: 50%; 
+    right: 0%;
+    transform: translate(0%, -50%);
+}
+
+.previousPage {
+    position: fixed;
+    height: 100%;
+    top: 50%; 
+    left: 0%;
+    transform: translate(0%, -50%); 
+}
+
+.switchPage {
+    appearance: unset;
+    max-width: 150px;
+    min-width: 90px;
+    height: 100%;
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 50px;
+    color: rgb(95, 94, 94);
+    font-weight: 300;
+}
+
+.switchPage:hover {
+    background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, .01) 60px, rgba(0, 0, 0, .06) 183px)
+}
+
+.previousPage .switchPage[initial="true"],
+.previousPage .switchPage[apps="true"],
+.nextPage .switchPage[apps="true"] {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Main Page */
+
+.mainPage[apps="true"] {
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed;
+}
+
+.mainPage {
+    margin-top: 180px;
+}
+
+.recentSites {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+    .recentSites {
+        max-width: 1000px;
+    }
+}
+
+.recentRow {
+    flex: 0 0 calc(25% - 20px);
+    box-sizing: border-box;
+    margin: 10px;
+    margin-right: 0px;
+    cursor: pointer;
+}
+
+.recentThumbnail {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.sitePreview img,
+.siteThumb {
+    max-width: 100%;
+    height: auto;
+}
+
+.removeThis {
+    width: 20px;
+    position: absolute;
+    right: 0;
+    margin-right: 8px;
+}
+
+.removeThis:hover img {
+    content: url(../assets/close_hover.png);
+}
+
+.recentThumbnail[type="blankEntry"] .removeThis:hover img {
+    content: none !important;
+}
+
+.siteThumb {
+    border: 1px solid #dedede;
+    border-radius: 3px;
+}
+
+.siteThumb:hover {
+    border: 1px solid #969696 !important;
+}
+  
+.recentRow:nth-of-type(6) .siteThumb,
+.recentRow:nth-of-type(1) .siteThumb {
+    border-bottom: 3px solid #e14343 !important;
+}
+  
+.recentRow:nth-of-type(2) .siteThumb,
+.recentRow:nth-of-type(5) .siteThumb {
+    border-bottom: 3px solid #fcd209 !important;
+}
+  
+.recentRow:nth-of-type(8) .siteThumb,
+.recentRow:nth-of-type(3) .siteThumb {
+    border-bottom: 3px solid #4db849 !important;
+}
+  
+.recentRow:nth-of-type(7) .siteThumb,
+.recentRow:nth-of-type(4) .siteThumb {
+    border-bottom: 3px solid #4f8ecb !important;
+}
+
+.recentThumbnail[type="blankEntry"] .siteThumb {
+    border-bottom: 1px solid #dedede !important;
+}
+  
+.recentThumbnail[type="blankEntry"] .siteThumb:hover {
+    border: 1px solid #dedede !important;
+}
+  
+.recentThumbnail[type="blankEntry"] {
+    cursor: default !important;
+}
+  
+.recentThumbnail[type="blankEntry"] .faviCon {
+    visibility: hidden;
+}
+
+.siteFavicon {
+    position: absolute;
+    left: 0;
+    margin-left: 15px;
+    margin-top: -30px;
+    width: 16px;
+    height: 16px;
+}
+
+.faviCon {
+    width: 16px;
+    height: 16px;
+}
+
+.recentURL {
+    font-size: 14px;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+/* Apps Page */
+
+.appsPage[recent="true"],
+.appsPage[initial="true"] {
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed;
+}
+
+.appsPage {
+    margin-top: 200px;
+}
+
+.appsRow {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+    .appsRow {
+        max-width: 1200px;
+    }
+}
+
+.someApp {
+    flex: 0 0 calc(15% - 10px);
+    box-sizing: border-box;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.someApp:active {
+    transform: scale(1.1) !important;
+}
+
+@media (max-width: 1000px) {
+    .appImage {
+        transform: scale(0.8);
+    }
+
+    .appLabel {
+        margin-top: -15px;
+    }
+}
+
+.appLabel {
+    margin-top: -5px;
+    font-size: 14px;
+}
+
+.appImage {
+    width: 128px;
+    height: 128px;
+}
+
+/* Bottom Potion */
+
+.endPortion {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-image: linear-gradient(to top, #e3e3e3 0%, #f2f2f2 100%);
+    width: 100%;
+    border-top: 1px solid #e3e3e3;
+    height: 50px;
+}
+
+.chromeChromiumLogo {
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+.switchPageBars {
+    position: fixed;
+    bottom: 0.5%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+.switchPageBars a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #7f7f7f;
+    font-weight: bold;
+    border-top: 4px solid #7f7f7f;
+    padding-top: 3px;
+}
+
+.mostVisited {
+    padding-right: 8px;
+    padding-left: 2px;
+}
+
+.appsView {
+    padding-left: 5px; 
+    padding-right: 45px;  
+}
+
+.mostVisited[apps="true"],
+.appsView[initial="true"] {
+    filter: brightness(160%) !important;
+}
+  
+.mostVisited[apps="true"]:hover,
+.appsView[initial="true"]:hover {
+    filter: brightness(120%) !important;
+}
+
+.historyStore {
+    position: fixed;
+    bottom: 1.6%;
+    right: 0%; 
+}
+
+.historyStore a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #7f7f7f;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.historyLink:after {
+    content: url(../assets/down_chevron.png);
+    padding-left: 7px;
+}
+
+.webStoreLink {
+    border-left: 1px solid #b2b2b2;
+    padding-left: 15px;
+}
+
+.webStoreLink:after {
+    content: url(../assets/webstore_chrome.png);
+    padding-left: 7px;
+    position: relative;
+    top: 5px;
+}
+
+@supports (-moz-bool-pref("silverfox.beChromium")) { 
+    .webStoreLink:after {
+        content: url(../assets/webstore_chromium.png);
+        padding-left: 7px;
+        position: relative;
+        top: 5px;
+    }
+}

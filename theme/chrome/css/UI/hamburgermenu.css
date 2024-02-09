@@ -21,7 +21,6 @@
   margin-left: 2px !important;
 }
 
-
 #hamburger-button menupopup, menuitem, div {
   font-size: 12px !important;
 }
@@ -76,7 +75,13 @@
 
 #hamburger-button menuitem {
   padding-right: 0px !important;
-  width: 270px !important;
+  width: 280px !important;
+}
+
+/* (*′☉.̫☉) */
+.windows8-mode[now="false"],
+#hamburger-button menuseparator[now="false"] {
+  display: none !important;
 }
 
 .submenu-item1::after,

@@ -1,36 +1,37 @@
-# What is Silverfox?
+
+![](githubassets/silverfoxlogo.png)
+
+Silverfox is a Mozilla Firefox **115ESR** theme that mimics the look and feel of 2012 Google Chrome (or Chromium). Silverfox's project name is derived from chrome's silver color.
 ######  This project is not developed, approved or endorsed by Google!
 
-![](github%20assets/silverfoxlogo.png)
+#### Aero
 
-Silverfox is a Mozilla Firefox **115ESR** theme that mimicks the look and feel of 2012 Google Chrome (or Chromium). Silverfox's project name is derived from chrome's silver color.
+![](githubassets/aero.png)
+######  *Supports native Aero on Windows 7 and Aero enabling software such as [DWMBlurGlass](https://github.com/Maplespe/DWMBlurGlass/) on Windows 10/11.
+######  *Support for WindowBlinds is as-is and is not going to be worked on.
 
-## Welcome closed beta testers!
+#### Classic Blue
 
-As a tester you have a responsability to test how Silverfox functions and looks in different situations. **Also please note, closed beta means closed! As a result please refrain from sharing to anybody that is not part of closed beta, any of SilverFox's files (regardless if they are trusted members)! People sharing Silverfox (or code from it) will be banned and lose trust/access to any future beta Silverfox releases! You can share videos or photos of Silverfox in action freely, as long as it doesn't include visible code blocks.**
+![](githubassets/classic.png)
 
-Closed beta members, you have been provided with the closed beta website directly built in to your Silverfox. Once closed beta is done, it will be removed from it. That site will function as a message board. Please double click Silverfox which shows the development status and available bools.
-
-## How to install Silverfox?
-
-######  Support for Linux and Mac has not been tested.
-
-1. Download and install the latest version of [Firefox 115ESR](https://ftp.mozilla.org/pub/firefox/releases/115.6.0esr/). **115ESR is a requirement !**
-2. Launch Firefox, go to about:support, then In Application Basics look for Profile Folder, then click Open Folder.
-3. Drop in, from theme folder, the chrome folder and user.js to the opened window.
-4. Go to Firefox's installation folder (usually inside C:\Program Files\Mozilla Firefox), then copy, from program folder, config.js and defaults folder to the installation folder.
-5. Back in Firefox's about:support simply select Clear startup cache, then wait for Firefox to restart.
-
-## Extras
-
-* The extras part is optional, however it does make it more convincing overall. Extras contain replacing the Firefox icon system-wide.
-1. Download and install [Resource Hacker](http://www.angusj.com/resourcehacker/):
-2. Open Resource Hacker and load firefox.exe from Firefox installation folder (usually inside C:\Program Files\Mozilla Firefox).
-3. Edit the following values accordingly:
-> Inside Icon Group tab
->> Go to IconGroup 1, 2, 5, 6 & 32512, do right click and hit Change Resource and replace each to the .icos inside "icons" from either chrome or chromium folder accordingly
-4. Do File > Save and save it as firefox.exe on Desktop. Do Ctrl+C and Ctrl+V and replace firefox.exe from the installation folder.
+######  *Classic Blue can be toggled on all platforms. On Windows 7 Aero Basic and Classic mode, Classic Blue is the only option.
 
 
-## Credits:
-* WIP.
+#### How to install Silverfox?
+
+To setup Silverfox, please visit the [Silverfox Neocities site](https://silverfox.neocities.org/openbeta).
+
+#### Silverfox Flags
+
+Silverfox flags are settings you can toggle that tweak the look and feel of some Silverfox specific functions. You can access them either by navigating to about:flags, or by clicking the Hamburger/Wrench menu > Tools > Silverfox flags.
+
+#### Join Silverfox server
+
+[![Join](/githubassets/serverjoin.gif)](https://discord.gg/WkvvDXs2uQ)
+
+Join the Discord server if you wish to be up to date on Silverfox status, new updates or if you have a bug to report.
+
+
+#### Credits
+
+To view the credits *(and some funny remarks)*, please visit the [Silverfox Neocities site](https://silverfox.neocities.org/components/credits).

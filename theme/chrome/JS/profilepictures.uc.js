@@ -18,7 +18,7 @@
       "cat",
       "chickpfp",
       "chrome",
-	  "chromium",
+	    "chromium",
       "cooldudepfp",
       "cupcake",
       "custom",
@@ -39,7 +39,7 @@
       "weather",
       "whitepfp",
       "yellowpfp",
-	  "animated",
+	    "animated",
       "off"
     ];
 

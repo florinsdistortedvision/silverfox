@@ -3,7 +3,11 @@
 :host, :root {
   --in-content-primary-button-background: white !important;
   --in-content-item-selected-text: inherit !important;
-}    
+}
+  
+* {
+    overflow: hidden !important;
+}  
    
 #downloadsListBox::before {
   content: "\00a0 Downloads" !important;

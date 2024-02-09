@@ -1,6 +1,11 @@
 /* Default Firefox UI layout tweak */
 
 
+/* Disable x is now fullscreen popup */
+#fullscreen-warning {
+  display: none !important;
+}
+
 /* Disables MenuBar */
 #toolbar-menubar {
   display: none !important;
@@ -23,8 +28,6 @@
   padding-inline-start: 0px !important;
   margin-inline-start: 0px !important;
 }
-
-
 
 
 /* Context menu (bring back non icon back, refresh etc) */
@@ -71,7 +74,6 @@
 
 #wrapper-customizableui-special-spring10,
 #customization-uidensity-button,
-#customization-titlebar-visibility-checkbox,
 #wrapper-customizableui-special-spring7,
 #wrapper-fxa-toolbar-menu-button,
 #customization-panel-container,
@@ -102,6 +104,48 @@
   display: none !important;
 }
 
+@media (-moz-platform: windows) {
+#customization-titlebar-visibility-checkbox {
+    display: none !important;
+}  
+  
+#customization-titlebar-visibility-checkbox[checked="true"] {
+    display: flex !important;
+    font-size: 0px !important;   
+}
+  
+#customization-titlebar-visibility-checkbox[checked="true"]::after {
+  content: "Since you are on Windows, please uncheck this option." !important;
+  font-size: 12px !important;
+  color: red !important;
+  font-weight: bold !important;
+}
+}
+
+@media (-moz-platform: macos) {
+#customization-titlebar-visibility-checkbox {
+    display: none !important;
+}  
+  
+#customization-titlebar-visibility-checkbox[checked="true"] {
+    display: flex !important;
+    font-size: 0px !important;   
+}
+  
+#customization-titlebar-visibility-checkbox[checked="true"]::after {
+  content: "Since you are on macOS, please uncheck this option." !important;
+  font-size: 12px !important;
+  color: red !important;
+  font-weight: bold !important;
+}    
+}
+
+@media (-moz-platform: linux) {
+#customization-titlebar-visibility-checkbox {
+    display: flex !important;
+}    
+}
+
 #wrapper-home-button::after {
   content: "Home button, if needed, please drag it after refresh button. It should stay between refresh button and adressbar." !important;
 }
@@ -109,7 +153,6 @@
 #wrapper-personal-bookmarks::after {
   content: "Your bookmarks, please drag this in the dotted section (bookmark bar)" !important;
 }
-
 
 
 /* Clear Recent History panel */
@@ -234,6 +277,14 @@ span[data-l10n-id="default-browser-notification-message"] {
   margin-left: 28px !important;
 }
 
+.notification-message {
+  font-size: 15px !important;
+  margin-left: 2px !important;
+  margin-top: 1.5px !important;
+}
+
+
+
 span[data-l10n-id="default-browser-notification-message"]:before {
   content: "Google Chrome isn't your default browser." !important;
   font-size: 15px !important;
@@ -247,6 +298,7 @@ span[data-l10n-id="default-browser-notification-message"]:before {
 }  
 }
 
+button[data-l10n-id="restore-session-startup-suggestion-button"],
 button[data-l10n-id="default-browser-notification-button"] {
   background: linear-gradient(to bottom, #fefae7 0%, #fbedb0 100%) !important;
   color: black !important;
@@ -255,6 +307,7 @@ button[data-l10n-id="default-browser-notification-button"] {
   border: 1px solid #978c5e !important;
 }
 
+button[data-l10n-id="restore-session-startup-suggestion-button"]:hover,
 button[data-l10n-id="default-browser-notification-button"]:hover {
   border: 1px solid black !important;
 }
@@ -266,7 +319,61 @@ button[data-l10n-id="default-browser-notification-button"]:hover {
   top: 7px;
 }
 
+.notificationbox-stack.global-notificationbox notification-message[style="margin-top: -37.5px; opacity: 0;"] {
+  display: none !important;
+}
 
 
+/* Checkboxes and radios */
 
+.checkbox-check {
+  background-color: #ededed !important;
+  border: 1px solid #a9a9a9 !important;
+}
 
+.checkbox-check:not([native]) {
+  height: 13px !important;
+  width: 13px !important;
+  margin-top: 3px !important;
+}
+
+.checkbox-check[checked] {
+  border-color: #a9a9a9 !important;
+  background-color: #ededed !important;
+  background-image: url("chrome://userchromeassets/content/images/pages/settings/checkmark.png") !important;
+}
+
+checkbox:not([disabled="true"]):hover > .checkbox-check[checked] {
+  background-color: var(--checkbox-unchecked-hover-bgcolor, color-mix(in srgb, AccentColor 4%, Field)) !important;
+}
+
+.radio-check {
+  width: 15px !important;
+  height: 15px !important;
+  border: 1px solid #a9a9a9 !important;
+  background-color: #ededed !important;
+}
+
+.radio-check[selected] {
+  fill: #666666 !important;
+  color: #666666 !important;
+  background-size: 15px !important;
+}
+
+html|input[type="radio"]:enabled:checked:hover,
+xul|radio:not([disabled="true"])[selected]:hover > xul|*.radio-check {
+  background-color: #ededed !important;
+  color: #666666 !important;
+  border-color: none !important;
+}
+
+html|input[type="radio"]:enabled:checked:hover:active,
+xul|radio:not([disabled="true"])[selected]:hover:active > xul|*.radio-check {
+  background-color: none !important;
+  color: transparent !important;
+  border-color: none !important;
+}
+
+radio[focused="true"] > .radio-check { 
+  outline: none !important; 
+}

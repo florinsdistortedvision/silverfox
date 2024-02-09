@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         categoriesBox.appendChild(newItem);
   
         newItem.addEventListener("click", function() {
-          window.location.href = "chrome://userchrome/content/pages/about/about.xhtml";
+          window.location.href = "about:silverfox";
         });
       }
     } catch (e) {

@@ -77,11 +77,13 @@
 .aboutButtons button {
     border: 1px solid #a9a9a9;
     background-image: linear-gradient(to top, #e2e2e2 0%, #ededed 100%);
-    font-size: 13px;
-    border-radius: 2px;
-    padding-bottom: 2px;
-    padding-top: 1px;
-    color: black;
+    font-size: 12px;
+    border-radius: 3px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    color: #444444;
 }
 
 .aboutButtons button:hover {
