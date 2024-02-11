@@ -38,8 +38,11 @@ var ReplaceFirefoxTitlebar = {
         const mainwindow = document.getElementById("main-window");
         setAttributes(mainwindow, attributes);
       }
+
+      updateTitle();
+      setInterval(updateTitle, 5000);
     } catch (e) {}
   },
 };
 
-document.addEventListener("DOMContentLoaded", ReplaceFirefoxTitlebar.init, false);
+ReplaceFirefoxTitlebar.init();

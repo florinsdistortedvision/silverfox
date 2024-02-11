@@ -1,4 +1,4 @@
-.icognitoSection {
+.incognitoSection {
     background-color: #EEE;
     border-radius: 5px;
     color: black;
@@ -12,6 +12,12 @@
     height: 233px;
 }
 
+@media (-moz-platform: linux) {
+    .incognitoSection {
+        height: 290px;
+    }
+}
+
 bold {
     font-weight: bold;
 }
@@ -21,14 +27,14 @@ bold {
     display: inline-flex;
 }
 
-.icognitoDude {
+.incognitoDude {
     transform: scaleX(-1);
     height: 33px;
     margin-top: 12px;
     margin-right: 5px;
 }
 
-.icognitoList {
+.incognitoList {
     margin-top: -13px;
 }
 

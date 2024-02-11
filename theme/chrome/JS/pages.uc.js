@@ -1,148 +1,71 @@
 // ==UserScript==
-// @name			About Pages
-// @description 	Adds correct about: pages to Firefox.
-// @author			aubymori, ephemeralViolette
-// @include			main
-// @backgroundmodule
+// @name           Silverfox About Pages
+// @version        1.0
+// @description    Creates custom about:x pages for Silverfox
+// @authoer        florin, based on aminomancer's about:cfg 1.2.4 script
+// @grant          none
 // ==/UserScript==
 
-class OverrideObject
-{
-    _uri = null;
-    QueryInterface = null;
+const customAboutPages = {
+    "flags": "chrome://userchrome/content/pages/flags/flags.xhtml",
+    "bookmarks": "chrome://browser/content/places/bookmarksSidebar.xhtml",
+    "history": "chrome://browser/content/places/historySidebar.xhtml",
+    "silverfox": "chrome://userchrome/content/pages/about/about.xhtml",
+    "privatebrowsing": "chrome://userchrome/content/pages/incognito/incognito.xhtml",
+    "credits": "https://silverfox.neocities.org/components/redirector/redirect_credits",
+    "home": "chrome://userchrome/content/pages/homepage/homepage.xhtml",
+    "newtab": "chrome://userchrome/content/pages/homepage/homepage.xhtml",
+    "intro": "https://silverfox.neocities.org/components/redirector/redirect_intro"
+};
 
-    constructor(uri)
-    {
-        this._uri = uri;
-        this.QueryInterface = ChromeUtils.generateQI(["nsIAboutModule"]);
-    }
+let { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+let { manager: Cm } = Components;
+let registrar = Cm.QueryInterface(Ci.nsIComponentRegistrar);
 
-    get uri()
-    {
-        return Services.io.newURI(this._uri);
+function generateFreeCID() {
+    let uuid = Components.ID(Services.uuid.generateUUID().toString());
+    while (registrar.isCIDRegistered(uuid)) {
+        uuid = Components.ID(Services.uuid.generateUUID().toString());
     }
-
-    newChannel(uri, loadInfo)
-    {
-        const ch = Services.io.newChannelFromURIWithLoadInfo(this.uri, loadInfo);
-        ch.owner = Services.scriptSecurityManager.getSystemPrincipal();
-        return ch;
-    }
-
-    getURIFlags(uri)
-    {
-        return Ci.nsIAboutModule.ALLOW_SCRIPT | Ci.nsIAboutModule.IS_SECURE_CHROME_UI;
-    }
-
-    getChromeURI(_uri)
-    {
-        return this.uri;
-    }
+    return uuid;
 }
 
-class OverrideFactory
-{
-    QueryInterface = null;
-    uri = null;
+function createCustomAboutModule(url) {
+    function CustomAboutPage() {}
 
-    constructor(uri)
-    {
-        this.uri = uri;
-        this.QueryInterface = ChromeUtils.generateQI(["nsIFactory"]);
-    }
+    CustomAboutPage.prototype = {
+        get uri() {
+            return this._uri || (this._uri = Services.io.newURI(url));
+        },
+        newChannel(_uri, loadInfo) {
+            const ch = Services.io.newChannelFromURIWithLoadInfo(this.uri, loadInfo);
+            ch.owner = Services.scriptSecurityManager.getSystemPrincipal();
+            return ch;
+        },
+        getURIFlags(_uri) {
+            return Ci.nsIAboutModule.ALLOW_SCRIPT | Ci.nsIAboutModule.IS_SECURE_CHROME_UI;
+        },
+        getChromeURI(_uri) {
+            return this.uri;
+        },
+        QueryInterface: ChromeUtils.generateQI(["nsIAboutModule"]),
+    };
 
-    createInstance(aIID)
-    {
-        return (new OverrideObject(this.uri)).QueryInterface(aIID);
-    }
+    return CustomAboutPage;
 }
 
-class SilverfoxPages
-{
-    static registrar = Components.manager.QueryInterface(Ci.nsIComponentRegistrar);
-    static registeredPages = {};
+Object.entries(customAboutPages).forEach(([aboutPage, url]) => {
+    let factory = {
+        createInstance(aIID) {
+            return new (createCustomAboutModule(url))().QueryInterface(aIID);
+        },
+        QueryInterface: ChromeUtils.generateQI(["nsIFactory"]),
+    };
 
-    /* Generate unique ID every launch */
-    static generateFreeCID()
-    {
-        let uuid;
-        do
-        {
-            uuid = Components.ID(Services.uuid.generateUUID().toString());
-        }
-        while (this.registrar.isCIDRegistered(uuid));
-
-        return uuid;
-    }
-
-    static registerAboutPage(name, uri)
-    {
-        /* Unregister the page if it has already been registered. */
-        this.unregisterAboutPage(name);
-
-        let factory = new OverrideFactory(uri);
-        let cid = this.generateFreeCID();
-
-        this.registeredPages[name] = {
-            cid: cid,
-            factory: factory
-        };
-
-        this.registrar.registerFactory(
-            cid,
-            `about:${name}`,
-            `@mozilla.org/network/protocol/about;1?what=${name}`,
-            factory
-        );
-    }
-
-    static unregisterAboutPage(name)
-    {
-        if (this.registeredPages[name])
-        {
-            this.registrar.unregisterFactory(
-                this.registeredPages[name].cid,
-                this.registeredPages[name].factory
-            );
-            delete this.registeredPages[name];
-        }
-    }
-}
-
-SilverfoxPages.registerAboutPage(
-    "flags",
-    "chrome://userchrome/content/pages/flags/flags.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "bookmarks",
-    "chrome://browser/content/places/bookmarksSidebar.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "history",
-    "chrome://browser/content/places/historySidebar.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "silverfox",
-    "chrome://userchrome/content/pages/about/about.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "privatebrowsing",
-    "chrome://userchrome/content/pages/icognito/icognito.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "credits",
-    "https://silverfox.neocities.org/components/redirector/redirect_credits"
-);
-SilverfoxPages.registerAboutPage(
-    "home",
-    "chrome://userchrome/content/pages/homepage/homepage.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "newtab",
-    "chrome://userchrome/content/pages/homepage/homepage.xhtml"
-);
-SilverfoxPages.registerAboutPage(
-    "intro",
-    "https://silverfox.neocities.org/components/redirector/redirect_intro"
-);
-let EXPORTED_SYMBOLS = [];
+    registrar.registerFactory(
+        generateFreeCID(),
+        `about:${aboutPage}`,
+        `@mozilla.org/network/protocol/about;1?what=${aboutPage}`,
+        factory
+    );
+});

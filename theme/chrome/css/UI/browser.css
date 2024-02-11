@@ -17,3 +17,14 @@
   border-bottom: none !important;
   margin-top: 0px !important;
 }
+
+/* On Linux, if native titlebars are enabled remove borders and margin */
+
+@media (-moz-platform: linux) {
+:root:not([tabsintitlebar="true"]) #browser {
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  margin-top: 0px !important;
+}
+}

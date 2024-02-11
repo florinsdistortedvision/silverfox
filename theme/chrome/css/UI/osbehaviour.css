@@ -224,6 +224,9 @@
     background-image: none !important;
 }
     
+
+:root[native="true"] #navigator-toolbox,
+:root[native="true"] #navigator-toolbox-background,
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
      background-color: transparent !important;
@@ -232,6 +235,13 @@
      background-color: transparent !important;
      appearance: auto !important;
      -moz-default-appearance: -moz-win-borderless-glass !important;
+}
+
+/* Firefox draws a white color over the TabsToolbar, NavBar and Personal Toolbar, artifically */
+/* Remove that white color to enable true Aero */
+#appcontent {
+    appearance: auto !important;
+    -moz-default-appearance: -moz-win-exclude-glass !important;
 }
 }
 }

@@ -22,6 +22,7 @@
     background-color: var(--checkbox-unchecked-hover-bgcolor, color-mix(in srgb, AccentColor 4%, Field)) !important;
   }
 
+  input[type="radio"],
   .radio-check {
     width: 15px !important;
     height: 15px !important;
@@ -29,6 +30,7 @@
     background-color: #ededed !important;
   }
   
+  input[type="radio"]:enabled:checked,
   .radio-check[selected] {
     fill: #666666 !important;
     color: #666666 !important;

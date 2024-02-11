@@ -6,6 +6,13 @@
   margin-bottom: -6px !important;
 }
 
+/* Remove the gap for Linux if native titlebars are enabled */
+@media (-moz-platform: linux) {
+:root:not([tabsintitlebar="true"]) #TabsToolbar {
+  margin-top: -4px !important;
+}
+}
+
 
 /* Remove the gap when Firefox is fullscreen */
 :root:not([sizemode="normal"]) #TabsToolbar {
@@ -270,7 +277,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         background-image: url(../../assets/images/topbar/newtab_original.png) !important;
         background-repeat: no-repeat !important;
         position: relative !important;
-        top: 6px !important;
+        top: 5px !important;
         right: 16px;
         list-style-image: none !important;
         visibility: visible;

@@ -30,6 +30,7 @@
 
 #identity-popup-multiView {
   display: block !important;
+    background: white !important;
 }
 
 
@@ -112,6 +113,7 @@
 .identityInfo p {
     font-size: 12px;
     margin-top: -10px;
+    color: black;
 }
 
 .identityNotVerified,
@@ -143,6 +145,7 @@
 .firstThing p {
     font-weight: bold;
     font-size: 14px;
+    color: black;
 }
 
 .fakeBorder {
@@ -184,6 +187,7 @@
 .permissionsTab p {
     font-size: 12px;
     font-weight: bold;
+    color: black;
 }
 
 .cookiesTab a {
@@ -204,12 +208,14 @@
 .infoView {
     border-bottom: 1px solid rgb(204, 204, 204);
     font-size: 12px;  
+    color: black;
 }
 
 .keepMeInfo,
 .keepMeSafe {
     margin-top: 12px;
     display: flex;
+    color: black;
 }
 
 .keepMeInfo img,
