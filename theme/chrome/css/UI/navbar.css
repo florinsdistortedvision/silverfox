@@ -17,10 +17,18 @@
 /* Remove the borders for Linux if native titlebars are enabled */
 @media (-moz-platform: linux) {
 :root:not([tabsintitlebar="true"]) #nav-bar {
-border-right: none !important;
-border-left: none !important;
-border-radius: 0px !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-radius: 0px !important;
 }
+ 
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+ #nav-bar {
+  border-right: none !important;
+  border-left: none !important;
+  border-radius: 0px !important;
+} 
+} 
 }
 
 /* When in fullscreen, remove left and right borders and radius */
@@ -50,18 +58,26 @@ background-color: unset !important;
 /* Personal Toolbar (bookmarks bar) */
 
 #PersonalToolbar {
-margin-top: 2.5px !important;
-border-bottom: 1px solid #b2b2b2 !important;
-border-right: 2px solid #b2b2b2 !important;
-border-left: 2px solid #b2b2b2 !important;
+  margin-top: 2.5px !important;
+  border-bottom: 1px solid #b2b2b2 !important;
+  border-right: 2px solid #b2b2b2 !important;
+  border-left: 2px solid #b2b2b2 !important;
 }
 
 /* Remove the borders for Linux if native titlebars are enabled */
 @media (-moz-platform: linux) {
 :root:not([tabsintitlebar="true"]) #PersonalToolbar {
-border-right: none !important;
-border-left: none !important;
-border-radius: 0px !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-radius: 0px !important;
+}
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+#PersonalToolbar {
+  border-right: none !important;
+  border-left: none !important;
+  border-radius: 0px !important;
+}  
 }
 }
 
@@ -333,11 +349,19 @@ z-index: 90 !important;
 #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
 margin-top: 2px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+#nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
+margin-top: 0px !important;
+  margin-left: -1px !important;
+}  
+}
 
 :root:not([tabsintitlebar="true"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
 margin-top: 0px !important;
 margin-left: -1px !important;
 }
+  
 }
 
 @media (-moz-platform: macos) {
@@ -364,7 +388,14 @@ z-index: 90 !important;
 #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
 margin-top: 2px !important; 
 }
-
+  
+ @supports (-moz-bool-pref("silverfox.beChromeOS")) {  
+#nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
+margin-top: 0px !important; 
+  margin-left: -1px !important;
+}  
+}
+  
 :root:not([tabsintitlebar="true"])   #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
 margin-top: 0px !important; 
 margin-left: -1px !important;
@@ -396,10 +427,23 @@ z-index: 999 !important;
 margin-top: 3px !important;
 margin-left: 2px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+#nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+margin-left: 0px !important;
+}  
+}
 
-:root:not([tabsintitlebar="true"])   #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+:root:not([tabsintitlebar="true"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
 margin-left: 0px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+:root:not([sizemode="normal"]) #nav-bar[home="false"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+  margin-left: 3px !important;
+}
+}
+  
 }
 
 @media (-moz-platform: macos) {
@@ -427,6 +471,18 @@ z-index: 999 !important;
 margin-top: 3px !important;
 margin-left: 3px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+#nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+margin-left: 1px !important;
+}
+  
+:root:not([sizemode="normal"]) #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
+margin-left: 3px !important;
+}
+  
+}
+  
 
 :root:not([tabsintitlebar="true"]) #nav-bar[home="true"] #identity-box[class="verifiedDomain certUserOverridden"]:after {
 margin-left: 0.5px !important;
@@ -590,6 +646,11 @@ background-position: 5px 10px !important;
 background-size: 18px !important;
 color: transparent;
 }
+
+.urlbarView-row[type=bookmark] .urlbarView-favicon {
+  visibility: hidden !important;
+}
+
 .urlbarView-row[type="bookmark"]:hover {
 background-position: 20px 4px !important;
 }

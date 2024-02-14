@@ -26,6 +26,7 @@ function updateSwitchText(flagName) {
 function getPrefName(flagName) {
     var flagToPrefMap = {
         'Be Chromium': 'silverfox.beChromium',
+        'Be Chrome OS': 'silverfox.beChromeOS',
         'Enable Aero Glass': 'silverfox.hasAeroGlass',
         'Restore Old Look': 'silverfox.preferOldLook',
         'Allow Homepage Images': 'silverfox.hasLocalImage',

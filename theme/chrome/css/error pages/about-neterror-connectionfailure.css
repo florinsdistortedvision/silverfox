@@ -10,9 +10,12 @@ body {
   box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
   font-size: 12px !important;
   min-width: 780px !important;
-  margin-top: -650px !important;
   height: 160px !important;
   color: black !important;
+  position: fixed !important;
+  top: 20% !important;
+  left: 50% !important;
+  transform: translate(-50%, -20%) !important;
 }
 
 

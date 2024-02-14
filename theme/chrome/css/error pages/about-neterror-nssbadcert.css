@@ -10,13 +10,17 @@ body {
   box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
   font-size: 12px !important;
   min-width: 780px !important;
-  margin-top: -450px !important;
+  position: fixed !important;
+  top: 20% !important;
+  left: 50% !important;
+  transform: translate(-50%, -20%) !important;
 }
 
 body.certerror .title {
   background-image: none !important;
 }
 
+h1[data-l10n-id="nssBadCert-sts-title"],
 h1[data-l10n-id="nssBadCert-title"] {
   font-size: 5px !important;
   font-weight: 600 !important;
@@ -25,6 +29,7 @@ h1[data-l10n-id="nssBadCert-title"] {
   margin-top: -15px !important;
 }
 
+h1[data-l10n-id="nssBadCert-sts-title"]::before,
 h1[data-l10n-id="nssBadCert-title"]::before {
   content: "The site's security certificate is not trusted!" !important;
   font-size: 24px !important;
@@ -32,6 +37,7 @@ h1[data-l10n-id="nssBadCert-title"]::before {
   color: #660000 !important;
 }
 
+h1[data-l10n-id="nssBadCert-sts-title"]::after,
 h1[data-l10n-id="nssBadCert-title"]::after {
   content: url(../../assets/images/pages/errors/bigwarning.png) !important;
   position: relative !important;
@@ -39,6 +45,8 @@ h1[data-l10n-id="nssBadCert-title"]::after {
   top: 30px !important;
 }
 
+#badStsCertExplanation, 
+#errorShortDesc2,
 #learnMoreLink,
 #errorWhatToDoText,
 p[data-l10n-id="certerror-what-can-you-do-about-it-title"],
@@ -98,8 +106,8 @@ p[data-l10n-id="certerror-what-can-you-do-about-it-title"] {
 
 #exceptionDialogButton {
   position: relative !important;
-  top: -367px !important;
-  left: -385px !important;
+  top: -319px !important;
+  left: -318px !important;
   visibility: visible !important;
   z-index: 999 !important;
 }
@@ -113,6 +121,7 @@ p[data-l10n-id="certerror-what-can-you-do-about-it-title"] {
 
 #returnButton {
 	z-index: 10 !important;
+  padding-right: 10px !important;
 }
 
 #returnButton::before {

@@ -98,6 +98,11 @@ red {
 
 /* Conditional flags */
 
+.notAvailable[type="linuxTitlebarsCombo"],
+.notAvailable[type="oldLook"],
+.notAvailable[type="beChromium"],
+.notAvailable[type="beChromeOS"],
+.enableDisableChromeOS,
 .enableDisableAero {
     display: none;
 }
@@ -117,6 +122,7 @@ red {
 }
 
 @media (-moz-platform: linux) {
+    .enableDisableChromeOS,
     .enableDisableLinuxTitlebar {
         display: block !important;
     }
@@ -124,4 +130,28 @@ red {
     .notAvailable[type="linuxTitlebars"] {
         display: none !important
     }
+    
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+    .enableDisableChromium,
+    .enableDisableOld,
+    .enableDisableLinuxTitlebar {
+        display: none !important;
+    }
+    
+    .notAvailable[type="linuxTitlebarsCombo"],
+    .notAvailable[type="oldLook"],
+    .notAvailable[type="beChromium"] {
+        display: block !important;
+    }
+}
+    
+@supports (-moz-bool-pref("silverfox.beChromium")) or (-moz-bool-pref("silverfox.preferOldLook")) or (-moz-bool-pref("silverfox.enableNativeLinuxTitlebars"))  {
+    .enableDisableChromeOS {
+        display: none !important;
+    }
+    
+    .notAvailable[type="beChromeOS"] {
+        display: block !important;
+    }
+}    
 }

@@ -46,9 +46,6 @@
         background-image: linear-gradient(to bottom, #b4bec9 0%, #a0aebe 100%) !important;
         opacity: 0.95 !important;
 }
-
-        
-
            
            
 :root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background,
@@ -353,7 +350,7 @@
 
 /* Linux System Theme */
 /* Tabs */
-
+@supports not (-moz-bool-pref("silverfox.beChromeOS")) {
 :root:not(:-moz-lwtheme) .tab-text {
   color: -moz-DialogText !important;
 }
@@ -386,6 +383,7 @@
   background: color-mix(in srgb, white 14%, -moz-dialog) !important;
 }
 
+
 /* NavBar */
 :root:not(:-moz-lwtheme) #nav-bar {
   background-image: linear-gradient(to top,
@@ -400,7 +398,7 @@
                           -moz-dialog 0%,
                           color-mix(in srgb, black 4%, -moz-dialog) 100%) !important;
 }
-    
+}   
 
 /* Light theme */
 
@@ -415,6 +413,35 @@ menupopup {
     --panel-background: Field !important;
     --panel-color: FieldText !important;
     --panel-border-color: ThreeDShadow !important;
+}
+    
+    
+/* Chrome OS mode */
+    
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+     
+:root:not(:-moz-lwtheme) #TabsToolbar {
+    background-image: linear-gradient(to top, #c4c4c4 0%, #c1c5c0 100%) !important;    
+}
+
+:root:not(:-moz-lwtheme) #navigator-toolbox,
+:root:not(:-moz-lwtheme) #navigator-toolbox-background {
+    background: #c1c5c0 !important;
+}
+
+:root[privatebrowsingmode="temporary"][native="true"] #TabsToolbar {
+    background-image: linear-gradient(to top, #526d92 0%, #526d92 10%, #617a9c 97%, #617a9c 100%) !important;    
+}
+
+:root[privatebrowsingmode="temporary"][native="true"] #navigator-toolbox,
+:root[privatebrowsingmode="temporary"][native="true"] #navigator-toolbox-background {
+    background: #617a9c !important;
+}   
+   
+:root:not(:-moz-lwtheme) #PersonalToolbar,   
+:root:not(:-moz-lwtheme) .tab-text {
+    color: black !important;
+}        
 }
 }
 
@@ -461,6 +488,5 @@ menupopup {
 :root:not(:-moz-lwtheme) #PersonalToolbar,    
 :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] #PersonalToolbar {
      background-image: linear-gradient(to top, #cecfce 0%, #cecfcf 100%) !important; 
-}    
-    
+}     
 }

@@ -129,6 +129,15 @@
         color: #4e5764 !important;
         left: 21px !important;
     }
+    
+    @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+         #category-general::before {
+        content: "Chrome OS" !important;
+      }
+      
+  }
+  
+  
 }
 @supports (-moz-bool-pref("silverfox.beChromium")) {
     #category-general::before {
@@ -139,7 +148,15 @@
         color: #4e5764 !important;
         left: 21px !important;
     }
-}
+  
+      @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+         #category-general::before {
+        content: "Chromium OS" !important;
+      }
+      
+  }
+} 
+  
 
 #category-general[selected="true"],
 #category-home[selected="true"],

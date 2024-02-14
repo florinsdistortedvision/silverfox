@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   showRestartElement(false);
 
   updateSwitchText('Be Chromium');
+  updateSwitchText('Be Chrome OS');
   updateSwitchText('Enable Aero Glass');
   updateSwitchText('Restore Old Look');
   updateSwitchText('Allow Homepage Images');
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
     
- <div class="experimentsTable">
+<div class="experimentsTable">
     <div class="experimentFlag">
         <div class="experimentName">
         <p class="flagName">Be Chromium</p>
@@ -49,7 +50,23 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="enableSwitch" data-flag="Be Chromium">
           <a class="enableDisableChromium" href="#" onclick="toggleFlag('Be Chromium', 'silverfox.beChromium')">Enable</a> 
+          <p class="notAvailable" type="beChromium">Sorry, this flag can't be combined with your existing flags.</p>
         </div>
+    </div>
+
+    <div class="experimentFlag">
+      <div class="experimentName">
+      <p class="flagName">Be Chrome OS</p>
+      <p class="flagMention">Linux only</p>
+      </div>
+      <div class="experimentInfo">
+      <p class="aboutInfo">Uses Chrome OS's titlebar buttons, grey gradient for system native theme and branding visible in multiple places.</p>
+      </div>
+      <div class="enableSwitch" data-flag="Be Chrome OS">
+        <a class="enableDisableChromeOS" href="#" onclick="toggleFlag('Be Chrome OS', 'silverfox.beChromeOS')">Enable</a>  
+        <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
+        <p class="notAvailable" type="beChromeOS">Sorry, this flag can't be combined with your existing flags.</p>
+      </div>
     </div>
 
     <div class="experimentFlag">
@@ -75,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <p class="aboutInfo">Turns new tab icon into older pre 2012 refresh design and hamburger menu turns into early 2012 wrench menu.</p>
         </div>
         <div class="enableSwitch" data-flag="Restore Old Look">
-          <a class="enableDisableOld" href="#" onclick="toggleFlag('Restore Old Look', 'silverfox.preferOldLook')">Enable</a> 
+          <a class="enableDisableOld" href="#" onclick="toggleFlag('Restore Old Look', 'silverfox.preferOldLook')">Enable</a>
+          <p class="notAvailable" type="oldLook">Sorry, this flag can't be combined with your existing flags.</p> 
         </div>
     </div>
 
@@ -147,10 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="enableSwitch" data-flag="Enable Native Linux Titlebars">
         <a class="enableDisableLinuxTitlebar" href="#" onclick="toggleFlag('Enable Native Linux Titlebars', 'silverfox.enableNativeLinuxTitlebars')">Enable</a>  
         <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
+        <p class="notAvailable" type="linuxTitlebarsCombo">Sorry, this flag can't be combined with your existing flags.</p>
       </div>
   </div>
-    
-    
  </div>   
 
  <div class="restartFirefox">

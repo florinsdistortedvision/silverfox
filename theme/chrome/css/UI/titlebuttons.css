@@ -680,4 +680,64 @@
       background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
     }
   }
-  }
+    
+/* Chrome OS */  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
+  
+.titlebar-buttonbox {
+      margin-top: 20px !important;
+}
+  
+:root:not([sizemode="normal"]) .titlebar-buttonbox {
+    margin-top: -2px !important;
+}  
+  
+.titlebar-close,
+.titlebar-restore,
+.titlebar-min,
+.titlebar-max {
+      min-width: 35px !important;
+      max-width: 35px !important;
+      height: 36px !important;
+}
+  
+.titlebar-close {
+      background: url(../../assets/images/topbar/chromeos/close.png) !important;
+}
+.titlebar-min {
+      background: url(../../assets/images/topbar/chromeos/minimize.png) !important;
+}
+.titlebar-max {
+      background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
+}
+.titlebar-restore {
+      background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
+}
+  
+/* Hovers */
+.titlebar-close:hover {
+      background: url(../../assets/images/topbar/chromeos/close_hover.png) !important;
+}
+.titlebar-min:hover {
+      background: url(../../assets/images/topbar/chromeos/minimize_hover.png) !important;
+}
+.titlebar-max:hover {
+      background: url(../../assets/images/topbar/chromeos/maximize_hover.png) !important;
+}
+.titlebar-restore:hover {
+      background: url(../../assets/images/topbar/chromeos/restore_hover.png) !important;
+}
+  
+/* Pressed */
+.titlebar-close:hover:active {
+      background: url(../../assets/images/topbar/chromeos/close_pressed.png) !important;
+}
+.titlebar-min:hover:active {
+      background: url(../../assets/images/topbar/chromeos/minimize_pressed.png) !important;
+}
+.titlebar-restore:hover:active,
+.titlebar-max:hover:active {
+      background: url(../../assets/images/topbar/chromeos/maximize_pressed.png) !important;
+}  
+}
+}

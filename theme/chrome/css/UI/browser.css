@@ -27,4 +27,13 @@
   border-bottom: none !important;
   margin-top: 0px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+#browser {
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  margin-top: -1px !important;
+}  
+}
 }

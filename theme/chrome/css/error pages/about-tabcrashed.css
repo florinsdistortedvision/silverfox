@@ -17,7 +17,7 @@ h1[data-l10n-id="crashed-header"]::before {
   position: fixed !important;
   top: 48%; 
   left: 50%; 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -48%);
 }
 
 h1[data-l10n-id="crashed-header"]::after {

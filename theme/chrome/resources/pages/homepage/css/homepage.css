@@ -69,6 +69,18 @@ body {
     margin-top: 180px;
 }
 
+@media (max-height: 800px) {
+    .mainPage {
+    margin-top: 100px;
+}
+}
+
+@media (max-height: 630px) {
+    .mainPage {
+    margin-top: 50px;
+}
+}
+
 .recentSites {
     display: flex;
     flex-wrap: wrap;
@@ -196,6 +208,18 @@ body {
 
 .appsPage {
     margin-top: 200px;
+}
+
+@media (max-height: 800px) {
+    .appsPage {
+    margin-top: 150px;
+}
+}
+
+@media (max-height: 630px) {
+    .appsPage {
+    margin-top: 100px;
+}
 }
 
 .appsRow {

@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let isChromium = Services.prefs.getBoolPref("silverfox.beChromium", false);
+    let isChromeOS = Services.prefs.getBoolPref("silverfox.beChromeOS", false);
 
     let chromeChromiumName = document.querySelector(".chromeChromiumName");
     let browserName = document.querySelector(".browserName");
@@ -26,5 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
             browserName.setAttribute("chrome", "true");
             browserName.removeAttribute("chromium");
         }
+    }
+
+    if (isChromeOS) {
+        if (chromeChromiumName) chromeChromiumName.textContent = "Chrome OS";
+        if (helpChromeButton) helpChromeButton.textContent = "Get help with using Chrome OS";
+        if (isUptoDate) isUptoDate.textContent = "Chrome OS is up to date.";
     }
 });

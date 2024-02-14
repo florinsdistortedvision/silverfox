@@ -11,6 +11,12 @@
 :root:not([tabsintitlebar="true"]) #TabsToolbar {
   margin-top: -4px !important;
 }
+  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+  #TabsToolbar {
+  margin-top: 2px !important;
+}
+} 
 }
 
 
@@ -294,6 +300,24 @@ tab:where(:first-of-type[visuallyselected="true"]) {
     top: 8px !important;
   }
     
+}
+
+@media (-moz-platform: linux) {
+
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {   
+  
+  #tabs-newtab-button, #TabsToolbar #new-tab-button {
+        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        top: 5px !important;
+        right: 16px;
+        list-style-image: none !important;
+        visibility: visible;
+        transform: scale(0.78) !important;
+        filter: grayscale(30%) brightness(505%) !important;
+}
+}
 }
 
 #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
