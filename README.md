@@ -16,6 +16,28 @@ Silverfox is a Mozilla Firefox **115ESR** theme that mimics the look and feel of
 
 ######  *Classic Blue can be toggled on all platforms. On Windows 7 Aero Basic and Classic mode, Classic Blue is the only option.
 
+#### Conditional Looks
+<img src="/theme/chrome/assets/images/pages/settings/native_linux.png" alt="Image Description" style="width:340px; height:46px;">
+
+<img src="/theme/chrome/assets/images/pages/settings/native_linux_rev.png" alt="Image Description" style="width:340px; height:46px;">
+
+###### ^ Native (GTK) theme. Linux only
+
+<img src="/theme/chrome/assets/images/pages/settings/native_linux_chromeOS.png" alt="Image Description" style="width:340px; height:46px;">
+
+###### ^ Chrome OS theme. Linux only
+
+<img src="/theme/chrome/assets/images/pages/settings/native_mac.png" alt="Image Description" style="width:340px; height:46px;">
+
+###### ^ Mac OS X native theme. Mac only
+
+<img src="/theme/chrome/assets/images/pages/settings/native_win8.png" alt="Image Description" style="width:340px; height:46px;">
+
+###### ^ Windows 8 native theme (follows Windows's accent color). Windows 8 only
+
+<img src="/theme/chrome/assets/images/pages/settings/native_win11.png" alt="Image Description" style="width:340px; height:46px;">
+
+###### ^ Windows 10/11 native theme. Windows 10/11 only
 
 #### How to install Silverfox?
 
