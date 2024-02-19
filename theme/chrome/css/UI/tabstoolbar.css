@@ -12,7 +12,7 @@
   margin-top: -4px !important;
 }
   
-@supports (-moz-bool-pref("silverfox.beChromeOS")), {
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
   #TabsToolbar {
   margin-top: 7px !important;
 }
