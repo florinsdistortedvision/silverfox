@@ -685,7 +685,7 @@
   @supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
   .titlebar-buttonbox {
-    margin-top: 15px !important;
+    margin-top: -15px !important;
     gap: 0 !important;
   }
   :root:not([sizemode="normal"]) .titlebar-buttonbox {
