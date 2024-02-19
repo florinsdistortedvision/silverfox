@@ -12,9 +12,9 @@
   margin-top: -4px !important;
 }
   
-@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+@supports (-moz-bool-pref("silverfox.beChromeOS")), {
   #TabsToolbar {
-  margin-top: 2px !important;
+  margin-top: 7px !important;
 }
 } 
 }
@@ -33,11 +33,13 @@
 
 
 /* Fix the gap added to the titlebar in normal and fullscreen */
-.titlebar-buttonbox-container {
-  margin-top: -30px;
-}
-:root:not([sizemode="normal"]) .titlebar-buttonbox-container {
-  margin-top: -5px;
+@media (-moz-platform: windows) {
+  .titlebar-buttonbox-container {
+    margin-top: -30px;
+  }
+  :root:not([sizemode="normal"]) .titlebar-buttonbox-container {
+    margin-top: -5px;
+  }
 }
 
 
@@ -304,7 +306,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 @media (-moz-platform: linux) {
 
-@supports (-moz-bool-pref("silverfox.beChromeOS")) {   
+@supports (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling")) {
   
   #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-image: url(../../assets/images/topbar/newtab_original.png) !important;

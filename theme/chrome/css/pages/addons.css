@@ -545,15 +545,8 @@
     
     
   #default-theme_mozilla_org-heading:before {
-      content: "Native Theme" !important;
-      font-size: 12px !important;
-  }
-      
-  @media (-moz-platform: macos) {
-  #default-theme_mozilla_org-heading:before {
       content: "Default Theme" !important;
       font-size: 12px !important;
-  }    
   }
     
   @media (-moz-platform: linux) {
@@ -561,13 +554,19 @@
       content: "GTK+ Theme" !important;
       font-size: 12px !important;
   }
-    
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
   #default-theme_mozilla_org-heading:before {
       content: "Chrome OS Theme" !important;
       font-size: 12px !important;
-  }  
-    
+  }
+  }
+
+  @supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+  #default-theme_mozilla_org-heading:before {
+      content: "Default Theme" !important;
+      font-size: 12px !important;
+  }
   }
     
   }  
@@ -578,50 +577,57 @@
   }   
     
   addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Native default theme. You're on Windows 10/11, theme will switch based on Windows light or dark mode." !important; 
+      content: "Default theme. You're on Windows 10/11 - theme will switch based on Windows light or dark mode." !important;
       font-size: 12px !important;
   }
     
   @media (-moz-platform: windows-win10) {
   @supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Native default theme. You enabled Aero switch, theme will switch based on Windows light or dark mode." !important; 
+      content: "Default theme. You enabled Aero Glass - theme will switch based on Windows light or dark mode." !important;
       font-size: 12px !important;
   }
   }}  
     
   @media (-moz-platform: windows-win8) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Native default theme. You're on Windows 8/8.1, theme will remain in light mode." !important; 
+      content: "Default theme. You're on Windows 8/8.1 - theme will remain in light mode." !important;
       font-size: 12px !important;
   }    
   }
     
   @media (-moz-platform: windows-win7) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Native default theme. You're on Windows 7 with Aero, theme will remain in light mode." !important; 
+      content: "Default theme. You're on Windows 7 with Aero - theme will remain in light mode." !important;
       font-size: 12px !important;
-  }    
+  }
   }  
   
   @media (-moz-platform: macos) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Native default theme. Mojave (10.14) and later will make theme switch based on Mac's light or dark mode." !important; 
+      content: "Default theme. Mojave (10.14) and later will make theme switch based on Mac's light or dark mode." !important;
       font-size: 12px !important;
   }     
   } 
     
   @media (-moz-platform: linux) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Native default theme. Depending on distro, theme switch based on light or dark mode." !important; 
+      content: "Default theme. The palette is based on your GTK+ appearance settings." !important;
       font-size: 12px !important;
-  } 
-    
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) {   
+  }
+
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Default theme. You have enabled Chrome OS flag, theme will remain in light mode." !important; 
+      content: "Default theme. You have enabled Chrome OS flag - theme will remain in light mode." !important;
       font-size: 12px !important;
-  } 
+  }
+  }
+
+  @supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+   addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+      content: "Default theme. You have enabled Force Windows Styling - theme will remain in light mode." !important;
+      font-size: 12px !important;
+  }
   }
     
   }  
@@ -652,7 +658,7 @@
   @media (-moz-platform: macos) {
   addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
       content: url(../../assets/images/pages/settings/native_mac.png) !important;
-  }  
+  }
   }
     
   @media (-moz-platform: linux) {
@@ -663,8 +669,13 @@
   @supports (-moz-bool-pref("silverfox.beChromeOS")) {
   addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
       content: url(../../assets/images/pages/settings/native_linux_chromeOS.png) !important;
-  }  
-  
+  }
+  }
+
+  @supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+  addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
+      content: url(../../assets/images/pages/settings/native_win7_aero.png) !important;
+  }
   }
     
   }

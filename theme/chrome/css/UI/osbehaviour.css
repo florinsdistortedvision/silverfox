@@ -12,7 +12,12 @@
        (-moz-platform: macos) {
 
 /* Tabs */
-  
+
+/* For Light and System, make text black */
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
+:root:not(:-moz-lwtheme) .tab-content {
+    color: black !important;
+}
  
 /* Light mode and System theme */
 
@@ -332,15 +337,6 @@
   background: #6192dc !important;
 }    
 }
-    
- /* For Light and System, make text black for Windows Classic */
-@media (-moz-windows-classic) {
-
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
-:root:not(:-moz-lwtheme) .tab-content {
-    color: black !important;
-} 
-}   
 }
 
 
@@ -350,7 +346,7 @@
 
 /* Linux System Theme */
 /* Tabs */
-@supports not (-moz-bool-pref("silverfox.beChromeOS")) {
+@supports (not -moz-bool-pref("silverfox.beChromeOS")) and (not -moz-bool-pref("silverfox.forceWindowsStyling")) {
 :root:not(:-moz-lwtheme) .tab-text {
   color: -moz-DialogText !important;
 }
