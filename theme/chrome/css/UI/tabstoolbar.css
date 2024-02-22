@@ -16,9 +16,9 @@
   margin-top: -4px !important;
 }
   
-@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
-:root[sizemode="normal"] #TabsToolbar {
-  margin-top: 2px !important;
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
+  #TabsToolbar {
+  margin-top: 7px !important;
 }
 
 } 
@@ -317,7 +317,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 @media (-moz-platform: linux) {
 
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
+@supports (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling")) {
   
 #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-repeat: no-repeat !important;

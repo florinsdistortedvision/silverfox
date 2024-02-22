@@ -618,20 +618,18 @@
   }
   
   
-  /* Linux */
-  
-  @media (-moz-platform: linux) {
+/* Linux */
+
+@media (-moz-platform: linux) {
     
   @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
     .titlebar-buttonbox {
+      margin-top: -35px !important;
       appearance: none !important; /* Prevents ANY influencing of margins */
       gap: 2px !important;
     }
     :root:not([sizemode="normal"]) .titlebar-buttonbox {
       margin-top: -4px !important;
-    }
-    :root[sizemode="normal"] .titlebar-buttonbox {
-      margin-top: -35px !important;
     }
     @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
       margin-right: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
@@ -694,7 +692,7 @@
       background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
     }
   }
-    
+
 /* Chrome OS */  
 @supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
