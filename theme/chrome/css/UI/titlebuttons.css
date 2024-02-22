@@ -269,7 +269,7 @@
   }  
     
   :root:not([sizemode="normal"]) .titlebar-restore {
-      margin-right: -2px !important;
+      margin-right: -10px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
@@ -277,7 +277,7 @@
   }
   
   .titlebar-max {
-      margin-right: -4px !important;
+      margin-right: -10px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
@@ -285,7 +285,7 @@
   }
    
   .titlebar-min {
-      margin-right: 2px !important;
+      margin-right: -6px !important;
   }
            
   
@@ -452,6 +452,11 @@
     align-items: center !important;
     margin-right: 3px;
   }
+    
+:root[sizemode="normal"] .titlebar-buttonbox {
+      margin-top: 12px !important;
+}  
+    
   }
     
   /* Aero Basic - PAIN */
@@ -465,7 +470,8 @@
   #titlebar-buttonbox-container .titlebar-close {
     appearance: none !important;
   }
-     
+    
+
   /* Disable the stupid hover of native basic titlebars */  
   .titlebar-button {
       appearance: none !important;
@@ -601,7 +607,13 @@
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox,
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
     margin-top: -50px !important;
-  }    
+  }
+    
+:root[sizemode="normal"] .titlebar-buttonbox {
+      margin-top: -45px !important;
+}
+         
+    
   }
   }
   
@@ -610,9 +622,9 @@
 
 @media (-moz-platform: linux) {
     
-  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
     .titlebar-buttonbox {
-      margin-top: -44px !important;
+      margin-top: -35px !important;
       appearance: none !important; /* Prevents ANY influencing of margins */
       gap: 2px !important;
     }
@@ -620,10 +632,10 @@
       margin-top: -4px !important;
     }
     @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-right: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+      margin-right: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
     }}
     @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-left: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
+      margin-left: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
     }}
     .titlebar-close,
     .titlebar-restore,
@@ -680,16 +692,9 @@
       background: url(../../assets/images/topbar/linux/restore_pressed.png) !important;
     }
   }
-    
-  /* Chrome OS */
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
-  :root {
-    --titlebutton-prefix: "";
-  }
-  :root[sizemode="maximized"] {
-    --titlebutton-prefix: "_maximized" !important;
-  }
+/* Chrome OS */  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
   .titlebar-buttonbox {
     margin-top: -15px !important;
@@ -720,7 +725,7 @@
   }
 
   .titlebar-close {
-        background: url("../../assets/images/topbar/chromeos/close" + var(--titlebutton-prefix) + ".png") !important;
+        background: url(../../assets/images/topbar/chromeos/close.png) !important;
         min-width: 36px !important;
         max-width: 36px !important;
   }

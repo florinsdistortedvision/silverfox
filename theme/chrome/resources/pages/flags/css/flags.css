@@ -101,8 +101,9 @@ red {
 .notAvailable[type="forceWindows"],
 .notAvailable[type="oldLook"],
 .notAvailable[type="beChromium"],
-.notAvailable[type="beChromeOS"],
 .notAvailable[type="systemThemeIcons"],
+.notAvailable[type="beChromeOS"],
+.enableSystemThemeIcons,
 .enableDisableChromeOS,
 .enableDisableAero {
     display: none;
@@ -148,7 +149,7 @@ red {
         display: block !important;
     }
 }
-
+    
 @supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
     .enableDisableChromeOS,
     .enableSystemThemeIcons {

@@ -10,7 +10,7 @@ body {
   box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.29) !important;
   font-size: 12px !important;
   min-width: 780px !important;
-  height: 160px !important;
+  height: 190px !important;
   color: black !important;
   position: fixed !important;
   top: 20% !important;
@@ -33,7 +33,7 @@ h1[data-l10n-id="netOffline-title"] {
 }
 
 h1[data-l10n-id="netOffline-title"]::before {
-  content: "You are offline" !important;
+  content: "Unable to connect to the Internet" !important;
   font-size: 23px !important;
   font-weight: 600 !important;
   color: black !important;
@@ -42,7 +42,7 @@ h1[data-l10n-id="netOffline-title"]::before {
 h1[data-l10n-id="netOffline-title"]::after {
   content: url(../../assets/images/pages/newtab/chromelogo.png) !important;
   position: relative !important;
-  left: 400px !important;
+  left: 220px !important;
   top: 10px !important;
 }
 
@@ -50,34 +50,39 @@ h1[data-l10n-id="netOffline-title"]::after {
   font-size: 12px !important;
   margin-left: 23px !important;
   max-width: 750px !important;
-  margin-top: 10px !important;
+  margin-top: 15px !important;
 }
 
 #errorShortDesc::after {
-  content: "The webpage you are trying to access has not been saved offline and you do not have a active connection to the internet." !important;
+  content: "Google Chrome can't display the webpage because your computer isn't connected to the Internet." !important;
 }
+  
+  li[data-l10n-id="neterror-net-offline"] {
+    font-size: 0px !important;
+  }
+  
+li[data-l10n-id="neterror-net-offline"]:before {
+  content: "You can try to diagnose the problem by taking the following steps: Go to" !important;
+  font-size: 12px !important;
+}
+  
+  li[data-l10n-id="neterror-net-offline"]:after {
+  content: "Start > Control Panel > Network and Internet > Network and Sharing Center > Troubleshoot Problems (at the bottom) > Internet Connections." !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  padding-left: 2px !important;
+}
+  
+  
 
 ul {
- margin-left: 50px !important;
+ list-style: none !important;
 }
 
 #netErrorButtonContainer > button {
-  background: transparent !important;
-  color: transparent !important;
-  cursor: pointer !important;
-  position: relative !important;
-  right: 604px !important;
-  top: -55px !important;  
+  display: none !important;
 }
 
-#netErrorButtonContainer::before {
-  content: "•" !important;
-  font-weight: bold !important;
-  font-size: 16px !important;
-  position: relative !important;
-  right: 590px !important;
-  top: -36px !important;
-}
 
 #netErrorButtonContainer > button::before {
   content: "Try Again." !important;
@@ -86,11 +91,11 @@ ul {
 }
 
 ul::after {
-  content: "Error 417 (net::EXPECTATION_FAILED): A client expectation cannot be met by the server." !important;
+  content: "Error 106 (net::ERR_INTERNET_DISCONNECTED): The Internet connection has been lost." !important;
   color: grey !important;
   position: relative !important;
   font-size: 13px !important;
-  top: 28px !important;
-  left: -24px !important;
+  top: 30px !important;
+  left: -px !important;
 }
 }

@@ -8,10 +8,10 @@
   z-index: 50 !important;
   border-right: 2px solid #b2b2b2 !important;
   border-left: 2px solid #b2b2b2 !important;
-  border-top: 1px solid #b2b2b2 !important;
-  border-radius: 5px 5px 0px 0px !important;
+  border-top: 1px solid #828282 !important;
+  border-radius: 4px 4px 0px 0px !important;
   height: 35px !important;
-  box-shadow: 0 -5px 5px -7px #b2b2b2 !important;
+  box-shadow: 0 -5px 5px -7px #828282 !important;
 }
 
 /* Remove the borders for Linux if native titlebars are enabled */
@@ -824,7 +824,7 @@ color: transparent;
 /* Search with Google tip */ 
 
 .urlbarView-title.urlbarView-overflowable[data-l10n-args='{"engineName":"Google"}'] {
-color: transparent !important;
+  font-size: 0px !important;
 }
 
 .urlbarView-title.urlbarView-overflowable[data-l10n-args='{"engineName":"Google"}']::before {
@@ -860,7 +860,7 @@ content: "Type to search or enter a URL to navigate - everything just works." !i
 font-size: 13px !important;
 color: black !important;
 position: relative !important;
-left: -617px !important;
+left: -235px !important;
 top: 21px !important;
 }
 
@@ -869,7 +869,7 @@ content: "Type to search or enter a URL to navigate - everything just works." !i
 font-size: 13px !important;
 color: black !important;
 position: relative !important;
-left: -799px !important;
+left: -235px !important;
 top: 21px !important;
 }
 

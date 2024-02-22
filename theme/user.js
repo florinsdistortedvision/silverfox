@@ -8,3 +8,4 @@ user_pref("browser.download.useDownloadDir", true); // Forces disabling ask wher
 user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Disable "Sponsored stories" in Pocket section of new tab page
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Disable the Pocket section of the new tab page
 user_pref("widget.gtk.overlay-scrollbars.enabled", false); // 2012 Chrome on Linux didn't have these.
+user_pref("nglayout.enable_drag_images", false); // Disable previews when dragging tabs

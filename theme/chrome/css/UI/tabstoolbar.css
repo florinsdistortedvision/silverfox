@@ -2,8 +2,12 @@
 
 /* Chrome's default gap */
 #TabsToolbar {
-  margin-top: 15px;
+  margin-top: 11px;
   margin-bottom: -6px !important;
+}
+
+:root[sizemode="normal"] .titlebar-buttonbox {
+  margin-top: 5px !important;
 }
 
 /* Remove the gap for Linux if native titlebars are enabled */
@@ -16,6 +20,7 @@
   #TabsToolbar {
   margin-top: 7px !important;
 }
+
 } 
 }
 
@@ -34,12 +39,12 @@
 
 /* Fix the gap added to the titlebar in normal and fullscreen */
 @media (-moz-platform: windows) {
-  .titlebar-buttonbox-container {
-    margin-top: -30px;
-  }
-  :root:not([sizemode="normal"]) .titlebar-buttonbox-container {
-    margin-top: -5px;
-  }
+.titlebar-buttonbox-container {
+  margin-top: -30px;
+}
+:root:not([sizemode="normal"]) .titlebar-buttonbox-container {
+  margin-top: -5px;
+}
 }
 
 
@@ -82,7 +87,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* Size of tabs */
 .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) { 
-  max-width: 212px !important;
+  max-width: 219px !important;
 }
 .tabbrowser-tab:not([pinned]) {
   max-width: 204px !important;
@@ -92,22 +97,21 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 /* Chrome's tabs trapzoid shape */
 .tab-background {
 	transform: perspective(45px) rotateX(12deg) translateY(-2.7px);
-	border-top: 1px solid #b2b2b2;
-  border-right: 1px solid #b2b2b2;
-  border-left: 1px solid #b2b2b2; 
-  border-radius: 5px 5px 0px 0px !important; /*topR topL bottomR bottomL*/
+	border-top: 1.75px solid #828282 !important;
+  border-right: 1.75px solid #828282 !important;
+  border-left: 1.75px solid #828282 !important;
+  border-radius: 4px 4px 0px 0px !important; /*topR topL bottomR bottomL*/
 	position: absolute;
-	width: 96% !important;
-  box-shadow: 0 0 2pt 0 #b2b2b2 !important;
+	width: 97% !important;
+  box-shadow: 3px 0 5px -5px #999, -3px 0 5px -5px #999 !important;
 }
 
 /* Make tabs rounded for each bottom side, only for selected tab */
 .tabbrowser-tab[visuallyselected="true"] .tab-background:before {
   content: "";
   position: absolute;
-  bottom: 8px;
-  left: -5px;
-  border-left: 1px solid #b2b2b2;
+  bottom: 7px;
+  left: -3px;
   width: 3px;
   height: 5px;
   transform: rotate(40deg);
@@ -119,8 +123,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   content: "";
   position: absolute;
   bottom: 8px;
-  right: -4px;
-  border-right: 1px solid #b2b2b2;
+  right: -2px;
   width: 3px;
   height: 3px;
   background: #f5f5f5;
@@ -198,7 +201,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* Slight fix for tabs initial position */
 .tab-stack {
-  margin-left: 3px;
+  margin-left: 5px;
 }
 
 /* Pinned tabs styling  */
@@ -220,7 +223,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 /* Make tabs more into each other OwO */
 .tabbrowser-tab:not(:first-of-type)[visuallyselected="true"],
 .tabbrowser-tab:not(:first-of-type):not([visuallyselected="true"]) {
-    margin-left: -20px !important;
+    margin-left: -25px !important;
 }
 .tabbrowser-tab:first-of-type {
     margin-left: 0 !important;
@@ -282,43 +285,65 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* New tab button and its hover */
 #tabs-newtab-button, #TabsToolbar #new-tab-button {
-        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
         background-repeat: no-repeat !important;
         position: relative !important;
-        top: 5px !important;
-        right: 16px;
+        top: 5.5px !important;
+        right: 13px;
         list-style-image: none !important;
         visibility: visible;
         transform: scale(0.78) !important;
-        filter: grayscale(30%) brightness(505%) !important;
+        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
+        filter: grayscale(30%), brightness(505%) !important;
+}
+
+:root[native="true"] #tabs-newtab-button, 
+:root[native="true"] #TabsToolbar #new-tab-button {
+        background-image: url(../../assets/images/topbar/newtab_aero.png) !important;
+        filter: brightness(115%) !important;
+        opacity: 80% !important;
 }
 
 @media (-moz-platform: macos),
        (-moz-platform: linux) {
-  #tabs-newtab-button, #TabsToolbar #new-tab-button {
+:root[native="true"] #tabs-newtab-button, 
+:root[native="true"] #TabsToolbar #new-tab-button,
+#tabs-newtab-button, #TabsToolbar #new-tab-button {
     background-image: url(../../assets/images/topbar/newtab_maclinux.png) !important;
     transform: scale(1) !important;
-    right: 13px;
+    right: 12px;
     top: 8px !important;
-  }
-    
+}            
 }
 
 @media (-moz-platform: linux) {
 
 @supports (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling")) {
   
-  #tabs-newtab-button, #TabsToolbar #new-tab-button {
-        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
+#tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-repeat: no-repeat !important;
         position: relative !important;
-        top: 5px !important;
-        right: 16px;
+        top: 5.5px !important;
+        right: 13px;
         list-style-image: none !important;
         visibility: visible;
         transform: scale(0.78) !important;
-        filter: grayscale(30%) brightness(505%) !important;
+        background-image: url(../../assets/images/topbar/newtab_original.png) !important;
+        filter: grayscale(30%), brightness(505%) !important;
 }
+
+:root[native="true"] #tabs-newtab-button, 
+:root[native="true"] #TabsToolbar #new-tab-button {
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        top: 5.5px !important;
+        right: 13px;
+        list-style-image: none !important;
+        visibility: visible;
+        transform: scale(0.78) !important;
+        background-image: url(../../assets/images/topbar/newtab_aero.png) !important;
+        filter: brightness(115%) !important;
+        opacity: 80% !important;
+}  
 }
 }
 
@@ -327,7 +352,8 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         border: 0px solid transparent !important;
         box-shadow: 0px !important;
         box-sizing: 0px !important;
-        filter: grayscale(30%) brightness(103%) !important;
+        filter: brightness(190%) !important;
+        opacity: 80% !important;
 }
 #tabs-newtab-button:hover > .toolbarbutton-icon {
         background: transparent !important;
