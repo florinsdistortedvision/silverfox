@@ -98,10 +98,12 @@ red {
 
 /* Conditional flags */
 
-.notAvailable[type="linuxTitlebarsCombo"],
+.notAvailable[type="forceWindows"],
 .notAvailable[type="oldLook"],
 .notAvailable[type="beChromium"],
+.notAvailable[type="systemThemeIcons"],
 .notAvailable[type="beChromeOS"],
+.enableSystemThemeIcons,
 .enableDisableChromeOS,
 .enableDisableAero {
     display: none;
@@ -117,13 +119,14 @@ red {
     }
 }
 
-.enableDisableLinuxTitlebar {
+.enableDisableForceWindows {
     display: none;
 }
 
 @media (-moz-platform: linux) {
     .enableDisableChromeOS,
-    .enableDisableLinuxTitlebar {
+    .enableDisableForceWindows,
+    .enableSystemThemeIcons {
         display: block !important;
     }
 
@@ -134,24 +137,50 @@ red {
 @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
     .enableDisableChromium,
     .enableDisableOld,
-    .enableDisableLinuxTitlebar {
+    .enableDisableForceWindows,
+    .enableSystemThemeIcons {
         display: none !important;
     }
     
-    .notAvailable[type="linuxTitlebarsCombo"],
+    .notAvailable[type="forceWindows"],
     .notAvailable[type="oldLook"],
-    .notAvailable[type="beChromium"] {
+    .notAvailable[type="beChromium"],
+    .notAvailable[type="systemThemeIcons"] {
         display: block !important;
     }
 }
     
-@supports (-moz-bool-pref("silverfox.beChromium")) or (-moz-bool-pref("silverfox.preferOldLook")) or (-moz-bool-pref("silverfox.enableNativeLinuxTitlebars"))  {
+@supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+    .enableDisableChromeOS,
+    .enableSystemThemeIcons {
+        display: none !important;
+    }
+
+    .notAvailable[type="beChromeOS"],
+    .notAvailable[type="systemThemeIcons"] {
+        display: block !important;
+    }
+}
+
+@supports (-moz-bool-pref("silverfox.systemThemeIcons")) {
+    .enableDisableChromeOS,
+    .enableDisableForceWindows {
+        display: none !important;
+    }
+
+    .notAvailable[type="beChromeOS"],
+    .notAvailable[type="forceWindows"] {
+        display: block !important;
+    }
+}
+
+@supports (-moz-bool-pref("silverfox.beChromium")) or (-moz-bool-pref("silverfox.preferOldLook")) {
     .enableDisableChromeOS {
         display: none !important;
     }
-    
+
     .notAvailable[type="beChromeOS"] {
         display: block !important;
     }
-}    
+}
 }

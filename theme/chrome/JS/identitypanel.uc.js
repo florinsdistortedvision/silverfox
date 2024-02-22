@@ -125,7 +125,6 @@
                 };
 
             } else {
-                console.error('identity-popup-multiView element not found.');
                 setTimeout(addDivsToMultiView, 100);
             }
         }  

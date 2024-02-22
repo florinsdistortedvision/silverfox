@@ -12,7 +12,11 @@
        (-moz-platform: macos) {
 
 /* Tabs */
-  
+
+/* For Light make text black */
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content {
+    color: black !important;
+} 
  
 /* Light mode and System theme */
 
@@ -213,7 +217,7 @@
 }
 
 
-/* Windows Aero for Windows 10, if bool set to TRUE*/
+/* Windows Aero for Windows 10, if flag is enabled*/
     
 @supports (-moz-bool-pref("silverfox.hasAeroGlass")) {
 
@@ -350,7 +354,7 @@
 
 /* Linux System Theme */
 /* Tabs */
-@supports not (-moz-bool-pref("silverfox.beChromeOS")) {
+@supports (not -moz-bool-pref("silverfox.beChromeOS")) and (not -moz-bool-pref("silverfox.forceWindowsStyling")) {
 :root:not(:-moz-lwtheme) .tab-text {
   color: -moz-DialogText !important;
 }

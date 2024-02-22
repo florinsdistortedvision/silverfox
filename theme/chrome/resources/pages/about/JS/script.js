@@ -33,5 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (chromeChromiumName) chromeChromiumName.textContent = "Chrome OS";
         if (helpChromeButton) helpChromeButton.textContent = "Get help with using Chrome OS";
         if (isUptoDate) isUptoDate.textContent = "Chrome OS is up to date.";
+        if (versionNumber) versionNumber.textContent = "37.0.2062.119 (Platform version: 5978.80.0/5978.81.0)";
     }
 });

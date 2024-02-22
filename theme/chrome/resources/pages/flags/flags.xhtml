@@ -10,10 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateSwitchText('Be Chromium');
   updateSwitchText('Be Chrome OS');
+  updateSwitchText('Icons on System Theme');
   updateSwitchText('Enable Aero Glass');
   updateSwitchText('Restore Old Look');
   updateSwitchText('Allow Homepage Images');
-  updateSwitchText('Enable Native Linux Titlebars')
+  updateSwitchText('Force Windows Styling')
 });
 </script>
 <head>
@@ -66,6 +67,21 @@ document.addEventListener('DOMContentLoaded', function() {
         <a class="enableDisableChromeOS" href="#" onclick="toggleFlag('Be Chrome OS', 'silverfox.beChromeOS')">Enable</a>  
         <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
         <p class="notAvailable" type="beChromeOS">Sorry, this flag can't be combined with your existing flags.</p>
+      </div>
+    </div>
+    
+    <div class="experimentFlag">
+      <div class="experimentName">
+      <p class="flagName">Icons on System Theme</p>
+      <p class="flagMention">Linux only</p>
+      </div>
+      <div class="experimentInfo">
+      <p class="aboutInfo">Allows System Theme to use your icon theme on the toolbar icons, as 2012 Google once intended.</p>
+      </div>
+      <div class="enableSwitch" data-flag="Icons on System Theme">
+        <a class="enableSystemThemeIcons" href="#" onclick="toggleFlag('Icons on System Theme', 'silverfox.systemThemeIcons')">Enable</a>
+        <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
+        <p class="notAvailable" type="systemThemeIcons">Sorry, this flag can't be combined with your existing flags.</p>
       </div>
     </div>
 
@@ -156,16 +172,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="experimentFlag">
       <div class="experimentName">
-      <p class="flagName">Enable Native Linux Titlebars</p>
+      <p class="flagName">Force Windows Styling</p>
       <p class="flagMention">Linux only</p>
       </div>
       <div class="experimentInfo">
-      <p class="aboutInfo">Disables the custom Chrome styled titlebar buttons, allowing the native ones to show.</p>
+      <p class="aboutInfo">Disables custom titlebars and Linux-specific System Theme customisations. Use this setting when combining Silverfox with a Windows-styled CSS modification.</p>
       </div>
-      <div class="enableSwitch" data-flag="Enable Native Linux Titlebars">
-        <a class="enableDisableLinuxTitlebar" href="#" onclick="toggleFlag('Enable Native Linux Titlebars', 'silverfox.enableNativeLinuxTitlebars')">Enable</a>  
+      <div class="enableSwitch" data-flag="Force Windows Styling">
+        <a class="enableDisableForceWindows" href="#" onclick="toggleFlag('Force Windows Styling', 'silverfox.forceWindowsStyling')">Enable</a>
         <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
-        <p class="notAvailable" type="linuxTitlebarsCombo">Sorry, this flag can't be combined with your existing flags.</p>
+        <p class="notAvailable" type="forceWindows">Sorry, this flag can't be combined with your existing flags.</p>
       </div>
   </div>
  </div>   

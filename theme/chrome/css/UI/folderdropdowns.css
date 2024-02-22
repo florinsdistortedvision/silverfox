@@ -57,6 +57,16 @@ toolbarbutton menupopup[placespopup] menuseparator {
   list-style-image: url(../../assets/images/middlebar/folder.png) !important;
 }
 
+/* Native folder icons for Linux */
+
+@media (-moz-platform: linux) {
+  @supports not ((-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling"))) {
+    .bookmark-item[container] {
+      list-style-image: url(moz-icon://stock/folder?size=toolbarsmall) !important;
+    }
+  }
+}
+
 toolbarbutton menupopup[placespopup] > menu > .menu-right {
   list-style-image: url(chrome://global/skin/icons/arrow-right.svg);
   transform: scale(0.7) !important;
