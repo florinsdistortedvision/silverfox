@@ -684,6 +684,13 @@
   /* Chrome OS */
   @supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
+  :root {
+    --titlebutton-prefix: "";
+  }
+  :root[sizemode="maximized"] {
+    --titlebutton-prefix: "_maximized" !important;
+  }
+
   .titlebar-buttonbox {
     margin-top: -15px !important;
     gap: 0 !important;
@@ -713,7 +720,7 @@
   }
 
   .titlebar-close {
-        background: url(../../assets/images/topbar/chromeos/close.png) !important;
+        background: url("../../assets/images/topbar/chromeos/close" + var(--titlebutton-prefix) + ".png") !important;
         min-width: 36px !important;
         max-width: 36px !important;
   }
