@@ -1,11 +1,7 @@
 /* Titlebars (Minimze, Maximize, Restore and Close) */
 
 /* Windows (7, 8/8.1, 10 and 11) */
-@media (-moz-platform: windows) {
-  /* Chrome's default gap */
-  :root[sizemode="normal"] .titlebar-buttonbox {
-    margin-top: 5px !important;
-  }
+@media (-moz-platform: windows) { 
 
   .titlebar-restore,
   .titlebar-min,
@@ -273,7 +269,7 @@
   }  
     
   :root:not([sizemode="normal"]) .titlebar-restore {
-      margin-right: -2px !important;
+      margin-right: -10px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
@@ -281,7 +277,7 @@
   }
   
   .titlebar-max {
-      margin-right: -4px !important;
+      margin-right: -10px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
@@ -289,7 +285,7 @@
   }
    
   .titlebar-min {
-      margin-right: 2px !important;
+      margin-right: -6px !important;
   }
            
   
@@ -456,6 +452,11 @@
     align-items: center !important;
     margin-right: 3px;
   }
+    
+:root[sizemode="normal"] .titlebar-buttonbox {
+      margin-top: 12px !important;
+}  
+    
   }
     
   /* Aero Basic - PAIN */
@@ -469,7 +470,8 @@
   #titlebar-buttonbox-container .titlebar-close {
     appearance: none !important;
   }
-     
+    
+
   /* Disable the stupid hover of native basic titlebars */  
   .titlebar-button {
       appearance: none !important;
@@ -605,39 +607,37 @@
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox,
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
     margin-top: -50px !important;
-  }    
   }
-}
-
-
-/* macOS */
-
-@media (-moz-platform: macos) {
-  /* Chrome's default gap */
-  :root[sizemode="normal"] .titlebar-buttonbox {
-    margin-top: 5px !important;
-  }
-}
-
-  
-/* Linux */
-
-@media (-moz-platform: linux) {
     
-  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+:root[sizemode="normal"] .titlebar-buttonbox {
+      margin-top: -45px !important;
+}
+         
+    
+  }
+  }
+  
+  
+  /* Linux */
+  
+  @media (-moz-platform: linux) {
+    
+  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
     .titlebar-buttonbox {
-      margin-top: -36px !important;
       appearance: none !important; /* Prevents ANY influencing of margins */
       gap: 2px !important;
     }
     :root:not([sizemode="normal"]) .titlebar-buttonbox {
       margin-top: -4px !important;
     }
+    :root[sizemode="normal"] .titlebar-buttonbox {
+      margin-top: -35px !important;
+    }
     @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-right: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
+      margin-right: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
     }}
     @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-left: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
+      margin-left: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
     }}
     .titlebar-close,
     .titlebar-restore,
@@ -695,15 +695,19 @@
     }
   }
     
-  /* Chrome OS */
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
+/* Chrome OS */  
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
+:root[sizemode="normal"] .titlebar-buttonbox-container {
+    margin-top: 20px !important;
+  }
+  
+  
   .titlebar-buttonbox {
-    margin-top: -15px !important;
     gap: 0 !important;
   }
-  :root[sizemode="maximized"] .titlebar-buttonbox {
-      margin-top: -9px !important;
+  :root:not([sizemode="normal"]) .titlebar-buttonbox {
+      margin-top: 1px !important;
   }
 
   @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
@@ -714,21 +718,17 @@
   }}
 
   .titlebar-close,
+  .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-      height: 35px !important;
-  }
-  :root[sizemode="maximized"] .titlebar-close,
-  :root[sizemode="maximized"] .titlebar-restore,
-  :root[sizemode="maximized"] .titlebar-min {
-      height: 28px !important;
+        height: 35px !important;
   }
   .titlebar-close,
   .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-      min-width: 35px !important;
-      max-width: 35px !important;
+        min-width: 35px !important;
+        max-width: 35px !important;
   }
 
   /* Button borders */
