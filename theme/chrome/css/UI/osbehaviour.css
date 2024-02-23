@@ -13,11 +13,6 @@
 
 /* Tabs */
 
-/* For Light make text black */
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content {
-    color: black !important;
-} 
- 
 /* Light mode and System theme */
 
 :root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
@@ -336,21 +331,17 @@
   background: #6192dc !important;
 }    
 }
-    
- /* For Light and System, make text black for Windows Classic */
-@media (-moz-windows-classic) {
-
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
-:root:not(:-moz-lwtheme) .tab-content {
-    color: black !important;
-} 
-}   
 }
 
 
 /* Linux */
 
 @media (-moz-platform: linux) {
+
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
+:root:not(:-moz-lwtheme) .tab-content { /* Tab text colour fix */
+    color: black !important;
+}
 
 /* Linux System Theme */
 /* Tabs */
@@ -422,15 +413,38 @@ menupopup {
     
 /* Chrome OS mode */
     
-@supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background: #CBCBCB !important;
+        filter: grayscale(30%) brightness(103%) !important;
+}
+
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background: #CBCBCB !important;
+        opacity: 95% !important;
+}
+
+:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) #navigator-toolbox,
+:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) dialog {
+  border-top-left-radius: 2px !important;
+  border-top-right-radius: 2px !important;
+}
      
 :root:not(:-moz-lwtheme) #TabsToolbar {
-    background-image: linear-gradient(to top, #c4c4c4 0%, #c1c5c0 100%) !important;    
+    background-image: linear-gradient(to top, #C2C2C4 100%, #C2C2C4 100%) !important;
+}
+:root:not(:-moz-lwtheme)[sizemode="maximized"] #TabsToolbar {
+    background-image: linear-gradient(to top, black 100%, black 100%) !important;
 }
 
 :root:not(:-moz-lwtheme) #navigator-toolbox,
 :root:not(:-moz-lwtheme) #navigator-toolbox-background {
-    background: #c1c5c0 !important;
+    background: #C2C2C4 !important;
+}
+:root:not(:-moz-lwtheme)[sizemode="maximized"] #navigator-toolbox,
+:root:not(:-moz-lwtheme)[sizemode="maximized"] #navigator-toolbox-background {
+    background: black !important;
 }
 
 :root[privatebrowsingmode="temporary"][native="true"] #TabsToolbar {

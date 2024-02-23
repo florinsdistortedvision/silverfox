@@ -170,10 +170,9 @@ background-repeat: no-repeat !important;
 /* Native folder icons for Linux */
 
 @media (-moz-platform: linux) {
-  @supports not ((-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling"))) {
-    .bookmark-item[container] .toolbarbutton-icon {
-      background-image: url(moz-icon://stock/folder?size=toolbarsmall) !important;
-    }
+@supports not ((-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling"))) {
+  .bookmark-item[container] .toolbarbutton-icon {
+    background-image: url(moz-icon://stock/folder?size=toolbarsmall) !important;
   }
 }
 
@@ -262,33 +261,34 @@ background-repeat: no-repeat !important;
 background-position: -2px -3px !important;  
 }
 
+/* Native icons for Linux's System Theme with optional flag */
+
 @media (-moz-platform: linux) {
-  @supports (-moz-bool-pref("silverfox.systemThemeIcons")) {
-    #forward-button:not(:-moz-lwtheme),
-    #back-button:not(:-moz-lwtheme),
-    #reload-button:not(:-moz-lwtheme),
-    #stop-button:not(:-moz-lwtheme),
-    #home-button:not(:-moz-lwtheme) {
-      background-size: 24px !important;
-      background-position: center !important;
-    }
-    #forward-button:not(:-moz-lwtheme),
-    #back-button:not(:-moz-lwtheme) {
-      background-image: url(moz-icon://stock/go-previous?size=toolbar) !important;
-    }
-    #forward-button:not(:-moz-lwtheme) {
-      transform: scaleX(1);/* No flip, 'cos they were different icons each */
-      background-image: url(moz-icon://stock/go-next?size=toolbar) !important;
-    }
-    #reload-button:not(:-moz-lwtheme) {
-      background-image: url(moz-icon://stock/view-refresh?size=toolbar) !important;
-    }
-    #stop-button:not(:-moz-lwtheme) {
-      background-image: url(moz-icon://stock/process-stop?size=toolbar) !important;
-    }
-    #home-button:not(:-moz-lwtheme) {
-      background-image: url(moz-icon://stock/go-home?size=toolbar) !important;
-    }
+@supports (-moz-bool-pref("silverfox.systemThemeIcons")) {
+  #forward-button:not(:-moz-lwtheme),
+  #back-button:not(:-moz-lwtheme),
+  #reload-button:not(:-moz-lwtheme),
+  #stop-button:not(:-moz-lwtheme),
+  #home-button:not(:-moz-lwtheme) {
+    background-size: 24px !important;
+    background-position: center !important;
+  }
+  #forward-button:not(:-moz-lwtheme),
+  #back-button:not(:-moz-lwtheme) {
+    background-image: url(moz-icon://stock/go-previous?size=toolbar) !important;
+  }
+  #forward-button:not(:-moz-lwtheme) {
+    transform: scaleX(1);/* No flip, 'cos they were different icons each */
+    background-image: url(moz-icon://stock/go-next?size=toolbar) !important;
+  }
+  #reload-button:not(:-moz-lwtheme) {
+    background-image: url(moz-icon://stock/view-refresh?size=toolbar) !important;
+  }
+  #stop-button:not(:-moz-lwtheme) {
+    background-image: url(moz-icon://stock/process-stop?size=toolbar) !important;
+  }
+  #home-button:not(:-moz-lwtheme) {
+    background-image: url(moz-icon://stock/go-home?size=toolbar) !important;
   }
 }
 

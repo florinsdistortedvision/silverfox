@@ -1,7 +1,11 @@
 /* Titlebars (Minimze, Maximize, Restore and Close) */
 
 /* Windows (7, 8/8.1, 10 and 11) */
-@media (-moz-platform: windows) { 
+@media (-moz-platform: windows) {
+  /* Chrome's default gap */
+  :root[sizemode="normal"] .titlebar-buttonbox {
+    margin-top: 5px !important;
+  }
 
   .titlebar-restore,
   .titlebar-min,
@@ -269,7 +273,7 @@
   }  
     
   :root:not([sizemode="normal"]) .titlebar-restore {
-      margin-right: -10px !important;
+      margin-right: -2px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
@@ -277,7 +281,7 @@
   }
   
   .titlebar-max {
-      margin-right: -10px !important;
+      margin-right: -4px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
@@ -285,7 +289,7 @@
   }
    
   .titlebar-min {
-      margin-right: -6px !important;
+      margin-right: 2px !important;
   }
            
   
@@ -452,11 +456,6 @@
     align-items: center !important;
     margin-right: 3px;
   }
-    
-:root[sizemode="normal"] .titlebar-buttonbox {
-      margin-top: 12px !important;
-}  
-    
   }
     
   /* Aero Basic - PAIN */
@@ -470,8 +469,7 @@
   #titlebar-buttonbox-container .titlebar-close {
     appearance: none !important;
   }
-    
-
+     
   /* Disable the stupid hover of native basic titlebars */  
   .titlebar-button {
       appearance: none !important;
@@ -607,37 +605,39 @@
   :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-buttonbox,
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-buttonbox {
     margin-top: -50px !important;
+  }    
   }
-    
-:root[sizemode="normal"] .titlebar-buttonbox {
-      margin-top: -45px !important;
 }
-         
-    
+
+
+/* macOS */
+
+@media (-moz-platform: macos) {
+  /* Chrome's default gap */
+  :root[sizemode="normal"] .titlebar-buttonbox {
+    margin-top: 5px !important;
   }
-  }
+}
+
   
-  
-  /* Linux */
-  
-  @media (-moz-platform: linux) {
+/* Linux */
+
+@media (-moz-platform: linux) {
     
-  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
+  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {
     .titlebar-buttonbox {
+      margin-top: -36px !important;
       appearance: none !important; /* Prevents ANY influencing of margins */
       gap: 2px !important;
     }
     :root:not([sizemode="normal"]) .titlebar-buttonbox {
       margin-top: -4px !important;
     }
-    :root[sizemode="normal"] .titlebar-buttonbox {
-      margin-top: -35px !important;
-    }
     @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-right: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+      margin-right: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
     }}
     @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-left: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
+      margin-left: max(2px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
     }}
     .titlebar-close,
     .titlebar-restore,
@@ -695,15 +695,15 @@
     }
   }
     
-/* Chrome OS */  
-@supports (-moz-bool-pref("silverfox.beChromeOS")) {
+  /* Chrome OS */
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
 
   .titlebar-buttonbox {
     margin-top: -15px !important;
     gap: 0 !important;
   }
-  :root:not([sizemode="normal"]) .titlebar-buttonbox {
-      margin-top: -2px !important;
+  :root[sizemode="maximized"] .titlebar-buttonbox {
+      margin-top: -9px !important;
   }
 
   @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
@@ -714,57 +714,120 @@
   }}
 
   .titlebar-close,
-  .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-        height: 35px !important;
+      height: 35px !important;
   }
+  :root[sizemode="maximized"] .titlebar-close,
+  :root[sizemode="maximized"] .titlebar-restore,
+  :root[sizemode="maximized"] .titlebar-min {
+      height: 28px !important;
+  }
+  .titlebar-close,
   .titlebar-restore,
   .titlebar-min,
   .titlebar-max {
-        min-width: 38px !important;
-        max-width: 38px !important;
+      min-width: 35px !important;
+      max-width: 35px !important;
   }
 
+  /* Button borders */
+  :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child) {
+    background-position: left !important;
+    max-width: 37px !important;
+    min-width: 37px !important;
+  }
+  :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child)::before {
+    content: url(../../assets/images/topbar/chromeos/border_right.png) !important;
+    width: 37px !important;
+    height: 28px !important;
+    position: fixed !important;
+    top: 0 !important;
+  }
+  @media (-moz-gtk-csd-reversed-placement) {
+    :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child) {
+      background-position: right !important;
+    }
+    :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child)::before {
+      content: url(../../assets/images/topbar/chromeos/border_left.png) !important;
+      margin-left: -3px !important;
+    }
+  }
+
+  /* Maximised button-borders are different */
+  @media not (-moz-gtk-csd-reversed-placement) { :root[sizemode="maximized"] .titlebar-button:not(:last-child) {
+      border-right: 1px solid rgba(0, 0, 0, 0.17);
+  }}
+  @media (-moz-gtk-csd-reversed-placement) { :root[sizemode="maximized"] .titlebar-button:not(:last-child) {
+      border-left: 1px solid rgba(0, 0, 0, 0.17);
+  }}
+
   .titlebar-close {
-        background: url(../../assets/images/topbar/chromeos/close.png) !important;
-        min-width: 36px !important;
-        max-width: 36px !important;
+      background: url(../../assets/images/topbar/chromeos/close.png) !important;
+      background-repeat: no-repeat !important;
+  }
+  :root[sizemode="maximized"] .titlebar-close {
+      background: url(../../assets/images/topbar/chromeos/close_maximized.png) !important;
   }
   .titlebar-min {
-        background: url(../../assets/images/topbar/chromeos/minimize.png) !important;
+      background: url(../../assets/images/topbar/chromeos/minimize.png) !important;
+      background-repeat: no-repeat !important;
+  }
+  :root[sizemode="maximized"] .titlebar-min {
+      background: url(../../assets/images/topbar/chromeos/minimize_maximized.png) !important;
   }
   .titlebar-max {
-        background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
+      background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
+      background-repeat: no-repeat !important;
   }
   .titlebar-restore {
-        background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
+      background: url(../../assets/images/topbar/chromeos/restore.png) !important;
   }
 
   /* Hovers */
   .titlebar-close:hover {
-        background: url(../../assets/images/topbar/chromeos/close_hover.png) !important;
+      background: url(../../assets/images/topbar/chromeos/close_hover.png) !important;
+      background-repeat: no-repeat !important;
+  }
+  :root[sizemode="maximized"] .titlebar-close:hover {
+      background: url(../../assets/images/topbar/chromeos/close_maximized_hover.png) !important;
   }
   .titlebar-min:hover {
-        background: url(../../assets/images/topbar/chromeos/minimize_hover.png) !important;
+      background: url(../../assets/images/topbar/chromeos/minimize_hover.png) !important;
+      background-repeat: no-repeat !important;
+  }
+  :root[sizemode="maximized"] .titlebar-min:hover {
+      background: url(../../assets/images/topbar/chromeos/minimize_maximized_hover.png) !important;
   }
   .titlebar-max:hover {
-        background: url(../../assets/images/topbar/chromeos/maximize_hover.png) !important;
+      background: url(../../assets/images/topbar/chromeos/maximize_hover.png) !important;
+      background-repeat: no-repeat !important;
   }
   .titlebar-restore:hover {
-        background: url(../../assets/images/topbar/chromeos/restore_hover.png) !important;
+      background: url(../../assets/images/topbar/chromeos/restore_hover.png) !important;
   }
 
   /* Pressed */
   .titlebar-close:hover:active {
-        background: url(../../assets/images/topbar/chromeos/close_pressed.png) !important;
+      background: url(../../assets/images/topbar/chromeos/close_pressed.png) !important;
+      background-repeat: no-repeat !important;
+  }
+  :root[sizemode="maximized"] .titlebar-close:hover:active {
+      background: url(../../assets/images/topbar/chromeos/close_maximized_pressed.png) !important;
   }
   .titlebar-min:hover:active {
-        background: url(../../assets/images/topbar/chromeos/minimize_pressed.png) !important;
+      background: url(../../assets/images/topbar/chromeos/minimize_pressed.png) !important;
+      background-repeat: no-repeat !important;
   }
-  .titlebar-restore:hover:active,
+  :root[sizemode="maximized"] .titlebar-min:hover:active {
+      background: url(../../assets/images/topbar/chromeos/minimize_maximized_pressed.png) !important;
+  }
   .titlebar-max:hover:active {
-        background: url(../../assets/images/topbar/chromeos/maximize_pressed.png) !important;
+      background: url(../../assets/images/topbar/chromeos/maximize_pressed.png) !important;
+      background-repeat: no-repeat !important;
+  }
+  .titlebar-restore:hover:active {
+      background: url(../../assets/images/topbar/chromeos/restore_pressed.png) !important;
   }
   }
 }
