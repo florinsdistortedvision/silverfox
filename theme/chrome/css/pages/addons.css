@@ -464,7 +464,7 @@
   @media (-moz-platform: windows),
   @media (-moz-platform: macos) {
     .theme-recommendation::before {
-      content: "Why not try Chromium's look? Enable Be Chromium flag in Silverfox Flags." !important;
+      content: "Why not try Chromium's look? Enable the 'Be Chromium' flag in Silverfox Flags." !important;
       color: var(--in-content-text-color) !important;
     }
   }
@@ -479,7 +479,7 @@
 
   @media (-moz-platform: linux) {
     .theme-recommendation::before {
-      content: "Why not try Chrome OS's look? Enable Be Chrome OS flag in Silverfox Flags." !important;
+      content: "Why not try Chrome OS's look? Enable the 'Be Chrome OS' flag in Silverfox Flags." !important;
       color: var(--in-content-text-color) !important;
     }
   }
@@ -555,14 +555,7 @@
       font-size: 12px !important;
   }
 
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
-  #default-theme_mozilla_org-heading:before {
-      content: "Chrome OS Theme" !important;
-      font-size: 12px !important;
-  }
-  }
-
-  @supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
+  @supports (-moz-bool-pref("silverfox.forceWindowsStyling") or -moz-bool-pref("silverfox.beChromeOS")) {
   #default-theme_mozilla_org-heading:before {
       content: "Default Theme" !important;
       font-size: 12px !important;
@@ -584,7 +577,7 @@
   @media (-moz-platform: windows-win10) {
   @supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Default theme. You enabled Aero Glass - theme will switch based on Windows light or dark mode." !important;
+      content: "Default theme. You have enabled Aero Glass - theme will switch based on Windows light or dark mode." !important;
       font-size: 12px !important;
   }
   }}  
@@ -618,7 +611,7 @@
 
   @supports (-moz-bool-pref("silverfox.beChromeOS")) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Default theme. You have enabled Chrome OS flag - theme will remain in light mode." !important;
+      content: "Default theme. You have enabled Be Chrome OS - theme will remain in light mode." !important;
       font-size: 12px !important;
   }
   }
