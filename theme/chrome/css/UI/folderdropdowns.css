@@ -57,7 +57,7 @@ toolbarbutton menupopup[placespopup] menuseparator {
   list-style-image: url(../../assets/images/middlebar/folder.png) !important;
 }
 
-/* Native folder icons for Linux */
+/* Native folder icons for Linux and macOS */
 
 @media (-moz-platform: linux) {
   @supports not ((-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling"))) {
@@ -66,6 +66,14 @@ toolbarbutton menupopup[placespopup] menuseparator {
     }
   }
 }
+
+@media (-moz-platform: macos) {
+    .bookmark-item[container] {
+      list-style-image: url("moz-icon:file:///System/Library/Kernels?size=32") !important;
+    }
+}
+
+
 
 toolbarbutton menupopup[placespopup] > menu > .menu-right {
   list-style-image: url(chrome://global/skin/icons/arrow-right.svg);

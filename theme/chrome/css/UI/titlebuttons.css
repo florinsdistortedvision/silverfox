@@ -831,3 +831,13 @@
     }
   }
 }
+
+/* macOS */
+
+@media (-moz-platform: macos) {
+ 
+/* Buttonbox needs to be higher */
+.titlebar-buttonbox-container {
+    margin-top: -20px !important;
+}  
+}

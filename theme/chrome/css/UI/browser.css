@@ -37,3 +37,14 @@
 }  
 }
 }
+
+/* Mac also didn't have borders */
+
+@media (-moz-platform: macos) {
+#browser {
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  margin-top: -1px !important;
+}  
+}

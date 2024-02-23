@@ -142,6 +142,12 @@
   left: 33px;
 }
 
+@media (min-resolution: 1.20dppx) and (max-resolution: 1.45dppx) {
+  .submenu-item5:before {
+    left: 29px;
+  }
+}  
+
 @media (-moz-platform: macos) {
   .submenu-item5:before {
     left: 23px;
@@ -162,6 +168,12 @@
   content: "Zoom" !important;
   position: relative;
   left: 33px;
+}
+
+@media (min-resolution: 1.20dppx) and (max-resolution: 1.45dppx) {
+  .submenu-item6::before {
+    left: 29px;
+  }  
 }
 
 @media (-moz-platform: macos) {

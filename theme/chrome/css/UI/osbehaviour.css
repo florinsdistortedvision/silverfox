@@ -488,9 +488,18 @@ menupopup {
         margin-top: -10px;
 }
     
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
+        background: #E1E1E1 !important;  
+        filter: grayscale(30%) brightness(103%) !important;
+}
+           
+:root:not(:-moz-lwtheme) .tabbrowser-tab:not(:hover):not([visuallyselected="true"]) .tab-background {
+        background: #E1E1E1 !important;
+}    
+    
 :root:not(:-moz-lwtheme) #navigator-toolbox,
 :root:not(:-moz-lwtheme) #navigator-toolbox-background {
-    background: linear-gradient(to bottom, #e6e6e6 0%, #c7c7c7 40%) !important;
+    background: linear-gradient(to bottom, #e6e6e6 0%, #afafaf 50%) !important;
 }      
     
 :root:not(:-moz-lwtheme) .tabbrowser-tab[visuallyselected="true"] .tab-background,

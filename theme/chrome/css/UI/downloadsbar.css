@@ -67,6 +67,12 @@
   font-size: 12px !important;
 }
 
+@media (-moz-platform: macos) {
+#downloadsFooter {
+  margin-top: 9px !important;
+}
+}
+
 
 #downloadsHistory:hover {
   background: #dfdfdf !important;
