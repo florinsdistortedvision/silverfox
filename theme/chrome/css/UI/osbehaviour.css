@@ -13,12 +13,6 @@
 
 /* Tabs */
 
-/* For Light and System, make text black */
-:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
-:root:not(:-moz-lwtheme) .tab-content {
-    color: black !important;
-} /* TODO: Add check for light mode */
- 
 /* Light mode and System theme */
 
 :root:not(:-moz-lwtheme) .tabbrowser-tab:not([visuallyselected="true"]):hover .tab-background {
@@ -343,6 +337,11 @@
 /* Linux */
 
 @media (-moz-platform: linux) {
+
+:root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .tab-content,
+:root:not(:-moz-lwtheme) .tab-content { /* Tab text colour fix */
+    color: black !important;
+}
 
 /* Linux System Theme */
 /* Tabs */

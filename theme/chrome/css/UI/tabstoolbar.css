@@ -6,22 +6,21 @@
   margin-bottom: -6px !important;
 }
 
-:root[sizemode="normal"] .titlebar-buttonbox {
-  margin-top: 5px !important;
-}
-
 /* Remove the gap for Linux if native titlebars are enabled */
 @media (-moz-platform: linux) {
 :root:not([tabsintitlebar="true"]) #TabsToolbar {
   margin-top: -4px !important;
 }
-  
-@supports (-moz-bool-pref("silverfox.beChromeOS")) {
-  #TabsToolbar {
-  margin-top: 7px !important;
-}
 
-} 
+/* Chrome OS's default gap */
+@supports (-moz-bool-pref("silverfox.beChromeOS")) {
+  :root:not([sizemode="maximized"]) #TabsToolbar {
+    margin-top: 7px !important;
+  }
+  :root[sizemode="maximized"] #TabsToolbar {
+    margin-top: 0px !important;
+  }
+}
 }
 
 
