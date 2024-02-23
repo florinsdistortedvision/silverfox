@@ -618,26 +618,26 @@
   }
   
   
-  /* Linux */
+/* Linux */
   
-  @media (-moz-platform: linux) {
+@media (-moz-platform: linux) {
     
-  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
+  @supports not (-moz-bool-pref("silverfox.forceWindowsStyling")) {
     .titlebar-buttonbox {
       appearance: none !important; /* Prevents ANY influencing of margins */
       gap: 2px !important;
     }
-    :root:not([sizemode="normal"]) .titlebar-buttonbox {
-      margin-top: -4px !important;
+    :root[sizemode="maximized"] .titlebar-buttonbox {
+      margin-top: -5px !important;
     }
-    :root[sizemode="normal"] .titlebar-buttonbox {
-      margin-top: -35px !important;
+    :root:not([sizemode="maximized"]) .titlebar-buttonbox {
+      margin-top: -36px !important;
     }
     @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-right: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
+      margin-right: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
     }}
     @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-      margin-left: max(6px, calc(env(-moz-gtk-csd-titlebar-radius) - 2px)) !important;
+      margin-left: max(3px, calc(env(-moz-gtk-csd-titlebar-radius) - 1px)) !important;
     }}
     .titlebar-close,
     .titlebar-restore,
@@ -695,139 +695,139 @@
     }
   }
     
-/* Chrome OS */  
-@supports (-moz-bool-pref("silverfox.beChromeOS")) {
+  /* Chrome OS */
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
+    .titlebar-buttonbox {
+      gap: 0 !important;
+    }
+    :root[sizemode="maximized"] .titlebar-buttonbox {
+        margin-top: -8px !important;
+    }
+    :root:not([sizemode="maximized"]) .titlebar-buttonbox {
+        margin-top: -13px !important;
+    }
 
-:root[sizemode="normal"] .titlebar-buttonbox-container {
-    margin-top: 20px !important;
-  }
-  
-  
-  .titlebar-buttonbox {
-    gap: 0 !important;
-  }
-  :root:not([sizemode="normal"]) .titlebar-buttonbox {
-      margin-top: 1px !important;
-  }
+    @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
+      margin-right: 0 !important;
+    }}
+    @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
+      margin-left: 0 !important;
+    }}
 
-  @media not (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-right: 0 !important;
-  }}
-  @media (-moz-gtk-csd-reversed-placement) { .titlebar-buttonbox {
-    margin-left: 0 !important;
-  }}
-
-  .titlebar-close,
-  .titlebar-restore,
-  .titlebar-min,
-  .titlebar-max {
+    .titlebar-close,
+    .titlebar-min,
+    .titlebar-max {
         height: 35px !important;
-  }
-  .titlebar-close,
-  .titlebar-restore,
-  .titlebar-min,
-  .titlebar-max {
+    }
+    :root[sizemode="maximized"] .titlebar-close,
+    .titlebar-restore,
+    :root[sizemode="maximized"] .titlebar-min {
+        height: 28px !important;
+    }
+    .titlebar-close,
+    .titlebar-restore,
+    .titlebar-min,
+    .titlebar-max {
         min-width: 35px !important;
         max-width: 35px !important;
-  }
+    }
 
-  /* Button borders */
-  :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child) {
-    background-position: left !important;
-    max-width: 37px !important;
-    min-width: 37px !important;
-  }
-  :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child)::before {
-    content: url(../../assets/images/topbar/chromeos/border_right.png) !important;
-    width: 37px !important;
-    height: 28px !important;
-    position: fixed !important;
-    top: 0 !important;
-  }
-  @media (-moz-gtk-csd-reversed-placement) {
+    /* Button borders */
     :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child) {
-      background-position: right !important;
+      background-position: left !important;
+      max-width: 37px !important;
+      min-width: 37px !important;
     }
     :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child)::before {
-      content: url(../../assets/images/topbar/chromeos/border_left.png) !important;
-      margin-left: -3px !important;
+      content: url(../../assets/images/topbar/chromeos/border_right.png) !important;
+      width: 37px !important;
+      position: fixed !important;
+      top: 0 !important;
     }
-  }
+    @media (-moz-gtk-csd-reversed-placement) {
+      :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child) {
+        background-position: right !important;
+      }
+      :root:not([sizemode="maximized"]) .titlebar-button:not(:last-child)::before {
+        content: url(../../assets/images/topbar/chromeos/border_left.png) !important;
+        margin-left: -3px !important;
+      }
+    }
 
-  /* Maximised button-borders are different */
-  @media not (-moz-gtk-csd-reversed-placement) { :root[sizemode="maximized"] .titlebar-button:not(:last-child) {
-      border-right: 1px solid rgba(0, 0, 0, 0.17);
-  }}
-  @media (-moz-gtk-csd-reversed-placement) { :root[sizemode="maximized"] .titlebar-button:not(:last-child) {
-      border-left: 1px solid rgba(0, 0, 0, 0.17);
-  }}
+    /* Maximised button-borders are different */
+    @media not (-moz-gtk-csd-reversed-placement) { :root[sizemode="maximized"] .titlebar-button:not(:last-child) {
+        border-right: 1px solid rgba(0, 0, 0, 0.17);
+    }}
+    @media (-moz-gtk-csd-reversed-placement) { :root[sizemode="maximized"] .titlebar-button:not(:last-child) {
+        border-left: 1px solid rgba(0, 0, 0, 0.17);
+    }}
 
-  .titlebar-close {
-      background: url(../../assets/images/topbar/chromeos/close.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  :root[sizemode="maximized"] .titlebar-close {
-      background: url(../../assets/images/topbar/chromeos/close_maximized.png) !important;
-  }
-  .titlebar-min {
-      background: url(../../assets/images/topbar/chromeos/minimize.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  :root[sizemode="maximized"] .titlebar-min {
-      background: url(../../assets/images/topbar/chromeos/minimize_maximized.png) !important;
-  }
-  .titlebar-max {
-      background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  .titlebar-restore {
-      background: url(../../assets/images/topbar/chromeos/restore.png) !important;
-  }
+    .titlebar-close {
+        background: url(../../assets/images/topbar/chromeos/close.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    :root[sizemode="maximized"] .titlebar-close {
+        background: url(../../assets/images/topbar/chromeos/close_maximized.png) !important;
+    }
+    .titlebar-min {
+        background: url(../../assets/images/topbar/chromeos/minimize.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    :root[sizemode="maximized"] .titlebar-min {
+        background: url(../../assets/images/topbar/chromeos/minimize_maximized.png) !important;
+    }
+    .titlebar-max {
+        background: url(../../assets/images/topbar/chromeos/maximize.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    .titlebar-restore {
+        background: url(../../assets/images/topbar/chromeos/restore.png) !important;
+    }
 
-  /* Hovers */
-  .titlebar-close:hover {
-      background: url(../../assets/images/topbar/chromeos/close_hover.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  :root[sizemode="maximized"] .titlebar-close:hover {
-      background: url(../../assets/images/topbar/chromeos/close_maximized_hover.png) !important;
-  }
-  .titlebar-min:hover {
-      background: url(../../assets/images/topbar/chromeos/minimize_hover.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  :root[sizemode="maximized"] .titlebar-min:hover {
-      background: url(../../assets/images/topbar/chromeos/minimize_maximized_hover.png) !important;
-  }
-  .titlebar-max:hover {
-      background: url(../../assets/images/topbar/chromeos/maximize_hover.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  .titlebar-restore:hover {
-      background: url(../../assets/images/topbar/chromeos/restore_hover.png) !important;
-  }
+    /* Hovers */
+    .titlebar-close:hover {
+        background: url(../../assets/images/topbar/chromeos/close_hover.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    :root[sizemode="maximized"] .titlebar-close:hover {
+        background: url(../../assets/images/topbar/chromeos/close_maximized_hover.png) !important;
+    }
+    .titlebar-min:hover {
+        background: url(../../assets/images/topbar/chromeos/minimize_hover.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    :root[sizemode="maximized"] .titlebar-min:hover {
+        background: url(../../assets/images/topbar/chromeos/minimize_maximized_hover.png) !important;
+    }
+    .titlebar-max:hover {
+        background: url(../../assets/images/topbar/chromeos/maximize_hover.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    .titlebar-restore:hover {
+        background: url(../../assets/images/topbar/chromeos/restore_hover.png) !important;
+    }
 
-  /* Pressed */
-  .titlebar-close:hover:active {
-      background: url(../../assets/images/topbar/chromeos/close_pressed.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  :root[sizemode="maximized"] .titlebar-close:hover:active {
-      background: url(../../assets/images/topbar/chromeos/close_maximized_pressed.png) !important;
-  }
-  .titlebar-min:hover:active {
-      background: url(../../assets/images/topbar/chromeos/minimize_pressed.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  :root[sizemode="maximized"] .titlebar-min:hover:active {
-      background: url(../../assets/images/topbar/chromeos/minimize_maximized_pressed.png) !important;
-  }
-  .titlebar-max:hover:active {
-      background: url(../../assets/images/topbar/chromeos/maximize_pressed.png) !important;
-      background-repeat: no-repeat !important;
-  }
-  .titlebar-restore:hover:active {
-      background: url(../../assets/images/topbar/chromeos/restore_pressed.png) !important;
-  }
+    /* Pressed */
+    .titlebar-close:hover:active {
+        background: url(../../assets/images/topbar/chromeos/close_pressed.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    :root[sizemode="maximized"] .titlebar-close:hover:active {
+        background: url(../../assets/images/topbar/chromeos/close_maximized_pressed.png) !important;
+    }
+    .titlebar-min:hover:active {
+        background: url(../../assets/images/topbar/chromeos/minimize_pressed.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    :root[sizemode="maximized"] .titlebar-min:hover:active {
+        background: url(../../assets/images/topbar/chromeos/minimize_maximized_pressed.png) !important;
+    }
+    .titlebar-max:hover:active {
+        background: url(../../assets/images/topbar/chromeos/maximize_pressed.png) !important;
+        background-repeat: no-repeat !important;
+    }
+    .titlebar-restore:hover:active {
+        background: url(../../assets/images/topbar/chromeos/restore_pressed.png) !important;
+    }
   }
 }

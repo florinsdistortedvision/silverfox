@@ -12,26 +12,33 @@
 
 /* Remove the gap for Linux if native titlebars are enabled */
 @media (-moz-platform: linux) {
-:root:not([tabsintitlebar="true"]) #TabsToolbar {
-  margin-top: -4px !important;
-}
-  
-@supports (-moz-bool-pref("silverfox.beChromeOS")) {
-  :root:not([sizemode="maximized"]) #TabsToolbar {
-    margin-top: 7px !important;
+  :root:not([tabsintitlebar="true"]) #TabsToolbar {
+    margin-top: -4px !important;
   }
-  :root[sizemode="maximized"] #TabsToolbar {
-    margin-top: -6px !important;
+  /* Additionally, enforce Chrome OS's larger gap */
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
+    :root[sizemode="normal"] #TabsToolbar {
+      margin-top: 6px !important;
+    }
   }
 }
-} 
-
-
 
 /* Remove the gap when Firefox is fullscreen */
 :root:not([sizemode="normal"]) #TabsToolbar {
   margin-top: -5px;
   margin-bottom: 0px !important;
+}
+/* ...unless we're on Linux. */
+@media (-moz-platform: linux) {
+  :root:not([sizemode="normal"]) #TabsToolbar {
+    margin-top: -4px !important;
+  }
+  /* Chrome OS has a larger gap */
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
+    :root:not([sizemode="normal"]) #TabsToolbar {
+      margin-top: 0 !important;
+    }
+  }
 }
 
 /* Remove All Tabs  */
