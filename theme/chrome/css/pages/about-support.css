@@ -1,7 +1,7 @@
 @-moz-document url-prefix(about:support) {
 	
 #application-box::after {
-  content: "running Silverfox Beta theme" !important;
+  content: "running Silverfox theme" !important;
   position: relative !important;
   left: 2px !important;
 }
