@@ -6,10 +6,6 @@
   margin-bottom: -6px !important;
 }
 
-:root[sizemode="normal"] .titlebar-buttonbox {
-  margin-top: 5px !important;
-}
-
 /* Remove the gap for Linux if native titlebars are enabled */
 @media (-moz-platform: linux) {
   :root:not([tabsintitlebar="true"]) #TabsToolbar {

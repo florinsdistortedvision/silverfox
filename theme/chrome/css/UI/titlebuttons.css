@@ -1,7 +1,11 @@
 /* Titlebars (Minimze, Maximize, Restore and Close) */
 
 /* Windows (7, 8/8.1, 10 and 11) */
-@media (-moz-platform: windows) { 
+@media (-moz-platform: windows) {
+
+  :root[sizemode="normal"] .titlebar-buttonbox {
+    margin-top: 5px !important;
+  }
 
   .titlebar-restore,
   .titlebar-min,
@@ -835,6 +839,10 @@
 /* macOS */
 
 @media (-moz-platform: macos) {
+
+:root[sizemode="normal"] .titlebar-buttonbox {
+    margin-top: 5px !important;
+}
  
 /* Buttonbox needs to be higher */
 .titlebar-buttonbox-container {
