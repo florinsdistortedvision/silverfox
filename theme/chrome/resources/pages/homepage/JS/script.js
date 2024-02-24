@@ -85,13 +85,17 @@ function checkChromiumPreference() {
   const beChromeOS = Services.prefs.getBoolPref('silverfox.beChromeOS', false);
  
   if (beChromium) {
-    welcomeText.textContent = 'Welcome to Chromium';
     webStoreImage.src = 'chrome://userchrome/content/pages/homepage/assets/addons_app_chromium.png';
     logoCornerImage.src = 'chrome://userchrome/content/pages/homepage/assets/chromiumlogo.png';
-  }
-
-  if (beChromeOS) {
-    welcomeText.textContent = 'Welcome to Chrome OS';
+    if (beChromeOS) {
+      welcomeText.textContent = 'Welcome to Chromium OS';
+    } else {
+      welcomeText.textContent = 'Welcome to Chromium';
+    }
+  } else {
+    if (beChromeOS) {
+      welcomeText.textContent = 'Welcome to Chrome OS';
+    }
   }
 }
 

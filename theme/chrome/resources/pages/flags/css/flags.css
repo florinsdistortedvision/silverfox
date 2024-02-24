@@ -100,7 +100,6 @@ red {
 
 .notAvailable[type="forceWindows"],
 .notAvailable[type="oldLook"],
-.notAvailable[type="beChromium"],
 .notAvailable[type="systemThemeIcons"],
 .notAvailable[type="beChromeOS"],
 .enableSystemThemeIcons,
@@ -135,7 +134,6 @@ red {
     }
     
 @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
-    .enableDisableChromium,
     .enableDisableOld,
     .enableDisableForceWindows,
     .enableSystemThemeIcons {
@@ -144,7 +142,6 @@ red {
     
     .notAvailable[type="forceWindows"],
     .notAvailable[type="oldLook"],
-    .notAvailable[type="beChromium"],
     .notAvailable[type="systemThemeIcons"] {
         display: block !important;
     }
@@ -174,7 +171,7 @@ red {
     }
 }
 
-@supports (-moz-bool-pref("silverfox.beChromium")) or (-moz-bool-pref("silverfox.preferOldLook")) {
+@supports (-moz-bool-pref("silverfox.preferOldLook")) {
     .enableDisableChromeOS {
         display: none !important;
     }
