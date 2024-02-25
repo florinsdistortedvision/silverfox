@@ -68,34 +68,31 @@
   #categories > .category:hover {
     background: transparent !important;
   }
-  
-  @supports not (-moz-bool-pref("silverfox.beChromium")) {
+
+  #categories::before {
+      position: fixed !important;
+      top: 20px !important;
+      font-size: 17px !important;
+      color: #4e5764 !important;
+      left: 21px !important;
+  }
+  @supports not (-moz-bool-pref("silverfox.beChromeOS")) {
       #categories::before {
           content: "Chrome" !important;
-          position: fixed !important;
-          top: 20px !important;
-          font-size: 17px !important;
-          color: #4e5764 !important;
-          left: 21px !important;
       }
-    
-    @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+
+    @supports (-moz-bool-pref("silverfox.beChromium")) {
       #categories::before {
-          content: "Chrome OS" !important;
+          content: "Chromium" !important;
       }
     }
   }
-  @supports (-moz-bool-pref("silverfox.beChromium")) {
+  @supports (-moz-bool-pref("silverfox.beChromeOS")) {
       #categories::before {
-          content: "Chromium" !important;
-          position: fixed !important;
-          top: 20px !important;
-          font-size: 17px !important;
-          color: #4e5764 !important;
-          left: 21px !important;
+          content: "Chrome OS" !important;
       }
-    
-      @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
+
+      @supports (-moz-bool-pref("silverfox.beChromium")) {
       #categories::before {
           content: "Chromium OS" !important;
       }
