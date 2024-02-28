@@ -7,7 +7,7 @@
 }
 
 #version-box::after {
-  content: "/ Silverfox version 0.7.4 (Closed Beta)" !important;
+  content: "/ Silverfox version 1.0" !important;
   position: relative !important;
   left: 2px !important;
 }
@@ -16,7 +16,7 @@
 @-moz-document url-prefix(https://silverfox.neocities.org/components/update) {
 	
 .currentVersion p:after {
-    content: "0.7.4";
+    content: "1.0";
     position: relative;
     left: 5px;
 }

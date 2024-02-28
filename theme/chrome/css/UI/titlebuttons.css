@@ -245,6 +245,7 @@
   .titlebar-close {
     margin-top: -7px !important;
     margin-right: 16px !important;
+    margin-left: -5px !important;
   }
   :root:not([sizemode="normal"]) .titlebar-close {
     margin-top: 4px !important;
@@ -264,33 +265,28 @@
   :root:not([sizemode="normal"]) .titlebar-restore {
     margin-top: 7px !important;
     margin-bottom: -5px !important;  
+    margin-left: -1px !important;
   } 
    
   :root:is(
     [style*="--lwt-accent-color: rgb(240, 240, 244)"]
     ):not([sizemode="normal"]) .titlebar-restore {
-      padding-right: 44px !important;
-  }  
-    
-  :root:not([sizemode="normal"]) .titlebar-restore {
-      margin-right: -10px !important;
-  }  
+      padding-right: 49px !important;
+      margin-left: -1px !important;
+  }   
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
-    padding-right: 44px !important;
+    padding-right: 49px !important;
   }
   
   .titlebar-max {
-      margin-right: -10px !important;
+      margin-left: -1px !important;
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-min {
-    padding-right: 32px !important;
+    padding-right: 33px !important;
   }
    
-  .titlebar-min {
-      margin-right: -6px !important;
-  }
            
   
   /* Fix for fullscreen native titlebars cutting off nav-bar */  
@@ -522,8 +518,8 @@
   }  
     
   :root[style*="--lwt-accent-color: rgb(240, 240, 244)"] .titlebar-max {
-    margin-right: -24px !important;
-    margin-left: 0px !important;
+    margin-right: -29px !important;
+    margin-left: -1px !important;
   } 
        
   :root[lwtheme] .titlebar-min {

@@ -425,9 +425,6 @@ z-index: 90 !important;
 }
 
 @media ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement: 0)) {
-#nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
-margin-top: 2px !important;
-}
   
 @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
 #nav-bar[home="false"] #identity-box[class="verifiedDomain"]:after {
@@ -465,10 +462,7 @@ z-index: 90 !important;
 }
 
 @media ((-moz-platform: linux) and (-moz-gtk-csd-reversed-placement: 0)) {
-#nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
-margin-top: 2px !important; 
-}
-  
+
  @supports (-moz-bool-pref("silverfox.beChromeOS")) {  
 #nav-bar[home="true"] #identity-box[class="verifiedDomain"]:after {
 margin-top: 0px !important; 

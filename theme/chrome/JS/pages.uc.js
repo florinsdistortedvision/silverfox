@@ -1,11 +1,20 @@
 // ==UserScript==
 // @name           Silverfox About Pages
-// @version        1.0
+// @version        1.1
 // @description    Creates custom about:x pages for Silverfox
 // @authoer        florin, based on aminomancer's about:cfg 1.2.4 script
 // @grant          none
 // ==/UserScript==
 
+
+window.addEventListener("load", function () {
+    // Check if the user agent matches Firefox 115esr
+    console.log("User Agent:", navigator.userAgent);
+    const userAgent = navigator.userAgent;
+    const firefox115esrPattern = /Firefox\/115\.0/;
+    if (firefox115esrPattern.test(userAgent)) {
+        console.log("You are using the right Firefox version for Silverfox. Enjoy :)");
+    
 const customAboutPages = {
     "flags": "chrome://userchrome/content/pages/flags/flags.xhtml",
     "bookmarks": "chrome://browser/content/places/bookmarksSidebar.xhtml",
@@ -68,4 +77,8 @@ Object.entries(customAboutPages).forEach(([aboutPage, url]) => {
         `@mozilla.org/network/protocol/about;1?what=${aboutPage}`,
         factory
     );
+});
+} else {
+console.log("Wrong Firefox version for Silverfox. Custom pages are disabled.");
+}
 });

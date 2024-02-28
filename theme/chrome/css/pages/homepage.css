@@ -1,29 +1,28 @@
 @-moz-document url-prefix(about:home), url-prefix(about:newtab) {
   
-:root {
-  --newtab-background-color: white;
-  --newtab-text-primary-color: #15141a;
-}
-:root[lwt-newtab-brighttext] {
-  --newtab-background-color: #2B2A33;
-  --newtab-text-primary-color: #fbfbfe;
-}  
-  
-@supports (-moz-bool-pref("silverfox.hasLocalImage")) {   
-body {
-    background: url(../../assets/images/pages/newtab/local.jpg) !important;
-    overflow: hidden !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    height: 100vh !important;
-}   
-  
-.welcomeChrome,
-.appLabel,
-.recentURL {
-    text-shadow: 0 0 10px white !important;
-} 
-}
-  
-}
+  :root {
+    --newtab-background-color: white;
+    --newtab-text-primary-color: #15141a;
+  }
+  :root[lwt-newtab-brighttext] {
+    --newtab-background-color: #2B2A33;
+    --newtab-text-primary-color: #fbfbfe;
+  }  
+    
+  @supports (-moz-bool-pref("silverfox.hasLocalImage")) {   
+  body {
+      background: url("chrome://userchrome/content/pages/homepage/assets/local.jpg") !important;
+      overflow: hidden !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      height: 100vh !important;
+  }   
+    
+  .welcomeChrome,
+  .appLabel,
+  .recentURL {
+      text-shadow: 0 0 10px white !important;
+  } 
+  } 
+  }

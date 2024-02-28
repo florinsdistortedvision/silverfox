@@ -323,7 +323,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 @media (-moz-platform: linux) {
 
-  @supports (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
+@supports (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling")) {   
   
 #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-repeat: no-repeat !important;
@@ -352,7 +352,8 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 }  
 }
 }
-
+:root[native="true"] #tabs-newtab-button:hover, 
+:root[native="true"] #TabsToolbar #new-tab-button:hover,
 #tabs-newtab-button:hover, #TabsToolbar #new-tab-button:hover {
         background-color: transparent !important;
         border: 0px solid transparent !important;
