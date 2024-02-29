@@ -9,3 +9,4 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false); // Disable
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false); // Disable the Pocket section of the new tab page
 user_pref("widget.gtk.overlay-scrollbars.enabled", false); // 2012 Chrome on Linux didn't have these.
 user_pref("nglayout.enable_drag_images", false); // Disable previews when dragging tabs
+user_pref("browser.search.widget.inNavBar", false); // Disable the optional search bar
