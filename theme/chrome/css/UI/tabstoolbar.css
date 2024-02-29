@@ -60,11 +60,6 @@ toolbarbutton#scrollbutton-down {
   display: none !important;
 }
 
-/* Tighten up tabs overflow portion */
-.scrollbox-clip {
-  max-width: 1522px !important;
-}
-
 
 /* Make tabs be one on top of next  */
 #tabbrowser-arrowscrollbox .tabbrowser-tab[visuallyselected="true"] {
