@@ -10,6 +10,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("widget.gtk.overlay-scrollbars.enabled", false); // 2012 Chrome on Linux didn't have these.
 user_pref("nglayout.enable_drag_images", false); // Disable previews when dragging tabs
 user_pref("browser.search.widget.inNavBar", false); // Disable the optional search bar
-user_pref("browser.startup.homepage_override.mstone", "115.8.0"); // Prevent first run screen
+user_pref("browser.startup.homepage_override.mstone", "9999999.0"); // Prevent first run screen
 user_pref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 2); // Prevent default privacy page
 user_pref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "10000000000000"); // Prevent default privacy page
