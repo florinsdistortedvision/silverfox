@@ -836,12 +836,12 @@
 
 @media (-moz-platform: macos) {
 
-:root[sizemode="normal"] .titlebar-buttonbox {
-    margin-top: 5px !important;
-}
- 
-/* Buttonbox needs to be higher */
-.titlebar-buttonbox-container {
-    margin-top: -20px !important;
+  :root[sizemode="normal"] .titlebar-buttonbox {
+      margin-top: 5px !important;
+  }
+   
+  /* Buttonbox needs to be higher */
+  :root[sizemode="normal"] .titlebar-buttonbox-container {
+      margin-top: -20px !important;
 }  
 }
