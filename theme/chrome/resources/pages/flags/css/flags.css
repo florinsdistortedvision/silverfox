@@ -100,10 +100,11 @@ red {
 
 .notAvailable[type="forceWindows"],
 .notAvailable[type="oldLook"],
-.notAvailable[type="systemThemeIcons"],
+.notAvailable[type="disableSystemThemeIcons"],
 .notAvailable[type="beChromeOS"],
-.enableSystemThemeIcons,
 .enableDisableChromeOS,
+.enableDisableForceWindows,
+.enableDisableSystemThemeIcons,
 .enableDisableAero {
     display: none;
 }
@@ -118,14 +119,10 @@ red {
     }
 }
 
-.enableDisableForceWindows {
-    display: none;
-}
-
 @media (-moz-platform: linux) {
     .enableDisableChromeOS,
     .enableDisableForceWindows,
-    .enableSystemThemeIcons {
+    .enableDisableSystemThemeIcons {
         display: block !important;
     }
 
@@ -136,30 +133,30 @@ red {
 @supports (-moz-bool-pref("silverfox.beChromeOS")) { 
     .enableDisableOld,
     .enableDisableForceWindows,
-    .enableSystemThemeIcons {
+    .enableDisableSystemThemeIcons {
         display: none !important;
     }
     
     .notAvailable[type="forceWindows"],
     .notAvailable[type="oldLook"],
-    .notAvailable[type="systemThemeIcons"] {
+    .notAvailable[type="disableSystemThemeIcons"] {
         display: block !important;
     }
 }
     
 @supports (-moz-bool-pref("silverfox.forceWindowsStyling")) {
     .enableDisableChromeOS,
-    .enableSystemThemeIcons {
+    .enableDisableSystemThemeIcons {
         display: none !important;
     }
 
     .notAvailable[type="beChromeOS"],
-    .notAvailable[type="systemThemeIcons"] {
+    .notAvailable[type="disableSystemThemeIcons"] {
         display: block !important;
     }
 }
 
-@supports (-moz-bool-pref("silverfox.systemThemeIcons")) {
+@supports (-moz-bool-pref("silverfox.disableSystemThemeIcons")) {
     .enableDisableChromeOS,
     .enableDisableForceWindows {
         display: none !important;

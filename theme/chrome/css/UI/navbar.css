@@ -302,7 +302,7 @@ background-position: -2px -3px !important;
 }
 
 @media (-moz-platform: linux) {
-  @supports (-moz-bool-pref("silverfox.systemThemeIcons")) {
+  @supports not ((-moz-bool-pref("silverfox.disableSystemThemeIcons")) or (-moz-bool-pref("silverfox.beChromeOS")) or (-moz-bool-pref("silverfox.forceWindowsStyling"))) {
     #forward-button:not(:-moz-lwtheme),
     #back-button:not(:-moz-lwtheme),
     #reload-button:not(:-moz-lwtheme),

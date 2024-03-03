@@ -29,7 +29,7 @@ function getPrefName(flagName) {
         'Be Chrome OS': 'silverfox.beChromeOS',
         'Enable Aero Glass': 'silverfox.hasAeroGlass',
         'Restore Old Look': 'silverfox.preferOldLook',
-        'Icons on System Theme': 'silverfox.systemThemeIcons',
+        'Standard icons on System Theme': 'silverfox.disableSystemThemeIcons',
         'Allow Homepage Images': 'silverfox.hasLocalImage',
         'Enable Profile Pictures': 'silverfox.usepfp',
         'Force Windows Styling': 'silverfox.forceWindowsStyling'
