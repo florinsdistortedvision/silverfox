@@ -102,21 +102,43 @@ red {
 .notAvailable[type="oldLook"],
 .notAvailable[type="disableSystemThemeIcons"],
 .notAvailable[type="beChromeOS"],
-.enableDisableChromeOS,
-.enableDisableForceWindows,
 .enableDisableSystemThemeIcons,
-.enableDisableAero {
+.enableDisableChromeOS,
+.enableDisableDWM,
+.enableDisableSpoofing,
+.enableDisableWin8,
+.enableDisableWin7 {
     display: none;
 }
 
-@media (-moz-platform: windows-win10) {
-    .enableDisableAero {
+
+@media (-moz-ev-native-controls-patch) {
+    .enableDisableWin8,
+    .enableDisableSpoofing,
+    .enableDisableDWM,
+    .enableDisableWin7 {
         display: block !important;
     }
     
-    .notAvailable[type="aeroFlag"] {
+    .enableDisableWin8:before,
+    .enableDisableDWM:before,
+    .enableDisableWin7:before {
+        content: "En";
+    }
+    
+    :root[win8="true"] .enableDisableWin8:before,
+    :root[dwm="off"] .enableDisableDWM:before,
+    :root[win7="true"] .enableDisableWin7:before {
+        content: "Dis" !important;
+    }
+    
+    .notAvailable[type="spoofFlag"] {
         display: none !important;
     }
+}
+
+.enableDisableForceWindows {
+    display: none;
 }
 
 @media (-moz-platform: linux) {

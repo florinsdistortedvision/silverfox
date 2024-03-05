@@ -11,6 +11,10 @@ window.addEventListener("load", function () {
     function addNativeAttribute() {
       document.documentElement.setAttribute('native', 'true');
     }
+
+    function javaCheck() {
+      document.documentElement.setAttribute('javascript', 'has');
+    }
   
     function removeNativeAttribute() {
       document.documentElement.removeAttribute('native');
@@ -25,6 +29,7 @@ window.addEventListener("load", function () {
     }
   
     monitorPreference();
+    javaCheck();
   
     setInterval(monitorPreference, 1000);
   });

@@ -230,6 +230,10 @@ tab:where(:first-of-type[visuallyselected="true"]) {
     margin-left: 0 !important;
 }
 
+.tabbrowser-tab:last-of-type {
+  margin-right: 0 !important;
+}
+
 
 /* Tabs throbber */
 .tab-throbber[busy] {
@@ -263,17 +267,22 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 /* Tab close */
 .tab-close-button {
-  margin-right: 5px !important;
+  margin-right: 10px !important;
   list-style-image: url('../../assets/images/topbar/closetab.png') !important;
-  transform: scale(1.2) !important;
+  width: 14px !important;
+  height: 14px !important;
+  padding: 0px !important;
+  border-radius: none !important;
 }
+
+
 .tab-close-button:hover {
   background-color: transparent !important;
   border: 0px solid transparent !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin-right: 9px !important;
   list-style-image: url('../../assets/images/topbar/closetab_hover.png') !important;
-  transform: scale(1.7) !important;
-  margin-right: 7px !important;
-  margin-top: 1px !important;
 }
 
 
@@ -285,16 +294,18 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 
 
 /* New tab button and its hover */
+
 #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 5.5px !important;
-        right: 13px;
         list-style-image: none !important;
-        visibility: visible;
-        transform: scale(0.78) !important;
+        transform: scale(0.8) !important;
         background-image: url(../../assets/images/topbar/newtab_original.png) !important;
         filter: grayscale(30%), brightness(505%) !important;
+        width: 41px !important;
+        height: 21px !important;
+        padding: 0 !important;
+        margin-left: -13px !important;
+        margin-top: 6px !important; 
 }
 
 :root[native="true"] #tabs-newtab-button, 
@@ -311,8 +322,10 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 #tabs-newtab-button, #TabsToolbar #new-tab-button {
     background-image: url(../../assets/images/topbar/newtab_maclinux.png) !important;
     transform: scale(1) !important;
-    right: 12px;
-    top: 8px !important;
+    width: 28px !important;
+    height: 18px !important;
+    margin-left: -11px !important;
+    margin-top: 8px !important;
 }            
 }
 
@@ -322,25 +335,19 @@ tab:where(:first-of-type[visuallyselected="true"]) {
   
 #tabs-newtab-button, #TabsToolbar #new-tab-button {
         background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 5.5px !important;
-        right: 13px;
         list-style-image: none !important;
-        visibility: visible;
-        transform: scale(0.78) !important;
+        transform: scale(0.8) !important;
         background-image: url(../../assets/images/topbar/newtab_original.png) !important;
         filter: grayscale(30%), brightness(505%) !important;
+        width: 41px !important;
+        height: 21px !important;
+        padding: 0 !important;
+        margin-left: -13px !important;
+        margin-top: 6px !important; 
 }
 
 :root[native="true"] #tabs-newtab-button, 
 :root[native="true"] #TabsToolbar #new-tab-button {
-        background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 5.5px !important;
-        right: 13px;
-        list-style-image: none !important;
-        visibility: visible;
-        transform: scale(0.78) !important;
         background-image: url(../../assets/images/topbar/newtab_aero.png) !important;
         filter: brightness(115%) !important;
         opacity: 80% !important;
@@ -354,7 +361,7 @@ tab:where(:first-of-type[visuallyselected="true"]) {
         border: 0px solid transparent !important;
         box-shadow: 0px !important;
         box-sizing: 0px !important;
-        filter: brightness(190%) !important;
+        filter: brightness(125%) !important;
         opacity: 80% !important;
 }
 #tabs-newtab-button:hover > .toolbarbutton-icon {
@@ -371,12 +378,13 @@ tab:where(:first-of-type[visuallyselected="true"]) {
  #TabsToolbar #new-tab-button {
         background-image: url(../../assets/images/topbar/newtabold.png) !important;
         background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 7px !important;
-        right: 13px;
         list-style-image: none !important;
         visibility: visible;
         transform: scale(0.9) !important;
+        margin-left: -11px !important;
+        margin-top: 8px !important; 
+        width: 34px !important;
+        height: 18px !important;
 }
 :root[native="true"] #tabs-newtab-button:hover, 
 :root[native="true"] #TabsToolbar #new-tab-button:hover,
@@ -384,9 +392,6 @@ tab:where(:first-of-type[visuallyselected="true"]) {
 #TabsToolbar #new-tab-button:hover {
         background-image: url(../../assets/images/topbar/newtabold_hover.png) !important;
         background-repeat: no-repeat !important;
-        position: relative !important;
-        top: 7px !important;
-        right: 13px;
         list-style-image: none !important;
         visibility: visible;
         transform: scale(0.9) !important;

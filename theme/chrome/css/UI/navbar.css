@@ -399,8 +399,8 @@ margin-top: -1px !important;
 background-image: url(../../assets/images/middlebar/greyfolder.png) !important;
 background-repeat: no-repeat !important;
 background-position: 6px center !important;
-margin-top: -1px !important;
 }
+
 
 /* During homepage/new tab, show URL search icon */
 #identity-box[class="localResource"] #identity-icon-box {

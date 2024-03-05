@@ -29,6 +29,50 @@
   margin-inline-start: 0px !important;
 }
 
+/* If user doesn't have the prerequisites, make it known by making them as "infobars" */
+
+/* JS Scripting */
+#navigator-toolbox::after {
+  content: "Silverfox is unable to run its required JavaScript modules. Please follow the instructions again, as you forgot step 2 or 4." !important;
+  background: linear-gradient(to bottom, #fdeda8 0%, #fae692 100%) !important;
+  margin-top: -5px !important;
+  border-bottom: 1px solid #b2b2b2 !important;
+  border-right: 2px solid #b2b2b2 !important;
+  border-left: 2px solid #b2b2b2 !important;
+  padding: 8px !important;
+  border-radius: 0px !important;
+  color: black !important;
+  font-size: 15px !important;
+}
+
+:root[javascript="has"] #navigator-toolbox::after {
+  content: none !important;
+}
+
+
+/* Native Control Patch for Windows */
+@media (-moz-platform: windows) {
+#appcontent:before {
+  content: "Silverfox requires Native Controls Patch to function properly. Check the installation instructions for more info." !important;
+  background: linear-gradient(to bottom, #fdeda8 0%, #fae692 100%) !important;
+  margin-top: -5px !important;
+  border-bottom: 1px solid #b2b2b2 !important;
+  border-right: 2px solid #b2b2b2 !important;
+  border-left: 2px solid #b2b2b2 !important;
+  padding: 8px !important;
+  border-radius: 0px !important;
+  color: black !important;
+  font-size: 15px !important;
+}
+
+
+@media (-moz-ev-native-controls-patch) {
+#appcontent:before {
+  content: none !important;
+}
+}
+}
+
 
 /* Context menu (bring back non icon back, refresh etc) */
 
@@ -283,7 +327,9 @@ span[data-l10n-id="default-browser-notification-message"] {
   margin-top: 1.5px !important;
 }
 
-
+.notification-button-container, .notification-message {
+  color: black !important;
+}
 
 span[data-l10n-id="default-browser-notification-message"]:before {
   content: "Google Chrome isn't your default browser." !important;
@@ -298,6 +344,7 @@ span[data-l10n-id="default-browser-notification-message"]:before {
 }  
 }
 
+.notification-button.small-button,
 button[data-l10n-id="restore-session-startup-suggestion-button"],
 button[data-l10n-id="default-browser-notification-button"] {
   background: linear-gradient(to bottom, #fefae7 0%, #fbedb0 100%) !important;
@@ -319,7 +366,11 @@ button[data-l10n-id="default-browser-notification-button"]:hover {
   top: 7px;
 }
 
-.notificationbox-stack.global-notificationbox notification-message[style="margin-top: -37.5px; opacity: 0;"] {
+/* Might be more */
+
+.animated[style="margin-top: -35.5px; opacity: 0;"],
+.notificationbox-stack.global-notificationbox notification-message[style="margin-top: -37.5px; opacity: 0;"],
+.animated[style="margin-top: -40px; opacity: 0;"] {
   display: none !important;
 }
 

@@ -1,20 +1,58 @@
 function toggleFlag(flagName, prefName) {
-    var prefValue = getPreference(prefName);
-    setPreference(prefName, !prefValue);
-    updateSwitchText(flagName);
-    showRestartElement(true);
-}
-
-function getPreference(prefName) {
-    try {
-        return Services.prefs.getBoolPref(prefName);
-    } catch (e) {
-        return false;
+    if (flagName === 'Be Windows 7' || flagName === 'Be Windows 8') {
+        var selectedValue = flagName === 'Be Windows 7' ? 7 : 8;
+        var currentPrefValue = Services.prefs.getIntPref(prefName);
+        if (currentPrefValue !== selectedValue) {
+            setPreference(prefName, selectedValue);
+            showRestartElement(true);
+        } else {
+            setPreference(prefName, 0);
+            showRestartElement(true);
+        }
+    } else if (flagName === 'Disable DWM') {
+        var prefValue = !getPreference(prefName);
+        setPreference(prefName, prefValue);
+        showRestartElement(true);
+    } else if (flagName === 'Disable Spoofing') {
+        setPreference('widget.ev-native-controls-patch.force-dwm-report-off', false);
+        setPreference('widget.ev-native-controls-patch.override-win-version', 0);
+        showRestartElement(true);
+    } else {
+        var prefValue = !getPreference(prefName);
+        setPreference(prefName, prefValue);
+        updateSwitchText(flagName);
+        showRestartElement(true);
     }
 }
 
+function getPreference(prefName) {
+    if (typeof prefName !== 'string') {
+        console.error('Preference name must be a string.');
+        return null;
+    }
+    
+    if (Services.prefs.prefHasUserValue(prefName)) {
+        if (Services.prefs.getPrefType(prefName) === Ci.nsIPrefBranch.PREF_BOOL) {
+            return Services.prefs.getBoolPref(prefName);
+        } else if (Services.prefs.getPrefType(prefName) === Ci.nsIPrefBranch.PREF_INT) {
+            return Services.prefs.getIntPref(prefName);
+        }
+    }
+    
+    return null;
+}
+
 function setPreference(prefName, value) {
-    Services.prefs.setBoolPref(prefName, value);
+    switch (typeof value) {
+        case 'boolean':
+            Services.prefs.setBoolPref(prefName, value);
+            break;
+        case 'number':
+            Services.prefs.setIntPref(prefName, value);
+            break;
+        default:
+            console.error('Unsupported preference value type.');
+    }
 }
 
 function updateSwitchText(flagName) {
@@ -27,12 +65,14 @@ function getPrefName(flagName) {
     var flagToPrefMap = {
         'Be Chromium': 'silverfox.beChromium',
         'Be Chrome OS': 'silverfox.beChromeOS',
-        'Enable Aero Glass': 'silverfox.hasAeroGlass',
+        'Standard Icons on System Theme': 'silverfox.disableSystemThemeIcons',
         'Restore Old Look': 'silverfox.preferOldLook',
-        'Standard icons on System Theme': 'silverfox.disableSystemThemeIcons',
         'Allow Homepage Images': 'silverfox.hasLocalImage',
-        'Enable Profile Pictures': 'silverfox.usepfp',
-        'Force Windows Styling': 'silverfox.forceWindowsStyling'
+        'Force Windows Styling': 'silverfox.forceWindowsStyling',
+        'Be Windows 7': 'widget.ev-native-controls-patch.override-win-version',
+        'Be Windows 8': 'widget.ev-native-controls-patch.override-win-version',
+        'Disable DWM': 'widget.ev-native-controls-patch.force-dwm-report-off',
+        'Disable Spoofing': 'widget.ev-native-controls-patch.force-dwm-report-off' // Just for consistency, not used
     };
     return flagToPrefMap[flagName];
 }

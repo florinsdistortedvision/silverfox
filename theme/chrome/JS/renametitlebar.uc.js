@@ -40,9 +40,9 @@ var ReplaceFirefoxTitlebar = {
       }
 
       updateTitle();
-      setInterval(updateTitle, 5000);
     } catch (e) {}
   },
 };
 
 ReplaceFirefoxTitlebar.init();
+setInterval(ReplaceFirefoxTitlebar, 1000);

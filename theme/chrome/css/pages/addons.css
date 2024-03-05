@@ -570,18 +570,16 @@
       content: "Default theme. You're on Windows 10/11 - theme will switch based on Windows light or dark mode." !important;
       font-size: 12px !important;
   }
-    
-  @media (-moz-platform: windows-win10) {
-  @supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
-   addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
-      content: "Default theme. You have enabled Aero Glass - theme will switch based on Windows light or dark mode." !important;
-      font-size: 12px !important;
-  }
-  }}  
+   
     
   @media (-moz-platform: windows-win8) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
       content: "Default theme. You're on Windows 8/8.1 - theme will remain in light mode." !important;
+      font-size: 12px !important;
+  }
+    
+      :root[win8="true"] addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+      content: "Default theme. You're spoofing Windows 8/8.1." !important;
       font-size: 12px !important;
   }    
   }
@@ -589,6 +587,11 @@
   @media (-moz-platform: windows-win7) {
    addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
       content: "Default theme. You're on Windows 7 with Aero - theme will remain in light mode." !important;
+      font-size: 12px !important;
+  }
+    
+    :root[win7="true"] addon-card[addon-id="default-theme@mozilla.org"] .addon-description::before {
+      content: "Default theme. You're spoofing Windows 7 with Aero." !important;
       font-size: 12px !important;
   }
   }  
@@ -625,14 +628,7 @@
   addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
       content: url(../../assets/images/pages/settings/native_win11.png) !important;
   }  
-   
-  @media (-moz-platform: windows-win10) {
-  @supports (-moz-bool-pref("silverfox.hasAeroGlass")) { 
-  addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
-      content: url(../../assets/images/pages/settings/native_win10_aero.png) !important;
-  }
-  }}
-    
+       
   @media (-moz-platform: windows-win8) {
   addon-card[addon-id="default-theme@mozilla.org"]  .card-heading-image {
       content: url(../../assets/images/pages/settings/native_win8.png) !important;

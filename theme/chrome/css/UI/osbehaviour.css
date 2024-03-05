@@ -1,9 +1,7 @@
 /* OS Behaviour Themes for Light/Dark/System and Custom Themes */
 /* Changes Navigator Toolbox, NavBar and Personal Toolbar */
-/* ONLY ON WINDOWS 10, use silverfox.hasAeroGlass to enable Aero - only for DWMBlurGlass or Aeroglass */
-/* Windows 8/8.1 users with Aeroglass, no need for any bool */
+/* To remove redundancy, Light Theme becomes Classic Chrome Blue theme & System theme becomes Native theme, unless flags alter this behaviour */
 
-/* To remove redundancy, Light Theme becomes Classic Chrome Blue theme & System theme becomes Native theme, unless specified */
 
 /* Generic Windows Light and Dark Mode, excluding custom theme */
 
@@ -208,7 +206,6 @@
 
 /* Windows 10/11 */
 @media (-moz-platform: windows-win10) {
-@supports not (-moz-bool-pref("silverfox.hasAeroGlass")) {   
   
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
@@ -216,38 +213,7 @@
 }
 }
 
-
-/* Windows Aero for Windows 10, if flag is enabled*/
-    
-@supports (-moz-bool-pref("silverfox.hasAeroGlass")) {
-
-#TabsToolbar {
-    background-image: none !important;
-}
-    
-
-:root[native="true"] #navigator-toolbox,
-:root[native="true"] #navigator-toolbox-background,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox,
-:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #navigator-toolbox-background {
-     background-color: transparent !important;
-}    
-:root {
-     background-color: transparent !important;
-     appearance: auto !important;
-     -moz-default-appearance: -moz-win-borderless-glass !important;
-}
-
-/* Firefox draws a white color over the TabsToolbar, NavBar and Personal Toolbar, artifically */
-/* Remove that white color to enable true Aero */
-#appcontent {
-    appearance: auto !important;
-    -moz-default-appearance: -moz-win-exclude-glass !important;
-}
-}
-}
-
-/* Windows Aero except for Windows 10 */
+/* Windows Aero */
 
 @media (-moz-windows-glass) {
    
@@ -273,7 +239,13 @@
                                             
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .tab-content {
     color: var(--lwt-text-color) !important;
-}                      
+}
+           
+/* Disable the fog */   
+:root[native="true"] #TabsToolbar,
+:root[style*="--lwt-accent-color: rgb(28, 27, 34)"] #TabsToolbar {
+      background-image: none !important;
+}
 }
     
     
