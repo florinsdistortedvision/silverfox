@@ -195,7 +195,7 @@
 
     
 /* No DWM compositor (Aero Basic, Classic Theme, XP mode etc) */
-    
+@media (-moz-platform: windows)  {    
 @media (-moz-windows-compositor: 0) {
     
 :root[tabsintitlebar]:not([inDOMFullscreen]) #titlebar:-moz-lwtheme {
@@ -233,7 +233,7 @@
 :root[style*="--lwt-accent-color: rgb(28, 27, 34)"] .titlebar-min {
     margin-right: 1px !important;
 }  
-  
+}
 }
   
   

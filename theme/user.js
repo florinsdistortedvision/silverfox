@@ -13,3 +13,4 @@ user_pref("browser.search.widget.inNavBar", false); // Disable the optional sear
 user_pref("browser.startup.homepage_override.mstone", "9999999.0"); // Prevent first run screen
 user_pref("datareporting.policy.dataSubmissionPolicyAcceptedVersion", 2); // Prevent default privacy page
 user_pref("datareporting.policy.dataSubmissionPolicyNotifiedTime", "10000000000000"); // Prevent default privacy page
+user_pref("gfx.webrender.software", true); // Fix for black box titlebar on Windows
