@@ -7,7 +7,7 @@
 }
 
 #version-box::after {
-  content: "/ Silverfox version 1.1.1" !important;
+  content: "/ Silverfox version 1.1.1.1" !important;
   position: relative !important;
   left: 2px !important;
 }
@@ -16,7 +16,7 @@
 @-moz-document url-prefix(https://silverfox.neocities.org/components/update) {
 	
 .currentVersion p:after {
-    content: "1.1.1";
+    content: "1.1.1.1";
     position: relative;
     left: 5px;
 }
