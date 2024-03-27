@@ -103,38 +103,8 @@ red {
 .notAvailable[type="disableSystemThemeIcons"],
 .notAvailable[type="beChromeOS"],
 .enableDisableSystemThemeIcons,
-.enableDisableChromeOS,
-.enableDisableDWM,
-.enableDisableSpoofing,
-.enableDisableWin8,
-.enableDisableWin7 {
+.enableDisableChromeOS {
     display: none;
-}
-
-
-@media (-moz-ev-native-controls-patch) {
-    .enableDisableWin8,
-    .enableDisableSpoofing,
-    .enableDisableDWM,
-    .enableDisableWin7 {
-        display: block !important;
-    }
-    
-    .enableDisableWin8:before,
-    .enableDisableDWM:before,
-    .enableDisableWin7:before {
-        content: "En";
-    }
-    
-    :root[win8="true"] .enableDisableWin8:before,
-    :root[dwm="off"] .enableDisableDWM:before,
-    :root[win7="true"] .enableDisableWin7:before {
-        content: "Dis" !important;
-    }
-    
-    .notAvailable[type="spoofFlag"] {
-        display: none !important;
-    }
 }
 
 .enableDisableForceWindows {
