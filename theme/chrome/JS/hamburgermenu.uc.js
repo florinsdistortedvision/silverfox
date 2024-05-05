@@ -35,7 +35,7 @@ window.addEventListener("load", function () {
     );
 
     const hamburgerMenuItems = [
-      { label: "Switch to Geckium to continue receiving updates...", class: "update-silverfox" },
+      { label: "Upgrade Silverfox to Geckium...", class: "update-silverfox" },
       { label: "New tab", class: "submenu-item1" },
       { label: "New window", class: "submenu-item2" },
       { label: "New incognito window", class: "submenu-item3" },
