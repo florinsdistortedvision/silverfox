@@ -590,6 +590,6 @@ _ucjs && utils.startupFinished().then(() => {
   _ucjs.GBROWSERHACK_ENABLED === 2 && showgBrowserNotification();
   utils.showNotification({
     type: "eol",
-    label: `Silverfox has been succeeded by Geckium. Please check the hamburger menu for more details.`
+    label: `To continue receiving Silverfox updates, please switch to Geckium. Thanks for using Silverfox.`
   });
 });
