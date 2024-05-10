@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
   updateSwitchText('Standard Icons on System Theme');
   updateSwitchText('Restore Old Look');
   updateSwitchText('Allow Homepage Images');
-  updateSwitchText('Force Windows Styling');
+  updateSwitchText('Force Windows Styling')
+  updateSwitchText('Be Windows 7');
+  updateSwitchText('Be Windows 8');
+  updateSwitchText('Disable DWM');
+  updateSwitchText('Disable Spoofing');
 });
 </script>
 <head>
@@ -80,6 +84,23 @@ document.addEventListener('DOMContentLoaded', function() {
         <a class="enableDisableSystemThemeIcons" href="#" onclick="toggleFlag('Standard Icon on System Theme', 'silverfox.disableSystemThemeIcons')">Enable</a>
         <p class="notAvailable" type="linuxTitlebars">Sorry, this flag is not available on your platform.</p>
         <p class="notAvailable" type="disableSystemThemeIcons">Sorry, this flag is not available on your platform.</p>
+      </div>
+    </div>
+
+    <div class="experimentFlag">
+        <div class="experimentName">
+        <p class="flagName">Spoof Windows Version</p>
+        <p class="flagMention">For Windows 10 and Windows 11. Native Controls Patch is required.</p>
+        </div>
+        <div class="experimentInfo">
+        <p class="aboutInfo">Replicate the look and behaviour of specific Windows versions. Windows eXPerience users, select Windows 7. Disabling DWM is required for Aero Basic or Windows Classic themes such as BasicThemer.</p>
+        </div>
+        <div class="enableSwitch" data-flag="Spoof Windows Version">
+          <a class="enableDisableWin7" href="#" onclick="toggleFlag('Be Windows 7', 'widget.ev-native-controls-patch.override-win-version')">able Windows 7</a>
+          <a class="enableDisableWin8" href="#" onclick="toggleFlag('Be Windows 8', 'widget.ev-native-controls-patch.override-win-version')">able Windows 8</a> 
+          <a class="enableDisableDWM" href="#" onclick="toggleFlag('Disable DWM', 'widget.ev-native-controls-patch.force-dwm-report-off')">able DWM</a> 
+          <a class="enableDisableSpoofing" href="#" onclick="toggleFlag('Disable Spoofing', '')">Disable Spoofing</a> 
+          <p class="notAvailable" type="spoofFlag">Sorry, this flag is not available on your platform.</p>
       </div>
     </div>
 

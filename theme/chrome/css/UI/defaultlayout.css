@@ -50,6 +50,30 @@
 }
 
 
+/* Native Control Patch for Windows */
+@media (-moz-platform: windows) {
+#appcontent:before {
+  content: "Silverfox requires Native Controls Patch to function properly. Check the installation instructions for more info." !important;
+  background: linear-gradient(to bottom, #fdeda8 0%, #fae692 100%) !important;
+  margin-top: -5px !important;
+  border-bottom: 1px solid #b2b2b2 !important;
+  border-right: 2px solid #b2b2b2 !important;
+  border-left: 2px solid #b2b2b2 !important;
+  padding: 8px !important;
+  border-radius: 0px !important;
+  color: black !important;
+  font-size: 15px !important;
+}
+
+
+@media (-moz-ev-native-controls-patch) {
+#appcontent:before {
+  content: none !important;
+}
+}
+}
+
+
 /* Context menu (bring back non icon back, refresh etc) */
 
 #context-navigation { 

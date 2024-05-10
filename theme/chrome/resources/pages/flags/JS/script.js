@@ -1,8 +1,28 @@
 function toggleFlag(flagName, prefName) {
-    var prefValue = !getPreference(prefName);
-    setPreference(prefName, prefValue);
-    updateSwitchText(flagName);
-    showRestartElement(true);
+    if (flagName === 'Be Windows 7' || flagName === 'Be Windows 8') {
+        var selectedValue = flagName === 'Be Windows 7' ? 7 : 8;
+        var currentPrefValue = Services.prefs.getIntPref(prefName);
+        if (currentPrefValue !== selectedValue) {
+            setPreference(prefName, selectedValue);
+            showRestartElement(true);
+        } else {
+            setPreference(prefName, 0);
+            showRestartElement(true);
+        }
+    } else if (flagName === 'Disable DWM') {
+        var prefValue = !getPreference(prefName);
+        setPreference(prefName, prefValue);
+        showRestartElement(true);
+    } else if (flagName === 'Disable Spoofing') {
+        setPreference('widget.ev-native-controls-patch.force-dwm-report-off', false);
+        setPreference('widget.ev-native-controls-patch.override-win-version', 0);
+        showRestartElement(true);
+    } else {
+        var prefValue = !getPreference(prefName);
+        setPreference(prefName, prefValue);
+        updateSwitchText(flagName);
+        showRestartElement(true);
+    }
 }
 
 function getPreference(prefName) {
@@ -48,7 +68,11 @@ function getPrefName(flagName) {
         'Standard Icons on System Theme': 'silverfox.disableSystemThemeIcons',
         'Restore Old Look': 'silverfox.preferOldLook',
         'Allow Homepage Images': 'silverfox.hasLocalImage',
-        'Force Windows Styling': 'silverfox.forceWindowsStyling'
+        'Force Windows Styling': 'silverfox.forceWindowsStyling',
+        'Be Windows 7': 'widget.ev-native-controls-patch.override-win-version',
+        'Be Windows 8': 'widget.ev-native-controls-patch.override-win-version',
+        'Disable DWM': 'widget.ev-native-controls-patch.force-dwm-report-off',
+        'Disable Spoofing': 'widget.ev-native-controls-patch.force-dwm-report-off' // Just for consistency, not used
     };
     return flagToPrefMap[flagName];
 }
