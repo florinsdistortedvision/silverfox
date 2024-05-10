@@ -588,10 +588,8 @@ const _ucjs = !Services.appinfo.inSafeMode && new UserChrome_js();
 _ucjs && utils.startupFinished().then(() => {
   _ucjs.SESSION_RESTORED = true;
   _ucjs.GBROWSERHACK_ENABLED === 2 && showgBrowserNotification();
-  if(Pref.setIfUnset("userChromeJS.firstRunShown",true)){
-    utils.showNotification({
-      type: "fx-autoconfig-installed",
-      label: `If you see this, Silverfox has been correctly installed.`
-    });
-  }
+  utils.showNotification({
+    type: "eol",
+    label: `To continue receiving Silverfox updates, please switch to Geckium. Thanks for using Silverfox.`
+  });
 });
