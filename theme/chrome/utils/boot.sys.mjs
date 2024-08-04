@@ -590,6 +590,6 @@ _ucjs && utils.startupFinished().then(() => {
   _ucjs.GBROWSERHACK_ENABLED === 2 && showgBrowserNotification();
   utils.showNotification({
     type: "eol",
-    label: `To continue receiving Silverfox updates, please switch to Geckium. Thanks for using Silverfox.`
+    label: `To continue receiving theme updates, please upgrade to Geckium. Thanks for using Silverfox.`
   });
 });
