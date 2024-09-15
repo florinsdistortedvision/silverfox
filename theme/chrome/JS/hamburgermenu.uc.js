@@ -35,7 +35,7 @@ window.addEventListener("load", function () {
     );
 
     const hamburgerMenuItems = [
-      { label: "Your Silverfox is outdated, update now", class: "update-silverfox" },
+      { label: "Upgrade Silverfox to Geckium...", class: "update-silverfox" },
       { label: "New tab", class: "submenu-item1" },
       { label: "New window", class: "submenu-item2" },
       { label: "New incognito window", class: "submenu-item3" },
@@ -752,32 +752,8 @@ if (exitMenu) {
 
 // Grab latest version from the local file
 function checkSilverfoxVersion() {
-    console.log("Checking Silverfox version");
-
-    const localVersionFile = "chrome://userscripts/content/version.txt";
-    const remoteURL = "https://silverfox.neocities.org/components/JS/currentversion.txt";
-
-    // Fetch local version with timestamp to prevent caching
-    fetch(localVersionFile + "?timestamp=" + Date.now())
-        .then(response => response.text())
-        .then(localVersion => {
-            // Fetch remote version with timestamp to prevent caching
-            fetch(remoteURL + "?timestamp=" + Date.now())
-                .then(response => response.text())
-                .then(remoteVersion => {
-                    const isCurrent = compareVersions(localVersion.trim(), remoteVersion.trim()) === 0;
-                    console.log("Is Silverfox up to date?", isCurrent);
-
-                    const hamburgerButton = document.getElementById("hamburger-button");
-                    hamburgerButton.setAttribute("current", isCurrent ? "true" : "false");
-                })
-                .catch(error => {
-                    console.error("Error fetching remote Silverfox version:", error);
-                });
-        })
-        .catch(error => {
-            console.error("Error fetching local Silverfox version:", error);
-        });
+  const hamburgerButton = document.getElementById("hamburger-button");
+  hamburgerButton.setAttribute("current", "false");
 }
 
 // Add an attribute to the hamburger menu according to whether it's up to date or not, and add function to the menu list 
