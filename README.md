@@ -7,7 +7,7 @@ Silverfox was a Mozilla Firefox **115ESR** theme that mimicked the look and feel
 
 Silverfox was a simple hobby project that I did for my own nostalgia (2012 Chrome). I never expected so many people to use it. Even tho this project is going away, there is thankfully something **much better** that has been made over the time Silverfox released. The project (not being made by me) is called Geckium which has a **ton** of cool things developed for such as every era styling of Chrome (2008-2015), actual Chrome themes support in Firefox (a first), proper support for Windows & Linux and many more. 
 
-As a result, please look forward to using that as a full on replacement for Silverfox. Thank you for hearing about Silverfox and a big thank you for using it.
+[As a result, please use Geckium as your full on replacement.](https://github.com/angelbruni/Geckium)
 
 ### Original description features:
 ######  This project was not developed, approved or endorsed by Google!
